@@ -16,3 +16,4 @@ func _process(delta):
 		direction.x = -1.0
 	if position.x < 0:
 		direction.x = 1.0
+
