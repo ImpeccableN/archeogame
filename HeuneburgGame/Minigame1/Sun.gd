@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = 500.0
+export var speed = 200.0
 onready var screen_size = get_viewport_rect().size
 
 var direction := Vector2(1.0, 0.75)
