@@ -3,7 +3,7 @@ extends Area2D
 export var speed = 200.0
 onready var screen_size = get_viewport_rect().size
 
-var direction := Vector2(1.0, 0.75)
+var direction := Vector2.ZERO
 
 
 func _process(delta):
@@ -17,3 +17,7 @@ func _process(delta):
 	if position.x < 0:
 		direction.x = 1.0
 
+
+
+func _on_Timer_timeout():
+	direction = Vector2(1.0, 0.8)
