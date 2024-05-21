@@ -6,6 +6,7 @@
 extents = Vector2( 32, 32 )
 
 [node name="Artefact" type="Area2D"]
+collision_layer = 257
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
