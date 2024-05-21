@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Minigame1/Assets/Sprites/placeholder_sun.png" type="Texture" id=1]
+[ext_resource path="res://Minigame1/Assets/Sprites/sun.png" type="Texture" id=1]
 [ext_resource path="res://Minigame1/Sun.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
