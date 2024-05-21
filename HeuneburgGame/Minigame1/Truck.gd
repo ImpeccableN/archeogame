@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	var direction = Vector2.ZERO
 		
+	# when lower end of screen is reached, truck drives upwards and changes rotation of sprite
 	if screen_lowerend:
 		rotation_degrees = -90
 		direction = Vector2(0.0, -1.0)
