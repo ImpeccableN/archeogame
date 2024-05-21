@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = 400.0
+export var speed = 800.0
 var straight = true
 var screen_size = Vector2.ZERO
 onready var sprite_node = get_node("Sprite")

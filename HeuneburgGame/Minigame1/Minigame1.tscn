@@ -113,4 +113,5 @@ position = Vector2( 31, 32 )
 [node name="ArtefactSpawnTimer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="direction_change" from="Sun" to="." method="_on_Sun_direction_change"]
 [connection signal="timeout" from="ArtefactSpawnTimer" to="." method="_on_ArtefactSpawnTimer_timeout"]
