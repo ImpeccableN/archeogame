@@ -3,6 +3,7 @@ extends Area2D
 export var speed = 400.0
 var straight = true
 var screen_size = Vector2.ZERO
+onready var sprite_node = get_node("Sprite")
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -12,8 +13,10 @@ func _process(delta):
 	
 	if straight:
 		direction.x += 1
+		sprite_node.flip_h = true
 	else:
 		direction.x -= 1
+		sprite_node.flip_h = false
 	
 	position.x += direction.x * speed * delta
 	
