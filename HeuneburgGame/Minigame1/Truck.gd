@@ -24,16 +24,16 @@ func _process(delta):
 	
 	position += direction * speed * delta
 	
-	if screen_lowerend == false && position.x >= screen_size.x:
+	if screen_lowerend == false && position.x >= screen_size.x - 31:
 		straight = not straight
 		position.y += 64
 	
-	if screen_lowerend == false && position.x <= 0:
+	if screen_lowerend == false && position.x <= 31:
 		straight = not straight
 		position.y += 64
 	
-	if position.y >= screen_size.y:
+	if position.y >= screen_size.y - 31:
 		screen_lowerend = true
 	
-	if position.y <= 0:
+	if position.y <= 32:
 		screen_lowerend = false
