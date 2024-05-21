@@ -11,10 +11,12 @@ func _ready():
 
 func _process(delta):
 	var direction = Vector2.ZERO
-	
+		
 	if screen_lowerend:
+		rotation_degrees = -90
 		direction = Vector2(0.0, -1.0)
 	else:
+		rotation_degrees = 0
 		if straight:
 			direction.x += 1
 			sprite_node.flip_h = true
