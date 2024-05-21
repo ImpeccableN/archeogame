@@ -21,3 +21,4 @@ func _on_ArtefactSpawnTimer_timeout():
 	truck_position = truck_node.position
 	var artefact_tile : Vector2 = tilemap.world_to_map(Vector2(truck_position.x -50, truck_position.y))
 	tilemap.set_cellv(artefact_tile, 2)
+
