@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 export var speed = 800.0
 var straight = true

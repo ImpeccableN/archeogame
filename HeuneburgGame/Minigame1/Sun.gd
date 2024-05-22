@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 export var speed = 200.0
 onready var screen_size = get_viewport_rect().size
