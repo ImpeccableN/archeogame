@@ -23,8 +23,6 @@ func _process(delta):
 	else:
 		tilemap.set_cellv((sunny_tile)+Vector2(-1,1) , 0)
 		tilemap.set_cellv((sunny_tile)-Vector2(-1,1) , 0)
-	
-	
 
 
 func _on_ArtefactSpawnTimer_timeout():
@@ -32,7 +30,6 @@ func _on_ArtefactSpawnTimer_timeout():
 	var artefact_instance = artefact_scene.instance()
 	add_child(artefact_instance)
 	artefact_instance.position = truck_position
-
 
 
 func _on_Sun_direction_change():
