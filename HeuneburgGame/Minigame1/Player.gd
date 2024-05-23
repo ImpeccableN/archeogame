@@ -5,6 +5,8 @@ export var speed = 400.0
 var body_size = Vector2.ZERO
 var screen_size = Vector2.ZERO
 
+signal set_marker(player_position)
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	body_size = get_node("Sprite").get_rect().size
@@ -25,6 +27,9 @@ func _process(delta):
 	
 	if direction.length() > 1:
 		direction = direction.normalized();
+	
+	if Input.is_action_just_pressed("set_marker"):
+			emit_signal("set_marker", position)
 	
 	position.x += direction.x * delta * speed
 	position.y += direction.y * body_size.y
