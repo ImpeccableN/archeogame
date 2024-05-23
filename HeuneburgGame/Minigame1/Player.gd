@@ -2,15 +2,15 @@ extends Area2D
 
 
 export var speed = 400.0
-var body_size = Vector2.ZERO
+var row_size = 64
 var screen_size = Vector2.ZERO
 
 signal set_marker(player_position)
 
 func _ready():
 	screen_size = get_viewport_rect().size
-	body_size = get_node("Sprite").get_rect().size
-	print(body_size)
+#	body_size = get_node("Sprite").get_rect().size
+#	print(body_size)
 
 
 func _process(delta):
@@ -32,7 +32,7 @@ func _process(delta):
 			emit_signal("set_marker", position)
 	
 	position.x += direction.x * delta * speed
-	position.y += direction.y * body_size.y
+	position.y += direction.y * row_size
 	position.x = clamp(position.x, 32, screen_size.x - 32)
 	position.y = clamp(position.y, 32, screen_size.y - 32)
 	

@@ -3,7 +3,7 @@ extends Node
 var truck_position = Vector2.ZERO
 var sun_position = Vector2.ZERO
 var sun_direction = true
-var artefact_scene = preload("res://Minigame1/Artefact.tscn")
+var marker_scene = preload("res://Minigame1/Marker.tscn")
 onready var truck_node = get_node("Truck")
 onready var tilemap = get_node("TileMap")
 onready var sun_node = get_node("Sun")
@@ -38,3 +38,11 @@ func _on_ArtefactSpawnTimer_timeout():
 
 func _on_Sun_direction_change():
 	sun_direction = not sun_direction
+
+
+func _on_Player_set_marker(player_position):
+	var player_tile : Vector2 = tilemap.world_to_map(player_position)
+	if tilemap.get_cellv(player_tile) == 2:
+		var marker_instace = marker_scene.instance()
+		add_child(marker_instace)
+		marker_instace.position = tilemap.map_to_world(player_tile) + Vector2(32, 32)
