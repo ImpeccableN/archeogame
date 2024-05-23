@@ -25,8 +25,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("move_up"):
 		direction.y -= 1
 	
-	if direction.length() > 1:
-		direction = direction.normalized();
+#	if direction.length() > 1:
+#		direction = direction.normalized();
 	
 	if Input.is_action_just_pressed("set_marker"):
 			emit_signal("set_marker", position)
