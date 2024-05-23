@@ -29,10 +29,12 @@ func _process(delta):
 	
 	if screen_lowerend == false && position.x >= screen_size.x - 31:
 		straight = not straight
+		position.x = screen_size.x - 32
 		position.y += 64
 	
 	if screen_lowerend == false && position.x <= 31:
 		straight = not straight
+		position.x = 32
 		position.y += 64
 	
 	if position.y >= screen_size.y - 31:
@@ -40,3 +42,4 @@ func _process(delta):
 	
 	if position.y <= 32:
 		screen_lowerend = false
+		position.y = 32
