@@ -4,10 +4,12 @@ var truck_position = Vector2.ZERO
 var sun_position = Vector2.ZERO
 var sun_direction = true
 var marker_scene = preload("res://Minigame1/Marker.tscn")
+var score = 0
 onready var truck_node = get_node("Truck")
 onready var tilemap = get_node("TileMap")
 onready var sun_node = get_node("Sun")
 
+signal score_up(score)
 
 func _process(delta):
 	truck_position = truck_node.position
@@ -46,3 +48,7 @@ func _on_Player_set_marker(player_position):
 		var marker_instace = marker_scene.instance()
 		add_child(marker_instace)
 		marker_instace.position = tilemap.map_to_world(player_tile) + Vector2(32, 32)
+		score += 1
+		emit_signal("score_up", score)
+
+
