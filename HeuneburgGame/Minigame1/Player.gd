@@ -6,6 +6,7 @@ var row_size = 64
 var screen_size = Vector2.ZERO
 
 signal set_marker(player_position)
+signal hit
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -35,8 +36,13 @@ func _process(delta):
 	position.y += direction.y * row_size
 	position.x = clamp(position.x, 32, screen_size.x - 32)
 	position.y = clamp(position.y, 32, screen_size.y - 32)
-	
 
+func start(new_position):
+	position = new_position
+	show()
+	$CollisionShape2D.disabled = false
 
 func _on_Player_body_entered(body):
-	pass # Replace with function body.
+	hide()
+	$CollisionShape2D.set_deferred("disabled", true)
+	emit_signal("hit")
