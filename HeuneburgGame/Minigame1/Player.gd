@@ -36,3 +36,7 @@ func _process(delta):
 	position.x = clamp(position.x, 32, screen_size.x - 32)
 	position.y = clamp(position.y, 32, screen_size.y - 32)
 	
+
+
+func _on_Player_body_entered(body):
+	pass # Replace with function body.
