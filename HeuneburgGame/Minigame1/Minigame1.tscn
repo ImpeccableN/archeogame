@@ -98,9 +98,11 @@ collision_mask = 257
 
 [node name="Sun" parent="." instance=ExtResource( 3 )]
 position = Vector2( 31, 33 )
+speed = 400.0
 
 [node name="Truck" parent="." instance=ExtResource( 6 )]
 position = Vector2( 31, 32 )
+speed = 400.0
 
 [node name="ArtefactSpawnTimer" type="Timer" parent="."]
 autostart = true
@@ -108,6 +110,7 @@ autostart = true
 [node name="Minigame1_HUD" parent="." instance=ExtResource( 7 )]
 
 [connection signal="score_up" from="." to="Minigame1_HUD" method="_on_Minigame1_score_up"]
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="set_marker" from="Player" to="." method="_on_Player_set_marker"]
 [connection signal="direction_change" from="Sun" to="." method="_on_Sun_direction_change"]
 [connection signal="timeout" from="ArtefactSpawnTimer" to="." method="_on_ArtefactSpawnTimer_timeout"]

@@ -52,3 +52,5 @@ func _on_Player_set_marker(player_position):
 		emit_signal("score_up", score)
 
 
+func _on_Player_hit():
+	pass # Replace with function body.
