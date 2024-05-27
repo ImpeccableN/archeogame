@@ -2,6 +2,7 @@ extends CanvasLayer
 
 onready var score_label = $ScoreLabel
 
+signal start_game
 
 
 func _on_Minigame1_score_up(score):
@@ -17,3 +18,4 @@ func _on_Player_hit():
 func _on_StartButton_button_up():
 	$StartButton.hide()
 	$StartButton.disabled = true
+	emit_signal("start_game")
