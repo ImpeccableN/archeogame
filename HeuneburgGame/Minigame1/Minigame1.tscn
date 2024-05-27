@@ -115,3 +115,4 @@ autostart = true
 [connection signal="set_marker" from="Player" to="." method="_on_Player_set_marker"]
 [connection signal="direction_change" from="Sun" to="." method="_on_Sun_direction_change"]
 [connection signal="timeout" from="ArtefactSpawnTimer" to="." method="_on_ArtefactSpawnTimer_timeout"]
+[connection signal="start_game" from="Minigame1_HUD" to="." method="_on_Minigame1_HUD_start_game"]

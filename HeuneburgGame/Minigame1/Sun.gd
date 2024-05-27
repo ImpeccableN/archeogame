@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var speed = 200.0
+export var starting_position = Vector2.ZERO
 onready var screen_size = get_viewport_rect().size
 
 var direction := Vector2.ZERO
@@ -26,3 +27,8 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	direction = Vector2(1.0, 0.8)
+
+func start():
+	position = starting_position
+	$CollisionShape2D.disabled = false
+	$Timer.start()

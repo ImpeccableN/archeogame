@@ -2,6 +2,7 @@ extends Area2D
 
 
 export var speed = 400.0
+export var starting_position = Vector2(514, 352)
 var row_size = 64
 var screen_size = Vector2.ZERO
 
@@ -38,7 +39,7 @@ func _process(delta):
 	position.y = clamp(position.y, 32, screen_size.y - 32)
 
 func start(new_position):
-	position = new_position
+	position = starting_position
 	show()
 	$CollisionShape2D.disabled = false
 

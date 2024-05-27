@@ -33,9 +33,6 @@ func _on_ArtefactSpawnTimer_timeout():
 	truck_position = truck_node.position
 	var artefact_tile : Vector2 = tilemap.world_to_map(truck_position)
 	tilemap.set_cellv(artefact_tile, 2)
-#	var artefact_instance = artefact_scene.instance()
-#	add_child(artefact_instance)
-#	artefact_instance.position = truck_position
 
 
 func _on_Sun_direction_change():
@@ -53,4 +50,12 @@ func _on_Player_set_marker(player_position):
 
 
 func _on_Player_hit():
-	pass # Replace with function body.
+	$Truck/CollisionShape2D.set_deferred("disabled", true)
+	$Sun/CollisionShape2D.set_deferred("disabled", true)
+	$Truck.speed = 0
+	
+
+
+func _on_Minigame1_HUD_start_game():
+	$Truck/CollisionShape2D.disabled = false
+	$Sun/CollisionShape2D.disabled = false

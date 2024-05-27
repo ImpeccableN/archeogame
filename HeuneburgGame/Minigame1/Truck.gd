@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var speed = 800.0
+export var starting_position = Vector2.ZERO
 var straight = true
 var screen_size = Vector2.ZERO
 onready var sprite_node = get_node("Sprite")
@@ -43,3 +44,8 @@ func _process(delta):
 	if position.y <= 32:
 		screen_lowerend = false
 		position.y = 32
+
+func start():
+	position = starting_position
+	$CollisionShape2D.disabled = false
+	straight = true
