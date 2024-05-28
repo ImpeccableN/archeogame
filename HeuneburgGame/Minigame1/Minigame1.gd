@@ -5,11 +5,15 @@ var sun_position = Vector2.ZERO
 var sun_direction = true
 var marker_scene = preload("res://Minigame1/Marker.tscn")
 var score = 0
+var cell_array
 onready var truck_node = get_node("Truck")
 onready var tilemap = get_node("TileMap")
 onready var sun_node = get_node("Sun")
 
 signal score_up(score)
+
+func _ready():
+	cell_array = tilemap.get_used_cells()
 
 func _process(delta):
 	truck_position = truck_node.position
@@ -57,5 +61,8 @@ func _on_Player_hit():
 
 
 func _on_Minigame1_HUD_start_game():
+	for cell in cell_array:
+		tilemap.set_cellv(cell, 0)
 	$Truck/CollisionShape2D.disabled = false
 	$Sun/CollisionShape2D.disabled = false
+	tilemap

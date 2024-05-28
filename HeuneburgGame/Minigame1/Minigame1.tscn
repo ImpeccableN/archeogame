@@ -101,8 +101,9 @@ position = Vector2( 31, 33 )
 speed = 400.0
 
 [node name="Truck" parent="." instance=ExtResource( 6 )]
-position = Vector2( 31, 32 )
+position = Vector2( 32, 32 )
 speed = 400.0
+starting_position = Vector2( 32, 32 )
 
 [node name="ArtefactSpawnTimer" type="Timer" parent="."]
 autostart = true
@@ -116,3 +117,6 @@ autostart = true
 [connection signal="direction_change" from="Sun" to="." method="_on_Sun_direction_change"]
 [connection signal="timeout" from="ArtefactSpawnTimer" to="." method="_on_ArtefactSpawnTimer_timeout"]
 [connection signal="start_game" from="Minigame1_HUD" to="." method="_on_Minigame1_HUD_start_game"]
+[connection signal="start_game" from="Minigame1_HUD" to="Player" method="start"]
+[connection signal="start_game" from="Minigame1_HUD" to="Sun" method="start"]
+[connection signal="start_game" from="Minigame1_HUD" to="Truck" method="start"]

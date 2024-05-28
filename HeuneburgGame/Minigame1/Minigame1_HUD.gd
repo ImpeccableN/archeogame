@@ -19,3 +19,4 @@ func _on_StartButton_button_up():
 	$StartButton.hide()
 	$StartButton.disabled = true
 	emit_signal("start_game")
+	_on_Minigame1_score_up(0)

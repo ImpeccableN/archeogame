@@ -49,3 +49,6 @@ func start():
 	position = starting_position
 	$CollisionShape2D.disabled = false
 	straight = true
+	sprite_node.flip_h = true
+	screen_lowerend = false
+	speed = 400

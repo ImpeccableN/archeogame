@@ -38,7 +38,7 @@ func _process(delta):
 	position.x = clamp(position.x, 32, screen_size.x - 32)
 	position.y = clamp(position.y, 32, screen_size.y - 32)
 
-func start(new_position):
+func start():
 	position = starting_position
 	show()
 	$CollisionShape2D.disabled = false
