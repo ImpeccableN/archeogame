@@ -2,7 +2,7 @@ extends Node
 
 var truck_position = Vector2.ZERO
 var sun_position = Vector2.ZERO
-var sun_direction = true
+var sun_direction = false
 var marker_scene = preload("res://Minigame1/Marker.tscn")
 var score = 0
 var cell_array : Array
@@ -69,6 +69,8 @@ func _on_Minigame1_HUD_start_game():
 	#delete all markers on map
 	for artefact in artefact_array:
 		artefact.queue_free()
+	artefact_array.clear()
+	score = 0
 	$Truck/CollisionShape2D.disabled = false
 	$Sun/CollisionShape2D.disabled = false
 	
