@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var truck_position = Vector2.ZERO
 var sun_position = Vector2.ZERO

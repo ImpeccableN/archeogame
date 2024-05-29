@@ -82,7 +82,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 2/shapes = [  ]
 2/z_index = 0
 
-[node name="Minigame1" type="Node"]
+[node name="Minigame1" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -113,12 +113,12 @@ autostart = true
 [node name="Minigame1_HUD" parent="." instance=ExtResource( 7 )]
 
 [connection signal="score_up" from="." to="Minigame1_HUD" method="_on_Minigame1_score_up"]
-[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="Minigame1_HUD" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="set_marker" from="Player" to="." method="_on_Player_set_marker"]
 [connection signal="direction_change" from="Sun" to="." method="_on_Sun_direction_change"]
 [connection signal="timeout" from="ArtefactSpawnTimer" to="." method="_on_ArtefactSpawnTimer_timeout"]
-[connection signal="start_game" from="Minigame1_HUD" to="." method="_on_Minigame1_HUD_start_game"]
 [connection signal="start_game" from="Minigame1_HUD" to="Player" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Sun" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Truck" method="start"]
+[connection signal="start_game" from="Minigame1_HUD" to="." method="_on_Minigame1_HUD_start_game"]
