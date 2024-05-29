@@ -4,7 +4,7 @@ export var speed = 200.0
 export var starting_position = Vector2.ZERO
 export var direction := Vector2.ZERO
 var start_speed = 0
-onready var screen_size = get_viewport_rect().size
+var screen_size = Vector2(1024, 576)
 
 
 signal direction_change

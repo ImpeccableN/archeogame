@@ -7,6 +7,7 @@ var marker_scene = preload("res://Minigame1/Marker.tscn")
 var score = 0
 var cell_array : Array
 var artefact_array : Array
+var tilemap_border := Vector2(16, 9)
 onready var truck_node = get_node("Truck")
 onready var tilemap = get_node("TileMap")
 onready var sun_node = get_node("Sun")
@@ -24,14 +25,14 @@ func _process(delta):
 	
 	sun_position = sun_node.position
 	var sunny_tile : Vector2 = tilemap.world_to_map(sun_position)
-	
-	tilemap.set_cellv(sunny_tile, 0)
-	if sun_direction == false:
-		tilemap.set_cellv((sunny_tile)+Vector2(1,1) , 0)
-		tilemap.set_cellv((sunny_tile)-Vector2(1,1) , 0)
-	else:
-		tilemap.set_cellv((sunny_tile)+Vector2(-1,1) , 0)
-		tilemap.set_cellv((sunny_tile)-Vector2(-1,1) , 0)
+	if sunny_tile.x < tilemap_border.x && sunny_tile.x >= 0 && sunny_tile.y < tilemap_border.y && sunny_tile.y >= 0:
+		tilemap.set_cellv(sunny_tile, 0)
+#	if sun_direction == false:
+#		tilemap.set_cellv((sunny_tile)+Vector2(1,1) , 0)
+#		tilemap.set_cellv((sunny_tile)-Vector2(1,1) , 0)
+#	else:
+#		tilemap.set_cellv((sunny_tile)+Vector2(-1,1) , 0)
+#		tilemap.set_cellv((sunny_tile)-Vector2(-1,1) , 0)
 
 
 func _on_ArtefactSpawnTimer_timeout():
@@ -59,6 +60,7 @@ func _on_Player_hit():
 	$Truck/CollisionShape2D.set_deferred("disabled", true)
 	$Sun/CollisionShape2D.set_deferred("disabled", true)
 	$Truck.speed = 0
+	$ArtefactSpawnTimer.stop()
 	
 
 
@@ -73,4 +75,5 @@ func _on_Minigame1_HUD_start_game():
 	score = 0
 	$Truck/CollisionShape2D.disabled = false
 	$Sun/CollisionShape2D.disabled = false
+	$ArtefactSpawnTimer.start()
 	

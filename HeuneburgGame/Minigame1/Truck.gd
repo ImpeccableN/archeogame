@@ -3,12 +3,10 @@ extends KinematicBody2D
 export var speed = 800.0
 export var starting_position = Vector2.ZERO
 var straight = true
-var screen_size = Vector2.ZERO
+var screen_size = Vector2(1024, 576)
 onready var sprite_node = get_node("Sprite")
 var screen_lowerend = false
 
-func _ready():
-	screen_size = get_viewport_rect().size
 
 func _process(delta):
 	var direction = Vector2.ZERO

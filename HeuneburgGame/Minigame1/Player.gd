@@ -4,15 +4,10 @@ extends Area2D
 export var speed = 400.0
 export var starting_position = Vector2(514, 352)
 var row_size = 64
-var screen_size = Vector2.ZERO
+var screen_size = Vector2(1024, 576)
 
 signal set_marker(player_position)
 signal hit
-
-func _ready():
-	screen_size = get_viewport_rect().size
-#	body_size = get_node("Sprite").get_rect().size
-#	print(body_size)
 
 
 func _process(delta):
