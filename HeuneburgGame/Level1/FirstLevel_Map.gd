@@ -5,9 +5,6 @@ onready var freilichtmuseum_image = get_node("Freilichtmuseum_Overlay")
 onready var keltenmuseum_image = get_node("Keltenmuseum_Overlay")
 export var grow_speed = 0
 
-func _on_Button_button_up():
-	print("click")
-
 
 func _on_Button_Grabungsstaette_mouse_entered():
 	grabungsstaette_image.rect_scale = Vector2(1.2, 1.2)
