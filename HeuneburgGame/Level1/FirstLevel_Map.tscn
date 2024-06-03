@@ -23,6 +23,16 @@ script = ExtResource( 2 )
 position = Vector2( 1221, 554 )
 polygon = PoolVector2Array( -178, -86, -23, -112, 15, -99, 70, -110, 194, 13, 150, 60, -12, 88 )
 
+[node name="Button_Freilichtmuseum" type="Area2D" parent="FirstLevel_Image"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Freilichtmuseum"]
+polygon = PoolVector2Array( 1324, 692, 1550, 685, 1634, 760, 1707, 749, 1844, 840, 1836, 869, 1470, 901, 1313, 742 )
+
+[node name="Button_Keltenmuseum" type="Area2D" parent="FirstLevel_Image"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Keltenmuseum"]
+polygon = PoolVector2Array( 120, 199, 241, 129, 276, 131, 337, 170, 341, 227, 219, 320, 129, 274 )
+
 [node name="Grabungsstaette_Overlay" type="TextureRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -31,17 +41,23 @@ mouse_filter = 2
 texture = ExtResource( 4 )
 
 [node name="Freilichtmuseum_Overlay" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 1550, 805 )
 mouse_filter = 2
 texture = ExtResource( 5 )
 
 [node name="Keltenmuseum_Overlay" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 237, 211 )
 mouse_filter = 2
 texture = ExtResource( 6 )
 
 [connection signal="input_event" from="FirstLevel_Image/Button_Grabungsstaette" to="FirstLevel_Image/Button_Grabungsstaette" method="_on_Button_Grabungsstaette_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Grabungsstaette" to="." method="_on_Button_Grabungsstaette_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Grabungsstaette" to="." method="_on_Button_Grabungsstaette_mouse_exited"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_exited"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_exited"]
