@@ -20,13 +20,13 @@ func _ready():
 func _process(delta):
 	truck_position = truck_node.position
 	var trucked_tile : Vector2 = tilemap.world_to_map(truck_position)
-	if tilemap.get_cellv(trucked_tile) == 0:
-		tilemap.set_cellv(trucked_tile, 1)
+	if tilemap.get_cellv(trucked_tile) == 4:
+		tilemap.set_cellv(trucked_tile, 3)
 	
 	sun_position = sun_node.position
 	var sunny_tile : Vector2 = tilemap.world_to_map(sun_position)
 	if sunny_tile.x < tilemap_border.x && sunny_tile.x >= 0 && sunny_tile.y < tilemap_border.y && sunny_tile.y >= 0:
-		tilemap.set_cellv(sunny_tile, 0)
+		tilemap.set_cellv(sunny_tile, 4)
 #	if sun_direction == false:
 #		tilemap.set_cellv((sunny_tile)+Vector2(1,1) , 0)
 #		tilemap.set_cellv((sunny_tile)-Vector2(1,1) , 0)
