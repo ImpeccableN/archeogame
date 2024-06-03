@@ -1,7 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Level/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=3]
+[ext_resource path="res://video/tb_blaettern_spedUp.ogv" type="VideoStream" id=4]
+[ext_resource path="res://Level/TgAnimation.gd" type="Script" id=5]
+[ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Level/TgStatic.gd" type="Script" id=7]
+[ext_resource path="res://Level/AdventureButton.gd" type="Script" id=8]
+[ext_resource path="res://Level/Button2.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -11,60 +32,128 @@ font_data = ExtResource( 1 )
 size = 22
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 0.917647 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 21
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 0.917647 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 0.917647 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
 [node name="Level0" type="Node2D"]
+
+[node name="TgFlip" type="VideoPlayer" parent="."]
+margin_right = 1917.0
+margin_bottom = 1079.0
+stream = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="SoundFlip" type="AudioStreamPlayer2D" parent="TgFlip"]
+stream = ExtResource( 6 )
+volume_db = 0.92
+
+[node name="TgStatic" type="TextureRect" parent="TgFlip"]
+margin_right = 1912.0
+margin_bottom = 1075.0
+texture = ExtResource( 3 )
+script = ExtResource( 7 )
+
+[node name="Button" type="Button" parent="TgFlip/TgStatic"]
+margin_left = 1132.0
+margin_top = 416.0
+margin_right = 1354.0
+margin_bottom = 551.0
+custom_fonts/font = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "Into the adventure"
+script = ExtResource( 8 )
+
+[node name="Button2" type="Button" parent="TgFlip/TgStatic"]
+margin_left = 1130.0
+margin_top = 417.0
+margin_right = 1352.0
+margin_bottom = 552.0
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "To the museum"
+script = ExtResource( 9 )
 
 [node name="PauseMenu" type="Control" parent="."]
 pause_mode = 2
+visible = false
 margin_right = 1916.0
 margin_bottom = 1080.0
 script = ExtResource( 2 )
 
-[node name="Background" type="ColorRect" parent="PauseMenu"]
-margin_left = 2.0
-margin_right = 1917.0
-margin_bottom = 1078.0
-color = Color( 0.129412, 0.270588, 0.0392157, 1 )
+[node name="TextureRect" type="TextureRect" parent="PauseMenu"]
+visible = false
+margin_right = 1913.0
+margin_bottom = 1076.0
+texture = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="PauseMenu/Background"]
-margin_left = 941.0
-margin_top = 344.0
-margin_right = 1020.0
-margin_bottom = 388.0
+[node name="Label" type="Label" parent="PauseMenu/TextureRect"]
+margin_left = 1111.0
+margin_top = 166.0
+margin_right = 1313.0
+margin_bottom = 284.0
 custom_fonts/font = SubResource( 1 )
 text = "Paused"
 
 [node name="Resume" type="Button" parent="PauseMenu"]
-margin_left = 919.0
-margin_top = 390.0
-margin_right = 1044.0
-margin_bottom = 451.0
+margin_left = 1091.0
+margin_top = 262.0
+margin_right = 1216.0
+margin_bottom = 323.0
 custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 text = "Resume"
 
 [node name="Main Menu" type="Button" parent="PauseMenu"]
-margin_left = 919.0
-margin_top = 458.0
-margin_right = 1044.0
-margin_bottom = 519.0
+margin_left = 1091.0
+margin_top = 337.0
+margin_right = 1216.0
+margin_bottom = 398.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/normal = SubResource( 8 )
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="PauseMenu"]
-margin_left = 920.0
-margin_top = 526.0
-margin_right = 1045.0
-margin_bottom = 587.0
+margin_left = 1091.0
+margin_top = 415.0
+margin_right = 1216.0
+margin_bottom = 476.0
 custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
 text = "Quit"
 
+[connection signal="finished" from="TgFlip" to="TgFlip" method="_on_TgFlip_finished"]
+[connection signal="finished" from="TgFlip/SoundFlip" to="TgFlip" method="_on_SoundFlip_finished"]
+[connection signal="pressed" from="TgFlip/TgStatic/Button" to="TgFlip/TgStatic/Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Resume" to="PauseMenu" method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Main Menu" to="PauseMenu" method="_on_Main_Menu_pressed"]
 [connection signal="pressed" from="PauseMenu/Quit" to="PauseMenu" method="_on_Quit_pressed"]
