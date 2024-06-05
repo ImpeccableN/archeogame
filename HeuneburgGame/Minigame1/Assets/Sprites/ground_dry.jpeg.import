@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desert_wet.png-c3a077552a5a0e1d561dd03769a5a896.stex"
+path="res://.import/ground_dry.jpeg-1ace169f3a88ab9b21668d8829b245d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigame1/Assets/Sprites/desert_wet.png"
-dest_files=[ "res://.import/desert_wet.png-c3a077552a5a0e1d561dd03769a5a896.stex" ]
+source_file="res://Minigame1/Assets/Sprites/ground_dry.jpeg"
+dest_files=[ "res://.import/ground_dry.jpeg-1ace169f3a88ab9b21668d8829b245d4.stex" ]
 
 [params]
 

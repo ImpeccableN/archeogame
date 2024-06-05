@@ -20,13 +20,13 @@ func _ready():
 func _process(delta):
 	truck_position = truck_node.position
 	var trucked_tile : Vector2 = tilemap.world_to_map(truck_position)
-	if tilemap.get_cellv(trucked_tile) == 4:
-		tilemap.set_cellv(trucked_tile, 3)
+	if tilemap.get_cellv(trucked_tile) == 3:
+		tilemap.set_cellv(trucked_tile, 4)
 	
 	sun_position = sun_node.position
 	var sunny_tile : Vector2 = tilemap.world_to_map(sun_position)
 	if sunny_tile.x < tilemap_border.x && sunny_tile.x >= 0 && sunny_tile.y < tilemap_border.y && sunny_tile.y >= 0:
-		tilemap.set_cellv(sunny_tile, 4)
+		tilemap.set_cellv(sunny_tile, 3)
 #	if sun_direction == false:
 #		tilemap.set_cellv((sunny_tile)+Vector2(1,1) , 0)
 #		tilemap.set_cellv((sunny_tile)-Vector2(1,1) , 0)
@@ -67,7 +67,7 @@ func _on_Player_hit():
 func _on_Minigame1_HUD_start_game():
 	# set all tilemap cells back to dryland tiles
 	for cell in cell_array:
-		tilemap.set_cellv(cell, 0)
+		tilemap.set_cellv(cell, 3)
 	#delete all markers on map
 	for artefact in artefact_array:
 		artefact.queue_free()
