@@ -8,6 +8,7 @@ var score = 0
 var cell_array : Array
 var artefact_array : Array
 var tilemap_border := Vector2(16, 9)
+var game_over_message = "Game Over. Want to try again?"
 onready var truck_node = get_node("Truck")
 onready var tilemap = get_node("TileMap")
 onready var sun_node = get_node("Sun")
@@ -16,6 +17,8 @@ signal score_up(score)
 
 func _ready():
 	cell_array = tilemap.get_used_cells()
+	$Minigame1_HUD/StartButton.hide()
+	$Minigame1_HUD/StartButton.disabled = true
 
 func _process(delta):
 	truck_position = truck_node.position
@@ -61,6 +64,8 @@ func _on_Player_hit():
 	$Sun/CollisionShape2D.set_deferred("disabled", true)
 	$Truck.speed = 0
 	$ArtefactSpawnTimer.stop()
+	$Minigame1_HUD.show()
+	$Minigame1_HUD.display_message(game_over_message)
 	
 
 
