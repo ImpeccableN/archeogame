@@ -9,6 +9,7 @@
 
 [node name="FirstLevel_Map" type="Node2D"]
 script = ExtResource( 3 )
+images_grow_scale = Vector2( 1.2, 1.2 )
 
 [node name="FirstLevel_Image" type="TextureRect" parent="."]
 margin_right = 40.0
