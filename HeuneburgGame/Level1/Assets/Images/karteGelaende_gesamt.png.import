@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desert_dry.png-a48126d145b18a7a5db821123fe4c58d.stex"
+path="res://.import/karteGelaende_gesamt.png-dc983255a8d4e71d24f847f1d2efa7a8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigame1/Assets/Sprites/desert_dry.png"
-dest_files=[ "res://.import/desert_dry.png-a48126d145b18a7a5db821123fe4c58d.stex" ]
+source_file="res://Level1/Assets/Images/karteGelaende_gesamt.png"
+dest_files=[ "res://.import/karteGelaende_gesamt.png-dc983255a8d4e71d24f847f1d2efa7a8.stex" ]
 
 [params]
 
