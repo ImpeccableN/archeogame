@@ -4,7 +4,7 @@ var minigame_scene := preload("res://Minigame1/Minigame1.tscn")
 var minigame_position := Vector2(448, 192)
 var started_before = false
 
-var introduction_message = "Click \"Start\" to start the game"
+var introduction_message = "Click  \"Start\"  to  start  the  game"
 
 func _ready():
 	$Minigame1_HUD.show()

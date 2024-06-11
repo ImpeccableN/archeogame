@@ -8,7 +8,7 @@ var score = 0
 var cell_array : Array
 var artefact_array : Array
 var tilemap_border := Vector2(16, 9)
-var game_over_message = "Game Over. Want to try again?"
+var game_over_message = "Game  Over.  Want  to  try  again?"
 onready var truck_node = get_node("Truck")
 onready var tilemap = get_node("TileMap")
 onready var sun_node = get_node("Sun")

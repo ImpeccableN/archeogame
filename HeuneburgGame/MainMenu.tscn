@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://graphics/UI_bg.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 0.917647 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 0.917647 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 0.917647 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1917.0
+margin_bottom = 1076.0
+texture = ExtResource( 3 )
+
+[node name="Start" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.894118 )
+margin_left = 805.0
+margin_top = 140.0
+margin_right = 1089.0
+margin_bottom = 289.0
+custom_colors/font_color = Color( 0.960784, 0.960784, 0.898039, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 4 )
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.894118 )
+margin_left = 805.0
+margin_top = 795.0
+margin_right = 1089.0
+margin_bottom = 944.0
+custom_colors/font_color = Color( 0.960784, 0.960784, 0.898039, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Quit"
+
+[node name="Credits" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0.894118 )
+margin_left = 1351.0
+margin_top = 795.0
+margin_right = 1635.0
+margin_bottom = 944.0
+custom_colors/font_color = Color( 0.960784, 0.960784, 0.898039, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 6 )
+text = "Credits"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 962, 540 )
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
