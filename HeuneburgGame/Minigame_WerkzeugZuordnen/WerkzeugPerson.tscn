@@ -23,7 +23,7 @@ texture = ExtResource( 1 )
 position = Vector2( 6, -7 )
 shape = SubResource( 1 )
 
-[node name="RichTextLabel" type="Label" parent="."]
+[node name="InfoBox" type="Label" parent="."]
 visible = false
 margin_left = 111.0
 margin_top = -179.0
@@ -35,3 +35,5 @@ custom_fonts/font = SubResource( 2 )
 text = "Kann gut schaufeln
 Muss oft auf Klo
 Hämmern liebt er"
+
+[connection signal="mouse_entered" from="." to="." method="_on_WerkzeugPerson_mouse_entered"]
