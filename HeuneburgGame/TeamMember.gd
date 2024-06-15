@@ -1,10 +1,14 @@
 extends Node
 
 export var member_name = ""
-var member_image_path = ""
+export var image_folder_path = ""
+var member_headshot_path = ""
+var member_fullcard_path = ""
+var member_fullcard_bw_path = ""
 
 #more properties to come
 
 func _ready():
-	#create image path with path to folder plus member_name var
-	member_image_path = 
+	member_headshot_path = image_folder_path + "/Headshots/" + member_name + ".png"
+	member_fullcard_path = image_folder_path + "/FullCards/" + member_name + ".png"
+	member_fullcard_bw_path = image_folder_path + "/FullCards/" + member_name + "_bw.png"

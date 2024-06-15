@@ -4,4 +4,3 @@
 
 [node name="TeamMember" type="Node"]
 script = ExtResource( 1 )
-member_name = null
