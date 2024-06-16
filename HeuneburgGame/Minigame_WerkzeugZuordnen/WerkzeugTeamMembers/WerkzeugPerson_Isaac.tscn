@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CharacterScenes/TeamMember_Isaac.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugTeamMembers/WerkzeugPerson_Isaac.gd" type="Script" id=3]
+
+[node name="WerkzeugPerson_Issac" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="TeamMember_Isaac" parent="." index="2" instance=ExtResource( 2 )]

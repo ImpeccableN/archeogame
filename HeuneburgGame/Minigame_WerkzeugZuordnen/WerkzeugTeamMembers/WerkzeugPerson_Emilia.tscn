@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CharacterScenes/TeamMember_Emilia.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugTeamMembers/WerkzeugPerson_Emilia.gd" type="Script" id=3]
+
+[node name="WerkzeugPerson_Emilia" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="TeamMember_Emilia" parent="." index="2" instance=ExtResource( 2 )]
