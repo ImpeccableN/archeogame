@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugTeamMembers/Team1/WerkzeugPerson_Luc.gd" type="Script" id=2]
+[ext_resource path="res://CharacterScenes/TeamMember_Luc.tscn" type="PackedScene" id=3]
 
 [node name="WerkzeugPerson_Luc" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="TeamMember_Luc" parent="." index="2" instance=ExtResource( 3 )]
