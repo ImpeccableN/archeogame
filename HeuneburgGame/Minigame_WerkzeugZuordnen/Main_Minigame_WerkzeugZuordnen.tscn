@@ -31,3 +31,6 @@ position = Vector2( 901, 602 )
 
 [node name="MemberPosition6" type="Node2D" parent="Teampositions"]
 position = Vector2( 1422, 620 )
+
+[node name="WerkzeugPosition" type="Node2D" parent="."]
+position = Vector2( 778, 900 )

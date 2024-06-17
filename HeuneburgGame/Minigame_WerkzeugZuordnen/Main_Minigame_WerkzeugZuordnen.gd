@@ -3,6 +3,7 @@ extends Node2D
 var team_members_array : Array
 var which_team = 2
 var team_members_path = ""
+var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 
 func _ready():
 	if which_team == 1:
@@ -11,6 +12,7 @@ func _ready():
 		team_members_path = "res://Minigame_WerkzeugZuordnen/WerkzeugTeamMembers/Team2/"
 	get_team_members(team_members_path)
 	load_in_team_members()
+	load_in_werkzeuge()
 
 func get_team_members(path):
 	var dir = Directory.new()
@@ -38,3 +40,8 @@ func load_in_team_members():
 		member_scene_instance.position = positions[i].position
 		i += 1
 	
+
+func load_in_werkzeuge():
+	var werkzeug_instance = werkzeug_preload.instance()
+	add_child(werkzeug_instance)
+	werkzeug_instance.position = $WerkzeugPosition.position
