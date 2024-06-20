@@ -29,6 +29,7 @@ func get_team_members(path):
 	else:
 		print("An error occurred when trying to access the path.")
 	print(team_members_array)
+	dir.list_dir_end()
 
 func load_in_team_members():
 	var positions = $Teampositions.get_children()
