@@ -7,6 +7,8 @@ var marker_scene = preload("res://Minigame1/Marker.tscn")
 var score = 0
 var cell_array : Array
 var artefact_array : Array
+var artefact_cell_array = [5, 6, 7, 8, 9]
+var artefact_cell_numb = 0
 var tilemap_border := Vector2(16, 9)
 var game_over_message = "Game  Over.  Want  to  try  again?"
 onready var truck_node = get_node("Truck")
@@ -19,6 +21,7 @@ func _ready():
 	cell_array = tilemap.get_used_cells()
 	$Minigame1_HUD/StartButton.hide()
 	$Minigame1_HUD/StartButton.disabled = true
+
 
 func _process(delta):
 	truck_position = truck_node.position
@@ -41,7 +44,17 @@ func _process(delta):
 func _on_ArtefactSpawnTimer_timeout():
 	truck_position = truck_node.position
 	var artefact_tile : Vector2 = tilemap.world_to_map(truck_position)
-	tilemap.set_cellv(artefact_tile, 2)
+	RandomNumberGenerator
+	tilemap.set_cellv(artefact_tile, artefact_cell_randomizer())
+
+
+func artefact_cell_randomizer():
+	if artefact_cell_numb == 4:
+		artefact_cell_array.shuffle()
+		artefact_cell_numb = 0
+	else :
+		artefact_cell_numb += 1
+	return artefact_cell_array[artefact_cell_numb]
 
 
 func _on_Sun_direction_change():
@@ -50,7 +63,7 @@ func _on_Sun_direction_change():
 
 func _on_Player_set_marker(player_position):
 	var player_tile : Vector2 = tilemap.world_to_map(player_position)
-	if tilemap.get_cellv(player_tile) == 2:
+	if tilemap.get_cellv(player_tile) in artefact_cell_array:
 		var marker_instace = marker_scene.instance()
 		add_child(marker_instace)
 		artefact_array.append(marker_instace)
