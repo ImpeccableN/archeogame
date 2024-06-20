@@ -1,10 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugTeamMembers/Team2/WerkzeugPerson_Niko.gd" type="Script" id=2]
 [ext_resource path="res://CharacterScenes/TeamMember_Niko.tscn" type="PackedScene" id=3]
 
 [node name="WerkzeugPerson_Niko" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
 
 [node name="TeamMember_Niko" parent="." index="2" instance=ExtResource( 3 )]

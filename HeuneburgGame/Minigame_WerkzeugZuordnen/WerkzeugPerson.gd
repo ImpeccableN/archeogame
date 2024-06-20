@@ -5,8 +5,7 @@ var member_path = "res://CharacterScenes/"
 #first add TeamMember as Node to tree. Then team_mamber_data var equals TeamMember Node
 #onready var team_member_data = 
 
-func _ready():
-	initiate_scene("Kilian")
+#func _ready():
 
 func _on_WerkzeugPerson_mouse_entered():
 	$Sprite/InfoBox.show()

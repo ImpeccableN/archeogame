@@ -1,7 +1,7 @@
 extends Node2D
 
 var team_members_array : Array
-var which_team = 2
+var which_team = 1
 var team_members_path = ""
 var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 
@@ -35,10 +35,13 @@ func load_in_team_members():
 	var positions = $Teampositions.get_children()
 	var i = 0
 	for member in team_members_array:
-		var member_scene = load(team_members_path + member)
-		var member_scene_instance = member_scene.instance()
-		add_child(member_scene_instance)
-		member_scene_instance.position = positions[i].position
+		var member_split_array = member.split("_", false)
+		member_split_array = member_split_array[1].split(".", false)
+		var member_scene = load(team_members_path + member).instance()
+		add_child(member_scene)
+		print(member_split_array[0])
+		member_scene.initiate_scene(member_split_array[0])
+		member_scene.position = positions[i].position
 		i += 1
 	
 
