@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_hintergrund.png" type="Texture" id=1]
 [ext_resource path="res://Level1/Button_Grabungsstaette.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_grabungsstaette.png" type="Texture" id=4]
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_freilichtmuseum.png" type="Texture" id=5]
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_keltenmuseum.png" type="Texture" id=6]
+[ext_resource path="res://Level1/Assets/Images/karteGelaende_bauwagen.png" type="Texture" id=7]
 
 [node name="FirstLevel_Map" type="Node2D"]
 script = ExtResource( 3 )
@@ -34,12 +35,17 @@ polygon = PoolVector2Array( 1324, 692, 1550, 685, 1634, 760, 1707, 749, 1844, 84
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Keltenmuseum"]
 polygon = PoolVector2Array( 120, 199, 241, 129, 276, 131, 337, 170, 341, 227, 219, 320, 129, 274 )
 
-[node name="Grabungsstaette_Overlay" type="TextureRect" parent="."]
+[node name="Button_Bauwagen" type="Area2D" parent="FirstLevel_Image"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Bauwagen"]
+polygon = PoolVector2Array( 1066, 418, 1066, 329, 1137, 302, 1199, 295, 1226, 320, 1224, 377, 1224, 398, 1112, 425 )
+
+[node name="Bauwagen_Overlay" type="TextureRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
-rect_pivot_offset = Vector2( 1250, 550 )
+rect_pivot_offset = Vector2( 1157, 366 )
 mouse_filter = 2
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="Freilichtmuseum_Overlay" type="TextureRect" parent="."]
 margin_right = 1920.0
@@ -47,6 +53,13 @@ margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 1550, 805 )
 mouse_filter = 2
 texture = ExtResource( 5 )
+
+[node name="Grabungsstaette_Overlay" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 1250, 550 )
+mouse_filter = 2
+texture = ExtResource( 4 )
 
 [node name="Keltenmuseum_Overlay" type="TextureRect" parent="."]
 margin_right = 1920.0
@@ -62,3 +75,5 @@ texture = ExtResource( 6 )
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_exited"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_exited"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen" to="." method="_on_Button_Bauwagen_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen" to="." method="_on_Button_Bauwagen_mouse_exited"]
