@@ -42,6 +42,7 @@ func load_in_team_members():
 		print(member_split_array[0])
 		member_scene.initiate_scene(member_split_array[0])
 		member_scene.position = positions[i].position
+		member_scene.scale = Vector2(0.75, 0.75)
 		i += 1
 	
 
