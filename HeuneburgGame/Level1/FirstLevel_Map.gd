@@ -17,18 +17,22 @@ func _on_Button_Grabungsstaette_mouse_exited():
 
 func _on_Button_Freilichtmuseum_mouse_entered():
 	freilichtmuseum_image.rect_scale = images_grow_scale
+	$Freilichtmuseum_Overlay/FreilichtLabel.show()
 
 
 func _on_Button_Freilichtmuseum_mouse_exited():
 	freilichtmuseum_image.rect_scale = Vector2.ONE
+	$Freilichtmuseum_Overlay/FreilichtLabel.hide()
 
 
 func _on_Button_Keltenmuseum_mouse_entered():
 	keltenmuseum_image.rect_scale = images_grow_scale
+	$Keltenmuseum_Overlay/KeltenLabel.show()
 
 
 func _on_Button_Keltenmuseum_mouse_exited():
 	keltenmuseum_image.rect_scale = Vector2.ONE
+	$Keltenmuseum_Overlay/KeltenLabel.hide()
 
 
 func _on_Button_Bauwagen_mouse_entered():
