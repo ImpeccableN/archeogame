@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var speed = 800.0
 export var starting_position = Vector2.ZERO
 var straight = true
-var screen_size = Vector2(1024, 576)
+var screen_size = Vector2(1024, 1088)
 onready var sprite_node = get_node("Sprite")
 var screen_lowerend = false
 
@@ -13,8 +13,9 @@ func _process(delta):
 		
 	# when lower end of screen is reached, truck drives upwards and changes rotation of sprite
 	if screen_lowerend:
-		rotation_degrees = -90
-		direction = Vector2(0.0, -1.0)
+		speed = 0
+#		rotation_degrees = -90
+#		direction = Vector2(0.0, -1.0)
 	else:
 		rotation_degrees = 0
 		if straight:

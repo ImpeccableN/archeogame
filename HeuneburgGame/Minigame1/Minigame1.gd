@@ -9,7 +9,7 @@ var cell_array_ground : Array
 var marker_array : Array
 var artefact_cell_array = [5, 6, 7, 8, 9]
 var artefact_cell_numb = 0
-var tilemap_border := Vector2(16, 9)
+var tilemap_border := Vector2(16, 17)
 var game_over_message = "Game  Over.  Want  to  try  again?"
 onready var truck_node = get_node("Truck")
 onready var tilemap_ground = get_node("TileMap_Ground")
@@ -47,7 +47,6 @@ func _process(delta):
 func _on_ArtefactSpawnTimer_timeout():
 	truck_position = truck_node.position
 	var artefact_tile : Vector2 = tilemap_artefacts.world_to_map(truck_position)
-	RandomNumberGenerator
 	tilemap_artefacts.set_cellv(artefact_tile, artefact_cell_randomizer())
 
 

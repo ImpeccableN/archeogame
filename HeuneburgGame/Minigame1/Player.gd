@@ -4,7 +4,7 @@ extends Area2D
 export var speed = 400.0
 export var starting_position = Vector2(514, 352)
 var row_size = 64
-var screen_size = Vector2(1024, 576)
+var screen_size = Vector2(1024, 1088)
 
 signal set_marker(player_position)
 signal hit
