@@ -1,7 +1,7 @@
 extends Node2D
 
 var team_members_array : Array
-var which_team = 1
+var which_team = 2
 var team_members_path = ""
 var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 

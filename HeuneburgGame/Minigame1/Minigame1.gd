@@ -25,7 +25,7 @@ func _ready():
 	$Minigame1_HUD/StartButton.disabled = true
 
 
-func _process(delta):
+func _process(_delta):
 	truck_position = truck_node.position
 	var trucked_tile : Vector2 = tilemap_ground.world_to_map(truck_position)
 	if tilemap_ground.get_cellv(trucked_tile) == 3:
