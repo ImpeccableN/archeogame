@@ -1,0 +1,146 @@
+[ 
+{
+   "Name": "Cynthia",
+   "Team": 1,
+   "Pro": "specialist",
+   "Con": "slightly chaotic",
+   "Experience": 100,
+   "Title": "M.A."
+ },
+ {
+   "Name": "Isaac",
+   "Team": 1,
+   "Pro": "organised",
+   "Con": "too detail-oriented",
+   "Experience": 100,
+   "Title": "Professor"
+ },
+ {
+   "Name": "Kilian",
+   "Team": 1,
+   "Pro": "motivated",
+   "Con": "bad time management",
+   "Experience": 20,
+   "Title": "Intern"
+ },
+ {
+   "Name": "Luc",
+   "Team": 1,
+   "Pro": "documentation",
+   "Con": "unprecise digging",
+   "Experience": 80,
+   "Title": "M.A."
+ },
+ {
+   "Name": "Marie",
+   "Team": 1,
+   "Pro": "drawing",
+   "Con": "big mouth",
+   "Experience": 80,
+   "Title": "B.A."
+ },
+ {
+   "Name": "Thea",
+   "Team": 1,
+   "Pro": "willing to learn",
+   "Con": "easily distracted",
+   "Experience": 50,
+   "Title": "B.A."
+ },
+ {
+   "Name": "Emilia",
+   "Team": 2,
+   "Pro": "organised",
+   "Con": "strict",
+   "Experience": 100,
+   "Title": "Professor"
+ },
+ {
+   "Name": "Francesco",
+   "Team": 2,
+   "Pro": "motivated",
+   "Con": "know-it-all",
+   "Experience": 20,
+   "Title": "Intern"
+ },
+ {
+   "Name": "Lina",
+   "Team": 2,
+   "Pro": "exact",
+   "Con": "not eager to learn",
+   "Experience": 50,
+   "Title": "B.A."
+ },
+ {
+   "Name": "Niko",
+   "Team": 2,
+   "Pro": "drawing",
+   "Con": "doesn't like physical labor",
+   "Experience": 50,
+   "Title": "M.A."
+ },
+ {
+   "Name": "Sinisa",
+   "Team": 2,
+   "Pro": "documentation",
+   "Con": "easily distracted",
+   "Experience": 80,
+   "Title": "B.A."
+ },
+ {
+   "Name": "Sofia",
+   "Team": 2,
+   "Pro": "specialist",
+   "Con": "slightly chaotic",
+   "Experience": 100,
+   "Title": "M.A."
+ },
+ {
+   "Name": "Diego",
+   "Team": 3,
+   "Pro": "documentation",
+   "Con": "digging technic",
+   "Experience": 50,
+   "Title": "M.A."
+ },
+ {
+   "Name": "Jupp",
+   "Team": 3,
+   "Pro": "very funny",
+   "Con": "know-it-all",
+   "Experience": 50,
+   "Title": "Intern"
+ },
+ {
+   "Name": "Lydia",
+   "Team": 3,
+   "Pro": "experienced",
+   "Con": "chaotic",
+   "Experience": 80,
+   "Title": "Volunteer"
+ },
+ {
+   "Name": "Thilo",
+   "Team": 3,
+   "Pro": "drawing",
+   "Con": "doesn't like physical labor",
+   "Experience": 50,
+   "Title": "B.A."
+ },
+ {
+   "Name": "Tommy",
+   "Team": 3,
+   "Pro": "physically fit",
+   "Con": "thinks he's Indiana Jones",
+   "Experience": 20,
+   "Title": "Volunteer"
+ },
+ {
+   "Name": "Tilda",
+   "Team": 3,
+   "Pro": "friendly",
+   "Con": "no assertiveness",
+   "Experience": 20,
+   "Title": "Doctoral candidate"
+ }
+]
