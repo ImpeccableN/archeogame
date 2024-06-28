@@ -9,10 +9,8 @@ var member_fullcard_bw_path = ""
 #more properties to come
 
 func _ready():
-	load_json_data()
-#	member_headshot_path = image_folder_path + "Headshots/" + member_name + ".png"
-#	member_fullcard_path = image_folder_path + "FullCards/" + member_name + ".png"
-#	member_fullcard_bw_path = image_folder_path + "FullCards/" + member_name + "_bw.png"
+#	load_json_data()
+	pass
 
 func initiate(name):
 	member_name = name
