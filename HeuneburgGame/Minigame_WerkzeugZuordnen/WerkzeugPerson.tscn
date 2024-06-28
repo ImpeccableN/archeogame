@@ -20,10 +20,10 @@ scale = Vector2( 0.3, 0.3 )
 
 [node name="InfoBox" type="Label" parent="Sprite"]
 visible = false
-margin_left = 370.0
-margin_top = -596.667
-margin_right = 659.0
-margin_bottom = -243.667
+margin_left = -1313.33
+margin_top = -606.667
+margin_right = -1024.33
+margin_bottom = -253.667
 rect_scale = Vector2( 3, 3 )
 mouse_filter = 0
 theme = ExtResource( 3 )
