@@ -5,12 +5,13 @@ var image_folder_path = "res://graphics/Characters/"
 var member_headshot_path = ""
 var member_fullcard_path = ""
 var member_fullcard_bw_path = ""
+var dictionary : Dictionary
 
 #more properties to come
 
 func _ready():
-#	load_json_data()
-	pass
+	initiate("Kilian")
+	load_json_data()
 
 func initiate(name):
 	member_name = name
@@ -28,7 +29,10 @@ func load_json_data():
 	var json_parse = JSON.parse(content)
 	if json_parse.error == OK:
 		if typeof(json_parse.result) == TYPE_ARRAY:
-			print(json_parse.result[1])
+			var parse_array = json_parse.result
+			for result in parse_array:
+				if result.Name == member_name:
+					dictionary = result
 	else:
 		print("Error")
 	
