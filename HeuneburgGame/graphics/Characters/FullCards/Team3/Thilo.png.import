@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/char11.png-f1a5b07eda268cb315f30026c08a72f3.stex"
+path="res://.import/Thilo.png-2ed978fa8f2cc11fcb063e829c318b03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/char11.png"
-dest_files=[ "res://.import/char11.png-f1a5b07eda268cb315f30026c08a72f3.stex" ]
+source_file="res://graphics/Characters/FullCards/Team3/Thilo.png"
+dest_files=[ "res://.import/Thilo.png-2ed978fa8f2cc11fcb063e829c318b03.stex" ]
 
 [params]
 
