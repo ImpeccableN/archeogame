@@ -1,0 +1,37 @@
+[
+  {
+    "Task": "Digging",
+    "Info": "Anlegen von Profilkästen (siehe Vokabular). Dabei können auch mal 2 Kubikmeter Erde bewegt werden.",
+    "Icon": "Shovel"
+  },
+  {
+    "Task": "Cleaning",
+    "Info": "Feinputzen (siehe Vokabular) von Profilen und Plana. 
+Hier ist mitunter Feingefühl gefragt, da sonst auch Artefakte zerstört werden können.",
+    "Icon": "Scratcher"
+  },
+  {
+    "Task": "Drawing",
+    "Info": "Das Zeichnen von Befunden im Planum und im Profil. 
+Hier sind ebenfalls Geduld und ein geübtes auge gefragt, insbesondere, wenn es darum geht die unterschiedlichen Schichten eines Befunds zu erkennen und in der Zeichnung darzustellen.",
+    "Icon": "Pencil"
+  },
+  {
+    "Task": "Organisation",
+    "Info": "Organisiert das Team (Schichtplan etc.), kümmert sich um Anträge/ Anfragen, 
+steht mit dem amt für Bodendenkmalpflege im Kontakt. Hier ist Organisatiomstalent und fachliches Know-How gefragt.",
+    "Icon": "Laptop"
+  },
+  {
+    "Task": "Photography",
+    "Info": "Möglichst objektives darstellen von Beunden via Foto und Einmessen der Befunde für den Grabungsplan. 
+Erfordert gewisses technisches Know-How, insbesondere zum Bedienen der jeweiligen Vermessungstechnik.",
+    "Icon": "Camera"
+  },
+  {
+    "Task": "Documentation",
+    "Info": "Kümmert sich darum, dass der Grabungsplan aktuell ist, hat Überblick über die anstehenden Aufgaben, 
+beschreibt Funde und ordnet diese wenn möglich zeitlich ein. Hier ist fachliches Know-How gefragt.",
+    "Icon": "Shard"
+  }
+]
