@@ -35,5 +35,5 @@ func load_json_data():
 				if result.Name == member_name:
 					dictionary = result
 	else:
-		print("Error")
+		print("FetalError")
 	
