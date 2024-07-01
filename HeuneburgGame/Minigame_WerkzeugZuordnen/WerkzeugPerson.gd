@@ -37,4 +37,3 @@ func task_dropped():
 	if area_entered:
 		var task_name = entered_task.task_name
 		task_score = initiated_member_scene.dictionary[task_name]
-		print(task_score)
