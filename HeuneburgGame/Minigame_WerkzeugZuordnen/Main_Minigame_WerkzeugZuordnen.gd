@@ -6,6 +6,7 @@ var which_team = 1
 var team_members_path = ""
 var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 var werkzeug_person_scene = preload("res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn")
+var score : int
 
 
 func _ready():
@@ -63,3 +64,13 @@ func load_in_werkzeuge(task_name):
 		werkzeug_instance.connect("icon_dropped", member, "task_dropped")
 	
 	
+
+
+func _on_Button_pressed():
+	for member in team_scenes_array:
+		if member.entered_task != null:
+			score += member.tesk_score
+			print(score)
+		else:
+			print("Not every teammember has a task.")
+			return

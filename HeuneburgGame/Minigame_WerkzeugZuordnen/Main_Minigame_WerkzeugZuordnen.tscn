@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen.png" type="Texture" id=1]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Main_Minigame_WerkzeugZuordnen.gd" type="Script" id=2]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/possible_theme.tres" type="Theme" id=3]
 
 [node name="Main_Minigame_WerkzeugZuordnen" type="Node2D"]
 script = ExtResource( 2 )
@@ -32,8 +33,32 @@ position = Vector2( 892, 692 )
 [node name="MemberPosition6" type="Node2D" parent="Teampositions"]
 position = Vector2( 1304, 781 )
 
-[node name="WerkzeugPosition" type="Node2D" parent="."]
+[node name="WerkzeugPositions" type="Node" parent="."]
+
+[node name="WerkzeugPosition" type="Node2D" parent="WerkzeugPositions"]
 position = Vector2( 778, 900 )
 
-[node name="WerkzeugPosition2" type="Node2D" parent="."]
+[node name="WerkzeugPosition2" type="Node2D" parent="WerkzeugPositions"]
 position = Vector2( 1097, 895 )
+
+[node name="WerkzeugPosition3" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 1282, 842 )
+
+[node name="WerkzeugPosition4" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 493, 850 )
+
+[node name="WerkzeugPosition5" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 608, 955 )
+
+[node name="WerkzeugPosition6" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 941, 983 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1496.0
+margin_top = 871.0
+margin_right = 1791.0
+margin_bottom = 1006.0
+theme = ExtResource( 3 )
+text = "Fertig"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
