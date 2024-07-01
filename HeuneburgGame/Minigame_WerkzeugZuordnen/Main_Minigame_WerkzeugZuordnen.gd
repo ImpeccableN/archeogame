@@ -66,7 +66,7 @@ func load_in_werkzeuge():
 		werkzeug_instance.initiate(task_name)
 		werkzeug_instance.position = positions[n].position
 		var werkzeug_control_node = werkzeug_instance.get_child(2)
-		werkzeug_control_node.connect("gui_input", self, "open_infoscreen")
+		werkzeug_control_node.connect("gui_input", self, "open_infoscreen", [werkzeug_instance])
 
 
 func load_json_data():
@@ -94,7 +94,15 @@ func _on_Button_pressed():
 	print(score)
 
 
-func open_infoscreen(event):
+func open_infoscreen(event, node):
 	if event.is_action("right_click"):
 		$InfoScreen.raise()
 		$InfoScreen.show()
+		$InfoScreen.mouse_filter = Control.MOUSE_FILTER_PASS
+		$InfoScreen/InfoLabel.text = node.dictionary.Info
+
+
+func _on_InfoScreen_gui_input(event):
+	if event.is_action("click_button"):
+		$InfoScreen.hide()
+		$InfoScreen.mouse_filter = Control.MOUSE_FILTER_IGNORE

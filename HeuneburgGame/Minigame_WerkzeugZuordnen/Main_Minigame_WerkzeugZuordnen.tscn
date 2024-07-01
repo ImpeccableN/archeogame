@@ -75,3 +75,4 @@ margin_right = 1384.0
 margin_bottom = 830.0
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="gui_input" from="InfoScreen" to="." method="_on_InfoScreen_gui_input"]
