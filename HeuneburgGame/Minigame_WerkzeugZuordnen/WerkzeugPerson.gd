@@ -9,11 +9,11 @@ var area_entered = false
 
 
 func _on_WerkzeugPerson_mouse_entered():
-	$Sprite/InfoBox.show()
+	$InfoBox.show()
 
 
 func _on_WerkzeugPerson_mouse_exited():
-	$Sprite/InfoBox.hide()
+	$InfoBox.hide()
 
 
 func initiate_scene(name):
@@ -22,6 +22,7 @@ func initiate_scene(name):
 	add_child(initiated_member_scene)
 	initiated_member_scene.initiate(member_name)
 	$Sprite.texture = load(initiated_member_scene.member_headshot_path)
+	$InfoBox.text = "Name: " + initiated_member_scene.dictionary.Name + "\nPro: " + initiated_member_scene.dictionary.Pro + "\nCon: " + initiated_member_scene.dictionary.Con
 
 
 func on_Area_entered(area):
