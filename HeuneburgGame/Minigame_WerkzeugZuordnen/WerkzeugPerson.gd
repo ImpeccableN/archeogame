@@ -6,7 +6,6 @@ var member_scene = preload("res://TeamMember.tscn")
 var task_score = 0
 var initiated_member_scene : Node
 var area_entered = false
-var entered_task : Node
 
 
 func _on_WerkzeugPerson_mouse_entered():
@@ -26,14 +25,14 @@ func initiate_scene(name):
 
 
 func on_Area_entered(area):
-	area_entered = true
-	entered_task = area
+	var task_name = area.task_name
+	task_score += initiated_member_scene.dictionary[task_name]
+	print(member_name + "'s score:")
+	print(task_score)
 
-func on_Area_exited(_area):
-	area_entered = false
-	entered_task = null
 
-func task_dropped():
-	if area_entered:
-		var task_name = entered_task.task_name
-		task_score = initiated_member_scene.dictionary[task_name]
+func on_Area_exited(area):
+	var task_name = area.task_name
+	task_score -= initiated_member_scene.dictionary[task_name]
+	print(member_name + "'s score:")
+	print(task_score)

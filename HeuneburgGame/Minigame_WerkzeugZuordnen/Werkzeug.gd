@@ -7,7 +7,7 @@ var image_path = ""
 var dropped = false
 onready var node = get_node(".")
 
-signal icon_dropped()
+signal icon_dropped(node)
 
 
 func _on_Werkzeug_mouse_entered():
@@ -25,7 +25,6 @@ func _process(_delta):
 	if mouse_entered and Input.is_action_just_released("click_button"):
 		dropped = true
 		emit_signal("icon_dropped")
-		print("Dropped Task: " + task_name)
 	if mouse_entered and Input.is_action_just_pressed("click_button"):
 		dropped = false
 

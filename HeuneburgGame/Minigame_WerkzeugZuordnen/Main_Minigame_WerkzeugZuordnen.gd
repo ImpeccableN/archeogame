@@ -65,8 +65,8 @@ func load_in_werkzeuge():
 		add_child(werkzeug_instance)
 		werkzeug_instance.initiate(task_name)
 		werkzeug_instance.position = positions[n].position
-		for member in team_scenes_array:
-			werkzeug_instance.connect("icon_dropped", member, "task_dropped")
+#		for member in team_scenes_array:
+#			werkzeug_instance.connect("icon_dropped", member, "task_dropped")
 
 
 func load_json_data():
@@ -82,11 +82,13 @@ func load_json_data():
 	else:
 		print("FatalError")
 
+
 func _on_Button_pressed():
 	for member in team_scenes_array:
-		if member.entered_task != null:
+		if member.task_score != 0:
 			score += member.task_score
 		else:
 			print(member.member_name + " does not have a task. Abort.")
+			score = 0
 			return
 	print(score)
