@@ -18,5 +18,11 @@ texture = ExtResource( 1 )
 position = Vector2( -7.5, 9.5 )
 shape = SubResource( 1 )
 
-[connection signal="mouse_entered" from="." to="." method="_on_Werkzeug_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_Werkzeug_mouse_exited"]
+[node name="MouseControl" type="Control" parent="."]
+margin_left = -100.0
+margin_top = -78.0
+margin_right = 86.0
+margin_bottom = 97.0
+
+[connection signal="mouse_entered" from="MouseControl" to="." method="_on_Werkzeug_mouse_entered"]
+[connection signal="mouse_exited" from="MouseControl" to="." method="_on_Werkzeug_mouse_exited"]

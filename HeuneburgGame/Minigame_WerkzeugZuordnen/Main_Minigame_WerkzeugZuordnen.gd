@@ -18,6 +18,7 @@ func _ready():
 	get_team_members(team_members_path)
 	load_in_team_members()
 	load_in_werkzeuge("Documentation")
+	load_in_werkzeuge("Drawing")
 
 
 func get_team_members(path):
@@ -59,8 +60,6 @@ func load_in_werkzeuge(task_name):
 	werkzeug_instance.initiate(task_name)
 	werkzeug_instance.position = $WerkzeugPosition.position
 	for member in team_scenes_array:
-		member.connect("area_entered", member, "on_Area_entered")
-		member.connect("area_exited", member, "on_Area_exited")
 		werkzeug_instance.connect("icon_dropped", member, "task_dropped")
 	
 	
