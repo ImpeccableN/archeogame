@@ -88,21 +88,24 @@ func _on_Button_pressed():
 		if member.task_score != 0:
 			score += member.task_score
 		else:
-			print(member.member_name + " does not have a task. Abort.")
+			show_text(member.member_name + " does not have a task. Abort.")
 			score = 0
 			return
-	print(score)
+	show_text("Congratulations. You're score is " + str(score))
 
 
 func open_infoscreen(event, node):
 	if event.is_action("right_click"):
-		$InfoScreen.raise()
-		$InfoScreen.show()
-		$InfoScreen.mouse_filter = Control.MOUSE_FILTER_PASS
-		$InfoScreen/InfoLabel.text = node.dictionary.Info
+		show_text(node.dictionary.Info)
 
 
 func _on_InfoScreen_gui_input(event):
 	if event.is_action("click_button"):
 		$InfoScreen.hide()
 		$InfoScreen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func show_text(text):
+	$InfoScreen.raise()
+	$InfoScreen.show()
+	$InfoScreen.mouse_filter = Control.MOUSE_FILTER_PASS
+	$InfoScreen/InfoLabel.text = text
