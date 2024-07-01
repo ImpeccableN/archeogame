@@ -37,22 +37,22 @@ position = Vector2( 1304, 781 )
 [node name="WerkzeugPositions" type="Node" parent="."]
 
 [node name="WerkzeugPosition" type="Node2D" parent="WerkzeugPositions"]
-position = Vector2( 778, 900 )
+position = Vector2( 254, 220 )
 
 [node name="WerkzeugPosition2" type="Node2D" parent="WerkzeugPositions"]
-position = Vector2( 1097, 895 )
+position = Vector2( 1602, 201 )
 
 [node name="WerkzeugPosition3" type="Node2D" parent="WerkzeugPositions"]
-position = Vector2( 1282, 842 )
+position = Vector2( 275, 473 )
 
 [node name="WerkzeugPosition4" type="Node2D" parent="WerkzeugPositions"]
-position = Vector2( 493, 850 )
+position = Vector2( 1628, 449 )
 
 [node name="WerkzeugPosition5" type="Node2D" parent="WerkzeugPositions"]
-position = Vector2( 608, 955 )
+position = Vector2( 253, 740 )
 
 [node name="WerkzeugPosition6" type="Node2D" parent="WerkzeugPositions"]
-position = Vector2( 941, 983 )
+position = Vector2( 1633, 754 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 1496.0
