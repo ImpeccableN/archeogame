@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen.png" type="Texture" id=1]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Main_Minigame_WerkzeugZuordnen.gd" type="Script" id=2]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/possible_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen_unscharf.png" type="Texture" id=4]
 
 [node name="Main_Minigame_WerkzeugZuordnen" type="Node2D"]
 script = ExtResource( 2 )
@@ -60,5 +61,16 @@ margin_right = 1791.0
 margin_bottom = 1006.0
 theme = ExtResource( 3 )
 text = "Fertig"
+
+[node name="InfoScreen" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="InfoLabel" type="RichTextLabel" parent="InfoScreen"]
+margin_left = 507.0
+margin_top = 218.0
+margin_right = 1384.0
+margin_bottom = 830.0
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
