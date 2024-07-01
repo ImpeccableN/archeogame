@@ -65,8 +65,8 @@ func load_in_werkzeuge():
 		add_child(werkzeug_instance)
 		werkzeug_instance.initiate(task_name)
 		werkzeug_instance.position = positions[n].position
-#		for member in team_scenes_array:
-#			werkzeug_instance.connect("icon_dropped", member, "task_dropped")
+		var werkzeug_control_node = werkzeug_instance.get_child(2)
+		werkzeug_control_node.connect("gui_input", self, "open_infoscreen")
 
 
 func load_json_data():
@@ -92,3 +92,9 @@ func _on_Button_pressed():
 			score = 0
 			return
 	print(score)
+
+
+func open_infoscreen(event):
+	if event.is_action("right_click"):
+		$InfoScreen.raise()
+		$InfoScreen.show()
