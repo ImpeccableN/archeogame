@@ -5,12 +5,14 @@ var sun_position = Vector2.ZERO
 var sun_direction = false
 var marker_scene = preload("res://Minigame1/Marker.tscn")
 var score = 0
+var score_goal = 5
 var cell_array_ground : Array
 var marker_array : Array
 var artefact_cell_array = [5, 6, 7, 8, 9]
 var artefact_cell_numb = 0
 var tilemap_border := Vector2(16, 17)
 var game_over_message = "Game  Over.  Want  to  try  again?"
+var success_message = "You did it. Now get out of here"
 onready var truck_node = get_node("Truck")
 onready var tilemap_ground = get_node("TileMap_Ground")
 onready var tilemap_artefacts = get_node("TileMap_Artefacts")
@@ -72,6 +74,9 @@ func _on_Player_set_marker(player_position):
 		marker_instace.position = tilemap_artefacts.map_to_world(player_tile) + Vector2(32, 32)
 		score += 1
 		emit_signal("score_up", score)
+	
+	if score == score_goal:
+		success()
 
 
 func _on_Player_hit():
@@ -81,7 +86,18 @@ func _on_Player_hit():
 	$ArtefactSpawnTimer.stop()
 	$Minigame1_HUD.show()
 	$Minigame1_HUD.display_message(game_over_message)
-	
+
+
+func success():
+	$Truck/CollisionShape2D.set_deferred("disabled", true)
+	$Sun/CollisionShape2D.set_deferred("disabled", true)
+	$Player.hide()
+	$Truck.speed = 0
+	$ArtefactSpawnTimer.stop()
+	$Minigame1_HUD.show()
+	$Minigame1_HUD.display_message(success_message)
+	yield(get_tree().create_timer(5.0), "timeout")
+	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")
 
 
 func _on_Minigame1_HUD_start_game():
