@@ -28,7 +28,7 @@ func _ready():
 func _process(_delta):
 	truck_position = truck_node.position
 	var trucked_tile : Vector2 = tilemap_ground.world_to_map(truck_position)
-	if tilemap_ground.get_cellv(trucked_tile) == 3:
+	if tilemap_ground.get_cellv(trucked_tile) != 4:
 		tilemap_ground.set_cellv(trucked_tile, 4)
 	
 	sun_position = sun_node.position
@@ -87,7 +87,7 @@ func _on_Player_hit():
 func _on_Minigame1_HUD_start_game():
 	# set all tilemap cells back to dryland tiles
 	for cell in cell_array_ground:
-		tilemap_ground.set_cellv(cell, 3)
+		tilemap_ground.set_cellv(cell, 10)
 	var cell_array_artefacts = tilemap_artefacts.get_used_cells()
 	for cell in cell_array_artefacts:
 		tilemap_artefacts.set_cellv(cell, -1)
