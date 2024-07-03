@@ -3,7 +3,7 @@ extends Area2D
 var mouse_entered = false
 var dictionary : Dictionary
 var task_name = ""
-var image_path = ""
+var image_path = "res://Minigame_WerkzeugZuordnen/Assets/Images/Tools/"
 var dropped = false
 onready var node = get_node(".")
 
@@ -32,6 +32,7 @@ func _process(_delta):
 func initiate(name):
 	task_name = name
 	load_json_data()
+	$Sprite.texture = load(image_path + dictionary.Icon + ".png")
 
 
 func load_json_data():
