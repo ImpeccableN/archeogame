@@ -9,6 +9,7 @@ radius = 52.1967
 [node name="Werkzeug" type="Area2D"]
 position = Vector2( 533, 260 )
 script = ExtResource( 2 )
+image_grow_scale = Vector2( 0.3, 0.3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -7, 10 )

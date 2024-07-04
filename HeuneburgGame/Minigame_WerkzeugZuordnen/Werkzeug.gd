@@ -5,6 +5,7 @@ var dictionary : Dictionary
 var task_name = ""
 var image_path = "res://Minigame_WerkzeugZuordnen/Assets/Images/Tools/"
 var dropped = false
+export var image_grow_scale := Vector2.ZERO
 onready var node = get_node(".")
 
 #signal icon_dropped(node)
@@ -12,10 +13,12 @@ onready var node = get_node(".")
 
 func _on_Werkzeug_mouse_entered():
 	mouse_entered = true
+	$Sprite.scale = image_grow_scale
 
 
 func _on_Werkzeug_mouse_exited():
 	mouse_entered = false
+	$Sprite.scale = Vector2(0.25, 0.25)
 
 
 func _process(_delta):

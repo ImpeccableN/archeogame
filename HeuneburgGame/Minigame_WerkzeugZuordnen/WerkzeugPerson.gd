@@ -23,6 +23,7 @@ func initiate_scene(name):
 	initiated_member_scene.initiate(member_name)
 	$Sprite.texture = load(initiated_member_scene.member_headshot_path)
 	$InfoBox.text = "Name: " + initiated_member_scene.dictionary.Name + "\nPro: " + initiated_member_scene.dictionary.Pro + "\nCon: " + initiated_member_scene.dictionary.Con
+	$InfoBox.raise()
 
 
 func on_Area_entered(area):

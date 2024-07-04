@@ -43,7 +43,7 @@ position = Vector2( 254, 220 )
 position = Vector2( 1602, 201 )
 
 [node name="WerkzeugPosition3" type="Node2D" parent="WerkzeugPositions"]
-position = Vector2( 275, 473 )
+position = Vector2( 579, 819 )
 
 [node name="WerkzeugPosition4" type="Node2D" parent="WerkzeugPositions"]
 position = Vector2( 1628, 449 )
@@ -66,6 +66,7 @@ text = "Fertig"
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+theme = ExtResource( 3 )
 texture = ExtResource( 4 )
 
 [node name="InfoLabel" type="RichTextLabel" parent="InfoScreen"]
@@ -73,6 +74,7 @@ margin_left = 507.0
 margin_top = 218.0
 margin_right = 1384.0
 margin_bottom = 830.0
+theme = ExtResource( 3 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="gui_input" from="InfoScreen" to="." method="_on_InfoScreen_gui_input"]
