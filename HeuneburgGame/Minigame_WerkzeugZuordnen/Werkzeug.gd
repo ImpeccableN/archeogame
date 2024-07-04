@@ -6,6 +6,7 @@ var task_name = ""
 var image_path = "res://Minigame_WerkzeugZuordnen/Assets/Images/Tools/"
 var dropped = false
 export var image_grow_scale := Vector2.ZERO
+export var image_normal_scale := Vector2(0.25, 0.25)
 onready var node = get_node(".")
 
 #signal icon_dropped(node)
@@ -18,7 +19,7 @@ func _on_Werkzeug_mouse_entered():
 
 func _on_Werkzeug_mouse_exited():
 	mouse_entered = false
-	$Sprite.scale = Vector2(0.25, 0.25)
+	$Sprite.scale = image_normal_scale
 
 
 func _process(_delta):
@@ -27,6 +28,7 @@ func _process(_delta):
 		raise()
 	if mouse_entered and Input.is_action_just_released("click_button"):
 		dropped = true
+		$Sprite.scale = image_normal_scale
 #		emit_signal("icon_dropped")
 	if mouse_entered and Input.is_action_just_pressed("click_button"):
 		dropped = false

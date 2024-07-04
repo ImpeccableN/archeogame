@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Thommy_bw.png-cdb495a3870479c3639f68bce60e6f70.stex"
+path="res://.import/Tommy.png-c27311559b6c578977f3147757eaf917.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/FullCards/Team3/Thommy_bw.png"
-dest_files=[ "res://.import/Thommy_bw.png-cdb495a3870479c3639f68bce60e6f70.stex" ]
+source_file="res://graphics/Characters/FullCards/Team3/Tommy.png"
+dest_files=[ "res://.import/Tommy.png-c27311559b6c578977f3147757eaf917.stex" ]
 
 [params]
 
