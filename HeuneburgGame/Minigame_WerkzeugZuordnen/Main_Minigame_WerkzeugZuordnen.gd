@@ -91,7 +91,9 @@ func _on_Button_pressed():
 			show_text(member.member_name + " does not have a task. Abort.")
 			score = 0
 			return
-	show_text("Congratulations. You're score is " + str(score))
+	show_text("Congratulations. Your score is " + str(score))
+	yield(get_tree().create_timer(5.0), "timeout")
+	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")
 
 
 func open_infoscreen(event, node):
