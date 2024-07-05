@@ -10,4 +10,4 @@ var scoreApplication : int = 0
 #var teamSelectT2 : int = 2
 #var teamSelectT3 : int = 3
 
-var teamSelect : int = 0
+var teamSelect : int

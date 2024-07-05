@@ -2,7 +2,7 @@ extends Node2D
 
 var team_names_array : Array
 var team_scenes_array : Array
-var which_team = 1
+var which_team : int
 var team_members_path = ""
 var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 var werkzeug_person_scene = preload("res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn")
@@ -11,6 +11,7 @@ var json_array : Array
 
 
 func _ready():
+	which_team = Global.teamSelect
 	if which_team == 1:
 		team_members_path = "res://graphics/Characters/FullCards/Team1/"
 	elif which_team == 2:
@@ -36,7 +37,6 @@ func get_team_members(path):
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
-#	print(team_names_array)
 	dir.list_dir_end()
 
 
