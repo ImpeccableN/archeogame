@@ -1,169 +1,437 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://graphics/char4.png" type="Texture" id=2]
-[ext_resource path="res://graphics/char3.png" type="Texture" id=3]
-[ext_resource path="res://graphics/char2.png" type="Texture" id=4]
-[ext_resource path="res://graphics/char5.png" type="Texture" id=5]
-[ext_resource path="res://graphics/char7.png" type="Texture" id=6]
-[ext_resource path="res://graphics/char6.png" type="Texture" id=7]
-[ext_resource path="res://graphics/char8.png" type="Texture" id=8]
-[ext_resource path="res://graphics/char1.png" type="Texture" id=9]
-[ext_resource path="res://Level/Team 1.gd" type="Script" id=10]
-[ext_resource path="res://Level/Team 2.gd" type="Script" id=11]
-[ext_resource path="res://Level/Team 3.gd" type="Script" id=12]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Cynthia_bw.png" type="Texture" id=2]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Isaac_bw.png" type="Texture" id=3]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Kilian_bw.png" type="Texture" id=4]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Luc_bw.png" type="Texture" id=5]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Marie_bw.png" type="Texture" id=6]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Thea_bw.png" type="Texture" id=7]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Emilia_bw.png" type="Texture" id=8]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Francesco_bw.png" type="Texture" id=9]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Lina_bw.png" type="Texture" id=10]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Niko_bw.png" type="Texture" id=11]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Sinisa_bw.png" type="Texture" id=12]
+[ext_resource path="res://Level/UserConfirmation.gd" type="Script" id=13]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Sofia_bw.png" type="Texture" id=14]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Diego_bw.png" type="Texture" id=15]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Jupp_bw.png" type="Texture" id=16]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Lydia_bw.png" type="Texture" id=17]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Thilo_bw.png" type="Texture" id=18]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Thommy_bw.png" type="Texture" id=19]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Tilda_bw.png" type="Texture" id=20]
+[ext_resource path="res://Level/TeamSelection.gd" type="Script" id=21]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Cynthia.png" type="Texture" id=22]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Isaac.png" type="Texture" id=23]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Kilian.png" type="Texture" id=24]
+[ext_resource path="res://Level/Button_Team1.gd" type="Script" id=25]
+[ext_resource path="res://Level/Button_Team2.gd" type="Script" id=26]
+[ext_resource path="res://Level/Button_Team3.gd" type="Script" id=27]
+
+[sub_resource type="DynamicFont" id=29]
+size = 45
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 45
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
+
+[sub_resource type="DynamicFont" id=31]
+size = 45
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.894118, 0.894118, 0.894118, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 20
+[sub_resource type="DynamicFont" id=14]
+size = 33
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 20
+[sub_resource type="DynamicFont" id=15]
+size = 21
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.0941176, 0.611765, 0.0980392, 1 )
 
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 20
+[sub_resource type="DynamicFont" id=16]
+size = 21
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.643137, 0.14902, 0.14902, 1 )
 
 [node name="TeamSelection" type="Node2D"]
+script = ExtResource( 21 )
+
+[node name="ScrollContainer_Team1" type="ScrollContainer" parent="."]
+margin_left = 30.0
+margin_top = 100.0
+margin_right = 583.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 540, 700 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer_Team1" type="VBoxContainer" parent="ScrollContainer_Team1"]
+margin_right = 541.0
+margin_bottom = 1940.0
+rect_min_size = Vector2( 540, 1000 )
+
+[node name="Container_Cynthia" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
+margin_right = 541.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="CynthiaBw" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Cynthia"]
+position = Vector2( 270, 168 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 2 )
+
+[node name="Cynthia" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Cynthia"]
+position = Vector2( 270, 168 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 22 )
+
+[node name="Container_Isaac" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
+margin_top = 324.0
+margin_right = 541.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="IsaacBw" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Isaac"]
+position = Vector2( 272, 174 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 3 )
+
+[node name="Isaac" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Isaac"]
+position = Vector2( 272, 174 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 23 )
+
+[node name="Container_Kilian" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
+margin_top = 648.0
+margin_right = 541.0
+margin_bottom = 968.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="KilianBw" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Kilian"]
+position = Vector2( 280, 185 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 4 )
+
+[node name="Kilian" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Kilian"]
+position = Vector2( 280, 185 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 24 )
+
+[node name="Container_Luc" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
+margin_top = 972.0
+margin_right = 541.0
+margin_bottom = 1292.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="LucBw" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Luc"]
+position = Vector2( 276, 182 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 5 )
+
+[node name="Container_Marie" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
+margin_top = 1296.0
+margin_right = 541.0
+margin_bottom = 1616.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="MarieBw" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Marie"]
+position = Vector2( 282, 187 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 6 )
+
+[node name="Container_Thea" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
+margin_top = 1620.0
+margin_right = 541.0
+margin_bottom = 1940.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="TheaBw" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Thea"]
+position = Vector2( 265, 169 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 7 )
+
+[node name="ScrollContainer_Team2" type="ScrollContainer" parent="."]
+margin_left = 712.0
+margin_top = 100.0
+margin_right = 1265.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 540, 700 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer_Team2" type="VBoxContainer" parent="ScrollContainer_Team2"]
+margin_right = 541.0
+margin_bottom = 1940.0
+rect_min_size = Vector2( 540, 1000 )
+
+[node name="Container_Emilia" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
+margin_right = 541.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="EmiliaBw" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Emilia"]
+position = Vector2( 262, 172 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 8 )
+
+[node name="Container_Francesco" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
+margin_top = 324.0
+margin_right = 541.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="FrancescoBw" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Francesco"]
+position = Vector2( 261, 184 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 9 )
+
+[node name="Container_Lina" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
+margin_top = 648.0
+margin_right = 541.0
+margin_bottom = 968.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="LinaBw" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Lina"]
+position = Vector2( 272, 179 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 10 )
+
+[node name="Container_Niko" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
+margin_top = 972.0
+margin_right = 541.0
+margin_bottom = 1292.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="NikoBw" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Niko"]
+position = Vector2( 270, 178 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 11 )
+
+[node name="Container_Sinisa" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
+margin_top = 1296.0
+margin_right = 541.0
+margin_bottom = 1616.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="SinisaBw" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Sinisa"]
+position = Vector2( 268, 175 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 12 )
+
+[node name="Container_Sofia" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
+margin_top = 1620.0
+margin_right = 541.0
+margin_bottom = 1940.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="SofiaBw" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Sofia"]
+position = Vector2( 272, 149 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 14 )
+
+[node name="ScrollContainer_Team3" type="ScrollContainer" parent="."]
+margin_left = 1340.0
+margin_top = 100.0
+margin_right = 1893.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 540, 700 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer_Team3" type="VBoxContainer" parent="ScrollContainer_Team3"]
+margin_right = 541.0
+margin_bottom = 1940.0
+rect_min_size = Vector2( 540, 1000 )
+
+[node name="Container_Diego" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
+margin_right = 541.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="DiegoBw" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Diego"]
+position = Vector2( 262, 173 )
+scale = Vector2( 0.352, 0.358 )
+texture = ExtResource( 15 )
+
+[node name="Container_Jupp" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
+margin_top = 324.0
+margin_right = 541.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="JuppBw" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Jupp"]
+position = Vector2( 267, 167 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 16 )
+
+[node name="Container_Lydia" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
+margin_top = 648.0
+margin_right = 541.0
+margin_bottom = 968.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="LydiaBw" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Lydia"]
+position = Vector2( 278, 170 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 17 )
+
+[node name="Container_Thilo" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
+margin_top = 972.0
+margin_right = 541.0
+margin_bottom = 1292.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="ThiloBw" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Thilo"]
+position = Vector2( 266, 172 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 18 )
+
+[node name="Container_Thommy" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
+margin_top = 1296.0
+margin_right = 541.0
+margin_bottom = 1616.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="ThommyBw" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Thommy"]
+position = Vector2( 266, 165 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 19 )
+
+[node name="Container_Tilda" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
+margin_top = 1620.0
+margin_right = 541.0
+margin_bottom = 1940.0
+rect_min_size = Vector2( 541, 320 )
+
+[node name="TildaBw" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Tilda"]
+position = Vector2( 269, 163 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 20 )
+
+[node name="Button_Team1" type="Button" parent="."]
+margin_left = 773.0
+margin_top = 831.0
+margin_right = 1156.0
+margin_bottom = 960.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 29 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+text = "Select Team 2"
+script = ExtResource( 25 )
+
+[node name="Button_Team2" type="Button" parent="."]
+margin_left = 91.0
+margin_top = 831.0
+margin_right = 474.0
+margin_bottom = 960.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 30 )
+custom_styles/hover = SubResource( 23 )
+custom_styles/pressed = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
+text = "Select Team 1"
+script = ExtResource( 26 )
+
+[node name="Button_Team3" type="Button" parent="."]
+margin_left = 1424.0
+margin_top = 831.0
+margin_right = 1807.0
+margin_bottom = 960.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 31 )
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+text = "Select Team 3"
+script = ExtResource( 27 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 569.0
-margin_top = 11.0
-margin_right = 1299.0
-margin_bottom = 124.0
+margin_left = 623.0
+margin_top = 5.0
+margin_right = 1353.0
+margin_bottom = 118.0
 custom_fonts/font = SubResource( 1 )
 text = "                                   Pick your team!
                Who is going to accompany your project?"
 
-[node name="Team 1" type="Button" parent="."]
-margin_left = 40.0
-margin_top = 245.0
-margin_right = 552.0
-margin_bottom = 916.0
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/normal = SubResource( 2 )
-script = ExtResource( 10 )
+[node name="UserTeamConfirmation" type="PanelContainer" parent="."]
+margin_left = 638.0
+margin_top = 383.0
+margin_right = 1303.0
+margin_bottom = 550.0
+custom_styles/panel = SubResource( 17 )
+script = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Team 1"]
-margin_left = 71.0
-margin_top = 4.0
-margin_right = 427.0
-margin_bottom = 101.0
-custom_fonts/font = SubResource( 8 )
-text = "Team 1"
+[node name="Label" type="Label" parent="UserTeamConfirmation"]
+margin_top = 60.0
+margin_right = 665.0
+margin_bottom = 106.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Are you sure?"
 align = 1
 
-[node name="Team 2" type="Button" parent="."]
-margin_left = 675.0
-margin_top = 245.0
-margin_right = 1187.0
-margin_bottom = 916.0
-rect_pivot_offset = Vector2( 934, 165 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/normal = SubResource( 3 )
-script = ExtResource( 11 )
+[node name="confirm" type="Button" parent="UserTeamConfirmation/Label"]
+margin_left = 65.0
+margin_top = 111.0
+margin_right = 289.0
+margin_bottom = 222.0
+custom_fonts/font = SubResource( 15 )
+custom_styles/normal = SubResource( 18 )
+text = "Yeah!"
 
-[node name="Label" type="Label" parent="Team 2"]
-margin_left = 71.0
-margin_top = 4.0
-margin_right = 427.0
-margin_bottom = 101.0
-custom_fonts/font = SubResource( 9 )
-text = "Team 2"
-align = 1
+[node name="decline" type="Button" parent="UserTeamConfirmation/Label"]
+margin_left = 365.0
+margin_top = 110.0
+margin_right = 589.0
+margin_bottom = 221.0
+custom_fonts/font = SubResource( 16 )
+custom_styles/normal = SubResource( 19 )
+text = "On second thought..."
 
-[node name="Team 3" type="Button" parent="."]
-margin_left = 1349.0
-margin_top = 249.0
-margin_right = 1861.0
-margin_bottom = 920.0
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/normal = SubResource( 4 )
-script = ExtResource( 12 )
-
-[node name="Label" type="Label" parent="Team 3"]
-margin_left = 71.0
-margin_right = 427.0
-margin_bottom = 97.0
-custom_fonts/font = SubResource( 10 )
-text = "Team 3"
-align = 1
-
-[node name="Char1" type="Sprite" parent="."]
-position = Vector2( 162, 444 )
-scale = Vector2( 0.166, 0.166 )
-texture = ExtResource( 9 )
-
-[node name="Char3" type="Sprite" parent="."]
-position = Vector2( 796, 428 )
-scale = Vector2( 0.166016, 0.166016 )
-texture = ExtResource( 3 )
-
-[node name="Char4" type="Sprite" parent="."]
-position = Vector2( 1036, 426 )
-scale = Vector2( 0.166016, 0.166016 )
-texture = ExtResource( 2 )
-
-[node name="Char5" type="Sprite" parent="."]
-position = Vector2( 1737, 429 )
-scale = Vector2( 0.166016, 0.166016 )
-texture = ExtResource( 5 )
-
-[node name="Char2" type="Sprite" parent="."]
-position = Vector2( 420, 445 )
-scale = Vector2( 0.166016, 0.166016 )
-texture = ExtResource( 4 )
-
-[node name="Char7" type="Sprite" parent="."]
-position = Vector2( 277, 734 )
-scale = Vector2( 0.166, 0.166 )
-texture = ExtResource( 6 )
-
-[node name="Char6" type="Sprite" parent="."]
-position = Vector2( 1482, 421 )
-scale = Vector2( 0.166, 0.166 )
-texture = ExtResource( 7 )
-
-[node name="Char8" type="Sprite" parent="."]
-position = Vector2( 910, 746 )
-scale = Vector2( 0.166, 0.166 )
-texture = ExtResource( 8 )
-
-[connection signal="pressed" from="Team 1" to="Team 1" method="_on_Team_1_pressed"]
-[connection signal="pressed" from="Team 2" to="Team 2" method="_on_Team_2_pressed"]
-[connection signal="pressed" from="Team 3" to="Team 3" method="_on_Team_3_pressed"]
+[connection signal="pressed" from="Button_Team1" to="Button_Team1" method="_on_Button_Team1_pressed"]
+[connection signal="pressed" from="Button_Team2" to="Button_Team2" method="_on_Button_Team2_pressed"]
+[connection signal="pressed" from="Button_Team3" to="Button_Team3" method="_on_Button_Team3_pressed"]
+[connection signal="pressed" from="UserTeamConfirmation/Label/confirm" to="." method="_on_confirm_pressed"]

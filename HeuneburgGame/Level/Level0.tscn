@@ -1,14 +1,13 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Level/PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=3]
 [ext_resource path="res://video/tb_blaettern_spedUp.ogv" type="VideoStream" id=4]
 [ext_resource path="res://Level/TgAnimation.gd" type="Script" id=5]
 [ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Level/TgStatic.gd" type="Script" id=7]
-[ext_resource path="res://Level/AdventureButton.gd" type="Script" id=8]
-[ext_resource path="res://Level/Button2.gd" type="Script" id=9]
+[ext_resource path="res://Level/Button_StartNewGame.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=12]
 size = 20
@@ -71,7 +70,7 @@ script = ExtResource( 5 )
 
 [node name="SoundFlip" type="AudioStreamPlayer2D" parent="TgFlip"]
 stream = ExtResource( 6 )
-volume_db = 0.92
+volume_db = 10.124
 
 [node name="TgStatic" type="TextureRect" parent="TgFlip"]
 margin_right = 1912.0
@@ -80,24 +79,23 @@ texture = ExtResource( 3 )
 script = ExtResource( 7 )
 
 [node name="Button" type="Button" parent="TgFlip/TgStatic"]
-margin_left = 1132.0
-margin_top = 416.0
-margin_right = 1354.0
-margin_bottom = 551.0
+margin_left = 1077.0
+margin_top = 379.0
+margin_right = 1299.0
+margin_bottom = 514.0
 custom_fonts/font = SubResource( 12 )
 custom_styles/normal = SubResource( 13 )
-text = "Into the adventure"
+text = "Start new game"
 script = ExtResource( 8 )
 
-[node name="Button2" type="Button" parent="TgFlip/TgStatic"]
-margin_left = 1130.0
-margin_top = 417.0
-margin_right = 1352.0
-margin_bottom = 552.0
+[node name="Button_Museum" type="Button" parent="TgFlip/TgStatic"]
+margin_left = 1082.0
+margin_top = 634.0
+margin_right = 1304.0
+margin_bottom = 769.0
 custom_fonts/font = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
 text = "To the museum"
-script = ExtResource( 9 )
 
 [node name="PauseMenu" type="Control" parent="."]
 pause_mode = 2

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://video/CutScene_FormApplication_Accepted.ogv" type="VideoStream" id=1]
+[ext_resource path="res://Level/Cutscene_ApplicationAccepted.gd" type="Script" id=2]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="ApplicationAccepted" type="Node2D"]
+
+[node name="Cutscene_ApplicationAccepted" type="VideoPlayer" parent="."]
+margin_right = 1917.0
+margin_bottom = 1077.0
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )
+
+[node name="continueGame" type="Button" parent="."]
+margin_left = 743.0
+margin_top = 878.0
+margin_right = 1159.0
+margin_bottom = 1035.0
+custom_fonts/font = SubResource( 1 )
+text = "Continue"
+
+[connection signal="finished" from="Cutscene_ApplicationAccepted" to="Cutscene_ApplicationAccepted" method="_on_Cutscene_ApplicationAccepted_finished"]
+[connection signal="pressed" from="continueGame" to="Cutscene_ApplicationAccepted" method="_on_continueGame_pressed"]

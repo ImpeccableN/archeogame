@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://video/CutScene_FormApplication_Denied.ogv" type="VideoStream" id=1]
+[ext_resource path="res://Level/Cutscene_ApplicationFailure.gd" type="Script" id=2]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="ApplicationDenied" type="Node2D"]
+
+[node name="Cutscene_ApplicationFailure" type="VideoPlayer" parent="."]
+margin_right = 1916.0
+margin_bottom = 1084.0
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )
+
+[node name="redoApplication" type="Button" parent="."]
+margin_left = 743.0
+margin_top = 878.0
+margin_right = 1159.0
+margin_bottom = 1035.0
+custom_fonts/font = SubResource( 1 )
+text = "Try again"
+
+[connection signal="finished" from="Cutscene_ApplicationFailure" to="Cutscene_ApplicationFailure" method="_on_Cutscene_ApplicationFailure_finished"]
+[connection signal="pressed" from="redoApplication" to="Cutscene_ApplicationFailure" method="_on_redoApplication_pressed"]
