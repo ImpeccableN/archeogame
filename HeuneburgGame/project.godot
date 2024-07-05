@@ -17,10 +17,6 @@ run/main_scene="res://MainMenu.tscn"
 
 Global="*res://Level/Global.gd"
 
-[autoload]
-
-Global="*res://AutoloadScripts/GlobalVariables.gd"
-
 [display]
 
 window/size/width=1920

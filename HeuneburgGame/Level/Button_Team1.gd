@@ -1,14 +1,16 @@
 extends Button
 
-onready var teamSelectT1 = "res://Level/Global.gd"
 onready var popupTeamSelec = get_node("/root/TeamSelection/UserTeamConfirmation")
+
+signal sendTeamNumb(teamNumb)
 
 func _ready():
 	pass
 
-func _on_decline_pressed():
-	popupTeamSelec.hide()
 
 func _on_Button_Team1_pressed():
 	popupTeamSelec.show()
+	print("Popup opened")
+	emit_signal("sendTeamNumb", 1)
+	print("emitted signal with number 1")
 
