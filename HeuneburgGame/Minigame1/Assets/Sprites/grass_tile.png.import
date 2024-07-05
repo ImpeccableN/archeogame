@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex"
+path="res://.import/grass_tile.png-f2611fcd05c8d7fbd5eb20e65bae8fdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Sinisa.png"
-dest_files=[ "res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex" ]
+source_file="res://Minigame1/Assets/Sprites/grass_tile.png"
+dest_files=[ "res://.import/grass_tile.png-f2611fcd05c8d7fbd5eb20e65bae8fdb.stex" ]
 
 [params]
 

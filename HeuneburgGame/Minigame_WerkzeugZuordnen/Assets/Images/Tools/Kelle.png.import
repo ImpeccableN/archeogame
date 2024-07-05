@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex"
+path="res://.import/Kelle.png-564885cdfd0a63fc1c71379023b89833.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Sinisa.png"
-dest_files=[ "res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex" ]
+source_file="res://Minigame_WerkzeugZuordnen/Assets/Images/Tools/Kelle.png"
+dest_files=[ "res://.import/Kelle.png-564885cdfd0a63fc1c71379023b89833.stex" ]
 
 [params]
 

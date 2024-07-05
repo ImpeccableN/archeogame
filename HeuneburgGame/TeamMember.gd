@@ -18,10 +18,11 @@ func initiate(name):
 	member_headshot_path = image_folder_path + "Headshots/" + member_name + ".png"
 	member_fullcard_path = image_folder_path + "FullCards/" + member_name + ".png"
 	member_fullcard_bw_path = image_folder_path + "FullCards/" + member_name + "_bw.png"
+	load_json_data()
 
 
 func load_json_data():
-# Retrieve data, Work in Progress
+# Retrieve data
 	var file = File.new()
 	file.open("res://Data/teamMemberData.json", File.READ)
 	var content = file.get_as_text()
@@ -34,5 +35,5 @@ func load_json_data():
 				if result.Name == member_name:
 					dictionary = result
 	else:
-		print("Error")
+		print("FetalError")
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex"
+path="res://.import/Tommy.png-c27311559b6c578977f3147757eaf917.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Sinisa.png"
-dest_files=[ "res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex" ]
+source_file="res://graphics/Characters/FullCards/Team3/Tommy.png"
+dest_files=[ "res://.import/Tommy.png-c27311559b6c578977f3147757eaf917.stex" ]
 
 [params]
 

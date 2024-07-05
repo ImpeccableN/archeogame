@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex"
+path="res://.import/Zeichenbrett.png-f1da827d3dddc0f1a5e992ef3aac6bcd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Sinisa.png"
-dest_files=[ "res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex" ]
+source_file="res://Minigame_WerkzeugZuordnen/Assets/Images/Tools/Zeichenbrett.png"
+dest_files=[ "res://.import/Zeichenbrett.png-f1da827d3dddc0f1a5e992ef3aac6bcd.stex" ]
 
 [params]
 

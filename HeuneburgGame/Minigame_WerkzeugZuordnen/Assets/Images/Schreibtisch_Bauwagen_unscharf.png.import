@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Thommy_bw.png-cdb495a3870479c3639f68bce60e6f70.stex"
+path="res://.import/Schreibtisch_Bauwagen_unscharf.png-6e5456143975afbfb85abde97622fa77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/FullCards/Team3/Thommy_bw.png"
-dest_files=[ "res://.import/Thommy_bw.png-cdb495a3870479c3639f68bce60e6f70.stex" ]
+source_file="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen_unscharf.png"
+dest_files=[ "res://.import/Schreibtisch_Bauwagen_unscharf.png-6e5456143975afbfb85abde97622fa77.stex" ]
 
 [params]
 

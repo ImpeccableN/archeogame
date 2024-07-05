@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen.png" type="Texture" id=1]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Main_Minigame_WerkzeugZuordnen.gd" type="Script" id=2]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/possible_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen_unscharf.png" type="Texture" id=4]
 
 [node name="Main_Minigame_WerkzeugZuordnen" type="Node2D"]
 script = ExtResource( 2 )
@@ -32,5 +34,47 @@ position = Vector2( 892, 692 )
 [node name="MemberPosition6" type="Node2D" parent="Teampositions"]
 position = Vector2( 1304, 781 )
 
-[node name="WerkzeugPosition" type="Node2D" parent="."]
-position = Vector2( 778, 900 )
+[node name="WerkzeugPositions" type="Node" parent="."]
+
+[node name="WerkzeugPosition" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 254, 220 )
+
+[node name="WerkzeugPosition2" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 1602, 201 )
+
+[node name="WerkzeugPosition3" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 579, 819 )
+
+[node name="WerkzeugPosition4" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 1628, 449 )
+
+[node name="WerkzeugPosition5" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 253, 740 )
+
+[node name="WerkzeugPosition6" type="Node2D" parent="WerkzeugPositions"]
+position = Vector2( 1633, 754 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1496.0
+margin_top = 871.0
+margin_right = 1791.0
+margin_bottom = 1006.0
+theme = ExtResource( 3 )
+text = "Fertig"
+
+[node name="InfoScreen" type="TextureRect" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+texture = ExtResource( 4 )
+
+[node name="InfoLabel" type="RichTextLabel" parent="InfoScreen"]
+margin_left = 507.0
+margin_top = 218.0
+margin_right = 1384.0
+margin_bottom = 830.0
+theme = ExtResource( 3 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="gui_input" from="InfoScreen" to="." method="_on_InfoScreen_gui_input"]

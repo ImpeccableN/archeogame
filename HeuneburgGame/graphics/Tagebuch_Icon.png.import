@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex"
+path="res://.import/Tagebuch_Icon.png-5094dac7d3b51c967b7ad406e3ad820b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Sinisa.png"
-dest_files=[ "res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex" ]
+source_file="res://graphics/Tagebuch_Icon.png"
+dest_files=[ "res://.import/Tagebuch_Icon.png-5094dac7d3b51c967b7ad406e3ad820b.stex" ]
 
 [params]
 
