@@ -11,8 +11,8 @@ font_data = ExtResource( 3 )
 [node name="ApplicationAccepted" type="Node2D"]
 
 [node name="Cutscene_ApplicationAccepted" type="VideoPlayer" parent="."]
-margin_right = 1917.0
-margin_bottom = 1077.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 stream = ExtResource( 1 )
 autoplay = true
 script = ExtResource( 2 )

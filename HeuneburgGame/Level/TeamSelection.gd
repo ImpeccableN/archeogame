@@ -9,6 +9,10 @@ func _ready():
 
 func _on_confirm_pressed():
 	Global.teamSelect = teamNumb
+	$UserTeamConfirmation.hide()
+	$Label.text = "You chose Team " + str(Global.teamSelect) + ". \nHave fun on your journey."
+	yield(get_tree().create_timer(5.0), "timeout")
+	get_tree().change_scene("res://Level/TravelToHeuneburg.tscn")
 
 
 func _on_Button_sendTeamNumb(numb):
