@@ -10,6 +10,4 @@ func _ready():
 
 func _on_Button_Team3_pressed():
 	popupTeamSelec.show()
-	print("Popup opened")
 	emit_signal("sendTeamNumb", 3)
-	print("emitted signal with number 3")
