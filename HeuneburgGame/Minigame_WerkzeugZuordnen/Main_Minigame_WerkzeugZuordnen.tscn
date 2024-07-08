@@ -75,6 +75,42 @@ margin_top = 218.0
 margin_right = 1384.0
 margin_bottom = 830.0
 theme = ExtResource( 3 )
+text = "Tutorial Second Mission:
+
+
+In this mission, your leadership skills are put to the test. You need to delegate tasks to our team members to keep the excavation running smoothly. Here’s how it works:
+
+Mission:
+Assign the six tasks to our six team members. Each member is either good or bad at each task, so choose wisely to ensure our excavation progresses efficiently.
+
+How to Assign Tasks:
+
+
+Drag and Drop: Click on a task and drag them onto a team member you want them to perform.
+
+Right Click for Info: If you need more information about a task, right-click on them. 
+
+For More information about a team member you can just hover over them.
+
+Tasks to be Assigned:
+
+Shoveling & Digging
+Cleaning
+Drawing
+Organization & Documentation
+Photography & Surveying
+Documentation & Finding Communication
+
+
+Tips for Success:
+
+Know Your Team: Hover over a team member to understand their strengths and weaknesses. This will help you assign them to the tasks where they will perform best.
+
+Balance the Work: Make sure each task is matched with the team member best suited for it. This will maximize efficiency and ensure a smooth operation.
+
+Remember, the success of our excavation depends on your ability to delegate effectively. Get to know your team, make informed decisions, and let’s keep unearthing the secrets of Heuneburg!
+
+Let’s get to work and make today another day of great discoveries!"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="gui_input" from="InfoScreen" to="." method="_on_InfoScreen_gui_input"]

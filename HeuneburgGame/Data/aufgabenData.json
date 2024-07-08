@@ -1,37 +1,43 @@
 [
   {
     "Task": "Digging",
-    "Info": "Anlegen von Profilkästen (siehe Vokabular). Dabei können auch mal 2 Kubikmeter Erde bewegt werden.",
+    "Info": "Involves the excavation and removal of soil to create profile boxes, 
+a crucial step in archaeological site analysis. 
+This task can involve moving up to 2 cubic meters of soil.",
     "Icon": "Shovel"
   },
   {
     "Task": "Cleaning",
-    "Info": "Feinputzen (siehe Vokabular) von Profilen und Plana. 
-Hier ist mitunter Feingefühl gefragt, da sonst auch Artefakte zerstört werden können.",
+    "Info": "Entails the meticulous cleaning of profiles and plans, 
+requiring a delicate touch to ensure the preservation of artifacts. 
+This step is essential for detailed documentation and analysis.",
     "Icon": "Kelle"
   },
   {
     "Task": "Drawing",
-    "Info": "Das Zeichnen von Befunden im Planum und im Profil. 
-Hier sind ebenfalls Geduld und ein geübtes auge gefragt, insbesondere, wenn es darum geht die unterschiedlichen Schichten eines Befunds zu erkennen und in der Zeichnung darzustellen.",
+    "Info": "Involves creating detailed illustrations of archaeological features in both plan and profile views. 
+This requires patience and a keen eye to accurately depict stratigraphic layers and other significant details.",
     "Icon": "Zeichenbrett"
   },
   {
     "Task": "Organisation",
-    "Info": "Organisiert das Team (Schichtplan etc.), kümmert sich um Anträge/ Anfragen, 
-steht mit dem amt für Bodendenkmalpflege im Kontakt. Hier ist Organisatiomstalent und fachliches Know-How gefragt.",
+    "Info": "Involves coordinating the excavation team, managing schedules, and handling administrative tasks, 
+including communication with heritage preservation authorities. 
+Requires strong organizational skills and professional knowledge.",
     "Icon": "Laptop"
   },
   {
     "Task": "Photography",
-    "Info": "Möglichst objektives darstellen von Beunden via Foto und Einmessen der Befunde für den Grabungsplan. 
-Erfordert gewisses technisches Know-How, insbesondere zum Bedienen der jeweiligen Vermessungstechnik.",
+    "Info": "Involves the precise documentation of findings through photography and surveying, 
+crucial for creating accurate excavation maps. 
+Requires technical proficiency with photographic and surveying equipment.",
     "Icon": "Kamera"
   },
   {
     "Task": "Documentation",
-    "Info": "Kümmert sich darum, dass der Grabungsplan aktuell ist, hat Überblick über die anstehenden Aufgaben, 
-beschreibt Funde und ordnet diese wenn möglich zeitlich ein. Hier ist fachliches Know-How gefragt.",
+    "Info": "Responsible for maintaining up-to-date excavation records, overseeing ongoing tasks, 
+and describing and dating finds when possible. 
+This role requires extensive professional knowledge to ensure accurate and comprehensive documentation.",
     "Icon": "ScherbeZettel"
   }
 ]

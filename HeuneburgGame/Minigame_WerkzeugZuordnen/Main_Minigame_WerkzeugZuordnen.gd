@@ -8,10 +8,13 @@ var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 var werkzeug_person_scene = preload("res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn")
 var score : int
 var json_array : Array
+var turotial_text = ""
 
 
 func _ready():
 	which_team = Global.teamSelect
+	if which_team == 0:
+		which_team = 1
 	if which_team == 1:
 		team_members_path = "res://graphics/Characters/FullCards/Team1/"
 	elif which_team == 2:
@@ -21,6 +24,8 @@ func _ready():
 	get_team_members(team_members_path)
 	load_in_team_members()
 	load_in_werkzeuge()
+	$InfoScreen.show()
+	$InfoScreen.raise()
 
 
 func get_team_members(path):
@@ -105,6 +110,7 @@ func _on_InfoScreen_gui_input(event):
 	if event.is_action("click_button"):
 		$InfoScreen.hide()
 		$InfoScreen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 
 func show_text(text):
 	$InfoScreen.raise()
