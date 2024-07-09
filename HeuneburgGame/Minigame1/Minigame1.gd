@@ -5,7 +5,7 @@ var sun_position = Vector2.ZERO
 var sun_direction = false
 var marker_scene = preload("res://Minigame1/Marker.tscn")
 var score = 0
-var score_goal = 5
+var score_goal = 10
 var cell_array_ground : Array
 var marker_array : Array
 var artefact_cell_array = [5, 6, 7, 8, 9]
@@ -96,6 +96,7 @@ func success():
 	$ArtefactSpawnTimer.stop()
 	$Minigame1_HUD.show()
 	$Minigame1_HUD.display_message(success_message)
+	Global.minigame_digger_done = true
 	yield(get_tree().create_timer(5.0), "timeout")
 	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")
 
