@@ -36,8 +36,9 @@ func _process(_delta):
 	sun_position = sun_node.position
 	var sunny_tile : Vector2 = tilemap_ground.world_to_map(sun_position)
 	if sunny_tile.x < tilemap_border.x && sunny_tile.x >= 0 && sunny_tile.y < tilemap_border.y && sunny_tile.y >= 0:
-		tilemap_ground.set_cellv(sunny_tile, 3)
-		tilemap_artefacts.set_cellv(sunny_tile, -1)
+		if tilemap_ground.get_cellv(sunny_tile) != 10:
+			tilemap_ground.set_cellv(sunny_tile, 3)
+			tilemap_artefacts.set_cellv(sunny_tile, -1)
 #	if sun_direction == false:
 #		tilemap.set_cellv((sunny_tile)+Vector2(1,1) , 0)
 #		tilemap.set_cellv((sunny_tile)-Vector2(1,1) , 0)
