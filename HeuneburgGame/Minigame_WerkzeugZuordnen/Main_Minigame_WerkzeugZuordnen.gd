@@ -96,7 +96,8 @@ func _on_Button_pressed():
 			show_text(member.member_name + " does not have a task. Abort.")
 			score = 0
 			return
-	show_text("Congratulations. Your score is " + str(score))
+	show_text(get_score_message())
+	Global.minigame_werkzeuge_done = true
 	yield(get_tree().create_timer(5.0), "timeout")
 	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")
 
@@ -117,3 +118,17 @@ func show_text(text):
 	$InfoScreen.show()
 	$InfoScreen.mouse_filter = Control.MOUSE_FILTER_PASS
 	$InfoScreen/InfoLabel.text = text
+
+
+func get_score_message():
+	match score:
+		3, 4, 5:
+			return "Needs improvement. Pay more attention to your team's strengths and weaknesses."
+		6, 7, 8:
+			return "Not bad, but you can do better. Not during this excavation though."
+		9, 10, 11:
+			return "Good effort! You’re on the right track, but there's room for improvement."
+		12, 13, 14:
+			return "Great job! Your leadership skills are impressive."
+		15, 16, 17, 18:
+			return "Perfect, you are a super supervisor!!!"

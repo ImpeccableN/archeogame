@@ -11,3 +11,7 @@ var scoreApplication : int = 0
 #var teamSelectT3 : int = 3
 
 var teamSelect = 0
+
+
+var minigame_digger_done = false
+var minigame_werkzeuge_done = false
