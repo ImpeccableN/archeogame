@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Level1/DiaryLvl1.tscn" type="PackedScene" id=1]
+
+[node name="DiaryLvl1End" instance=ExtResource( 1 )]
+script = null
+
+[node name="DiaryEntry" parent="." index="0"]
+text = "Day 1 of our Heuneburg Excavation and what a start! This morning, armed with my trusty shovel and a lot of excitement, I jumped into our first mission.
+
+Our big excavator dug up some interesting artifacts. Pieces of Iron Age life. Just as we found them, the hot sun threatened to dry them out again.
+
+It turned into a race against time! I had to quickly save each artifact before the sun could ruin them. There were bits of pottery, old tools, and some not identified Objects! – each piece saved felt like a small victory.
+
+With all the artifacts safely rescued, I took a moment to celebrate. The thrill of finding these ancient pieces mixed with the fear of getting driven over by our Intern, who seemed to have won his driving license in the lottery, was hell of an adventure. Today reminded me why I love archaeology. As I write this first entry, I’m excited for all the discoveries still waiting to be found.
+
+In total it was a huge achievement and a big step into the right direction of finishing the excavation.
+
+Here’s to more finds and hopefully less sun-chasing!"
+
+[node name="TitleLabel" parent="." index="1"]
+margin_right = 817.0
+margin_bottom = 476.0
+text = "Day 1
+Concluded
+"
