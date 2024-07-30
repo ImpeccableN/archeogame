@@ -8,6 +8,7 @@ export var images_grow_scale := Vector2.ZERO
 
 
 func _ready():
+	# on load up, check if both minigames are absolved succesfully. Wait two seconds, then load Diaryentry from Day 1.
 	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
 		yield(get_tree().create_timer(2.0), "timeout")
 		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")
