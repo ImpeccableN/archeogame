@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/DiggingSpot.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/markierung.PNG" type="Texture" id=2]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/Background1Profilkasten.PNG" type="Texture" id=3]
-[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/polygon_texture.png" type="Texture" id=4]
 [ext_resource path="res://Level2/MinigameProfilkasten/OberflaechenSprite.gd" type="Script" id=5]
 
 [node name="MainMinigameProfilkasten" type="Node2D"]
@@ -110,12 +109,12 @@ margin_bottom = 961.0
 texture = ExtResource( 2 )
 
 [node name="ClipPolygon" type="Polygon2D" parent="Background"]
-visible = false
+position = Vector2( 371, 324 )
 polygon = PoolVector2Array( 152, 105, 218, 146, 316, 126, 328, 177, 278, 228, 200, 229, 170, 181, 123, 169 )
 
 [node name="OberflaechenSprite" type="Polygon2D" parent="Background"]
 position = Vector2( 631, 550 )
 scale = Vector2( 1.00542, 0.931634 )
-texture = ExtResource( 4 )
+color = Color( 0.878431, 0.14902, 0.14902, 1 )
 polygon = PoolVector2Array( -38.3729, -73.2799, 559.386, -73.2799, 563.364, 446.237, -34.3944, 446.237 )
 script = ExtResource( 5 )
