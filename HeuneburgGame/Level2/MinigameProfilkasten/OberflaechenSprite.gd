@@ -19,10 +19,11 @@ func _input(event):
 	if event.is_pressed() and event.get_button_index() == 1:
 #		if Geometry.is_point_in_polygon(event.position, polygon_global.polygon):
 		if 1 == 1:
+			clip_poly.global_position = event.position
 			var offset_poly = Polygon2D.new()
 			var new_values = []
 			for point in clip_poly.polygon:
-				new_values.append(Transform2D(0, event.position) * point)
+				new_values.append(Transform2D(0, clip_poly.global_position) * point)
 			offset_poly.polygon = PoolVector2Array(new_values)
 			print("node polygon before: ")
 			print(node.polygon)

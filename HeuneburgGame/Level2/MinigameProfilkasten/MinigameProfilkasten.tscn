@@ -12,14 +12,15 @@ margin_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 
-[node name="ClipPolygon" type="Polygon2D" parent="Background"]
-offset = Vector2( -224, -179 )
-polygon = PoolVector2Array( 152, 105, 218, 146, 316, 126, 328, 177, 278, 228, 200, 229, 170, 181, 123, 169 )
-
 [node name="OberflaechenSprite" type="Polygon2D" parent="Background"]
-position = Vector2( 637, 395 )
-offset = Vector2( 35, 69 )
+position = Vector2( 916, 657 )
+offset = Vector2( -244, -188 )
 texture = ExtResource( 1 )
-texture_offset = Vector2( -20, -20 )
 polygon = PoolVector2Array( -38.3729, -73.2799, 559.386, -73.2799, 563.364, 446.237, -34.3944, 446.237 )
 script = ExtResource( 5 )
+
+[node name="ClipPolygon" type="Polygon2D" parent="Background"]
+visible = false
+position = Vector2( -217, 152 )
+offset = Vector2( -224, -179 )
+polygon = PoolVector2Array( 152, 105, 218, 146, 316, 126, 328, 177, 278, 228, 200, 229, 170, 181, 123, 169 )
