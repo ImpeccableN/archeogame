@@ -30,12 +30,17 @@ func _input(event):
 			var splits = Geometry.clip_polygons_2d(polygon_global.polygon, offset_poly.polygon)
 			print("Splits: ")
 			print(splits)
+			var outer_polygon : int
+			if Geometry.is_polygon_clockwise(splits[0]):
+				outer_polygon = 1
+			else:
+				outer_polygon = 0
 			var lok_polygon = []
-			for point in splits[0]:
+			for point in splits[outer_polygon]:
 				lok_polygon.append(point - node.global_position)
 #			for poly in splits[0]:
 #				if Geometry.is_polygon_clockwise(poly):
 			node.polygon = PoolVector2Array(lok_polygon)
-			polygon_global.polygon = PoolVector2Array(splits[0])
+			polygon_global.polygon = PoolVector2Array(splits[outer_polygon])
 			print("node polygon after: ")
 			print(node.polygon)

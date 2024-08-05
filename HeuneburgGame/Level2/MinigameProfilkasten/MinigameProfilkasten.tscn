@@ -13,9 +13,10 @@ mouse_filter = 2
 texture = ExtResource( 3 )
 
 [node name="OberflaechenSprite" type="Polygon2D" parent="Background"]
-position = Vector2( 916, 657 )
-offset = Vector2( -244, -188 )
+position = Vector2( 917, 651 )
+offset = Vector2( -253, -170 )
 texture = ExtResource( 1 )
+texture_offset = Vector2( 253, 170 )
 polygon = PoolVector2Array( -38.3729, -73.2799, 559.386, -73.2799, 563.364, 446.237, -34.3944, 446.237 )
 script = ExtResource( 5 )
 
