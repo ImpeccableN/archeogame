@@ -5,13 +5,11 @@ extends Node
 #for application score
 var scoreApplication : int = 0 
 
-#which team was chosen
-#var teamSelectT1 : int = 1
-#var teamSelectT2 : int = 2
-#var teamSelectT3 : int = 3
-
+#team selected
 var teamSelect = 0
 
+#package selected
+var packageSelect = 0
 
 var minigame_digger_done = false
 var minigame_werkzeuge_done = false

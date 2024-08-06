@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cynthia.png-a4fcde1dbafe3bd6ce35748916d8e04c.stex"
+path="res://.import/Cynthia.PNG-b2e23e8724eed093138d140278f93d0b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Cynthia.png"
-dest_files=[ "res://.import/Cynthia.png-a4fcde1dbafe3bd6ce35748916d8e04c.stex" ]
+source_file="res://graphics/Characters/Headshots/Cynthia.PNG"
+dest_files=[ "res://.import/Cynthia.PNG-b2e23e8724eed093138d140278f93d0b.stex" ]
 
 [params]
 

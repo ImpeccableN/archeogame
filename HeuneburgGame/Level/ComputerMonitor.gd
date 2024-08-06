@@ -6,3 +6,7 @@ func _ready():
 	$PCBoot.play()
 
 
+func _on_Button_Tip2_pressed():
+	$PCMonitor/Tip2.show()
+	yield(get_tree().create_timer(3.0), "timeout")
+	$PCMonitor/Tip2.hide()

@@ -37,10 +37,14 @@ func _on_Button_Applicationpapers_mouse_entered():
 func _on_Button_Applicationpapers_mouse_exited():
 	paperslabel.hide()
 
-
 #toggle show/hide diary commentary
 func _on_Button_diary_mouse_entered():
 	diarylabel.show()
 
 func _on_Button_diary_mouse_exited():
 	diarylabel.hide()
+
+func _on_Button_Tip1_pressed():
+	$Tip.show()
+	yield(get_tree().create_timer(3.0), "timeout")
+	$Tip.hide()

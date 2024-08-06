@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Thea.PNG-68327dd0b94cb0c01deede58d354f01f.stex"
+path="res://.import/Serious_Business.png-fb6db57c6bd225e5fb28cdd9e8dac3fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Thea.PNG"
-dest_files=[ "res://.import/Thea.PNG-68327dd0b94cb0c01deede58d354f01f.stex" ]
+source_file="res://graphics/Serious_Business.png"
+dest_files=[ "res://.import/Serious_Business.png-fb6db57c6bd225e5fb28cdd9e8dac3fb.stex" ]
 
 [params]
 

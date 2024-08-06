@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Thea.PNG-68327dd0b94cb0c01deede58d354f01f.stex"
+path="res://.import/Pauschal_Paket.png-cb90b66d2a26a80977d99ff1149aaa11.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Thea.PNG"
-dest_files=[ "res://.import/Thea.PNG-68327dd0b94cb0c01deede58d354f01f.stex" ]
+source_file="res://graphics/Pauschal_Paket.png"
+dest_files=[ "res://.import/Pauschal_Paket.png-cb90b66d2a26a80977d99ff1149aaa11.stex" ]
 
 [params]
 

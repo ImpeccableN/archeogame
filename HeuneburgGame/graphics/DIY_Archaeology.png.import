@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Thea.PNG-68327dd0b94cb0c01deede58d354f01f.stex"
+path="res://.import/DIY_Archaeology.png-abc0c2aa1cc64e1c0f31970ec687142d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Thea.PNG"
-dest_files=[ "res://.import/Thea.PNG-68327dd0b94cb0c01deede58d354f01f.stex" ]
+source_file="res://graphics/DIY_Archaeology.png"
+dest_files=[ "res://.import/DIY_Archaeology.png-abc0c2aa1cc64e1c0f31970ec687142d.stex" ]
 
 [params]
 

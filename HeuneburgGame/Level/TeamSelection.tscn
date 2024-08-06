@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://graphics/Characters/FullCards/Team1/Cynthia_bw.png" type="Texture" id=2]
@@ -27,6 +27,21 @@
 [ext_resource path="res://Level/Button_Team1.gd" type="Script" id=25]
 [ext_resource path="res://Level/Button_Team2.gd" type="Script" id=26]
 [ext_resource path="res://Level/Button_Team3.gd" type="Script" id=27]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Luc.png" type="Texture" id=28]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Marie.png" type="Texture" id=29]
+[ext_resource path="res://graphics/Characters/FullCards/Team1/Thea.png" type="Texture" id=30]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Lina.png" type="Texture" id=31]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Sinisa.png" type="Texture" id=32]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Sofia.png" type="Texture" id=33]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Niko.png" type="Texture" id=34]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Emilia.png" type="Texture" id=35]
+[ext_resource path="res://graphics/Characters/FullCards/Team2/Francesco.png" type="Texture" id=36]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Lydia.png" type="Texture" id=37]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Thilo.png" type="Texture" id=38]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Diego.png" type="Texture" id=39]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Jupp.png" type="Texture" id=40]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Tilda.png" type="Texture" id=41]
+[ext_resource path="res://graphics/Characters/FullCards/Team3/Tommy.png" type="Texture" id=42]
 
 [sub_resource type="DynamicFont" id=30]
 size = 45
@@ -34,9 +49,6 @@ use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=23]
-bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
-
-[sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
 
 [sub_resource type="StyleBoxFlat" id=25]
@@ -75,15 +87,17 @@ size = 25
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=17]
-bg_color = Color( 0.894118, 0.894118, 0.894118, 1 )
+bg_color = Color( 0.678431, 0.705882, 0.478431, 1 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 33
 outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 21
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=18]
@@ -91,6 +105,7 @@ bg_color = Color( 0.0941176, 0.611765, 0.0980392, 1 )
 
 [sub_resource type="DynamicFont" id=16]
 size = 21
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=19]
@@ -170,6 +185,11 @@ position = Vector2( 276, 182 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 5 )
 
+[node name="Luc" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Luc"]
+position = Vector2( 276, 182 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 28 )
+
 [node name="Container_Marie" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
 margin_top = 1296.0
 margin_right = 541.0
@@ -181,6 +201,11 @@ position = Vector2( 282, 187 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 6 )
 
+[node name="Marie" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Marie"]
+position = Vector2( 282, 187 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 29 )
+
 [node name="Container_Thea" type="VBoxContainer" parent="ScrollContainer_Team1/VBoxContainer_Team1"]
 margin_top = 1620.0
 margin_right = 541.0
@@ -191,6 +216,11 @@ rect_min_size = Vector2( 541, 320 )
 position = Vector2( 265, 169 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 7 )
+
+[node name="Thea" type="Sprite" parent="ScrollContainer_Team1/VBoxContainer_Team1/Container_Thea"]
+position = Vector2( 265, 169 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 30 )
 
 [node name="ScrollContainer_Team2" type="ScrollContainer" parent="."]
 margin_left = 712.0
@@ -215,6 +245,11 @@ position = Vector2( 262, 172 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 8 )
 
+[node name="Emilia" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Emilia"]
+position = Vector2( 262, 172 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 35 )
+
 [node name="Container_Francesco" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
 margin_top = 324.0
 margin_right = 541.0
@@ -225,6 +260,11 @@ rect_min_size = Vector2( 541, 320 )
 position = Vector2( 261, 184 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 9 )
+
+[node name="Francesco" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Francesco"]
+position = Vector2( 261, 184 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 36 )
 
 [node name="Container_Lina" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
 margin_top = 648.0
@@ -237,6 +277,11 @@ position = Vector2( 272, 179 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 10 )
 
+[node name="Lina" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Lina"]
+position = Vector2( 272, 179 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 31 )
+
 [node name="Container_Niko" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
 margin_top = 972.0
 margin_right = 541.0
@@ -247,6 +292,11 @@ rect_min_size = Vector2( 541, 320 )
 position = Vector2( 270, 178 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 11 )
+
+[node name="Niko" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Niko"]
+position = Vector2( 270, 178 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 34 )
 
 [node name="Container_Sinisa" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
 margin_top = 1296.0
@@ -259,6 +309,11 @@ position = Vector2( 268, 175 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 12 )
 
+[node name="Sinisa" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Sinisa"]
+position = Vector2( 268, 175 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 32 )
+
 [node name="Container_Sofia" type="VBoxContainer" parent="ScrollContainer_Team2/VBoxContainer_Team2"]
 margin_top = 1620.0
 margin_right = 541.0
@@ -269,6 +324,11 @@ rect_min_size = Vector2( 541, 320 )
 position = Vector2( 272, 149 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 14 )
+
+[node name="Sofia" type="Sprite" parent="ScrollContainer_Team2/VBoxContainer_Team2/Container_Sofia"]
+position = Vector2( 272, 149 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 33 )
 
 [node name="ScrollContainer_Team3" type="ScrollContainer" parent="."]
 margin_left = 1340.0
@@ -293,6 +353,11 @@ position = Vector2( 262, 173 )
 scale = Vector2( 0.352, 0.358 )
 texture = ExtResource( 15 )
 
+[node name="Diego" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Diego"]
+position = Vector2( 262, 173 )
+scale = Vector2( 0.352, 0.358 )
+texture = ExtResource( 39 )
+
 [node name="Container_Jupp" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
 margin_top = 324.0
 margin_right = 541.0
@@ -303,6 +368,11 @@ rect_min_size = Vector2( 541, 320 )
 position = Vector2( 267, 167 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 16 )
+
+[node name="Jupp" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Jupp"]
+position = Vector2( 267, 167 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 40 )
 
 [node name="Container_Lydia" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
 margin_top = 648.0
@@ -315,6 +385,11 @@ position = Vector2( 278, 170 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 17 )
 
+[node name="Lydia" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Lydia"]
+position = Vector2( 278, 170 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 37 )
+
 [node name="Container_Thilo" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
 margin_top = 972.0
 margin_right = 541.0
@@ -325,6 +400,11 @@ rect_min_size = Vector2( 541, 320 )
 position = Vector2( 266, 172 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 18 )
+
+[node name="Thilo" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Thilo"]
+position = Vector2( 266, 172 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 38 )
 
 [node name="Container_Thommy" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
 margin_top = 1296.0
@@ -337,6 +417,11 @@ position = Vector2( 266, 165 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 19 )
 
+[node name="Thommy" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Thommy"]
+position = Vector2( 266, 165 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 42 )
+
 [node name="Container_Tilda" type="VBoxContainer" parent="ScrollContainer_Team3/VBoxContainer_Team3"]
 margin_top = 1620.0
 margin_right = 541.0
@@ -348,6 +433,11 @@ position = Vector2( 269, 163 )
 scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 20 )
 
+[node name="Tilda" type="Sprite" parent="ScrollContainer_Team3/VBoxContainer_Team3/Container_Tilda"]
+position = Vector2( 269, 163 )
+scale = Vector2( 0.352, 0.357 )
+texture = ExtResource( 41 )
+
 [node name="Button_Team1" type="Button" parent="."]
 margin_left = 91.0
 margin_top = 831.0
@@ -356,7 +446,6 @@ margin_bottom = 960.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 30 )
 custom_styles/hover = SubResource( 23 )
-custom_styles/pressed = SubResource( 24 )
 custom_styles/normal = SubResource( 25 )
 text = "Select Team 1"
 script = ExtResource( 25 )
@@ -388,9 +477,9 @@ text = "Select Team 3"
 script = ExtResource( 27 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 623.0
+margin_left = 589.0
 margin_top = 5.0
-margin_right = 1353.0
+margin_right = 1319.0
 margin_bottom = 118.0
 custom_fonts/font = SubResource( 1 )
 text = "                                   Pick your team!
@@ -431,10 +520,16 @@ custom_fonts/font = SubResource( 16 )
 custom_styles/normal = SubResource( 19 )
 text = "On second thought..."
 
+[connection signal="mouse_entered" from="Button_Team1" to="Button_Team1" method="_on_Button_Team1_mouse_entered"]
+[connection signal="mouse_exited" from="Button_Team1" to="Button_Team1" method="_on_Button_Team1_mouse_exited"]
 [connection signal="pressed" from="Button_Team1" to="Button_Team1" method="_on_Button_Team1_pressed"]
 [connection signal="sendTeamNumb" from="Button_Team1" to="." method="_on_Button_sendTeamNumb"]
+[connection signal="mouse_entered" from="Button_Team2" to="Button_Team2" method="_on_Button_Team2_mouse_entered"]
+[connection signal="mouse_exited" from="Button_Team2" to="Button_Team2" method="_on_Button_Team2_mouse_exited"]
 [connection signal="pressed" from="Button_Team2" to="Button_Team2" method="_on_Button_Team2_pressed"]
 [connection signal="sendTeamNumb" from="Button_Team2" to="." method="_on_Button_sendTeamNumb"]
+[connection signal="mouse_entered" from="Button_Team3" to="Button_Team3" method="_on_Button_Team3_mouse_entered"]
+[connection signal="mouse_exited" from="Button_Team3" to="Button_Team3" method="_on_Button_Team3_mouse_exited"]
 [connection signal="pressed" from="Button_Team3" to="Button_Team3" method="_on_Button_Team3_pressed"]
 [connection signal="sendTeamNumb" from="Button_Team3" to="." method="_on_Button_sendTeamNumb"]
 [connection signal="pressed" from="UserTeamConfirmation/Label/confirm" to="." method="_on_confirm_pressed"]

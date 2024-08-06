@@ -32,6 +32,7 @@ func _on_ContinueButton_pressed():
 	
 	elif questionState == 1:
 		$Label1.text = question2L1
+		
 		#loads new textures for answer field
 		answer1.texture = load("res://Level/AnswerGraphics/2.1.png") 
 		answer2.texture = load("res://Level/AnswerGraphics/2.3.png")

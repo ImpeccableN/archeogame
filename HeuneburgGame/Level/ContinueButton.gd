@@ -5,11 +5,6 @@ extends Button
 func _ready():
 	hide()
 
-
-func _on_UsernameInput_text_entered(new_text):
-	show()
-
-
 func _on_ContinueButton_pressed():
 	hide()
 

@@ -31,6 +31,6 @@ func can_drop_data(_pos, data):
 
 
 func drop_data(_pos, data):
-	#What happens when we drop an item in this slot
+	#When we drop an item in this slot, texture changes & continue button shows
 	texture = data["origin_texture"]
 	$"../../../../VBoxContainer_answerfield/ContinueButton".show()
