@@ -22,11 +22,7 @@ func _input(event):
 			show_cursor()
 	
 	if grabbed and event is InputEventMouse:
-		
 		position = get_global_mouse_position()
-	
-	
-
 
 func _on_ProfilkastenTool_mouse_entered():
 	mouse_entered = true
@@ -34,3 +30,19 @@ func _on_ProfilkastenTool_mouse_entered():
 
 func _on_ProfilkastenTool_mouse_exited():
 	mouse_entered = false
+
+
+func _on_ProfilkastenTool_area_entered(area):
+	$Timer.start()
+	
+
+
+func _on_Timer_timeout():
+	if $Sprite.rotation_degrees == 0:
+		$Sprite.rotation_degrees = 10
+	else:
+		$Sprite.rotation_degrees = 0
+
+
+func _on_ProfilkastenTool_area_exited(area):
+	$Timer.stop()
