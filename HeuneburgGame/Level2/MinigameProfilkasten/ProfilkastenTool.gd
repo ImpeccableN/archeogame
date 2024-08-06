@@ -46,3 +46,4 @@ func _on_Timer_timeout():
 
 func _on_ProfilkastenTool_area_exited(area):
 	$Timer.stop()
+	$Sprite.rotation_degrees = 0
