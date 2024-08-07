@@ -2,9 +2,14 @@ extends Area2D
 
 var grabbed : bool = false 
 var mouse_entered : bool = false
+var wait_pos : Vector2
 
 func set_grabbed():
 	grabbed = not grabbed
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_HIDDEN:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func get_grabbed():
 	return grabbed
@@ -16,13 +21,20 @@ func show_cursor():
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _input(event):
-	if mouse_entered:
+	if mouse_entered and grabbed == false:
 		if event.is_pressed() and event.get_button_index() == 1:
 			set_grabbed()
-			show_cursor()
+#			show_cursor()
 	
-	if grabbed and event is InputEventMouse:
+	if grabbed and event is InputEventMouseMotion:
 		position = get_global_mouse_position()
+	
+	if grabbed:
+		if event.is_pressed() and event.get_button_index() == 2:
+			go_to_wait()
+			set_grabbed()
+#			show_cursor()
+			
 
 func _on_ProfilkastenTool_mouse_entered():
 	mouse_entered = true
@@ -36,6 +48,9 @@ func _on_ProfilkastenTool_area_entered(area):
 	$Timer.start()
 	
 
+func go_to_wait():
+	position = wait_pos
+
 
 func _on_Timer_timeout():
 	if $Sprite.rotation_degrees == 0:
@@ -47,3 +62,6 @@ func _on_Timer_timeout():
 func _on_ProfilkastenTool_area_exited(area):
 	$Timer.stop()
 	$Sprite.rotation_degrees = 0
+
+func set_wait_pos(pos):
+	wait_pos = pos

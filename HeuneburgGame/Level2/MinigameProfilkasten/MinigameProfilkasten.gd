@@ -7,4 +7,5 @@ func _ready():
 	var i = 0
 	for tl in tools:
 		tl.position = tool_pos[i].global_position
+		tl.set_wait_pos(tool_pos[i].global_position)
 		i += 1
