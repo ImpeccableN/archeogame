@@ -19,6 +19,7 @@ func _ready():
 		var collider = CollisionPolygon2D.new()
 		collider.polygon = polygon
 		add_child(collider)
+		collider.position = Vector2(0,0)
 
 func set_grabbed():
 	grabbed = not grabbed
