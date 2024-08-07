@@ -27,6 +27,7 @@ func set_grabbed():
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		raise()
 
 func get_grabbed():
 	return grabbed
