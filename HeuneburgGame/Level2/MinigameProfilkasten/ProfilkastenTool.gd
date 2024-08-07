@@ -4,6 +4,22 @@ var grabbed : bool = false
 var mouse_entered : bool = false
 var wait_pos : Vector2
 
+
+func _ready():
+	var path = ($Sprite.texture.resource_path)
+	var image = Image.new()
+	image.load(path)
+
+	var bitmap = BitMap.new()
+	bitmap.create_from_image_alpha(image)
+
+	var polygons = bitmap.opaque_to_polygons(Rect2(Vector2(0, 0), bitmap.get_size()))
+
+	for polygon in polygons:
+		var collider = CollisionPolygon2D.new()
+		collider.polygon = polygon
+		add_child(collider)
+
 func set_grabbed():
 	grabbed = not grabbed
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_HIDDEN:
@@ -38,6 +54,7 @@ func _input(event):
 
 func _on_ProfilkastenTool_mouse_entered():
 	mouse_entered = true
+	print("mouse entered")
 
 
 func _on_ProfilkastenTool_mouse_exited():
