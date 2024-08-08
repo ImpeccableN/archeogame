@@ -8,7 +8,7 @@ var wait_pos : Vector2
 func _ready():
 	var path = ($Sprite.texture.resource_path)
 	var image = Image.new()
-	image.load(path)
+	image.load(ProjectSettings.globalize_path(path))
 
 	var bitmap = BitMap.new()
 	bitmap.create_from_image_alpha(image)
@@ -63,10 +63,6 @@ func _on_ProfilkastenTool_mouse_exited():
 	mouse_entered = false
 
 
-func _on_ProfilkastenTool_area_entered(area):
-	$Timer.start()
-	
-
 func go_to_wait():
 	position = wait_pos
 
@@ -78,9 +74,14 @@ func _on_Timer_timeout():
 		$Sprite.rotation_degrees = 0
 
 
+func _on_ProfilkastenTool_area_entered(area):
+	$Timer.start()
+
+
 func _on_ProfilkastenTool_area_exited(area):
 	$Timer.stop()
 	$Sprite.rotation_degrees = 0
+
 
 func set_wait_pos(pos):
 	wait_pos = pos

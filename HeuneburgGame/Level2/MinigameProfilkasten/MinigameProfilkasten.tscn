@@ -31,6 +31,7 @@
 script = ExtResource( 6 )
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 2
@@ -43,23 +44,21 @@ margin_right = 1901.0
 margin_bottom = 519.0
 
 [node name="Schaufel" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 566, 371 )
+position = Vector2( 1505, 2 )
 scale = Vector2( 0.15, 0.15 )
+collision_layer = 2
+collision_mask = 3
 
 [node name="Spitzhacke" parent="." instance=ExtResource( 1 )]
-visible = false
-position = Vector2( 767, 629 )
+position = Vector2( 1688, 81 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="Kelle" parent="." instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 813, 754 )
+position = Vector2( 1719, 347 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="Futterkelle" parent="." instance=ExtResource( 5 )]
-visible = false
-position = Vector2( 904, 839 )
+position = Vector2( 1592, 475 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="Cutouts" type="Node2D" parent="."]
@@ -146,13 +145,11 @@ margin_bottom = 549.0
 texture = ExtResource( 23 )
 
 [node name="CutOut17" type="TextureRect" parent="Cutouts"]
-visible = false
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 25 )
 
 [node name="CutOut18" type="TextureRect" parent="Cutouts"]
-visible = false
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 17 )

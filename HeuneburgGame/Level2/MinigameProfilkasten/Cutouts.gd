@@ -6,12 +6,18 @@ func _ready():
 	var children: Array = get_children()
 	
 	for child in children:
+		## set mouse filter to "ignore"
 		child.mouse_filter = 2
+		
+		##add area2D to every cutout
 		var area = Area2D.new()
 		add_child(area)
+		
+		
+		##create collisionpolygon from texture
 		var path = (child.texture.resource_path)
 		var image = Image.new()
-		image.load(path)
+		image.load(ProjectSettings.globalize_path(path))
 
 		var bitmap = BitMap.new()
 		bitmap.create_from_image_alpha(image)
@@ -23,6 +29,15 @@ func _ready():
 			collider.polygon = polygon
 			area.add_child(collider)
 			collider.position = Vector2(0,0)
+		
+		area.set_collision_layer_bit(0, false)
+		area.set_collision_layer_bit(1, true)
+		area.set_collision_mask_bit(0, false)
+		area.set_collision_mask_bit(1, true)
+#		area.set_collision_layer(10)
+#		print("Collision_Layer int: ")
+#		print(area.get_collision_layer())
+#		print("collision bit 1 set: ")
 		
 		area.connect("area_entered", self, "delete_cutout")
 		
