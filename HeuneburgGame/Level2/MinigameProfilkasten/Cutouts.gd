@@ -34,13 +34,10 @@ func _ready():
 		area.set_collision_layer_bit(1, true)
 		area.set_collision_mask_bit(0, false)
 		area.set_collision_mask_bit(1, true)
-#		area.set_collision_layer(10)
-#		print("Collision_Layer int: ")
-#		print(area.get_collision_layer())
-#		print("collision bit 1 set: ")
 		
-		area.connect("area_entered", self, "delete_cutout")
+		area.connect("area_entered", child, "delete_self")
 		
 
 func delete_cutout(area):
-	print("true")
+#	print("true")
+	pass
