@@ -35,7 +35,8 @@ func _ready():
 		area.set_collision_mask_bit(0, false)
 		area.set_collision_mask_bit(1, true)
 		
-		area.connect("area_entered", child, "delete_self")
+		area.connect("area_entered", child, "area_entered")
+		area.connect("area_exited", child, "area_exited")
 		
 
 func delete_cutout(area):

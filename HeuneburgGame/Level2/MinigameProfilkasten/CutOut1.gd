@@ -1,5 +1,16 @@
 extends TextureRect
 
-func delete_self(area):
+var shovel_entered : bool = false
+
+func area_entered(area):
 	if "schaufel" in area.get_groups():
-		queue_free()
+		shovel_entered = true
+
+func area_exited(area):
+	if "schaufel" in area.get_groups():
+		shovel_entered = false
+
+func _input(event):
+	if shovel_entered:
+		if event.is_pressed() and event.get_button_index() == 1:
+			queue_free()
