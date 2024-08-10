@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenTool.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/futterkelle.PNG" type="Texture" id=2]
 
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 375.322
+height = 544.128
+
 [node name="Futterkelle" groups=["futterkelle"] instance=ExtResource( 1 )]
+collision_mask = 0
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( 19, 42 )
-rotation = -0.575959
-
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2( 1222, 1344 )
+rotation = -0.60912
+shape = SubResource( 1 )

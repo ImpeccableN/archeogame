@@ -11,7 +11,7 @@ func _ready():
 		
 		##add area2D to every cutout
 		var area = Area2D.new()
-		add_child(area)
+		child.add_child(area)
 		
 		
 		##create collisionpolygon from texture
