@@ -75,10 +75,7 @@ margin_top = 218.0
 margin_right = 1384.0
 margin_bottom = 830.0
 theme = ExtResource( 3 )
-text = "Tutorial Second Mission:
-
-
-In this mission, your leadership skills are put to the test. You need to delegate tasks to our team members to keep the excavation running smoothly. Here’s how it works:
+text = "In this mission, your leadership skills are put to the test. You need to delegate tasks to our team members to keep the excavation running smoothly. Here’s how it works:
 
 Mission:
 Assign the six tasks to our six team members. Each member is either good or bad at each task, so choose wisely to ensure our excavation progresses efficiently.
