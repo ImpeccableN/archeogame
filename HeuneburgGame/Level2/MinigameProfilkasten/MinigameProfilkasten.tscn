@@ -65,109 +65,109 @@ scale = Vector2( 0.15, 0.15 )
 [node name="Cutouts" type="Node2D" parent="."]
 script = ExtResource( 8 )
 
-[node name="CutOut1" type="TextureRect" parent="Cutouts"]
+[node name="CutOut1" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 3 )
 script = ExtResource( 27 )
 
-[node name="CutOut2" type="TextureRect" parent="Cutouts"]
+[node name="CutOut2" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 9 )
 script = ExtResource( 27 )
 
-[node name="CutOut3" type="TextureRect" parent="Cutouts"]
+[node name="CutOut3" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 10 )
 script = ExtResource( 27 )
 
-[node name="CutOut4" type="TextureRect" parent="Cutouts"]
+[node name="CutOut4" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 11 )
 script = ExtResource( 27 )
 
-[node name="CutOut5" type="TextureRect" parent="Cutouts"]
+[node name="CutOut5" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 12 )
 script = ExtResource( 27 )
 
-[node name="CutOut6" type="TextureRect" parent="Cutouts"]
+[node name="CutOut6" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 13 )
 script = ExtResource( 27 )
 
-[node name="CutOut7" type="TextureRect" parent="Cutouts"]
+[node name="CutOut7" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 18 )
 script = ExtResource( 27 )
 
-[node name="CutOut8" type="TextureRect" parent="Cutouts"]
+[node name="CutOut8" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 19 )
 script = ExtResource( 27 )
 
-[node name="CutOut9" type="TextureRect" parent="Cutouts"]
+[node name="CutOut9" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 24 )
 script = ExtResource( 27 )
 
-[node name="CutOut10" type="TextureRect" parent="Cutouts"]
+[node name="CutOut10" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 14 )
 script = ExtResource( 27 )
 
-[node name="CutOut11" type="TextureRect" parent="Cutouts"]
+[node name="CutOut11" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 15 )
 script = ExtResource( 27 )
 
-[node name="CutOut12" type="TextureRect" parent="Cutouts"]
+[node name="CutOut12" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 20 )
 script = ExtResource( 27 )
 
-[node name="CutOut13" type="TextureRect" parent="Cutouts"]
+[node name="CutOut13" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 21 )
 script = ExtResource( 27 )
 
-[node name="CutOut14" type="TextureRect" parent="Cutouts"]
+[node name="CutOut14" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 22 )
 script = ExtResource( 27 )
 
-[node name="CutOut15" type="TextureRect" parent="Cutouts"]
+[node name="CutOut15" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 16 )
 script = ExtResource( 27 )
 
-[node name="CutOut16" type="TextureRect" parent="Cutouts"]
+[node name="CutOut16" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 23 )
 script = ExtResource( 27 )
 
-[node name="CutOut17" type="TextureRect" parent="Cutouts"]
+[node name="CutOut17" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 25 )
 script = ExtResource( 27 )
 
-[node name="CutOut18" type="TextureRect" parent="Cutouts"]
+[node name="CutOut18" type="TextureRect" parent="Cutouts" groups=["cutout"]]
 margin_right = 544.0
 margin_bottom = 549.0
 texture = ExtResource( 17 )
