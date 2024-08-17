@@ -111,3 +111,4 @@ func ungrab_tool(node):
 	else:
 		print("ja hier")
 		grabbed = false
+		go_to_wait()
