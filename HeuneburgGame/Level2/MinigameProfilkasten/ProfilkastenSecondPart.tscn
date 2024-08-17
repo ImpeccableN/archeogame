@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
@@ -11,8 +11,10 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg2_klops5.png" type="Texture" id=9]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/eimer.PNG" type="Texture" id=10]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg2_klops2.png" type="Texture" id=11]
+[ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenSecondPart.gd" type="Script" id=12]
 
 [node name="ProfilkastenSecondPart" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
