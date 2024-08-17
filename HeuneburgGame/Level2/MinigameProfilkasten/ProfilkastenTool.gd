@@ -4,7 +4,9 @@ var grabbed : bool = false
 var mouse_entered : bool = false
 var wait_pos : Vector2
 var entered_areas: Array
+onready var main_node = get_parent()
 
+signal grabbed_tool(node)
 
 func _ready():
 	pass
@@ -24,8 +26,8 @@ func _ready():
 #		collider.position = Vector2(0,0)
 
 func set_grabbed():
-	grabbed = not grabbed
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_HIDDEN:
+#	grabbed = not grabbed
+	if not grabbed:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -41,9 +43,9 @@ func show_cursor():
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _input(event):
-	if mouse_entered and grabbed == false:
-		if event.is_pressed() and event.get_button_index() == 1:
-			set_grabbed()
+#	if mouse_entered and grabbed == false:
+#		if event.is_pressed() and event.get_button_index() == 1:
+#			set_grabbed()
 #			show_cursor()
 	
 	if grabbed and event is InputEventMouseMotion:
@@ -51,6 +53,9 @@ func _input(event):
 	
 	if grabbed:
 		if event.is_pressed() and event.get_button_index() == 2:
+#			print(main_node.grabbed_tool)
+			emit_signal("grabbed_tool", null)
+#			print(main_node.grabbed_tool)
 			go_to_wait()
 			set_grabbed()
 #			show_cursor()
@@ -91,3 +96,18 @@ func _on_ProfilkastenTool_area_exited(area):
 
 func set_wait_pos(pos):
 	wait_pos = pos
+
+
+func _on_ToolButton_button_down():
+	set_grabbed()
+	emit_signal("grabbed_tool", self)
+	print("sent signal grabbed_tool")
+
+
+func ungrab_tool(node):
+	if node == self:
+		grabbed = true
+		set_grabbed()
+	else:
+		print("ja hier")
+		grabbed = false
