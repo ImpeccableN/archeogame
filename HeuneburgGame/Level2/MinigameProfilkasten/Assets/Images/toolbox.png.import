@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex"
+path="res://.import/toolbox.png-bb342da7d0f951358e149f9b78324444.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Sinisa.png"
-dest_files=[ "res://.import/Sinisa.png-76bb89d963eb82cc73524532050f6527.stex" ]
+source_file="res://Level2/MinigameProfilkasten/Assets/Images/toolbox.png"
+dest_files=[ "res://.import/toolbox.png-bb342da7d0f951358e149f9b78324444.stex" ]
 
 [params]
 

@@ -17,4 +17,4 @@ func _ready():
 func erase_cutout(node):
 	cutout_arr.erase(node)
 	if cutout_arr.size() == 0:
-		print("success")
+		print("all cutouts deleted")

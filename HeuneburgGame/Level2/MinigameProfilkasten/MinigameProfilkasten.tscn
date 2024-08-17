@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/Spitzhacke.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
@@ -27,22 +27,24 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg1_cutouts/bg1_cut17.png" type="Texture" id=25]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/background1_finished.png" type="Texture" id=26]
 [ext_resource path="res://Level2/MinigameProfilkasten/CutOut1.gd" type="Script" id=27]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/toolbox.png" type="Texture" id=28]
 
 [node name="MainMinigameProfilkasten" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource( 26 )
 
 [node name="Toolbox" parent="." instance=ExtResource( 2 )]
-margin_left = 1701.0
-margin_top = 19.0
-margin_right = 1901.0
-margin_bottom = 519.0
+margin_left = 1452.0
+margin_top = 28.0
+margin_right = 3500.0
+margin_bottom = 2076.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 28 )
 
 [node name="Schaufel" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1505, 2 )
