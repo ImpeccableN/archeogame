@@ -1,7 +1,7 @@
 extends Area2D
 
 var grabbed : bool = false 
-var mouse_entered : bool = false
+#var mouse_entered : bool = false
 var wait_pos : Vector2
 var entered_areas: Array
 onready var main_node = get_parent()
@@ -61,13 +61,12 @@ func _input(event):
 #			show_cursor()
 			
 
-func _on_ProfilkastenTool_mouse_entered():
-	mouse_entered = true
-	print("mouse entered")
-
-
-func _on_ProfilkastenTool_mouse_exited():
-	mouse_entered = false
+#func _on_ProfilkastenTool_mouse_entered():
+#	mouse_entered = true
+#
+#
+#func _on_ProfilkastenTool_mouse_exited():
+#	mouse_entered = false
 
 
 func go_to_wait():
@@ -101,7 +100,6 @@ func set_wait_pos(pos):
 func _on_ToolButton_button_down():
 	set_grabbed()
 	emit_signal("grabbed_tool", self)
-	print("sent signal grabbed_tool")
 
 
 func ungrab_tool(node):
@@ -109,6 +107,5 @@ func ungrab_tool(node):
 		grabbed = true
 		set_grabbed()
 	else:
-		print("ja hier")
 		grabbed = false
 		go_to_wait()

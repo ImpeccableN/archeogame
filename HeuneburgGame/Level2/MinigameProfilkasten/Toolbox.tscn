@@ -11,21 +11,23 @@ mouse_filter = 2
 texture = ExtResource( 1 )
 
 [node name="ToolPosition" type="Node2D" parent="."]
-position = Vector2( 342, 320 )
+position = Vector2( 264, 334 )
 
 [node name="ToolPosition2" type="Node2D" parent="."]
-position = Vector2( 1222, 320 )
+position = Vector2( 1064, 322 )
 
 [node name="ToolPosition3" type="Node2D" parent="."]
-position = Vector2( 394, 806 )
+position = Vector2( 344, 1192 )
 
 [node name="ToolPosition4" type="Node2D" parent="."]
-position = Vector2( 1188, 788 )
+position = Vector2( 1186, 1156 )
 
 [node name="ToolPosition5" type="Node2D" parent="."]
+visible = false
 position = Vector2( 482, 1362 )
 
 [node name="ToolPosition6" type="Node2D" parent="."]
+visible = false
 position = Vector2( 1288, 1350 )
 
 [node name="ToolButton" type="Button" parent="."]
