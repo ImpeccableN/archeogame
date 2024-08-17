@@ -1,14 +1,77 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=1]
-[ext_resource path="res://Level2/MinigameProfilkasten/MinigameProfilkasten.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level2/MinigameProfilkasten/Erdklops.gd" type="Script" id=3]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/fundtuete.PNG" type="Texture" id=4]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg3_abraumhaeufchenAKAkuhfladen.png" type="Texture" id=5]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg2_klops1.png" type="Texture" id=6]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg2_klops3.png" type="Texture" id=7]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg2_klops4.png" type="Texture" id=8]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg2_klops5.png" type="Texture" id=9]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/eimer.PNG" type="Texture" id=10]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg2_cutouts/bg2_klops2.png" type="Texture" id=11]
 
-[node name="ProfilkastenSecondPart" instance=ExtResource( 2 )]
+[node name="ProfilkastenSecondPart" type="Node2D"]
 
-[node name="Background" parent="." index="0"]
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 texture = ExtResource( 1 )
 
-[node name="Cutouts" parent="." index="6"]
+[node name="Toolbox" parent="." instance=ExtResource( 2 )]
+margin_left = 1463.0
+margin_top = 85.0
+margin_right = 3511.0
+margin_bottom = 2133.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="Erdklopse" type="Node" parent="."]
+
+[node name="Erdklops" type="TextureRect" parent="Erdklopse"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+script = ExtResource( 3 )
+
+[node name="Erdklops2" type="TextureRect" parent="Erdklopse"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+script = ExtResource( 3 )
+
+[node name="Erdklops3" type="TextureRect" parent="Erdklopse"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+script = ExtResource( 3 )
+
+[node name="Erdklops4" type="TextureRect" parent="Erdklopse"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+script = ExtResource( 3 )
+
+[node name="Erdklops5" type="TextureRect" parent="Erdklopse"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+script = ExtResource( 3 )
+
+[node name="EarthHeap" type="TextureRect" parent="."]
 visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 5 )
+
+[node name="Bucket" type="Sprite" parent="."]
+position = Vector2( 1675, 920 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+
+[node name="FindingsBag" type="Sprite" parent="."]
+position = Vector2( 179, 921 )
+scale = Vector2( 0.175, 0.175 )
+texture = ExtResource( 4 )
 
 [editable path="Toolbox"]
