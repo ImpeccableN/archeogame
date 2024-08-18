@@ -100,6 +100,7 @@ func set_wait_pos(pos):
 func _on_ToolButton_button_down():
 	set_grabbed()
 	emit_signal("grabbed_tool", self)
+	print("grabbed")
 
 
 func ungrab_tool(node):
