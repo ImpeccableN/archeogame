@@ -3,7 +3,10 @@ extends TextureRect
 var futterkelle_entered : bool = false
 var collider_arr : Array
 
+signal collect_earth
+
 func _ready():
+	hide()
 #	mouse_filter = 2
 	
 ##add area2D to every cutout
@@ -26,6 +29,7 @@ func _ready():
 		collider.polygon = polygon
 		area.add_child(collider)
 		collider.position = Vector2(0,0)
+		collider.set_disabled(true)
 		collider_arr.append(collider)
 	
 	area.set_collision_layer_bit(0, false)
@@ -52,10 +56,11 @@ func _input(event):
 		hide()
 		for collider in collider_arr:
 			collider.set_deferred("disabled", true)
+		emit_signal("collect_earth")
 
 
-func initiate():
+func initiate(_node):
 	for collider in collider_arr:
-			collider.set_disabled(true)
+			collider.set_disabled(false)
 	
 	show()
