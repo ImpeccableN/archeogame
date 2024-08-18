@@ -110,3 +110,10 @@ func ungrab_tool(node):
 	else:
 		grabbed = false
 		go_to_wait()
+
+
+func disable_collision():
+	$CollisionShape2D.set_deferred("disabled", true)
+
+func enable_collision():
+	$CollisionShape2D.set_disabled(false)

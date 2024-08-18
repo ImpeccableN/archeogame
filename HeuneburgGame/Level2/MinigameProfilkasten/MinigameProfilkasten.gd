@@ -23,6 +23,8 @@ func erase_cutout(node):
 	cutout_arr.erase(node)
 	if cutout_arr.size() == 0:
 		print("all cutouts deleted")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene("res://Level2/MinigameProfilkasten/ProfilkastenSecondPart.tscn")
 
 
 func _on_grabbed_tool(node):

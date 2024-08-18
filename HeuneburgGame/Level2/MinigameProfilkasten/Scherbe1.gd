@@ -21,5 +21,5 @@ func _input(_event):
 			queue_free()
 
 
-func _on_Erdklops_deleted(node):
+func _on_Erdklops_deleted(_node):
 	shard_deleted = true

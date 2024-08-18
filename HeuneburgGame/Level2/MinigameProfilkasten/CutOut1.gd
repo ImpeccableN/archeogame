@@ -24,7 +24,7 @@ func area_exited(area):
 #		if event.is_pressed() and event.get_button_index() == 1:
 #			queue_free()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_mouse_button_pressed(1) and shovel_entered:
 		emit_signal("deleted", self)
 		queue_free()

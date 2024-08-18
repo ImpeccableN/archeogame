@@ -136,6 +136,8 @@ script = ExtResource( 21 )
 [connection signal="deleted" from="Erdklopse/Erdklops4" to="EarthHeap" method="initiate"]
 [connection signal="deleted" from="Erdklopse/Erdklops5" to="Scherbe1" method="_on_Erdklops_deleted"]
 [connection signal="deleted" from="Erdklopse/Erdklops5" to="EarthHeap" method="initiate"]
+[connection signal="collect_earth" from="EarthHeap" to="Kelle" method="enable_collision"]
 [connection signal="collect_earth" from="EarthHeap" to="Bucket" method="change_img"]
+[connection signal="show_earthheap" from="EarthHeap" to="Kelle" method="disable_collision"]
 
 [editable path="Toolbox"]

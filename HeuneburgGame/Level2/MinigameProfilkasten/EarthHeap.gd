@@ -4,6 +4,7 @@ var futterkelle_entered : bool = false
 var collider_arr : Array
 
 signal collect_earth
+signal show_earthheap
 
 func _ready():
 	hide()
@@ -51,7 +52,7 @@ func area_exited(area):
 		futterkelle_entered = false
 
 
-func _input(event):
+func _input(_event):
 	if futterkelle_entered and Input.is_mouse_button_pressed(1):
 		hide()
 		for collider in collider_arr:
@@ -62,5 +63,5 @@ func _input(event):
 func initiate(_node):
 	for collider in collider_arr:
 			collider.set_disabled(false)
-	
+	emit_signal("show_earthheap")
 	show()
