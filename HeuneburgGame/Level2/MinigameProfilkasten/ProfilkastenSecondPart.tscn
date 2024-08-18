@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Scherbe1.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Level2/MinigameProfilkasten/EarthHeap.gd" type="Script" id=20]
 [ext_resource path="res://Level2/MinigameProfilkasten/FindingsBag.gd" type="Script" id=21]
+[ext_resource path="res://Level2/MinigameProfilkasten/Bucket.gd" type="Script" id=22]
 
 [node name="ProfilkastenSecondPart" type="Node2D"]
 script = ExtResource( 12 )
@@ -112,6 +113,7 @@ script = ExtResource( 20 )
 position = Vector2( 1675, 920 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 10 )
+script = ExtResource( 22 )
 
 [node name="FindingsBag" type="Sprite" parent="."]
 position = Vector2( 179, 921 )

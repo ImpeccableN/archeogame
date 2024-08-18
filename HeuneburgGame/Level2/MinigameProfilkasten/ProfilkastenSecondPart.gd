@@ -18,7 +18,6 @@ func _ready():
 		tl.set_wait_pos(tool_pos[i].global_position)
 		i += 1
 	
-	var heap = get_node("EarthHeap")
 
 
 func erase_cutout(node):
