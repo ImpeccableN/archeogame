@@ -4,7 +4,7 @@ var futterkelle_entered : bool = false
 var collider_arr : Array
 
 func _ready():
-	mouse_filter = 2
+#	mouse_filter = 2
 	
 ##add area2D to every cutout
 	var area = Area2D.new()
@@ -51,7 +51,7 @@ func _input(event):
 	if futterkelle_entered and Input.is_mouse_button_pressed(1):
 		hide()
 		for collider in collider_arr:
-			collider.set_disabled(true)
+			collider.set_deferred("disabled", true)
 
 
 func initiate():
