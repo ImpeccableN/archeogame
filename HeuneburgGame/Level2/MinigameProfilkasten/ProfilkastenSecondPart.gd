@@ -19,7 +19,6 @@ func _ready():
 		i += 1
 	
 	var heap = get_node("EarthHeap")
-	
 
 
 func erase_cutout(node):
