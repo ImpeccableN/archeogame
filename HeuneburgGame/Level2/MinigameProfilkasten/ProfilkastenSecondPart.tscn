@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/EarthHeap.gd" type="Script" id=20]
 [ext_resource path="res://Level2/MinigameProfilkasten/FindingsBag.gd" type="Script" id=21]
 [ext_resource path="res://Level2/MinigameProfilkasten/Bucket.gd" type="Script" id=22]
+[ext_resource path="res://Level2/MinigameProfilkasten/SnappingZone.tscn" type="PackedScene" id=23]
 
 [node name="ProfilkastenSecondPart" type="Node2D"]
 script = ExtResource( 12 )
@@ -120,6 +121,10 @@ position = Vector2( 179, 921 )
 scale = Vector2( 0.175, 0.175 )
 texture = ExtResource( 4 )
 script = ExtResource( 21 )
+
+[node name="SnappingZoneShovel" parent="." instance=ExtResource( 23 )]
+position = Vector2( 297, 484 )
+snap_group = "schaufel"
 
 [connection signal="button_down" from="Toolbox/ToolButton" to="Schaufel" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton2" to="Spitzhacke" method="_on_ToolButton_button_down"]

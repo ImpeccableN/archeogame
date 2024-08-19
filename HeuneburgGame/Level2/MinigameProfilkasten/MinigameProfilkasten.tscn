@@ -45,21 +45,17 @@ margin_bottom = 2076.0
 rect_scale = Vector2( 0.2, 0.2 )
 
 [node name="Schaufel" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1505, 2 )
 scale = Vector2( 0.075, 0.075 )
 collision_layer = 2
 collision_mask = 3
 
 [node name="Spitzhacke" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1688, 81 )
 scale = Vector2( 0.075, 0.075 )
 
 [node name="Kelle" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1719, 347 )
 scale = Vector2( 0.075, 0.075 )
 
 [node name="Futterkelle" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1592, 475 )
 scale = Vector2( 0.075, 0.075 )
 
 [node name="Cutouts" type="Node2D" parent="."]
