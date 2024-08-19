@@ -4,6 +4,9 @@ var grabbed : bool = false
 #var mouse_entered : bool = false
 var wait_pos : Vector2
 var entered_areas: Array
+var snap_zone_entered : bool = false
+var snap_zone_pos : Vector2
+var snapped : bool = false
 onready var main_node = get_parent()
 
 signal grabbed_tool(node)
@@ -43,22 +46,30 @@ func show_cursor():
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _input(event):
+	if not snapped:
+		if grabbed and snap_zone_entered:
+			if event.is_pressed() and event.get_button_index() == 1:
+				global_position = snap_zone_pos
+				grabbed = false
+				snapped = true
+				set_grabbed()
+			
 #	if mouse_entered and grabbed == false:
 #		if event.is_pressed() and event.get_button_index() == 1:
 #			set_grabbed()
 #			show_cursor()
 	
-	if grabbed and event is InputEventMouseMotion:
-		position = get_global_mouse_position()
+		if grabbed and event is InputEventMouseMotion:
+			position = get_global_mouse_position()
 	
-	if grabbed:
-		if event.is_pressed() and event.get_button_index() == 2:
-#			print(main_node.grabbed_tool)
-			emit_signal("grabbed_tool", null)
-#			print(main_node.grabbed_tool)
-			go_to_wait()
-			set_grabbed()
-#			show_cursor()
+		if grabbed:
+			if event.is_pressed() and event.get_button_index() == 2:
+#				print(main_node.grabbed_tool)
+				emit_signal("grabbed_tool", null)
+#				print(main_node.grabbed_tool)
+				go_to_wait()
+				set_grabbed()
+#				show_cursor()
 			
 
 #func _on_ProfilkastenTool_mouse_entered():
@@ -81,16 +92,22 @@ func _on_Timer_timeout():
 
 
 func _on_ProfilkastenTool_area_entered(area):
-	entered_areas.append(area)
-	if $Timer.get_time_left() == 0:
-		$Timer.start()
+	if "snap_zone" in area.get_groups():
+		pass
+	else:
+		entered_areas.append(area)
+		if $Timer.get_time_left() == 0:
+			$Timer.start()
 
 
 func _on_ProfilkastenTool_area_exited(area):
-	entered_areas.erase(area)
-	if entered_areas.size() == 0:
-		$Timer.stop()
-		$Sprite.rotation_degrees = 0
+	if "snap_zone" in area.get_groups():
+		pass
+	else:
+		entered_areas.erase(area)
+		if entered_areas.size() == 0:
+			$Timer.stop()
+			$Sprite.rotation_degrees = 0
 
 
 func set_wait_pos(pos):
@@ -98,22 +115,37 @@ func set_wait_pos(pos):
 
 
 func _on_ToolButton_button_down():
-	set_grabbed()
-	emit_signal("grabbed_tool", self)
-	print("grabbed")
+	if not snapped:
+		set_grabbed()
+		emit_signal("grabbed_tool", self)
 
 
 func ungrab_tool(node):
-	if node == self:
-		grabbed = true
-		set_grabbed()
-	else:
-		grabbed = false
-		go_to_wait()
+	if not snapped:
+		if node == self:
+			grabbed = true
+			set_grabbed()
+		else:
+			grabbed = false
+			go_to_wait()
 
 
 func disable_collision():
 	$CollisionShape2D.set_deferred("disabled", true)
 
+
 func enable_collision():
 	$CollisionShape2D.set_disabled(false)
+
+
+func snapzone_entered(pos):
+	snap_zone_entered = true
+	snap_zone_pos = pos
+
+
+func snapzone_exited():
+	snap_zone_entered = false
+
+func snapped():
+	snapped = true
+	
