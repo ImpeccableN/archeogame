@@ -39,6 +39,6 @@ func _ready():
 		area.connect("area_exited", child, "area_exited")
 		
 
-func delete_cutout(area):
+func delete_cutout(_area):
 #	print("true")
 	pass

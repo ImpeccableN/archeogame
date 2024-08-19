@@ -51,7 +51,7 @@ func _input(event):
 			if event.is_pressed() and event.get_button_index() == 1:
 				global_position = snap_zone_pos
 				grabbed = false
-				snapped = true
+				snap()
 				set_grabbed()
 			
 #	if mouse_entered and grabbed == false:
@@ -146,6 +146,6 @@ func snapzone_entered(pos):
 func snapzone_exited():
 	snap_zone_entered = false
 
-func snapped():
+func snap():
 	snapped = true
 	
