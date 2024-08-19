@@ -31,6 +31,7 @@ visible = false
 position = Vector2( 1288, 1350 )
 
 [node name="ToolButton" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 266.0
 margin_top = 330.0
 margin_right = 1028.0
@@ -38,6 +39,7 @@ margin_bottom = 1060.0
 script = ExtResource( 2 )
 
 [node name="ToolButton2" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 1074.0
 margin_top = 316.0
 margin_right = 1810.0
@@ -45,6 +47,7 @@ margin_bottom = 1044.0
 script = ExtResource( 2 )
 
 [node name="ToolButton3" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 248.0
 margin_top = 1114.0
 margin_right = 1074.0
@@ -52,6 +55,7 @@ margin_bottom = 1726.0
 script = ExtResource( 2 )
 
 [node name="ToolButton4" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 1106.0
 margin_top = 1098.0
 margin_right = 1840.0

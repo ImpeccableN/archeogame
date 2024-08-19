@@ -1,6 +1,5 @@
 extends Node2D
 
-onready var klopse_arr: Array = get_node("Erdklopse").get_children()
 var grabbed_tool : Node = null
 
 signal change_tool(node)
@@ -17,14 +16,6 @@ func _ready():
 		tl.position = tool_pos[i].global_position
 		tl.set_wait_pos(tool_pos[i].global_position)
 		i += 1
-	
-	
-
-
-func erase_cutout(node):
-	klopse_arr.erase(node)
-	if klopse_arr.size() == 0:
-		print("all cutouts deleted")
 
 
 func _on_grabbed_tool(node):

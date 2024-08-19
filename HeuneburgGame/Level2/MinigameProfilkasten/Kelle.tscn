@@ -11,9 +11,10 @@ height = 734.755
 collision_mask = 0
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( -848, -870 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-position = Vector2( 1176, 1538 )
+position = Vector2( 303, 647 )
 rotation = -0.457276
 shape = SubResource( 1 )

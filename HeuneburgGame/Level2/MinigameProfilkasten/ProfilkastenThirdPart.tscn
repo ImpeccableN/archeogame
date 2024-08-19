@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/EimerMiniVoll.png" type="Texture" id=3]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/fundtueteMit3Scherben.png" type="Texture" id=4]
+[ext_resource path="res://Level2/MinigameProfilkasten/Nordpfeil.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/MinigameProfilkasten/Kamera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/MinigameProfilkasten/Massstab.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level2/MinigameProfilkasten/Stecktafel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level2/MinigameProfilkasten/SnappingZone.tscn" type="PackedScene" id=10]
+
+[node name="ProfilkastenThirdPart" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="Toolbox" parent="." instance=ExtResource( 6 )]
+margin_left = 1463.0
+margin_top = 85.0
+margin_right = 3511.0
+margin_bottom = 2133.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="ToolPosition" parent="Toolbox" index="0"]
+position = Vector2( 680, 680 )
+
+[node name="ToolPosition2" parent="Toolbox" index="1"]
+position = Vector2( 1490, 685 )
+
+[node name="ToolPosition3" parent="Toolbox" index="2"]
+position = Vector2( 660, 1445 )
+
+[node name="ToolPosition4" parent="Toolbox" index="3"]
+position = Vector2( 1505, 1445 )
+
+[node name="FindingsBag" type="Sprite" parent="."]
+position = Vector2( 179, 921 )
+scale = Vector2( 0.175, 0.175 )
+texture = ExtResource( 4 )
+
+[node name="Bucket" type="Sprite" parent="."]
+position = Vector2( 1675, 920 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Kamera" parent="." instance=ExtResource( 7 )]
+scale = Vector2( 0.075, 0.075 )
+
+[node name="Massstab" parent="." instance=ExtResource( 8 )]
+position = Vector2( 504, 198 )
+rotation = 0.45204
+scale = Vector2( 0.175, 0.175 )
+
+[node name="Nordpfeil" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1009, 560 )
+scale = Vector2( 0.075, 0.075 )
+
+[node name="Stecktafel" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1322, 211 )
+scale = Vector2( 0.075, 0.075 )
+
+[node name="SnappingZoneMassstab" parent="." instance=ExtResource( 10 )]
+position = Vector2( 569, 441 )
+snap_group = "massstab"
+
+[node name="SnappingZoneStecktafel" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1170, 111 )
+snap_group = "stecktafel"
+
+[node name="SnappingZoneNordpfeil" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1082, 593 )
+snap_group = "nordpfeil"
+
+[connection signal="button_down" from="Toolbox/ToolButton" to="Kamera" method="_on_ToolButton_button_down"]
+[connection signal="button_down" from="Toolbox/ToolButton2" to="Massstab" method="_on_ToolButton_button_down"]
+[connection signal="button_down" from="Toolbox/ToolButton3" to="Nordpfeil" method="_on_ToolButton_button_down"]
+[connection signal="button_down" from="Toolbox/ToolButton4" to="Stecktafel" method="_on_ToolButton_button_down"]
+
+[editable path="Toolbox"]

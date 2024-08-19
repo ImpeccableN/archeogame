@@ -92,7 +92,7 @@ func _on_Timer_timeout():
 
 
 func _on_ProfilkastenTool_area_entered(area):
-	if "snap_zone" in area.get_groups():
+	if "snap_zone" in area.get_groups() or "tool" in area.get_groups():
 		pass
 	else:
 		entered_areas.append(area)
