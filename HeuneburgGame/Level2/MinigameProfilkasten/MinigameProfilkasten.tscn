@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Level2/MinigameProfilkasten/Spitzhacke.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level2/MinigameProfilkasten/Handschuh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg1_cutouts/bg1_cut1.png" type="Texture" id=3]
 [ext_resource path="res://Level2/MinigameProfilkasten/Schaufel.tscn" type="PackedScene" id=4]
@@ -49,7 +49,7 @@ scale = Vector2( 0.075, 0.075 )
 collision_layer = 2
 collision_mask = 3
 
-[node name="Spitzhacke" parent="." instance=ExtResource( 1 )]
+[node name="Handschuh" parent="." instance=ExtResource( 1 )]
 scale = Vector2( 0.075, 0.075 )
 
 [node name="Kelle" parent="." instance=ExtResource( 7 )]
@@ -170,7 +170,6 @@ texture = ExtResource( 17 )
 script = ExtResource( 27 )
 
 [connection signal="button_down" from="Toolbox/ToolButton" to="Schaufel" method="_on_ToolButton_button_down"]
-[connection signal="button_down" from="Toolbox/ToolButton2" to="Spitzhacke" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton3" to="Kelle" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton4" to="Futterkelle" method="_on_ToolButton_button_down"]
 

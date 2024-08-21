@@ -23,3 +23,11 @@ func _input(_event):
 
 func _on_Erdklops_deleted(_node):
 	shard_deleted = true
+
+
+func disable_collision():
+	$CollisionShape2D.set_deferred("disabled", true)
+
+
+func enable_collision():
+	$CollisionShape2D.set_disabled(false)
