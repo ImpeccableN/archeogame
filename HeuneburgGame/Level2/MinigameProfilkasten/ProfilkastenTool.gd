@@ -7,7 +7,9 @@ var entered_areas: Array
 var snap_zone_entered : bool = false
 var snap_zone_pos : Vector2
 var snapped : bool = false
+var camera_flash_buffer : bool = true
 onready var main_node = get_parent()
+
 
 signal grabbed_tool(node)
 
@@ -57,7 +59,15 @@ func _input(event):
 				grabbed = false
 				snap()
 				set_grabbed()
-			
+		
+		if grabbed and "kamera" in get_groups():
+			if Input.is_mouse_button_pressed(1):
+				if camera_flash_buffer:
+					camera_flash_buffer = not camera_flash_buffer
+				else:
+					get_parent().camera_flash()
+				
+		
 #	if mouse_entered and grabbed == false:
 #		if event.is_pressed() and event.get_button_index() == 1:
 #			set_grabbed()
@@ -152,4 +162,3 @@ func snapzone_exited():
 
 func snap():
 	snapped = true
-	

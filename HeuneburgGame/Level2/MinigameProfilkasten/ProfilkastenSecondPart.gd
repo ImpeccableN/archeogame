@@ -17,8 +17,6 @@ func _ready():
 		tl.position = tool_pos[i].global_position
 		tl.set_wait_pos(tool_pos[i].global_position)
 		i += 1
-	
-	
 
 
 func erase_cutout(node):

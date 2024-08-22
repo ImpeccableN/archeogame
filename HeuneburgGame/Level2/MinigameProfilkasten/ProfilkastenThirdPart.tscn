@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Massstab.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Level2/MinigameProfilkasten/Stecktafel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Level2/MinigameProfilkasten/SnappingZone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/flash.png" type="Texture" id=11]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/camera-flash.mp3" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 193 )
@@ -22,6 +24,8 @@ extents = Vector2( 287, 87 )
 
 [node name="ProfilkastenThirdPart" type="Node2D"]
 script = ExtResource( 1 )
+strength = 20.0
+speed = 0.5
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -61,7 +65,6 @@ texture = ExtResource( 3 )
 scale = Vector2( 0.075, 0.075 )
 
 [node name="Massstab" parent="." instance=ExtResource( 8 )]
-position = Vector2( 584, 406 )
 rotation = 0.453786
 scale = Vector2( 0.175, 0.175 )
 
@@ -81,6 +84,14 @@ snap_group = "massstab"
 position = Vector2( 30, -26 )
 shape = SubResource( 1 )
 
+[node name="SnappingZoneMassstab2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1048, 428 )
+snap_group = "massstab"
+
+[node name="CollisionShape2D" parent="SnappingZoneMassstab2" index="0"]
+position = Vector2( 30, -26 )
+shape = SubResource( 1 )
+
 [node name="SnappingZoneStecktafel" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1170, 111 )
 snap_group = "stecktafel"
@@ -97,6 +108,17 @@ snap_group = "nordpfeil"
 position = Vector2( -237, 68 )
 shape = SubResource( 3 )
 
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CameraFlash" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 959.5, 539 )
+scale = Vector2( 3.87, 2.184 )
+texture = ExtResource( 11 )
+
+[node name="AudioCameraFlash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
 [connection signal="button_down" from="Toolbox/ToolButton" to="Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton2" to="Massstab" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton3" to="Nordpfeil" method="_on_ToolButton_button_down"]
@@ -104,5 +126,6 @@ shape = SubResource( 3 )
 
 [editable path="Toolbox"]
 [editable path="SnappingZoneMassstab"]
+[editable path="SnappingZoneMassstab2"]
 [editable path="SnappingZoneStecktafel"]
 [editable path="SnappingZoneNordpfeil"]
