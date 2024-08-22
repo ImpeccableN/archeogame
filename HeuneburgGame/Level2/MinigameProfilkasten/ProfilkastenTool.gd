@@ -49,7 +49,11 @@ func _input(event):
 	if not snapped:
 		if grabbed and snap_zone_entered:
 			if event.is_pressed() and event.get_button_index() == 1:
-				global_position = snap_zone_pos
+				if "massstab" in get_groups():
+					global_position.y = 406
+					update()
+				if not "massstab" in get_groups():
+					rotation = 0
 				grabbed = false
 				snap()
 				set_grabbed()

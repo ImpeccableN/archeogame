@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -10,6 +10,15 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Massstab.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Level2/MinigameProfilkasten/Stecktafel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Level2/MinigameProfilkasten/SnappingZone.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 87.5, 193 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 444.5, 99.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 287, 87 )
 
 [node name="ProfilkastenThirdPart" type="Node2D"]
 script = ExtResource( 1 )
@@ -52,29 +61,41 @@ texture = ExtResource( 3 )
 scale = Vector2( 0.075, 0.075 )
 
 [node name="Massstab" parent="." instance=ExtResource( 8 )]
-position = Vector2( 504, 198 )
-rotation = 0.45204
+position = Vector2( 584, 406 )
+rotation = 0.453786
 scale = Vector2( 0.175, 0.175 )
 
 [node name="Nordpfeil" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1009, 560 )
+rotation = -1.71915
 scale = Vector2( 0.075, 0.075 )
 
 [node name="Stecktafel" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1322, 211 )
+rotation = -0.904081
 scale = Vector2( 0.075, 0.075 )
 
 [node name="SnappingZoneMassstab" parent="." instance=ExtResource( 10 )]
 position = Vector2( 569, 441 )
 snap_group = "massstab"
 
+[node name="CollisionShape2D" parent="SnappingZoneMassstab" index="0"]
+position = Vector2( 30, -26 )
+shape = SubResource( 1 )
+
 [node name="SnappingZoneStecktafel" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1170, 111 )
 snap_group = "stecktafel"
 
+[node name="CollisionShape2D" parent="SnappingZoneStecktafel" index="0"]
+position = Vector2( -328.5, -8.5 )
+shape = SubResource( 2 )
+
 [node name="SnappingZoneNordpfeil" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1082, 593 )
 snap_group = "nordpfeil"
+
+[node name="CollisionShape2D" parent="SnappingZoneNordpfeil" index="0"]
+position = Vector2( -237, 68 )
+shape = SubResource( 3 )
 
 [connection signal="button_down" from="Toolbox/ToolButton" to="Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton2" to="Massstab" method="_on_ToolButton_button_down"]
@@ -82,3 +103,6 @@ snap_group = "nordpfeil"
 [connection signal="button_down" from="Toolbox/ToolButton4" to="Stecktafel" method="_on_ToolButton_button_down"]
 
 [editable path="Toolbox"]
+[editable path="SnappingZoneMassstab"]
+[editable path="SnappingZoneStecktafel"]
+[editable path="SnappingZoneNordpfeil"]
