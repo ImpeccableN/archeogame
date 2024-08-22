@@ -9,3 +9,6 @@ func _physics_process(delta):
 
 func _on_TgFlip_finished():
 	$TgStatic.show()
+
+
+

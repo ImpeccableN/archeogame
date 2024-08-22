@@ -39,9 +39,3 @@ func can_drop_data(_pos, data):
 func drop_data(_pos, data):
 	#what happens when we drop an item in this slot
 	pass
-
-
-
-func _on_Answer3_mouse_entered():
-	Global.scoreApplication += 1
-	print(Global.scoreApplication)

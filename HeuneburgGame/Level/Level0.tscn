@@ -78,7 +78,7 @@ margin_bottom = 1075.0
 texture = ExtResource( 3 )
 script = ExtResource( 7 )
 
-[node name="Button" type="Button" parent="TgFlip/TgStatic"]
+[node name="Button_Start" type="Button" parent="TgFlip/TgStatic"]
 margin_left = 1077.0
 margin_top = 379.0
 margin_right = 1299.0
@@ -149,9 +149,7 @@ custom_styles/hover = SubResource( 11 )
 custom_styles/normal = SubResource( 9 )
 text = "Quit"
 
-[connection signal="finished" from="TgFlip" to="TgFlip" method="_on_TgFlip_finished"]
-[connection signal="finished" from="TgFlip/SoundFlip" to="TgFlip" method="_on_SoundFlip_finished"]
-[connection signal="pressed" from="TgFlip/TgStatic/Button" to="TgFlip/TgStatic/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="TgFlip/TgStatic/Button_Start" to="TgFlip/TgStatic/Button_Start" method="_on_Button_Start_pressed"]
 [connection signal="pressed" from="PauseMenu/Resume" to="PauseMenu" method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Main Menu" to="PauseMenu" method="_on_Main_Menu_pressed"]
 [connection signal="pressed" from="PauseMenu/Quit" to="PauseMenu" method="_on_Quit_pressed"]

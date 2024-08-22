@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://graphics/Pauschal_Paket.png" type="Texture" id=1]
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Level/Button_Serious.gd" type="Script" id=11]
 [ext_resource path="res://Level/PackageSelection.gd" type="Script" id=12]
 [ext_resource path="res://graphics/ExGLAMAtion.png" type="Texture" id=13]
+[ext_resource path="res://Level/Background.gd" type="Script" id=14]
+[ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=15]
+[ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -64,18 +67,6 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.843137, 0.819608, 0.156863, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.678431, 0.705882, 0.478431, 1 )
-border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="DynamicFont" id=11]
-size = 25
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.678431, 0.705882, 0.478431, 1 )
-
 [sub_resource type="DynamicFont" id=12]
 size = 22
 use_filter = true
@@ -94,6 +85,30 @@ font_data = ExtResource( 2 )
 bg_color = Color( 0.643137, 0.14902, 0.14902, 1 )
 border_color = Color( 0.0392157, 0, 0, 1 )
 
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.678431, 0.705882, 0.478431, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 25
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.678431, 0.705882, 0.478431, 1 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
 [node name="PackageSelection" type="Node2D"]
 script = ExtResource( 12 )
 
@@ -101,6 +116,7 @@ script = ExtResource( 12 )
 margin_right = 1920.0
 margin_bottom = 1078.0
 texture = ExtResource( 1 )
+script = ExtResource( 14 )
 
 [node name="Button_DIY" type="Button" parent="."]
 margin_left = 179.0
@@ -110,7 +126,7 @@ margin_bottom = 898.0
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 9 )
 custom_styles/normal = SubResource( 4 )
-text = "Select DIY"
+text = "Select no. 1: DIY"
 script = ExtResource( 9 )
 
 [node name="Button_GLAM" type="Button" parent="."]
@@ -121,18 +137,18 @@ margin_bottom = 665.0
 custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 8 )
 custom_styles/normal = SubResource( 5 )
-text = "Select ExGLAMation"
+text = "Select no. 2:  ExGLAMation"
 script = ExtResource( 10 )
 
 [node name="Button_Serious" type="Button" parent="."]
-margin_left = 1165.0
+margin_left = 1145.0
 margin_top = 726.0
-margin_right = 1622.0
+margin_right = 1628.0
 margin_bottom = 785.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/normal = SubResource( 6 )
-text = "Select Serious Business"
+text = "Select no. 3: Serious Business"
 script = ExtResource( 11 )
 
 [node name="PNG_DIY" type="TextureRect" parent="."]
@@ -148,16 +164,36 @@ texture = ExtResource( 13 )
 script = ExtResource( 5 )
 
 [node name="PNG_Serious" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 4.0
+margin_top = -1.0
+margin_right = 1924.0
+margin_bottom = 1079.0
 texture = ExtResource( 7 )
 script = ExtResource( 4 )
 
+[node name="confirm" type="Button" parent="."]
+margin_left = 1331.0
+margin_top = 979.0
+margin_right = 1560.0
+margin_bottom = 1057.0
+custom_fonts/font = SubResource( 12 )
+custom_styles/normal = SubResource( 15 )
+text = "Pick this one!"
+
+[node name="decline" type="Button" parent="."]
+margin_left = 1665.0
+margin_top = 979.0
+margin_right = 1894.0
+margin_bottom = 1057.0
+custom_fonts/font = SubResource( 13 )
+custom_styles/normal = SubResource( 16 )
+text = "Go back"
+
 [node name="PackageConfirmation" type="PanelContainer" parent="."]
-margin_left = 736.0
-margin_top = 400.0
-margin_right = 1248.0
-margin_bottom = 570.0
+margin_left = 756.0
+margin_top = 410.0
+margin_right = 1268.0
+margin_bottom = 580.0
 custom_styles/panel = SubResource( 10 )
 script = ExtResource( 6 )
 
@@ -169,29 +205,23 @@ mouse_filter = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 11 )
 custom_styles/normal = SubResource( 14 )
-text = "Pick this one?"
 align = 1
 
-[node name="confirm" type="Button" parent="PackageConfirmation/Label"]
-margin_left = 26.0
-margin_top = 121.0
-margin_right = 187.0
-margin_bottom = 182.0
-custom_fonts/font = SubResource( 12 )
-custom_styles/normal = SubResource( 15 )
-text = "Yes!"
+[node name="Button_Diary" type="Button" parent="."]
+margin_left = 1761.0
+margin_top = 2.0
+margin_right = 1916.0
+margin_bottom = 145.0
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
 
-[node name="decline" type="Button" parent="PackageConfirmation/Label"]
-margin_left = 309.0
-margin_top = 121.0
-margin_right = 470.0
-margin_bottom = 182.0
-custom_fonts/font = SubResource( 13 )
-custom_styles/normal = SubResource( 16 )
-text = "Back"
-
+[connection signal="pressed" from="Button_DIY" to="." method="_on_Button_DIY_pressed"]
 [connection signal="pressed" from="Button_DIY" to="Button_DIY" method="_on_Button_DIY_pressed"]
+[connection signal="sendPackageNum" from="Button_DIY" to="." method="_on_Button_DIY_sendPackageNum"]
 [connection signal="pressed" from="Button_GLAM" to="Button_GLAM" method="_on_Button_GLAM_pressed"]
+[connection signal="sendPackageNum" from="Button_GLAM" to="." method="_on_Button_GLAM_sendPackageNum"]
 [connection signal="pressed" from="Button_Serious" to="Button_Serious" method="_on_Button_Serious_pressed"]
-[connection signal="pressed" from="PackageConfirmation/Label/confirm" to="." method="_on_confirm_pressed"]
-[connection signal="pressed" from="PackageConfirmation/Label/decline" to="." method="_on_decline_pressed"]
+[connection signal="sendPackageNum" from="Button_Serious" to="." method="_on_Button_Serious_sendPackageNum"]
+[connection signal="pressed" from="confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="decline" to="." method="_on_decline_pressed"]

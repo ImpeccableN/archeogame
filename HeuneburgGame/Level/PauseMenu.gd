@@ -4,6 +4,7 @@ var is_paused = false setget set_is_paused
 
 func _ready():
 	hide()
+	pause_mode = Node.PAUSE_MODE_PROCESS
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Pause"):

@@ -1,13 +1,14 @@
 extends Button
 
-onready var popupPackage = $"../PackageConfirmation"
+onready var Button_confirm = $"../confirm"
+onready var Button_decline = $"../decline"
 
 signal sendPackageNum(packageNum)
 
 func _on_Button_Serious_pressed():
 	$"../PNG_Serious".show()
-	yield(get_tree().create_timer(4.0), "timeout")
-	popupPackage.show()
+	Button_confirm.show()
+	Button_decline.show()
 	emit_signal("sendPackageNum", 3)
 
 

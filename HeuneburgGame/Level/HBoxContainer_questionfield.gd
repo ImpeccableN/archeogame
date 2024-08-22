@@ -32,54 +32,67 @@ func _on_ContinueButton_pressed():
 	
 	elif questionState == 1:
 		$Label1.text = question2L1
-		
+		$Label1/Label2/SlotAnswer.texture = null
 		#loads new textures for answer field
 		answer1.texture = load("res://Level/AnswerGraphics/2.1.png") 
 		answer2.texture = load("res://Level/AnswerGraphics/2.3.png")
 		answer3.texture = load("res://Level/AnswerGraphics/2.2.png") 
 		questionState += 1
+		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
 	
 	elif questionState == 2:
 		$Label1.text = question2L2
+		$Label1/Label2/SlotAnswer.texture = null
 		answer1.texture = load("res://Level/AnswerGraphics/3.1.png")
 		answer2.texture = load("res://Level/AnswerGraphics/3.3.png")
 		answer3.texture = load("res://Level/AnswerGraphics/3.2.png")
 		questionState += 1
+		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
 	
 	elif questionState == 3:
 		$Label1.text = question3L2
+		$Label1/Label2/SlotAnswer.texture = null
 		answer1.texture = load("res://Level/AnswerGraphics/4.1.png")
 		answer2.texture = load("res://Level/AnswerGraphics/4.3.png")
 		answer3.texture = load("res://Level/AnswerGraphics/4.2.png")
 		questionState += 1
-	
+		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
+		
 	elif questionState == 4:
 		$Label1.text = question5L1
+		$Label1/Label2/SlotAnswer.texture = null
 		answer1.texture = load("res://Level/AnswerGraphics/5.2.png") 
 		answer2.texture = load("res://Level/AnswerGraphics/5.3.png")
 		answer3.texture = load("res://Level/AnswerGraphics/5.1.png")
 		questionState += 1 
+		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
 	
 	elif questionState == 5:
 		$Label1.text = question6L1
+		$Label1/Label2/SlotAnswer.texture = null
 		answer1.texture = load("res://Level/AnswerGraphics/6.1.png")
 		answer2.texture = load("res://Level/AnswerGraphics/6.3.png")
 		answer3.texture = load("res://Level/AnswerGraphics/6.2.png")
 		questionState += 1
+		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
 	
 	elif questionState == 6:
 		$Label1.text = question7L1
+		$Label1/Label2/SlotAnswer.texture = null
 		answer1.texture = load("res://Level/AnswerGraphics/7.1.png")
 		answer2.texture = load("res://Level/AnswerGraphics/7.3.png")
 		answer3.texture = load("res://Level/AnswerGraphics/7.2.png")
 		questionState += 1
+		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
 	
 	elif questionState == 7:
 		$Label1.text = question8L1
+		$Label1/Label2/SlotAnswer.texture = null
 		answer1.texture = load("res://Level/AnswerGraphics/8.1.png")
 		answer2.texture = load("res://Level/AnswerGraphics/8.3.png")
 		answer3.texture = load("res://Level/AnswerGraphics/8.2.png")
 		questionState += 1
+		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
 	
 	#conditions for application acception or dismissal
 	elif questionState == 8 and Global.scoreApplication < 8:
