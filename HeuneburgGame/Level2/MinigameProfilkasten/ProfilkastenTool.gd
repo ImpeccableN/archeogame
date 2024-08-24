@@ -77,7 +77,7 @@ func _input(event):
 			position = get_global_mouse_position()
 	
 		if grabbed:
-			if event.is_pressed() and event.get_button_index() == 2:
+			if event.is_pressed() and Input.is_mouse_button_pressed(2):
 #				print(main_node.grabbed_tool)
 				emit_signal("grabbed_tool", null)
 #				print(main_node.grabbed_tool)
