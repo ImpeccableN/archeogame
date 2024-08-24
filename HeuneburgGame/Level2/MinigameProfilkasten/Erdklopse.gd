@@ -1,7 +1,6 @@
 extends Node2D
 
 
-
 func _ready():
 	var children: Array = get_children()
 	
@@ -31,14 +30,10 @@ func _ready():
 			collider.position = Vector2(0,0)
 		
 		area.set_collision_layer_bit(0, false)
-		area.set_collision_layer_bit(1, true)
+		area.set_collision_layer_bit(2, true)
 		area.set_collision_mask_bit(0, false)
-		area.set_collision_mask_bit(1, true)
+		area.set_collision_mask_bit(2, true)
 		
 		area.connect("area_entered", child, "area_entered")
 		area.connect("area_exited", child, "area_exited")
 		
-
-func delete_cutout(_area):
-#	print("true")
-	pass
