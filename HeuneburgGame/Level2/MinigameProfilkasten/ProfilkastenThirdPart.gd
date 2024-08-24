@@ -43,6 +43,7 @@ func camera_flash():
 	
 #	$Toolbox.show()
 	$AudioCameraFlash.play()
+	$CameraFlash.raise()
 	$Tween.interpolate_property(flash, "self_modulate:a", 0, strength, speed, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
 	
