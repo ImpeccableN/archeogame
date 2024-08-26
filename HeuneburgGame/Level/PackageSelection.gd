@@ -19,9 +19,15 @@ func _on_decline_pressed():
 
 func _on_Button_DIY_sendPackageNum(pNum):
 	packageNum = pNum
+	Global.disasterScore += 30
+	print(Global.disasterScore)
 	
 func _on_Button_GLAM_sendPackageNum(pNum):
 	packageNum = pNum
+	Global.disasterScore += 15
+	print(Global.disasterScore)
 
 func _on_Button_Serious_sendPackageNum(pNum):
 	packageNum = pNum
+	Global.disasterScore += 0
+	print(Global.disasterScore)

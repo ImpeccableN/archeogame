@@ -1,7 +1,5 @@
 extends TextureRect
 
-onready var scoreApplication = $"."
-
 func _ready():
 	hide()
 

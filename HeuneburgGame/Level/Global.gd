@@ -2,6 +2,9 @@ extends Node
 
 #data only for global variables. Saves player choices
 
+#keeps track of the amount of disaster points gathered
+var disasterScore = 0
+
 #for application score
 var scoreApplication : int = 0 
 

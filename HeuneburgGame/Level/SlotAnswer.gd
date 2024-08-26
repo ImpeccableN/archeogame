@@ -1,5 +1,7 @@
 extends TextureRect
 
+onready var score = Global.scoreApplication
+
 func _ready():
 	hide()
 	
@@ -34,3 +36,6 @@ func drop_data(_pos, data):
 	#When we drop an item in this slot, texture changes & continue button shows
 	texture = data["origin_texture"]
 	$"../../../../VBoxContainer_answerfield/ContinueButton".show()
+	if $".".texture == $"../../../../VBoxContainer_answerfield/Answer3".texture:
+		Global.scoreApplication += 1
+		print(Global.scoreApplication)

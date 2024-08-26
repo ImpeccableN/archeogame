@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen.png" type="Texture" id=1]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Main_Minigame_WerkzeugZuordnen.gd" type="Script" id=2]
@@ -6,10 +6,15 @@
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen_unscharf.png" type="Texture" id=4]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=5]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=6]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/Button_Diary.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 5 )
@@ -89,7 +94,10 @@ margin_top = 218.0
 margin_right = 1384.0
 margin_bottom = 830.0
 theme = ExtResource( 3 )
-text = "In this mission, your leadership skills are put to the test. You need to delegate tasks to our team members to keep the excavation running smoothly. Here’s how it works:
+text = "Tutorial Second Mission:
+
+
+In this mission, your leadership skills are put to the test. You need to delegate tasks to our team members to keep the excavation running smoothly. Here’s how it works:
 
 Mission:
 Assign the six tasks to our six team members. Each member is either good or bad at each task, so choose wisely to ensure our excavation progresses efficiently.
@@ -130,6 +138,8 @@ margin_bottom = 143.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
+script = ExtResource( 7 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="gui_input" from="InfoScreen" to="." method="_on_InfoScreen_gui_input"]
+[connection signal="pressed" from="Button_Diary" to="Button_Diary" method="_on_Button_Diary_pressed"]

@@ -1,14 +1,10 @@
 extends VideoPlayer
 
-
-func _physics_process(delta):
-	if Input.is_action_just_pressed("click_button"):
+func _on_Button_nextPage_pressed():
 		play()
 		$SoundFlip.play()
-
-
-func _on_TgFlip_finished():
-	$TgStatic.show()
-
-
-
+		$TgStatic/Label_Introtxt1.hide()
+		$TgStatic/Label_Introtxt2.hide()
+		$TgStatic/Button_nextPage.hide()
+		yield(get_tree().create_timer(1.0), "timeout")
+		$TgStatic/Button_Start.show()

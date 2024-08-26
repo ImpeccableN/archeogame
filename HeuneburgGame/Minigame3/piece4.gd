@@ -30,3 +30,4 @@ func can_drop_data(_pos, data):
 func drop_data(_pos, data):
 	#what happens when we drop an item in this slot
 	pass
+

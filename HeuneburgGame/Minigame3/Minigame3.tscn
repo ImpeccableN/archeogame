@@ -87,6 +87,10 @@ bg_color = Color( 0.827451, 0.121569, 0.121569, 1 )
 [sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 38 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 38 )
@@ -406,13 +410,13 @@ anchor_bottom = 1.0
 [node name="Tip3" type="Label" parent="Tip3/NinePatchRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1051.0
+margin_left = -715.0
 margin_top = 1024.0
 margin_right = -329.0
 margin_bottom = 1020.0
 custom_colors/font_color = Color( 0.2, 0.835294, 0.537255, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Click and drag the pieces to the middle. Once a piece fits you can't override it. If you get stuck click the reset button to try again."
+text = "Click and drag the pieces to the middle. If you get stuck click the reset button to try again."
 valign = 1
 
 [node name="Button_Tip3" type="Button" parent="."]

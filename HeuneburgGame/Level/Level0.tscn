@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Level/PauseMenu.gd" type="Script" id=2]
@@ -8,6 +8,13 @@
 [ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Level/TgStatic.gd" type="Script" id=7]
 [ext_resource path="res://Level/Button_StartNewGame.gd" type="Script" id=8]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Level/Label_Introtxt.gd" type="Script" id=10]
+[ext_resource path="res://Level/Label_Introtxt2.gd" type="Script" id=11]
+[ext_resource path="res://Level/Button_nextPage.gd" type="Script" id=12]
+[ext_resource path="res://video/tb_zoomIn.ogv" type="VideoStream" id=13]
+[ext_resource path="res://Level/Tb_zoomIn.gd" type="Script" id=14]
+[ext_resource path="res://Level/Level0.gd" type="Script" id=15]
 
 [sub_resource type="DynamicFont" id=12]
 size = 20
@@ -22,6 +29,30 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 20
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 20
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 25
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -61,6 +92,7 @@ bg_color = Color( 0.439216, 0.270588, 0.168627, 0.917647 )
 bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
 
 [node name="Level0" type="Node2D"]
+script = ExtResource( 15 )
 
 [node name="TgFlip" type="VideoPlayer" parent="."]
 margin_right = 1917.0
@@ -79,16 +111,17 @@ texture = ExtResource( 3 )
 script = ExtResource( 7 )
 
 [node name="Button_Start" type="Button" parent="TgFlip/TgStatic"]
-margin_left = 1077.0
-margin_top = 379.0
-margin_right = 1299.0
-margin_bottom = 514.0
+margin_left = 1113.0
+margin_top = 759.0
+margin_right = 1335.0
+margin_bottom = 894.0
 custom_fonts/font = SubResource( 12 )
 custom_styles/normal = SubResource( 13 )
 text = "Start new game"
 script = ExtResource( 8 )
 
 [node name="Button_Museum" type="Button" parent="TgFlip/TgStatic"]
+visible = false
 margin_left = 1082.0
 margin_top = 634.0
 margin_right = 1304.0
@@ -96,6 +129,98 @@ margin_bottom = 769.0
 custom_fonts/font = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
 text = "To the museum"
+
+[node name="Label_Introtxt1" type="Label" parent="TgFlip/TgStatic"]
+margin_left = 335.0
+margin_top = 128.0
+margin_right = 723.0
+margin_bottom = 581.0
+rect_min_size = Vector2( 388, 252 )
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "Welcome to the Heuneburg Excavation Site!
+I’m the lead archaeologist and my Name is Professor Dustina Sands. Our mission?
+To uncover the secrets of one of Germany’s most fascinating archaeological sites, the Heuneburg. This Iron Age settlement offers glimpses into the lives of our ancient ancestors. Your role?
+Help us to make the right decisions and prevent turning history into dirt. Here on this scenery hill we are going to start our excavation. Imagine bustling streets and"
+autowrap = true
+script = ExtResource( 10 )
+
+[node name="Timer" type="Timer" parent="TgFlip/TgStatic/Label_Introtxt1"]
+wait_time = 0.5
+
+[node name="Label_Introtxt2" type="Label" parent="TgFlip/TgStatic"]
+margin_left = 945.0
+margin_top = 128.0
+margin_right = 1345.0
+margin_bottom = 581.0
+rect_min_size = Vector2( 388, 453 )
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "early trade. Your task is crucial: every choice impacts our excavation. Choose wisely, and we’ll unearth valuable insights. Missteps?
+They lead to missed opportunities and maybe a few laughs. Join our team of passionate scientists. Let’s tackle this excavation with curiosity and humor. Together, we’ll uncover Heuneburg’s secrets and perhaps make groundbreaking discoveries. 
+Grab your shovel, put on your explorer hat, and let’s make history – one layer at a time!"
+autowrap = true
+script = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="TgFlip/TgStatic/Label_Introtxt2"]
+wait_time = 0.5
+
+[node name="Button_nextPage" type="Button" parent="TgFlip/TgStatic"]
+margin_left = 1395.0
+margin_top = 859.0
+margin_right = 1505.0
+margin_bottom = 902.0
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0.0313726, 0.478431, 0.00392157, 1 )
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+text = "Turn page"
+script = ExtResource( 12 )
+
+[node name="Label_Introtxt3" type="Label" parent="TgFlip/TgStatic"]
+margin_left = 328.0
+margin_top = 124.0
+margin_right = 721.0
+margin_bottom = 615.0
+rect_min_size = Vector2( 388, 480 )
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "The Heuneburg Excavation Diary
+
+Welcome to the Heuneburg Excavation Diary, your trusty chronicle of progress and
+discovery! As you complete mini missions and unearth ancient secrets, this diary will fill
+itself with the tales of your archaeological adventures.
+
+Every puzzle solved, every artifact found, and every decision made will be recorded here.
+"
+autowrap = true
+
+[node name="Label_Introtxt4" type="Label" parent="TgFlip/TgStatic"]
+margin_left = 940.0
+margin_top = 137.0
+margin_right = 1354.0
+margin_bottom = 477.0
+rect_min_size = Vector2( 388, 252 )
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "Think of it as your personal time capsule, capturing the highlights of your journey through history. So, dive in, get your hands dirty, and watch as your achievements turn into entries in this ever-growing log.
+
+Ready to make your mark on history?
+Let’s see what fascinating stories you’ll uncover next!"
+autowrap = true
+
+[node name="Tb_zoomIn" type="VideoPlayer" parent="."]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1082.0
+stream = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="PauseMenu" type="Control" parent="."]
 pause_mode = 2
@@ -149,7 +274,12 @@ custom_styles/hover = SubResource( 11 )
 custom_styles/normal = SubResource( 9 )
 text = "Quit"
 
+[connection signal="finished" from="TgFlip" to="TgFlip/TgStatic" method="_on_TgFlip_finished"]
 [connection signal="pressed" from="TgFlip/TgStatic/Button_Start" to="TgFlip/TgStatic/Button_Start" method="_on_Button_Start_pressed"]
+[connection signal="timeout" from="TgFlip/TgStatic/Label_Introtxt1/Timer" to="TgFlip/TgStatic/Label_Introtxt1" method="_on_Timer_timeout"]
+[connection signal="timeout" from="TgFlip/TgStatic/Label_Introtxt2/Timer" to="TgFlip/TgStatic/Label_Introtxt2" method="_on_Timer_timeout"]
+[connection signal="pressed" from="TgFlip/TgStatic/Button_nextPage" to="TgFlip" method="_on_Button_nextPage_pressed"]
+[connection signal="finished" from="Tb_zoomIn" to="TgFlip/TgStatic/Button_Start" method="_on_Tb_zoomIn_finished"]
 [connection signal="pressed" from="PauseMenu/Resume" to="PauseMenu" method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Main Menu" to="PauseMenu" method="_on_Main_Menu_pressed"]
 [connection signal="pressed" from="PauseMenu/Quit" to="PauseMenu" method="_on_Quit_pressed"]

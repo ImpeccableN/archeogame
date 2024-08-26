@@ -1,6 +1,5 @@
 extends TextureRect
 
-
-func _physics_process(delta):
-	if Input.is_action_just_pressed("click_button"):
-		hide()
+func _on_TgFlip_finished():
+	$Label_Introtxt3.show()
+	$Label_Introtxt4.show()

@@ -95,8 +95,8 @@ func _on_ContinueButton_pressed():
 		$Label1/Label2/SlotAnswer.texture = load("res://Level/AnswerGraphics/AnswerSlot.png")
 	
 	#conditions for application acception or dismissal
-	elif questionState == 8 and Global.scoreApplication < 8:
+	elif questionState == 8 and Global.scoreApplication < 7:
 		get_tree().change_scene("res://Level/ApplicationDenied.tscn")
 	
-	elif questionState == 8 and Global.scoreApplication >= 8:
+	elif questionState == 8 and Global.scoreApplication >= 7:
 		get_tree().change_scene("res://Level/ApplicationAccepted.tscn")

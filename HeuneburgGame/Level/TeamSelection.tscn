@@ -116,6 +116,10 @@ bg_color = Color( 0.643137, 0.14902, 0.14902, 1 )
 [sub_resource type="StyleBoxTexture" id=32]
 texture = ExtResource( 43 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id=33]
 texture = ExtResource( 43 )
