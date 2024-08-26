@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/EimerMiniVoll.png" type="Texture" id=3]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/fundtueteMit3Scherben.png" type="Texture" id=4]
+[ext_resource path="res://Level2/MinigameProfilkasten/Nordpfeil.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level2/MinigameProfilkasten/Kamera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level2/MinigameProfilkasten/Massstab.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level2/MinigameProfilkasten/Stecktafel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level2/MinigameProfilkasten/SnappingZone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/flash.png" type="Texture" id=11]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/camera-flash.mp3" type="AudioStream" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 87.5, 193 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 444.5, 99.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 287, 87 )
+
+[node name="ProfilkastenThirdPart" type="Node2D"]
+script = ExtResource( 1 )
+strength = 20.0
+speed = 0.5
+region = Rect2( 300, 450, 1600, 900 )
+
+[node name="RegionRect" type="ReferenceRect" parent="."]
+margin_left = 215.0
+margin_top = 70.0
+margin_right = 1475.0
+margin_bottom = 770.0
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="Toolbox" parent="." instance=ExtResource( 6 )]
+margin_left = 1463.0
+margin_top = 85.0
+margin_right = 3511.0
+margin_bottom = 2133.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="ToolPosition" parent="Toolbox" index="0"]
+position = Vector2( 680, 680 )
+
+[node name="ToolPosition2" parent="Toolbox" index="1"]
+position = Vector2( 1490, 685 )
+
+[node name="ToolPosition3" parent="Toolbox" index="2"]
+position = Vector2( 660, 1445 )
+
+[node name="ToolPosition4" parent="Toolbox" index="3"]
+position = Vector2( 1505, 1445 )
+
+[node name="FindingsBag" type="Sprite" parent="."]
+position = Vector2( 179, 921 )
+scale = Vector2( 0.175, 0.175 )
+texture = ExtResource( 4 )
+
+[node name="Bucket" type="Sprite" parent="."]
+position = Vector2( 1675, 920 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Kamera" parent="." instance=ExtResource( 7 )]
+scale = Vector2( 0.075, 0.075 )
+
+[node name="Massstab" parent="." instance=ExtResource( 8 )]
+rotation = 0.453786
+scale = Vector2( 0.175, 0.175 )
+
+[node name="Nordpfeil" parent="." instance=ExtResource( 5 )]
+rotation = -1.71915
+scale = Vector2( 0.075, 0.075 )
+
+[node name="Stecktafel" parent="." instance=ExtResource( 9 )]
+rotation = -0.904081
+scale = Vector2( 0.075, 0.075 )
+
+[node name="SnappingZoneMassstab" parent="." instance=ExtResource( 10 )]
+position = Vector2( 569, 441 )
+snap_group = "massstab"
+
+[node name="CollisionShape2D" parent="SnappingZoneMassstab" index="0"]
+position = Vector2( 30, -26 )
+shape = SubResource( 1 )
+
+[node name="SnappingZoneMassstab2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1048, 428 )
+snap_group = "massstab"
+
+[node name="CollisionShape2D" parent="SnappingZoneMassstab2" index="0"]
+position = Vector2( 30, -26 )
+shape = SubResource( 1 )
+
+[node name="SnappingZoneStecktafel" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1170, 111 )
+snap_group = "stecktafel"
+
+[node name="CollisionShape2D" parent="SnappingZoneStecktafel" index="0"]
+position = Vector2( -328.5, -8.5 )
+shape = SubResource( 2 )
+
+[node name="SnappingZoneNordpfeil" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1082, 593 )
+snap_group = "nordpfeil"
+
+[node name="CollisionShape2D" parent="SnappingZoneNordpfeil" index="0"]
+position = Vector2( -237, 68 )
+shape = SubResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CameraFlash" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 959.5, 539 )
+scale = Vector2( 3.87, 2.184 )
+texture = ExtResource( 11 )
+
+[node name="AudioCameraFlash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[connection signal="button_down" from="Toolbox/ToolButton" to="Kamera" method="_on_ToolButton_button_down"]
+[connection signal="button_down" from="Toolbox/ToolButton2" to="Massstab" method="_on_ToolButton_button_down"]
+[connection signal="button_down" from="Toolbox/ToolButton3" to="Nordpfeil" method="_on_ToolButton_button_down"]
+[connection signal="button_down" from="Toolbox/ToolButton4" to="Stecktafel" method="_on_ToolButton_button_down"]
+
+[editable path="Toolbox"]
+[editable path="SnappingZoneMassstab"]
+[editable path="SnappingZoneMassstab2"]
+[editable path="SnappingZoneStecktafel"]
+[editable path="SnappingZoneNordpfeil"]
