@@ -39,14 +39,13 @@ func set_grabbed():
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		raise()
 
-func get_grabbed():
-	return grabbed
 
 func show_cursor():
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_HIDDEN:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 
 func _input(event):
 	if not snapped:
@@ -143,6 +142,7 @@ func ungrab_tool(node):
 		else:
 			grabbed = false
 			go_to_wait()
+			camera_flash_buffer = true
 
 
 func disable_collision():

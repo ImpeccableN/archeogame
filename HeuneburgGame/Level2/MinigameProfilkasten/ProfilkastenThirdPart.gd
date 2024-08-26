@@ -49,7 +49,7 @@ func camera_flash():
 	image.flip_y()
 	var imgtext = ImageTexture.new()
 	imgtext.create_from_image(image)
-	image.save_png("res://Level2/MinigameProfilkasten/Assets/Images/capture.png")
+#	image.save_png("res://Level2/MinigameProfilkasten/Assets/Images/capture.png")
 	
 #	$Photo.scale = Vector2(0.2, 0.2)
 	
@@ -63,6 +63,8 @@ func camera_flash():
 	$Tween.interpolate_property(flash, "self_modulate:a", strength, 0, 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
 	$Kamera.show()
-	yield(get_tree().create_timer(2), "timeout")
 	$Photo.texture = imgtext
+	yield(get_tree().create_timer(1), "timeout")
 	$Photo.show()
+	yield(get_tree().create_timer(3), "timeout")
+	$Photo.hide()
