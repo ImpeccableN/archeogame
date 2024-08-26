@@ -12,6 +12,7 @@ onready var main_node = get_parent()
 
 
 signal grabbed_tool(node)
+signal tool_snap
 
 func _ready():
 	pass
@@ -160,5 +161,8 @@ func snapzone_entered(pos):
 func snapzone_exited():
 	snap_zone_entered = false
 
+
 func snap():
 	snapped = true
+	emit_signal("tool_snap")
+	

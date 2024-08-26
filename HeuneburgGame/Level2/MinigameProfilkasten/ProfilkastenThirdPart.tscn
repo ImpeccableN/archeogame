@@ -127,10 +127,18 @@ texture = ExtResource( 11 )
 [node name="AudioCameraFlash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
 
+[node name="Photo" type="Sprite" parent="."]
+position = Vector2( 255, 162 )
+rotation = -0.541052
+scale = Vector2( 0.5, 0.5 )
+
 [connection signal="button_down" from="Toolbox/ToolButton" to="Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton2" to="Massstab" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton3" to="Nordpfeil" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton4" to="Stecktafel" method="_on_ToolButton_button_down"]
+[connection signal="tool_snap" from="Massstab" to="." method="tools_snapped"]
+[connection signal="tool_snap" from="Nordpfeil" to="." method="tools_snapped"]
+[connection signal="tool_snap" from="Stecktafel" to="." method="tools_snapped"]
 
 [editable path="Toolbox"]
 [editable path="SnappingZoneMassstab"]
