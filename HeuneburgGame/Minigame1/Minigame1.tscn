@@ -180,6 +180,12 @@ autostart = true
 
 [node name="Minigame1_HUD" parent="." instance=ExtResource( 7 )]
 
+[node name="MessageLabel" parent="Minigame1_HUD" index="2"]
+margin_left = -321.0
+margin_top = -343.0
+margin_right = 332.0
+margin_bottom = -272.0
+
 [connection signal="score_up" from="." to="Minigame1_HUD" method="_on_Minigame1_score_up"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="Minigame1_HUD" method="_on_Player_hit"]
@@ -190,3 +196,5 @@ autostart = true
 [connection signal="start_game" from="Minigame1_HUD" to="Player" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Sun" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Truck" method="start"]
+
+[editable path="Minigame1_HUD"]

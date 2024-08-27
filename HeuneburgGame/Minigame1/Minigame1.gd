@@ -76,17 +76,21 @@ func _on_Player_set_marker(player_position):
 		score += 1
 		emit_signal("score_up", score)
 	
-	if score == score_goal:
-		success()
+#	if score == score_goal:
+#		success()
 
 
 func _on_Player_hit():
-	$Truck/CollisionShape2D.set_deferred("disabled", true)
-	$Sun/CollisionShape2D.set_deferred("disabled", true)
-	$Truck.speed = 0
-	$ArtefactSpawnTimer.stop()
-	$Minigame1_HUD.show()
-	$Minigame1_HUD.display_message(game_over_message)
+	if score < score_goal:
+		$Truck/CollisionShape2D.set_deferred("disabled", true)
+		$Sun/CollisionShape2D.set_deferred("disabled", true)
+		$Truck.speed = 0
+		$Sun.speed = 0
+		$ArtefactSpawnTimer.stop()
+		$Minigame1_HUD.show()
+		$Minigame1_HUD.display_message(game_over_message)
+	else:
+		success()
 
 
 func success():
@@ -96,6 +100,7 @@ func success():
 	$Truck.speed = 0
 	$ArtefactSpawnTimer.stop()
 	$Minigame1_HUD.show()
+	$Minigame1_HUD/StartButton.hide()
 	$Minigame1_HUD.display_message(success_message)
 	Global.minigame_digger_done = true
 	yield(get_tree().create_timer(5.0), "timeout")
