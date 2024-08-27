@@ -3,6 +3,9 @@ extends Node2D
 onready var popupPackage = $PackageConfirmation
 var packageNum : int
 
+func _ready():
+	pass
+
 func _on_confirm_pressed():
 	Global.packageSelect = packageNum
 	popupPackage.show()
@@ -20,14 +23,37 @@ func _on_decline_pressed():
 func _on_Button_DIY_sendPackageNum(pNum):
 	packageNum = pNum
 	Global.disasterScore += 30
-	print(Global.disasterScore)
 	
 func _on_Button_GLAM_sendPackageNum(pNum):
 	packageNum = pNum
 	Global.disasterScore += 15
-	print(Global.disasterScore)
 
 func _on_Button_Serious_sendPackageNum(pNum):
 	packageNum = pNum
 	Global.disasterScore += 0
-	print(Global.disasterScore)
+
+
+
+
+func _on_Button_Diary_pressed():
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$Background.hide()
+	$Button_DIY.hide()
+	$Button_GLAM.hide()
+	$Button_Serious.hide()
+	$PNG_DIY.hide()
+	$PNG_GLAM.hide()
+	$PNG_Serious.hide()
+
+
+
+func _on_Button_Close_pressed():
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$Background.show()
+	$Button_DIY.show()
+	$Button_GLAM.show()
+	$Button_Serious.show()
+	$confirm.hide()
+	$decline.hide()

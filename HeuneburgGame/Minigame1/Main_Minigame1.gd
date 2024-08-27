@@ -17,3 +17,19 @@ func _on_StartButton_button_up():
 	minigame_instance.position = minigame_position
 	$Minigame1_HUD.hide()
 	$Minigame1_HUD/StartButton.disabled = true
+
+
+
+
+func _on_Button_Diary_pressed():
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$TextureRect.hide()
+	$Minigame1_HUD.hide()
+
+
+func _on_Button_Close_pressed():
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$TextureRect.show()
+	$Minigame1_HUD.show()

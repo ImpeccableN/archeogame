@@ -132,3 +132,19 @@ func get_score_message():
 			return "Great job! Your leadership skills are impressive."
 		15, 16, 17, 18:
 			return "Perfect, you are a super supervisor!!!"
+
+
+
+
+func _on_Button_Diary_pressed():
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$Background.hide()
+	$Button.hide()
+
+
+func _on_Button_Close_pressed():
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$Background.show()
+	$Button.show()

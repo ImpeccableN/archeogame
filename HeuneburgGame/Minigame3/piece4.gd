@@ -28,6 +28,6 @@ func can_drop_data(_pos, data):
 	return false
 
 func drop_data(_pos, data):
-	#what happens when we drop an item in this slot
+	#nothing should happen when we drop something in the piece slot
 	pass
 

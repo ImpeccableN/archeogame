@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var puzzleScore = Global.puzzlePieces
 #score must be 11
+onready var puzzleScore = Global.puzzlePieces
 
 func _ready():
 	$TextureRect2_puzzleFinished.hide()
@@ -37,5 +37,24 @@ func _on_Button_reset_pressed():
 	Global.puzzlePieces = 0
 
 
+
+
+
 func _on_Button_Diary_pressed():
-	get_tree().change_scene("res://Level/Tg_Lesezeichen.tscn")
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$TextureRect.hide()
+	$CanvasLayer.hide()
+	$Label.hide()
+	$Button_Tip3.hide()
+	$Button_reset.hide()
+
+
+func _on_Button_Close_pressed():
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$TextureRect.show()
+	$CanvasLayer.show()
+	$Label.show()
+	$Button_Tip3.show()
+	$Button_reset.show()

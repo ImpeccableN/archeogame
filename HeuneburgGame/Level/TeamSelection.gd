@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var teamNumb : int
 
 func _ready():
@@ -24,3 +25,27 @@ func _on_decline_pressed():
 	teamNumb = 0
 
 
+
+
+func _on_Button_Close_pressed():
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$ScrollContainer_Team1.show()
+	$ScrollContainer_Team2.show()
+	$ScrollContainer_Team3.show()
+	$Button_Team1.show()
+	$Button_Team2.show()
+	$Button_Team3.show()
+	$Label.show()
+
+
+func _on_Button_Diary_pressed():
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$ScrollContainer_Team1.hide()
+	$ScrollContainer_Team2.hide()
+	$ScrollContainer_Team3.hide()
+	$Button_Team1.hide()
+	$Button_Team2.hide()
+	$Button_Team3.hide()
+	$Label.hide()

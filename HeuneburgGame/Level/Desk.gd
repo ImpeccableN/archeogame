@@ -1,9 +1,12 @@
 extends Node2D
 
+
 onready var computerlabel = $Desk_Image/ComputerLabel
 onready var muglabel = $Desk_Image/Button_Mug/MugLabel
 onready var paperslabel = $Desk_Image/Button_Applicationpapers/PapersLabel
 onready var diarylabel = $Desk_Image/Button_diary/DiaryLabel
+
+
 
 
 #hides all the labels on first loading of the scene

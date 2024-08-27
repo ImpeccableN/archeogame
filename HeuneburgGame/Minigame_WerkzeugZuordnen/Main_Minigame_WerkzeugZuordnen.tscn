@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen.png" type="Texture" id=1]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Main_Minigame_WerkzeugZuordnen.gd" type="Script" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/Images/Schreibtisch_Bauwagen_unscharf.png" type="Texture" id=4]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=5]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=6]
-[ext_resource path="res://Minigame_WerkzeugZuordnen/Button_Diary.gd" type="Script" id=7]
+[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=7]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
@@ -23,6 +24,34 @@ region_rect = Rect2( 0, 0, 2048, 2048 )
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Main_Minigame_WerkzeugZuordnen" type="Node2D"]
 script = ExtResource( 2 )
@@ -138,8 +167,41 @@ margin_bottom = 143.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-script = ExtResource( 7 )
+
+[node name="Diary" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Diary_texture" type="TextureRect" parent="Diary"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+
+[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 384.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Glossar"
+
+[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Close"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="gui_input" from="InfoScreen" to="." method="_on_InfoScreen_gui_input"]
-[connection signal="pressed" from="Button_Diary" to="Button_Diary" method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]

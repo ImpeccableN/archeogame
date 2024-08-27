@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Minigame3/Assets/Images/Topf 2.png" type="Texture" id=1]
 [ext_resource path="res://Minigame3/Assets/Images/Topf 4.png" type="Texture" id=2]
@@ -39,6 +39,8 @@
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=37]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=38]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=39]
+[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=40]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=41]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
@@ -99,6 +101,34 @@ region_rect = Rect2( 0, 0, 2048, 2048 )
 [sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 39 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+use_filter = true
+font_data = ExtResource( 41 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 32
+use_filter = true
+font_data = ExtResource( 41 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Vase_Puzzle" type="Node2D"]
 script = ExtResource( 35 )
@@ -396,7 +426,6 @@ custom_fonts/font = SubResource( 1 )
 text = "Congrats! You have put it back together!"
 
 [node name="Tip3" type="Popup" parent="."]
-visible = true
 margin_left = 1385.0
 margin_top = 4.0
 margin_right = 1836.0
@@ -450,6 +479,40 @@ custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
 custom_styles/normal = SubResource( 13 )
 
+[node name="Diary" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Diary_texture" type="TextureRect" parent="Diary"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 40 )
+
+[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 384.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Glossar"
+
+[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+text = "Close"
+
 [connection signal="pressed" from="Button_Tip3" to="." method="_on_Button_Tip3_pressed"]
 [connection signal="pressed" from="Button_reset" to="." method="_on_Button_reset_pressed"]
 [connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]

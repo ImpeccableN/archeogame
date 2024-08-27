@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://graphics/Characters/FullCards/Team1/Cynthia_bw.png" type="Texture" id=2]
@@ -44,6 +44,8 @@
 [ext_resource path="res://graphics/Characters/FullCards/Team3/Tommy.png" type="Texture" id=42]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=43]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=44]
+[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=45]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=47]
 
 [sub_resource type="DynamicFont" id=30]
 size = 45
@@ -128,6 +130,34 @@ region_rect = Rect2( 0, 0, 2048, 2048 )
 [sub_resource type="StyleBoxTexture" id=34]
 texture = ExtResource( 44 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 32
+use_filter = true
+font_data = ExtResource( 47 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=39]
+size = 32
+use_filter = true
+font_data = ExtResource( 47 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="TeamSelection" type="Node2D"]
 script = ExtResource( 21 )
@@ -546,6 +576,39 @@ custom_styles/hover = SubResource( 32 )
 custom_styles/pressed = SubResource( 33 )
 custom_styles/normal = SubResource( 34 )
 
+[node name="Diary" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Diary_texture" type="TextureRect" parent="Diary"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 45 )
+
+[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 384.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 36 )
+custom_styles/pressed = SubResource( 37 )
+custom_styles/normal = SubResource( 38 )
+text = "Glossar"
+
+[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 39 )
+custom_styles/hover = SubResource( 40 )
+custom_styles/pressed = SubResource( 41 )
+custom_styles/normal = SubResource( 42 )
+text = "Close"
+
 [connection signal="mouse_entered" from="Button_Team1" to="Button_Team1" method="_on_Button_Team1_mouse_entered"]
 [connection signal="mouse_exited" from="Button_Team1" to="Button_Team1" method="_on_Button_Team1_mouse_exited"]
 [connection signal="pressed" from="Button_Team1" to="Button_Team1" method="_on_Button_Team1_pressed"]
@@ -560,3 +623,5 @@ custom_styles/normal = SubResource( 34 )
 [connection signal="sendTeamNumb" from="Button_Team3" to="." method="_on_Button_sendTeamNumb"]
 [connection signal="pressed" from="UserTeamConfirmation/Label/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="UserTeamConfirmation/Label/decline" to="." method="_on_decline_pressed"]
+[connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]

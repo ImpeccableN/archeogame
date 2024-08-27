@@ -24,30 +24,31 @@ func get_drag_data(_pos):
 func can_drop_data(_pos, _data):
 #	what happens when a texture is dropped in the target slot.
 #	Only if the right one is dropped it can't be changed anymore.
-	if  $".".texture == null:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces1/piece3".texture:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces1/piece4".texture:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces1/piece5".texture:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces2/piece7".texture:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces2/piece8".texture:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces2/piece9".texture:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces1/piece10".texture:
-		return true
-	elif $".".texture == $"../HBoxContainer1/piece11".texture:
-		return true
-	elif $".".texture == $"../HBoxContainer1/piece12".texture:
-		return true
-	elif $".".texture == $"../HBoxContainer1/piece13".texture:
-		return true
-	elif $".".texture == $"../VBoxContainer_pieces1/piece2".texture:
-		return false
+		if  $".".texture == null:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces1/piece3".texture:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces1/piece4".texture:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces1/piece5".texture:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces2/piece7".texture:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces2/piece8".texture:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces2/piece9".texture:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces1/piece10".texture:
+			return true
+		elif $".".texture == $"../HBoxContainer1/piece11".texture:
+			return true
+		elif $".".texture == $"../HBoxContainer1/piece12".texture:
+			return true
+		elif $".".texture == $"../HBoxContainer1/piece13".texture:
+			return true
+		elif $".".texture == $"../VBoxContainer_pieces1/piece2".texture:
+			return false
+			
 
 
 func drop_data(_pos, _data):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://graphics/Pauschal_Paket.png" type="Texture" id=1]
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Level/Background.gd" type="Script" id=14]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=15]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=16]
+[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=17]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -113,6 +115,34 @@ region_rect = Rect2( 0, 0, 2048, 2048 )
 texture = ExtResource( 16 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
 
+[sub_resource type="DynamicFont" id=20]
+size = 32
+use_filter = true
+font_data = ExtResource( 20 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 32
+use_filter = true
+font_data = ExtResource( 20 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
 [node name="PackageSelection" type="Node2D"]
 script = ExtResource( 12 )
 
@@ -194,6 +224,7 @@ custom_styles/normal = SubResource( 16 )
 text = "Go back"
 
 [node name="PackageConfirmation" type="PanelContainer" parent="."]
+visible = false
 margin_left = 756.0
 margin_top = 410.0
 margin_right = 1268.0
@@ -220,6 +251,39 @@ custom_styles/hover = SubResource( 17 )
 custom_styles/pressed = SubResource( 18 )
 custom_styles/normal = SubResource( 19 )
 
+[node name="Diary" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Diary_texture" type="TextureRect" parent="Diary"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 17 )
+
+[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 384.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+text = "Glossar"
+
+[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 24 )
+custom_styles/hover = SubResource( 25 )
+custom_styles/pressed = SubResource( 26 )
+custom_styles/normal = SubResource( 27 )
+text = "Close"
+
 [connection signal="pressed" from="Button_DIY" to="." method="_on_Button_DIY_pressed"]
 [connection signal="pressed" from="Button_DIY" to="Button_DIY" method="_on_Button_DIY_pressed"]
 [connection signal="sendPackageNum" from="Button_DIY" to="." method="_on_Button_DIY_sendPackageNum"]
@@ -229,3 +293,5 @@ custom_styles/normal = SubResource( 19 )
 [connection signal="sendPackageNum" from="Button_Serious" to="." method="_on_Button_Serious_sendPackageNum"]
 [connection signal="pressed" from="confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="decline" to="." method="_on_decline_pressed"]
+[connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
