@@ -1,6 +1,8 @@
 extends Node2D
 
 var grabbed_tool : Node = null
+
+#keeps track of snapped tools
 var snapped_tools: int = 0
 export var strength: float
 export var speed: float
@@ -28,14 +30,12 @@ func _ready():
 #
 
 
+#saves grabbed tool node when a tool is grabbed.
+#sends information to profiltool script
 func _on_grabbed_tool(node):
 	if grabbed_tool != node:
 		grabbed_tool = node
 		emit_signal("change_tool", node)
-#		if "kamera" in grabbed_tool.get_groups() and snapped_tools == 3:
-#			var image = get_viewport().get_texture().get_data().get_rect(region)
-#			image.flip_y()
-#			image.save_png("res://Level2/MinigameProfilkasten/Assets/Images/capture.png")
 
 
 func tools_snapped():

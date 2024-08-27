@@ -8,7 +8,7 @@ var introduction_message = "Greetings, aspiring archaeologist! Your first missio
 
 func _ready():
 	$Minigame1_HUD.show()
-	$Minigame1_HUD.display_message(introduction_message)
+#	$Minigame1_HUD.display_message(introduction_message)
 
 
 func _on_StartButton_button_up():
