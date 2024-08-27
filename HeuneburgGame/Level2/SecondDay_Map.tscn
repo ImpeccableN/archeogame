@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Level1/Button_Keltenmuseum.gd" type="Script" id=1]
-[ext_resource path="res://Level1/Button_Grabungsstaette.gd" type="Script" id=2]
+[ext_resource path="res://Level2/Button_Grabungsstaette2.gd" type="Script" id=2]
 [ext_resource path="res://Level1/Button_Bauwagen.gd" type="Script" id=3]
 [ext_resource path="res://Level1/Button_Freilichtmuseum.gd" type="Script" id=4]
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_keltenmuseum.png" type="Texture" id=5]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_grabungsstaette.png" type="Texture" id=10]
 [ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/possible_theme.tres" type="Theme" id=11]
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_hintergrund.png" type="Texture" id=12]
+[ext_resource path="res://Level2/SecondDay_Map.gd" type="Script" id=13]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 6 )
@@ -26,6 +27,8 @@ texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
 
 [node name="SecondDay_Map" type="Node2D"]
+script = ExtResource( 13 )
+images_grow_scale = Vector2( 1.2, 1.2 )
 
 [node name="FirstLevel_Image" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -56,6 +59,7 @@ polygon = PoolVector2Array( 120, 199, 241, 129, 276, 131, 337, 170, 341, 227, 21
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Bauwagen"]
+visible = false
 polygon = PoolVector2Array( 1066, 418, 1066, 329, 1137, 302, 1199, 295, 1226, 320, 1224, 377, 1224, 398, 1112, 425 )
 
 [node name="Bauwagen_Overlay" type="TextureRect" parent="."]
@@ -116,4 +120,9 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 
 [connection signal="input_event" from="FirstLevel_Image/Button_Grabungsstaette" to="FirstLevel_Image/Button_Grabungsstaette" method="_on_Button_Grabungsstaette_input_event"]
-[connection signal="input_event" from="FirstLevel_Image/Button_Bauwagen" to="FirstLevel_Image/Button_Bauwagen" method="_on_Button_Bauwagen_input_event"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Grabungsstaette" to="." method="_on_Button_Grabungsstaette_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Grabungsstaette" to="." method="_on_Button_Grabungsstaette_mouse_exited"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_exited"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_exited"]
