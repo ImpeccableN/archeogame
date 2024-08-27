@@ -12,6 +12,8 @@ onready var flash = get_node("CameraFlash")
 signal change_tool(node)
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	var tools: Array = get_tree().get_nodes_in_group("tool")
 	var tool_pos: Array = $Toolbox.get_children()
 	
