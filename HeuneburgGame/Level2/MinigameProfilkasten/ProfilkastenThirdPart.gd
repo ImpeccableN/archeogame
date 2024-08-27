@@ -49,6 +49,7 @@ func camera_flash():
 	image.flip_y()
 	var imgtext = ImageTexture.new()
 	imgtext.create_from_image(image)
+	Global.photo = imgtext
 #	image.save_png("res://Level2/MinigameProfilkasten/Assets/Images/capture.png")
 	
 #	$Photo.scale = Vector2(0.2, 0.2)
