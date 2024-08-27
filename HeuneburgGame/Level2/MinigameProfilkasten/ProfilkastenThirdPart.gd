@@ -52,11 +52,8 @@ func camera_flash():
 	var imgtext = ImageTexture.new()
 	imgtext.create_from_image(image)
 	Global.photo = imgtext
-#	image.save_png("res://Level2/MinigameProfilkasten/Assets/Images/capture.png")
 	
-#	$Photo.scale = Vector2(0.2, 0.2)
 	
-#	$Toolbox.show()
 	$AudioCameraFlash.play()
 	$CameraFlash.raise()
 	$Tween.interpolate_property(flash, "self_modulate:a", 0, strength, speed, Tween.TRANS_SINE, Tween.EASE_OUT)
@@ -75,4 +72,4 @@ func camera_flash():
 	if snapped_tools == 3:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene("res://Level2/SecondDay_Map.tscn")
-#
+
