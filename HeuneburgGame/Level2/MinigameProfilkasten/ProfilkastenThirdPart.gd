@@ -69,3 +69,6 @@ func camera_flash():
 	$Photo.show()
 	yield(get_tree().create_timer(3), "timeout")
 	$Photo.hide()
+	
+#	if snapped_tools == 3:
+#
