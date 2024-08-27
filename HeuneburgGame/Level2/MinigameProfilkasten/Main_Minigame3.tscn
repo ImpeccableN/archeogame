@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Minigame1/Assets/Images/miniGameBackground.png" type="Texture" id=1]
+[ext_resource path="res://Minigame1/Main_Minigame1.gd" type="Script" id=2]
+[ext_resource path="res://Minigame1/Minigame1_HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=4]
+[ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[node name="Minigame1Main" type="Node2D"]
+script = ExtResource( 2 )
+minigame_position = Vector2( 448, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+
+[node name="Minigame1_HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="ScoreLabel" parent="Minigame1_HUD" index="0"]
+visible = false
+
+[node name="StartButton" parent="Minigame1_HUD" index="1"]
+disabled = false
+
+[node name="MessageLabel" parent="Minigame1_HUD" index="2"]
+margin_right = 792.0
+margin_bottom = 332.0
+text = "Time to get your hands dirty! 
+Use the tools in the correct order by simply clicking on them. Don’t worry, it’s all about finesse—click,  hover, and let the magic happen. 
+Once you've freed the pieces with the right tools, take them up and carefully remove them from the  profile box. Make sure to store them properly—no tossing them around! 
+When you’ve successfully dug everything out, the final task is to document the profile box. Yes, you  get to be the hero who captures all the details. 
+Let’s dig in and make some history!
+"
+
+[node name="Button_Diary" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 156.0
+margin_bottom = 145.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[connection signal="pressed" from="Minigame1_HUD/StartButton" to="Minigame1_HUD" method="_on_StartButton_pressed"]
+
+[editable path="Minigame1_HUD"]
