@@ -29,13 +29,6 @@ strength = 20.0
 speed = 0.5
 region = Rect2( 300, 450, 1600, 900 )
 
-[node name="RegionRect" type="ReferenceRect" parent="."]
-margin_left = 215.0
-margin_top = 70.0
-margin_right = 1475.0
-margin_bottom = 770.0
-mouse_filter = 2
-
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
