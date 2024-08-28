@@ -1,9 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/DiaryLvl1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level1/DiaryLvl1End.gd" type="Script" id=2]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="DiaryLvl1End" instance=ExtResource( 1 )]
-script = null
+script = ExtResource( 2 )
 
 [node name="DiaryEntry" parent="." index="0"]
 text = "Day 1 of our Heuneburg Excavation and what a start! This morning, armed with my trusty shovel and a lot of excitement, I jumped into our first mission.
@@ -24,3 +40,18 @@ margin_bottom = 476.0
 text = "Day 1
 Concluded
 "
+
+[node name="Button_nextDay" type="Button" parent="." index="2"]
+margin_left = 1283.0
+margin_top = 848.0
+margin_right = 1461.0
+margin_bottom = 891.0
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0.0313726, 0.478431, 0.00392157, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Start next day"
+
+[connection signal="pressed" from="Button_nextDay" to="." method="_on_Button_nextDay_pressed"]

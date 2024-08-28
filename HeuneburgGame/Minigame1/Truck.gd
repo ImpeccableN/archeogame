@@ -4,12 +4,14 @@ export var speed = 800.0
 export var starting_position = Vector2.ZERO
 var straight = true
 var screen_size = Vector2(1024, 1088)
-onready var sprite_node = get_node("Sprite")
 var screen_lowerend = false
+var crash_sound = load("res://Minigame1/Assets/SFX/ExcavatorCrash.wav")
+var drive_sound = load("res://Minigame1/Assets/SFX/truck-engine-idle-loops-33687.wav")
+onready var sprite_node = get_node("Sprite")
 
 
 func _ready():
-	play_sound()
+	play_drive_sound()
 
 
 func _process(delta):
@@ -50,7 +52,13 @@ func _process(delta):
 		position.y = 32
 
 
-func play_sound():
+func play_crash_sound():
+	$AudioTruck.set_stream(crash_sound)
+	$AudioTruck.play()
+
+
+func play_drive_sound():
+	$AudioTruck.set_stream(drive_sound)
 	$AudioTruck.play()
 
 
@@ -65,4 +73,4 @@ func start():
 	sprite_node.flip_h = true
 	screen_lowerend = false
 	speed = 400
-	play_sound()
+	play_drive_sound()

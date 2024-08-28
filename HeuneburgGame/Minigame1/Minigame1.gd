@@ -69,6 +69,7 @@ func _on_Sun_direction_change():
 func _on_Player_set_marker(player_position):
 	var player_tile : Vector2 = tilemap_artefacts.world_to_map(player_position)
 	if tilemap_artefacts.get_cellv(player_tile) in artefact_cell_array:
+		$Player/AudioPlayer.play()
 		var marker_instace = marker_scene.instance()
 		add_child(marker_instace)
 		marker_array.append(marker_instace)

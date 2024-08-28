@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Minigame1/Assets/Sprites/ground_dry.jpeg" type="Texture" id=1]
 [ext_resource path="res://Minigame1/Assets/Sprites/ground_wet.jpeg" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Minigame1/Assets/Sprites/Artefacts/Tiles.png" type="Texture" id=13]
 [ext_resource path="res://Minigame1/Assets/Sprites/grass_tile.png" type="Texture" id=14]
 [ext_resource path="res://Minigame1/Assets/SFX/truck-engine-idle-loops-33687.wav" type="AudioStream" id=15]
+[ext_resource path="res://Minigame1/Assets/SFX/Sunburn2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Minigame1/Assets/SFX/pickupArtefact.wav" type="AudioStream" id=17]
 
 [sub_resource type="TileSet" id=5]
 2/name = "placeholder_artefact.png 2"
@@ -164,13 +166,19 @@ format = 1
 position = Vector2( 514, 352 )
 collision_mask = 257
 
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource( 17 )
+
 [node name="Sun" parent="." instance=ExtResource( 3 )]
 position = Vector2( 477, 36 )
 max_speed = 800.0
 starting_position = Vector2( 475, 32 )
 direction = Vector2( 0.5, 1.5 )
 
-[node name="Truck" parent="." instance=ExtResource( 6 )]
+[node name="AudioSun" type="AudioStreamPlayer2D" parent="Sun"]
+stream = ExtResource( 16 )
+
+[node name="Truck" parent="." groups=["truck"] instance=ExtResource( 6 )]
 position = Vector2( 32, 32 )
 speed = 400.0
 starting_position = Vector2( 32, 32 )

@@ -29,6 +29,9 @@ func _process(delta):
 		speed += 0.2
 
 
+func play_crash_sound():
+	$AudioSun.play()
+
 
 func _on_Timer_timeout():
 	start_speed = 1

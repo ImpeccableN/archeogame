@@ -33,13 +33,15 @@ func _process(delta):
 	position.x = clamp(position.x, 32, screen_size.x - 32)
 	position.y = clamp(position.y, 32, screen_size.y - 32)
 
+
 func start():
 	position = starting_position
 	show()
 	$CollisionShape2D.disabled = false
 
-func _on_Player_body_entered(_body):
+
+func _on_Player_body_entered(body):
+	body.play_crash_sound()
 	hide()
 	$CollisionShape2D.set_deferred("disabled", true)
 	emit_signal("hit")
-	print("hit")
