@@ -55,6 +55,7 @@ func _on_Button_Close_pressed():
 	$Diary/Diary_texture.hide()
 	$TextureRect.show()
 	$CanvasLayer.show()
-	$Label.show()
+	$Label.hide()
 	$Button_Tip3.show()
 	$Button_reset.show()
+	

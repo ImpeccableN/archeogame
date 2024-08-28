@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var distasterScore = Global.disasterScore
+
 var team_names_array : Array
 var team_scenes_array : Array
 var which_team : int
@@ -123,6 +125,7 @@ func show_text(text):
 func get_score_message():
 	match score:
 		3, 4, 5:
+			Global.disasterScore += 30
 			return "Needs improvement. Pay more attention to your team's strengths and weaknesses."
 		6, 7, 8:
 			return "Not bad, but you can do better. Not during this excavation though."
