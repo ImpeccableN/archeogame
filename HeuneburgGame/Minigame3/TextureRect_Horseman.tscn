@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/ArialTh.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://TextureRect_Horseman.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 27
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="TextureRect_Horseman" type="TextureRect"]
+margin_right = 1922.0
+margin_bottom = 1080.0
+script = ExtResource( 3 )
+
+[node name="Button_Back" type="Button" parent="."]
+margin_left = 699.0
+margin_top = 963.0
+margin_right = 1005.0
+margin_bottom = 1055.0
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+
+[node name="Header_Label" type="Label" parent="."]
+margin_left = 547.0
+margin_top = 31.0
+margin_right = 1301.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 2 )
+text = "The Horseman of Unlingen"
+
+[node name="Label_Text" type="Label" parent="."]
+margin_left = 673.0
+margin_top = 214.0
+margin_right = 1106.0
+margin_bottom = 749.0
+custom_fonts/font = SubResource( 3 )
+text = "The bronze figure of a horseman on a double-headed horse was found in 2016/17 during excavations of a burial ground near Unlingen (Lkr. Biberach) by Mount Bussen, just 11 kilometres from the Heuneburg Settlement.
+
+The 9.2 cm long depiction dates back to the 8th/7th century BCE, making it one of the oldest of it’s kind north of the Alps."
+autowrap = true
+
+[connection signal="pressed" from="Button_Back" to="." method="_on_Button_Back_pressed"]
