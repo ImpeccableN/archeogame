@@ -4,6 +4,7 @@ var grabbed_tool : Node = null
 
 #keeps track of snapped tools
 var snapped_tools: int = 0
+
 export var strength: float
 export var speed: float
 export var region: Rect2
