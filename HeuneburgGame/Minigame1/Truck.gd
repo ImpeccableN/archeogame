@@ -8,12 +8,17 @@ onready var sprite_node = get_node("Sprite")
 var screen_lowerend = false
 
 
+func _ready():
+	play_sound()
+
+
 func _process(delta):
 	var direction = Vector2.ZERO
 		
 	# when lower end of screen is reached, truck drives upwards and changes rotation of sprite
 	if screen_lowerend:
 		speed = 0
+		stop_sound()
 #		rotation_degrees = -90
 #		direction = Vector2(0.0, -1.0)
 	else:
@@ -44,6 +49,15 @@ func _process(delta):
 		screen_lowerend = false
 		position.y = 32
 
+
+func play_sound():
+	$AudioTruck.play()
+
+
+func stop_sound():
+	$AudioTruck.stop()
+
+
 func start():
 	position = starting_position
 	$CollisionShape2D.disabled = false
@@ -51,3 +65,4 @@ func start():
 	sprite_node.flip_h = true
 	screen_lowerend = false
 	speed = 400
+	play_sound()

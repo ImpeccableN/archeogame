@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/truck-engine-idle-loops-33687.wav-d5c2b0aa6d24d4faa0854ac403c39ce6.sample"
+
+[deps]
+
+source_file="res://Minigame1/Assets/SFX/truck-engine-idle-loops-33687.wav"
+dest_files=[ "res://.import/truck-engine-idle-loops-33687.wav-d5c2b0aa6d24d4faa0854ac403c39ce6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=366183
+edit/loop_end=407746
+compress/mode=0
