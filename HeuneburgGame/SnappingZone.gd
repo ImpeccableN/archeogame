@@ -21,3 +21,4 @@ func _on_SnappingZone_area_entered(area):
 func _on_SnappingZone_area_exited(area):
 	if snap_group in area.get_groups():
 		emit_signal("snapzone_exited")
+

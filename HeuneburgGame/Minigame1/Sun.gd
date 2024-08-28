@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
-export var speed = 200.0
+export var max_speed : float
 export var starting_position = Vector2.ZERO
 export var direction := Vector2.ZERO
 var start_speed = 0
+var speed = 0
 var screen_size = Vector2(1024, 1088)
 
 
@@ -24,6 +25,8 @@ func _process(delta):
 	if position.x < 0:
 		direction.x *= -1.0
 		emit_signal("direction_change")
+	if speed < max_speed:
+		speed += 0.2
 
 
 

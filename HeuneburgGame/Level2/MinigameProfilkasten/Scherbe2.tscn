@@ -17,6 +17,3 @@ texture = ExtResource( 1 )
 position = Vector2( 22, 38 )
 rotation = 0.994838
 shape = SubResource( 1 )
-
-[connection signal="mouse_entered" from="." to="." method="_on_Scherbe1_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_Scherbe1_mouse_exited"]

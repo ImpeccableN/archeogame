@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/SnappingZone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/flash.png" type="Texture" id=11]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/camera-flash.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Level2/MinigameProfilkasten/ColorRectSnapzone.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 193 )
@@ -27,13 +28,6 @@ script = ExtResource( 1 )
 strength = 20.0
 speed = 0.5
 region = Rect2( 300, 450, 1600, 900 )
-
-[node name="RegionRect" type="ReferenceRect" parent="."]
-margin_left = 215.0
-margin_top = 70.0
-margin_right = 1475.0
-margin_bottom = 770.0
-mouse_filter = 2
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -127,10 +121,71 @@ texture = ExtResource( 11 )
 [node name="AudioCameraFlash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
 
+[node name="Photo" type="Sprite" parent="."]
+visible = false
+position = Vector2( 255, 162 )
+rotation = -0.179769
+scale = Vector2( 0.3, 0.3 )
+
+[node name="ColorRectStecktafel" type="ColorRect" parent="."]
+visible = false
+margin_left = 400.0
+margin_top = 67.0
+margin_right = 1279.0
+margin_bottom = 203.0
+color = Color( 0.545098, 0.619608, 1, 0.196078 )
+script = ExtResource( 13 )
+
+[node name="ColorRectNordpfeil" type="ColorRect" parent="."]
+visible = false
+margin_left = 554.0
+margin_top = 588.0
+margin_right = 1131.0
+margin_bottom = 751.0
+color = Color( 0.545098, 0.619608, 1, 0.196078 )
+script = ExtResource( 13 )
+
+[node name="ColorRectMassstab" type="ColorRect" parent="."]
+visible = false
+margin_left = 510.0
+margin_top = 223.0
+margin_right = 687.0
+margin_bottom = 608.0
+color = Color( 0.545098, 0.619608, 1, 0.196078 )
+script = ExtResource( 13 )
+
+[node name="ColorRectMassstab2" type="ColorRect" parent="."]
+visible = false
+margin_left = 986.0
+margin_top = 210.0
+margin_right = 1163.0
+margin_bottom = 595.0
+color = Color( 0.545098, 0.619608, 1, 0.196078 )
+script = ExtResource( 13 )
+
 [connection signal="button_down" from="Toolbox/ToolButton" to="Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton2" to="Massstab" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton3" to="Nordpfeil" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton4" to="Stecktafel" method="_on_ToolButton_button_down"]
+[connection signal="tool_snap" from="Massstab" to="." method="tools_snapped"]
+[connection signal="tool_snap" from="Massstab" to="ColorRectMassstab" method="make_invisible"]
+[connection signal="tool_snap" from="Massstab" to="ColorRectMassstab2" method="make_invisible"]
+[connection signal="tool_snap" from="Nordpfeil" to="." method="tools_snapped"]
+[connection signal="tool_snap" from="Nordpfeil" to="ColorRectNordpfeil" method="make_invisible"]
+[connection signal="tool_snap" from="Stecktafel" to="." method="tools_snapped"]
+[connection signal="tool_snap" from="Stecktafel" to="ColorRectStecktafel" method="make_invisible"]
+[connection signal="snapzone_entered" from="SnappingZoneMassstab" to="ColorRectMassstab" method="make_visible"]
+[connection signal="snapzone_entered" from="SnappingZoneMassstab" to="ColorRectMassstab2" method="make_visible"]
+[connection signal="snapzone_exited" from="SnappingZoneMassstab" to="ColorRectMassstab" method="make_invisible"]
+[connection signal="snapzone_exited" from="SnappingZoneMassstab" to="ColorRectMassstab2" method="make_invisible"]
+[connection signal="snapzone_entered" from="SnappingZoneMassstab2" to="ColorRectMassstab" method="make_visible"]
+[connection signal="snapzone_entered" from="SnappingZoneMassstab2" to="ColorRectMassstab2" method="make_visible"]
+[connection signal="snapzone_exited" from="SnappingZoneMassstab2" to="ColorRectMassstab" method="make_invisible"]
+[connection signal="snapzone_exited" from="SnappingZoneMassstab2" to="ColorRectMassstab2" method="make_invisible"]
+[connection signal="snapzone_entered" from="SnappingZoneStecktafel" to="ColorRectStecktafel" method="make_visible"]
+[connection signal="snapzone_exited" from="SnappingZoneStecktafel" to="ColorRectStecktafel" method="make_invisible"]
+[connection signal="snapzone_entered" from="SnappingZoneNordpfeil" to="ColorRectNordpfeil" method="make_visible"]
+[connection signal="snapzone_exited" from="SnappingZoneNordpfeil" to="ColorRectNordpfeil" method="make_invisible"]
 
 [editable path="Toolbox"]
 [editable path="SnappingZoneMassstab"]

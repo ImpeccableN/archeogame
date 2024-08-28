@@ -63,10 +63,35 @@ mouse_filter = 2
 texture = ExtResource( 1 )
 
 [node name="Minigame1_HUD" parent="." instance=ExtResource( 3 )]
-visible = false
 
 [node name="StartButton" parent="Minigame1_HUD" index="1"]
 disabled = false
+
+[node name="MessageLabel" parent="Minigame1_HUD" index="2"]
+margin_right = 792.0
+margin_bottom = 332.0
+text = "Greetings, aspiring archaeologist! Your first mission is about to begin, and it’s a race against  time and heat. Here’s how to save those precious artifacts from the force of nature! 
+The Mission: Rescue the artifacts before the sun dries them out again. 
+
+The Challenges: 
+1. The Sun: Our biggest nemesis today. If you take too long or move sloppy, you risk  getting a massive sunburn. 
+2. The Excavator: The Excavator is your friend, but it’s been driven by the frantic  intern. Watch out for its powerful arm and wheels. 
+
+Tips for Success: 
+• Be Quick: As soon as an artifact is unearthed, rush to collect it before the sun dries  the soil.  
+• Stay Alert: Keep an eye on Big Digger’s movements and the position of the sun. Plan  your path to avoid both hazards. 
+• Prioritize: Some artifacts might be closer to danger. Go for those first to maximize  your chances of success. 
+
+Controls: 
+• Move: Use the arrow keys or W, A, S, D to navigate through the excavation site. 
+• Collect Artifacts: Press the spacebar to grab those ancient artifacts. 
+
+Mission Failure: 
+• Sunburn: If the sun hits you, you’ll get sunburned and have to start over. Remember,  sunscreen is your friend! 
+• Run Over: Getting hit by the Excavator will end the mission immediately. Stay sharp  and agile. 
+
+Ready to Dig In? Press \"Start\" to begin your first mission. May the archaeological odds be in  your favor!
+"
 
 [node name="Button_Diary" type="Button" parent="."]
 margin_left = 1.0

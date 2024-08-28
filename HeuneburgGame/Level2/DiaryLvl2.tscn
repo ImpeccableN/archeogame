@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=1]
+[ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=2]
+[ext_resource path="res://Level2/DiaryLvl2.gd" type="Script" id=3]
+
+[node name="DiaryLvl2" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="DiaryEntry" type="RichTextLabel" parent="."]
+margin_left = 994.0
+margin_top = 177.0
+margin_right = 1531.0
+margin_bottom = 891.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+text = "Welcome back to the Heuneburg excavation! 
+
+In Phase 1, we bravely assigned tasks to our team, escaped various threats and created a planum, revealing the first signs of ancient life. Our teamwork and planning and astonishing bravery have set us up for success in our explorational excavation!
+
+Today, in Phase 2, we'll be tackling the creation of a profile box. This step gives us a three-dimensional view of the features we've uncovered. By cutting the features in half and examining the soil layers, we can better understand the site. Think of it as our version of slicing into a cake, but with way more dirt and less cherry’s on top of it. 
+Creating a profile box means carefully digging and documenting the different soil layers. It helps us uncover the history of human activity and natural processes at the site, providing important context for our finds. 
+
+And don't worry. Even though we must deal with a lot of dust, dirt and sand, you won't need to channel your inner Lawrence of Arabia. But a desert hat wouldn’t hurt with the sun! 
+Let’s get started and keep uncovering the secrets of Heuneburg with a smile!"
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_left = 458.0
+margin_top = 287.0
+margin_right = 827.0
+margin_bottom = 391.0
+theme = ExtResource( 1 )
+text = "Day 2"
+align = 1
+
+[connection signal="gui_input" from="." to="." method="_on_DiaryLvl2_gui_input"]
