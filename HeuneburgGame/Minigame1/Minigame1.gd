@@ -105,7 +105,7 @@ func success():
 	$Minigame1_HUD.display_message(success_message)
 	Global.minigame_digger_done = true
 	yield(get_tree().create_timer(5.0), "timeout")
-	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")
+	get_tree().change_scene("res://Level1/FirstLevel_Map2.tscn")
 
 
 func _on_Minigame1_HUD_start_game():

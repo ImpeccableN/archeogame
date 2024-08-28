@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://graphics/MuseumStock.PNG" type="Texture" id=1]
+[ext_resource path="res://horseMask.jpg" type="Texture" id=2]
+[ext_resource path="res://Horseman.PNG" type="Texture" id=3]
+[ext_resource path="res://Keltenmuseum.gd" type="Script" id=4]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color( 0.0666667, 0.0156863, 0.0156863, 0.6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 26
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 29
+font_data = ExtResource( 5 )
+
+[node name="Keltenmuseum" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1916.0
+margin_bottom = 1077.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Button_Horsemask" type="Button" parent="Background"]
+margin_left = 190.0
+margin_top = 247.0
+margin_right = 638.0
+margin_bottom = 689.0
+custom_styles/hover = SubResource( 1 )
+icon = ExtResource( 2 )
+
+[node name="Button_Horseman" type="Button" parent="Background"]
+margin_left = 1040.0
+margin_top = 211.0
+margin_right = 1808.0
+margin_bottom = 782.0
+custom_styles/hover = SubResource( 2 )
+icon = ExtResource( 3 )
+
+[node name="Button_Leave" type="Button" parent="."]
+margin_left = 684.0
+margin_top = 956.0
+margin_right = 1054.0
+margin_bottom = 1052.0
+custom_fonts/font = SubResource( 3 )
+text = "Leave museum"
+
+[node name="Label_exhibit1" type="Label" parent="."]
+margin_left = 262.0
+margin_top = 752.0
+margin_right = 612.0
+margin_bottom = 827.0
+custom_fonts/font = SubResource( 4 )
+text = "Bronze horse mask
+(not accurate depiction)"
+
+[node name="Label_exhibit2" type="Label" parent="."]
+margin_left = 1262.0
+margin_top = 794.0
+margin_right = 1594.0
+margin_bottom = 892.0
+custom_fonts/font = SubResource( 5 )
+text = "Horseman of Unlingen
+(not accurate depection)"
+
+[connection signal="pressed" from="Background/Button_Horsemask" to="." method="_on_Button_Horsemask_pressed"]
+[connection signal="pressed" from="Background/Button_Horseman" to="." method="_on_Button_Horseman_pressed"]
+[connection signal="pressed" from="Button_Leave" to="." method="_on_Button_Leave_pressed"]

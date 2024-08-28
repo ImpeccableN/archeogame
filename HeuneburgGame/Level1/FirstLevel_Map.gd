@@ -10,15 +10,6 @@ export var images_grow_scale := Vector2.ZERO
 func _ready():
 	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
 		yield(get_tree().create_timer(2.0), "timeout")
-		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")
-	$TgFlip/TgStatic/Label_Introtxt3.hide()
-	$TgFlip/TgStatic/Label_Introtxt4.hide()
-	$FirstLevel_Image.hide()
-	$Bauwagen_Overlay.hide()
-	$Freilichtmuseum_Overlay.hide()
-	$Grabungsstaette_Overlay.hide()
-	$Keltenmuseum_Overlay.hide()
-	
 
 
 func _on_Button_Grabungsstaette_mouse_entered():
@@ -58,7 +49,6 @@ func _on_Button_Bauwagen_mouse_exited():
 
 
 
-
 func _on_Button_Diary_pressed():
 	$Diary.show()
 	$Diary/Diary_texture.show()
@@ -69,6 +59,7 @@ func _on_Button_Diary_pressed():
 	$Keltenmuseum_Overlay.hide()
 
 
+
 func _on_Button_Close_pressed():
 	$Diary.hide()
 	$Diary/Diary_texture.hide()
@@ -77,3 +68,4 @@ func _on_Button_Close_pressed():
 	$Freilichtmuseum_Overlay.show()
 	$Grabungsstaette_Overlay.show()
 	$Keltenmuseum_Overlay.show()
+

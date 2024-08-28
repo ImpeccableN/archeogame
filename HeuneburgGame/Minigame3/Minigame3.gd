@@ -6,6 +6,7 @@ onready var puzzleScore = Global.puzzlePieces
 func _ready():
 	$TextureRect2_puzzleFinished.hide()
 	$Label.hide()
+	$Button_ctn.hide()
 
 func _process(_delta):
 	if Global.puzzlePieces == 11:
@@ -22,6 +23,7 @@ func _process(_delta):
 		$CanvasLayer/Control/piece11_target.hide()
 		$CanvasLayer/Control/piece12_target.hide()
 		$CanvasLayer/Control/piece13_target.hide()
+		$Button_ctn.show()
 
 
 func _on_Button_Tip3_pressed():
@@ -59,3 +61,7 @@ func _on_Button_Close_pressed():
 	$Button_Tip3.show()
 	$Button_reset.show()
 	
+
+
+func _on_Button_ctn_pressed():
+	get_tree().change_scene("res://Minigame3/DiaryLvl3.tscn")
