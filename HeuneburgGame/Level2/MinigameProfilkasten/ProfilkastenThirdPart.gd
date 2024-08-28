@@ -70,6 +70,7 @@ func camera_flash():
 	$Photo.hide()
 	
 	if snapped_tools == 3:
+		Global.profilkasten_done = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene("res://Level2/SecondDay_Map.tscn")
 

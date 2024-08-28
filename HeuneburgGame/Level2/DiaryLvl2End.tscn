@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=1]
+[ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=2]
+[ext_resource path="res://Level2/DiaryLvl2End.gd" type="Script" id=3]
+
+[node name="DiaryLvl2End" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="DiaryEntry" type="RichTextLabel" parent="."]
+margin_left = 994.0
+margin_top = 177.0
+margin_right = 1531.0
+margin_bottom = 891.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+text = "The second phase of our Heuneburg excavation really kept us busy! After mastering the planum, today was all about digging into the profile box. And let me tell you, Sir Arthur Evans would have been proud of our artifact puzzling skills!
+
+Digging out the profile box was just the beginning. We carefully peeled back the layers of soil, revealing bits of history. Then came the documentation. Measurements, photos, and sketches, it’s like leaving behind a perfect record for future archaeologists, just in case they
+question our brilliance!
+
+Once that was done, we moved on to piecing the artifacts together. Fitting them together was like a whole different pottery class game. Fragment by fragment, it slowly made sense.
+
+By the end of the day, we had dug, documented, and puzzled together some amazing finds. Our team was in great form, and we’re ready for whatever comes next.
+
+Here’s to more discoveries, more puzzles, and who knows, maybe Evans' lost hat is still waiting for us!"
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_left = 458.0
+margin_top = 287.0
+margin_right = 827.0
+margin_bottom = 391.0
+theme = ExtResource( 1 )
+text = "Day 2"
+align = 1
+
+[node name="ProfilkastenPhoto" type="TextureRect" parent="."]
+margin_left = 384.0
+margin_top = 482.0
+margin_right = 424.0
+margin_bottom = 522.0
+rect_scale = Vector2( 0.3, 0.3 )
