@@ -33,7 +33,6 @@ func _on_grabbed_tool(node):
 		emit_signal("change_tool", node)
 
 
-
 func _on_EarthHeap_collect_earth():
 	earth_collected += 1
 	if shards_collected == 3 and earth_collected == 5:
