@@ -60,6 +60,7 @@ func load_in_team_members():
 		member_scene.initiate_scene(member_split_array[0])
 		member_scene.position = positions[i].position
 		member_scene.scale = Vector2(0.75, 0.75)
+		member_scene.connect("show_memberinfo", self, "show_text")
 		i += 1
 
 

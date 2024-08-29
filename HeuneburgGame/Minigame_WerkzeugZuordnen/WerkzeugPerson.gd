@@ -6,14 +6,25 @@ var member_scene = preload("res://TeamMember.tscn")
 var task_score = 0
 var initiated_member_scene : Node
 var area_entered = false
+var mouse_entered = false
+var infotext : String
+
+signal show_memberinfo(text)
 
 
 func _on_WerkzeugPerson_mouse_entered():
-	$InfoBox.show()
+#	$InfoBox.show()
+	mouse_entered = true
 
 
 func _on_WerkzeugPerson_mouse_exited():
-	$InfoBox.hide()
+#	$InfoBox.hide()
+	mouse_entered = false
+
+
+func _input(event):
+	if mouse_entered and Input.is_mouse_button_pressed(2):
+		emit_signal ("show_memberinfo", infotext)
 
 
 func initiate_scene(name):
@@ -22,7 +33,7 @@ func initiate_scene(name):
 	add_child(initiated_member_scene)
 	initiated_member_scene.initiate(member_name)
 	$Sprite.texture = load(initiated_member_scene.member_headshot_path)
-	$InfoBox.text = "Name: " + initiated_member_scene.dictionary.Name + "\nPro: " + initiated_member_scene.dictionary.Pro + "\nCon: " + initiated_member_scene.dictionary.Con
+	infotext = "Name: " + initiated_member_scene.dictionary.Name + "\nPro: " + initiated_member_scene.dictionary.Pro + "\nCon: " + initiated_member_scene.dictionary.Con
 	$InfoBox.raise()
 
 
