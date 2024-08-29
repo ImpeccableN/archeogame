@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=3]
@@ -16,7 +17,7 @@ bg_color = Color( 0.0196078, 0.439216, 0.427451, 1 )
 size = 20
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 4
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.14902, 0.12549, 0.0784314, 0.85098 )

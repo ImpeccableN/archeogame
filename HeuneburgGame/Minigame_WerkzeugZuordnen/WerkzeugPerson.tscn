@@ -2,8 +2,7 @@
 
 [ext_resource path="res://Minigame_WerkzeugZuordnen/WerkzeugPerson.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/possible_theme.tres" type="Theme" id=3]
-
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30

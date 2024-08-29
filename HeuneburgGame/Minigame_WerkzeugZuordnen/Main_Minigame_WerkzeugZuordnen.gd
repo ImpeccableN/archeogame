@@ -10,7 +10,7 @@ var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 var werkzeug_person_scene = preload("res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn")
 var score : int
 var json_array : Array
-var turotial_text = ""
+var tutorial_text = ""
 
 
 func _ready():
