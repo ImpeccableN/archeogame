@@ -76,42 +76,60 @@ collision_mask = 16
 [node name="Erdklopse" type="Node2D" parent="."]
 script = ExtResource( 13 )
 
-[node name="Erdklops" type="TextureRect" parent="Erdklopse"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Klops1" type="Area2D" parent="Erdklopse"]
+
+[node name="Erdklops" type="Sprite" parent="Erdklopse/Klops1"]
+position = Vector2( 960, 540 )
 texture = ExtResource( 6 )
 script = ExtResource( 3 )
 
-[node name="Erdklops2" type="TextureRect" parent="Erdklopse"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Erdklopse/Klops1"]
+position = Vector2( 960, 540 )
+polygon = PoolVector2Array( -315, -166.5, -315, -164.9, -290, -141.9, -290, -139.5, -281, -126.6, -281, -123.3, -271, -99.4, -271, -95, -269.9, -77, -271.4, -77, -273.4, -68, -275, -68, -282, -59, -284, -59, -288, -54, -291.6, -54, -302.6, -49, -312.2, -49, -346, -57.4, -346, -58.5, -353, -60.5, -353, -62, -362, -69, -362, -71.6, -369, -86.6, -369, -94, -370.8, -109, -384, -127.4, -384, -130.7, -385.4, -139, -383.5, -139, -379.5, -154, -378.2, -154, -371.2, -168, -369.8, -168, -363.8, -174, -360.4, -174, -352, -175.7, -352, -177.7 )
+
+[node name="Klops2" type="Area2D" parent="Erdklopse"]
+
+[node name="Erdklops2" type="Sprite" parent="Erdklopse/Klops2"]
+position = Vector2( 960, 540 )
 texture = ExtResource( 11 )
 script = ExtResource( 3 )
 
-[node name="Erdklops3" type="TextureRect" parent="Erdklopse"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Erdklopse/Klops2"]
+position = Vector2( 960, 540 )
+polygon = PoolVector2Array( -50, -263.8, -50, -262.3, -29, -253.3, -29, -251.9, -13, -234.8, -13, -232, -9.40002, -219, -11.5, -219, -14.5, -209, -16.3, -209, -25.2, -201, -35.9, -201, -50, -197.4, -50, -199.3, -60, -201.4, -60, -203.1, -67, -209.1, -67, -211.4, -72.3, -221, -82, -225.8, -82, -227.3, -86, -232.3, -86, -248.5, -79.2, -261, -76.4, -261, -63, -263.7, -63, -265.2 )
+
+[node name="Klops3" type="Area2D" parent="Erdklopse"]
+
+[node name="Erdklops3" type="Sprite" parent="Erdklopse/Klops3"]
+position = Vector2( 960, 540 )
 texture = ExtResource( 7 )
 script = ExtResource( 3 )
 
-[node name="Erdklops4" type="TextureRect" parent="Erdklopse"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Erdklopse/Klops3"]
+position = Vector2( 960, 540 )
+polygon = PoolVector2Array( -212, -287.4, -204, -284.4, -204, -283, -199, -279, -199, -276.4, -190, -256.4, -190, -240.8, -194.3, -215, -195.8, -215, -209.8, -188, -211.3, -188, -226.3, -177, -239.3, -177, -253, -181.6, -253, -183.1, -262, -191.1, -262, -193.4, -273, -213.5, -273, -217, -275.3, -233, -273.3, -233, -267.3, -247, -265.8, -247, -255, -257.8, -255, -259.2, -250.6, -277, -248.8, -277, -242.8, -283, -239.3, -283, -226, -287.4, -226, -289, -212, -289 )
+
+[node name="Klops4" type="Area2D" parent="Erdklopse"]
+
+[node name="Erdklops4" type="Sprite" parent="Erdklopse/Klops4"]
+position = Vector2( 960, 540 )
 texture = ExtResource( 8 )
 script = ExtResource( 3 )
 
-[node name="Erdklops5" type="TextureRect" parent="Erdklopse"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Erdklopse/Klops4"]
+position = Vector2( 960, 540 )
+polygon = PoolVector2Array( 51, -232.4, 51, -230.9, 60.7, -222, 62.5, -222, 146, -179.2, 146, -177.9, 176, -149.9, 176, -145, 178.3, -127, 176, -127, 166, -114, 163.5, -114, 151.5, -107, 148.1, -107, 133.3, -103, 112.8, -103, 65, -112.4, 65, -113.7, 43, -123.7, 43, -125.3, 32, -139.3, 32, -142.7, 19, -183.7, 19, -196.3, 28.6, -225, 29.7, -225, 33.7, -234, 35.4, -234, 37, -235.1, 37, -238 )
+
+[node name="Klops5" type="Area2D" parent="Erdklopse"]
+
+[node name="Erdklops5" type="Sprite" parent="Erdklopse/Klops5"]
+position = Vector2( 960, 540 )
 texture = ExtResource( 9 )
 script = ExtResource( 3 )
 
-[node name="EarthHeap" type="TextureRect" parent="." groups=["earthheap"]]
-margin_right = 1920.0
-margin_bottom = 1080.0
-mouse_filter = 2
-texture = ExtResource( 5 )
-script = ExtResource( 20 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Erdklopse/Klops5"]
+position = Vector2( 960, 540 )
+polygon = PoolVector2Array( -120, -121.9, -120, -120.5, -102, -115.5, -102, -113.9, -95, -107.9, -95, -105.3, -89, -91.4, -89, -82.9, -93.3, -54, -94.8, -54, -109.8, -26, -111.1, -26, -124.1, -11, -126.3, -11, -160.4, 12, -164.8, 12, -185, 14.2, -185, 12.6, -194, 10.6, -194, 9.09998, -206, 1.09998, -206, -1.40002, -216, -15.4, -216, -21, -217, -64, -215.5, -64, -211.5, -78, -210, -78, -203, -87, -200.6, -87, -188.6, -95, -185.4, -95, -168, -101.4, -152.9, -120, -150.5, -120, -148, -121.2, -148, -123.1 )
 
 [node name="Bucket" type="Sprite" parent="."]
 position = Vector2( 1675, 920 )
@@ -124,6 +142,17 @@ position = Vector2( 179, 921 )
 scale = Vector2( 0.175, 0.175 )
 texture = ExtResource( 4 )
 script = ExtResource( 21 )
+
+[node name="HeapArea" type="Area2D" parent="."]
+
+[node name="EarthHeap" type="Sprite" parent="HeapArea" groups=["earthheap"]]
+position = Vector2( 960, 540 )
+texture = ExtResource( 5 )
+script = ExtResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HeapArea"]
+position = Vector2( 960, 540 )
+polygon = PoolVector2Array( -257, 63.6, -257, 65.4, -240, 91.4, -240, 102, -236.8, 138, -238.3, 138, -240.4, 148, -242.2, 148, -247.2, 153, -249.6, 153, -266.7, 159, -269.1, 159, -289, 157.7, -289, 160.3, -297.6, 164, -306.2, 164, -322, 160.6, -322, 159, -368, 126, -368, 123.4, -371.5, 107, -369.5, 107, -367.6, 99, -365.9, 99, -359, 91.3, -359, 87.4, -361.4, 75, -358.8, 75, -345.8, 62, -342.1, 62, -327.3, 58, -315.9, 58, -313.9, 61, -279.7, 61, -279, 59.5, -279, 56.2 )
 
 [connection signal="button_down" from="Toolbox/ToolButton" to="Schaufel" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton2" to="Handschuh" method="_on_ToolButton_button_down"]
@@ -141,18 +170,18 @@ script = ExtResource( 21 )
 [connection signal="area_exited" from="Scherbe2" to="Scherbe2" method="_on_Scherbe_area_exited"]
 [connection signal="shard_collected" from="Scherbe2" to="." method="_on_Scherbe_shard_collected"]
 [connection signal="shard_collected" from="Scherbe2" to="FindingsBag" method="change_img"]
-[connection signal="deleted" from="Erdklopse/Erdklops" to="EarthHeap" method="initiate"]
-[connection signal="deleted" from="Erdklopse/Erdklops2" to="EarthHeap" method="initiate"]
-[connection signal="deleted" from="Erdklopse/Erdklops3" to="Scherbe3" method="_on_Erdklops_deleted"]
-[connection signal="deleted" from="Erdklopse/Erdklops3" to="EarthHeap" method="initiate"]
-[connection signal="deleted" from="Erdklopse/Erdklops4" to="Scherbe2" method="_on_Erdklops_deleted"]
-[connection signal="deleted" from="Erdklopse/Erdklops4" to="EarthHeap" method="initiate"]
-[connection signal="deleted" from="Erdklopse/Erdklops5" to="Scherbe1" method="_on_Erdklops_deleted"]
-[connection signal="deleted" from="Erdklopse/Erdklops5" to="EarthHeap" method="initiate"]
-[connection signal="collect_earth" from="EarthHeap" to="." method="_on_EarthHeap_collect_earth"]
-[connection signal="collect_earth" from="EarthHeap" to="Kelle" method="enable_collision"]
-[connection signal="collect_earth" from="EarthHeap" to="Bucket" method="change_img"]
-[connection signal="show_earthheap" from="EarthHeap" to="Kelle" method="disable_collision"]
+[connection signal="deleted" from="Erdklopse/Klops1/Erdklops" to="HeapArea/EarthHeap" method="initiate"]
+[connection signal="deleted" from="Erdklopse/Klops2/Erdklops2" to="HeapArea/EarthHeap" method="initiate"]
+[connection signal="deleted" from="Erdklopse/Klops3/Erdklops3" to="Scherbe3" method="_on_Erdklops_deleted"]
+[connection signal="deleted" from="Erdklopse/Klops3/Erdklops3" to="HeapArea/EarthHeap" method="initiate"]
+[connection signal="deleted" from="Erdklopse/Klops4/Erdklops4" to="Scherbe2" method="_on_Erdklops_deleted"]
+[connection signal="deleted" from="Erdklopse/Klops4/Erdklops4" to="HeapArea/EarthHeap" method="initiate"]
+[connection signal="deleted" from="Erdklopse/Klops5/Erdklops5" to="Scherbe1" method="_on_Erdklops_deleted"]
+[connection signal="deleted" from="Erdklopse/Klops5/Erdklops5" to="HeapArea/EarthHeap" method="initiate"]
+[connection signal="collect_earth" from="HeapArea/EarthHeap" to="." method="_on_EarthHeap_collect_earth"]
+[connection signal="collect_earth" from="HeapArea/EarthHeap" to="Kelle" method="enable_collision"]
+[connection signal="collect_earth" from="HeapArea/EarthHeap" to="Bucket" method="change_img"]
+[connection signal="show_earthheap" from="HeapArea/EarthHeap" to="Kelle" method="disable_collision"]
 
 [editable path="Toolbox"]
 [editable path="Scherbe1"]

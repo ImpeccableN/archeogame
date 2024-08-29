@@ -1,12 +1,12 @@
-extends TextureRect
+extends Sprite
 
 var kelle_entered : bool = false
-onready var kelle_node = get_node("../../Kelle")
+onready var kelle_node = get_node("../../../Kelle")
 
 signal deleted(node)
 
 func _ready():
-	var main_node = get_parent().get_parent()
+	var main_node = get_parent().get_parent().get_parent()
 	connect("deleted", main_node, "erase_cutout")
 	connect("deleted", kelle_node, "_on_ProfilkastenTool_area_exited")
 
