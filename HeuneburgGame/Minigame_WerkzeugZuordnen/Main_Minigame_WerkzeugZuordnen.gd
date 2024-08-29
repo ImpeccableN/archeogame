@@ -39,7 +39,8 @@ func get_team_members(path):
 		while file_name != "":
 			if "_bw" in file_name:
 				pass
-			elif file_name.get_extension() == "png":
+			elif file_name.get_extension() == "import":
+				var file = file_name.replace(".import", "")
 				team_names_array.append(file_name)
 			file_name = dir.get_next()
 	else:
