@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/bg1_cut14.png-cd5ff1c44a951911d0673fe7ac0723a8.image"
+
+[deps]
+
+source_file="res://Level2/MinigameProfilkasten/Assets/Images/bg1_cutouts_collision/bg1_cut14.png"
+dest_files=[ "res://.import/bg1_cut14.png-cd5ff1c44a951911d0673fe7ac0723a8.image" ]
+
+[params]
+
