@@ -35,13 +35,17 @@ func _on_grabbed_tool(node):
 
 func _on_EarthHeap_collect_earth():
 	earth_collected += 1
-	if shards_collected == 3 and earth_collected == 5:
-		yield(get_tree().create_timer(2), "timeout")
-		get_tree().change_scene("res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.tscn")
+	print("earth collected")
+	check_if_rdy()
 
 
 func _on_Scherbe_shard_collected():
 	shards_collected += 1
-	if shards_collected == 3 and earth_collected == 5:
-		yield(get_tree().create_timer(2), "timeout")
+	print("shard_collected")
+	check_if_rdy()
+
+
+func check_if_rdy():
+	if shards_collected >= 3 and earth_collected >= 5:
+#		yield(get_tree().create_timer(2), "timeout")
 		get_tree().change_scene("res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.tscn")
