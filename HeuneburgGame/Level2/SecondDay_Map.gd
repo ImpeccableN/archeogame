@@ -10,7 +10,7 @@ export var images_grow_scale := Vector2.ZERO
 func _ready():
 	# on load up, check if minigame is absolved succesfully. Wait two seconds, then load diary entry from Day 1.
 	if Global.profilkasten_done:
-		yield(get_tree().create_timer(2.0), "timeout")
+		yield(get_tree().create_timer(0.5), "timeout")
 		get_tree().change_scene("res://Level2/DiaryLvl2End.tscn")
 
 
