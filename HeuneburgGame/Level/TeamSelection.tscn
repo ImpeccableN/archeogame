@@ -530,8 +530,9 @@ margin_top = 5.0
 margin_right = 1319.0
 margin_bottom = 118.0
 custom_fonts/font = SubResource( 1 )
-text = "                                   Pick your team!
-               Who is going to accompany your project?"
+text = "Pick your team!
+Who is going to accompany your project?"
+align = 1
 
 [node name="UserTeamConfirmation" type="PanelContainer" parent="."]
 margin_left = 638.0
