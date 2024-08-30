@@ -67,11 +67,17 @@ func camera_flash():
 	$Photo.texture = imgtext
 	yield(get_tree().create_timer(1), "timeout")
 	$Photo.show()
-	yield(get_tree().create_timer(3), "timeout")
-	$Photo.hide()
+#	yield(get_tree().create_timer(3), "timeout")
+##	$Photo.hide()
 	
 	if snapped_tools == 3:
 		Global.profilkasten_done = true
+		$LeaveButton.show()
+		_on_grabbed_tool(null)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().change_scene("res://Level2/SecondDay_Map.tscn")
+		$SuccessLabel.show()
 
+
+
+func _on_LeaveButton_pressed():
+	get_tree().change_scene("res://Level2/SecondDay_Map.tscn")

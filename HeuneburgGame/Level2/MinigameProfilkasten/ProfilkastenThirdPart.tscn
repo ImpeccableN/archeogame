@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/flash.png" type="Texture" id=11]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/camera-flash.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Level2/MinigameProfilkasten/ColorRectSnapzone.gd" type="Script" id=13]
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 193 )
@@ -163,6 +164,32 @@ margin_bottom = 595.0
 color = Color( 0.545098, 0.619608, 1, 0.196078 )
 script = ExtResource( 13 )
 
+[node name="LeaveButton" type="Button" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 816.0
+margin_top = 874.0
+margin_right = 1129.0
+margin_bottom = 999.0
+theme = ExtResource( 14 )
+text = "Leave"
+
+[node name="SuccessLabel" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 900.0
+margin_top = 784.0
+margin_right = 1204.0
+margin_bottom = 890.0
+theme = ExtResource( 14 )
+text = "You did it!"
+
 [connection signal="button_down" from="Toolbox/ToolButton" to="Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton2" to="Massstab" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton3" to="Nordpfeil" method="_on_ToolButton_button_down"]
@@ -186,6 +213,7 @@ script = ExtResource( 13 )
 [connection signal="snapzone_exited" from="SnappingZoneStecktafel" to="ColorRectStecktafel" method="make_invisible"]
 [connection signal="snapzone_entered" from="SnappingZoneNordpfeil" to="ColorRectNordpfeil" method="make_visible"]
 [connection signal="snapzone_exited" from="SnappingZoneNordpfeil" to="ColorRectNordpfeil" method="make_invisible"]
+[connection signal="pressed" from="LeaveButton" to="." method="_on_LeaveButton_pressed"]
 
 [editable path="Toolbox"]
 [editable path="SnappingZoneMassstab"]
