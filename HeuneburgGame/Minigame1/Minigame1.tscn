@@ -193,7 +193,15 @@ autostart = true
 
 [node name="Minigame1_HUD" parent="." instance=ExtResource( 7 )]
 
-[node name="MessageLabel" parent="Minigame1_HUD" index="2"]
+[node name="LeaveButton" type="Button" parent="Minigame1_HUD"]
+visible = false
+margin_left = 872.0
+margin_top = 944.0
+margin_right = 1062.0
+margin_bottom = 1026.0
+text = "Leave"
+
+[node name="MessageLabel" parent="Minigame1_HUD" index="3"]
 margin_left = -321.0
 margin_top = -343.0
 margin_right = 332.0
@@ -209,5 +217,6 @@ margin_bottom = -272.0
 [connection signal="start_game" from="Minigame1_HUD" to="Player" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Sun" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Truck" method="start"]
+[connection signal="pressed" from="Minigame1_HUD/LeaveButton" to="." method="_on_LeaveButton_pressed"]
 
 [editable path="Minigame1_HUD"]

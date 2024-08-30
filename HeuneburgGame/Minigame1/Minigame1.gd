@@ -99,13 +99,13 @@ func success():
 	$Sun/CollisionShape2D.set_deferred("disabled", true)
 	$Player.hide()
 	$Truck.speed = 0
+	$Sun.speed = 0
 	$ArtefactSpawnTimer.stop()
 	$Minigame1_HUD.show()
 	$Minigame1_HUD/StartButton.hide()
 	$Minigame1_HUD.display_message(success_message)
 	Global.minigame_digger_done = true
-	yield(get_tree().create_timer(5.0), "timeout")
-	get_tree().change_scene("res://Level1/FirstLevel_Map2.tscn")
+	$Minigame1_HUD/LeaveButton.show()
 
 
 func _on_Minigame1_HUD_start_game():
@@ -124,3 +124,7 @@ func _on_Minigame1_HUD_start_game():
 	$Sun/CollisionShape2D.disabled = false
 	$ArtefactSpawnTimer.start()
 	
+
+
+func _on_LeaveButton_pressed():
+	get_tree().change_scene("res://Level1/FirstLevel_Map2.tscn")
