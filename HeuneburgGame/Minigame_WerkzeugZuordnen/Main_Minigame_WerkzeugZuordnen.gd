@@ -101,9 +101,8 @@ func _on_Button_pressed():
 			score = 0
 			return
 	show_text(get_score_message())
+	$InfoScreen/LeaveButton.show()
 	Global.minigame_werkzeuge_done = true
-	yield(get_tree().create_timer(5.0), "timeout")
-	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")
 
 
 func open_infoscreen(event, node):
@@ -153,3 +152,7 @@ func _on_Button_Close_pressed():
 	$Diary/Diary_texture.hide()
 	$Background.show()
 	$Button.show()
+
+
+func _on_LeaveButton_pressed():
+	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")

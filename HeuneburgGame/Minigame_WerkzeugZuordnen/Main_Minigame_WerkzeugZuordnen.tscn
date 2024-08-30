@@ -111,7 +111,6 @@ theme = ExtResource( 3 )
 text = "Done"
 
 [node name="InfoScreen" type="TextureRect" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 3 )
@@ -159,6 +158,18 @@ Remember, the success of our excavation depends on your ability to delegate effe
 
 Let’s get to work and make today another day of great discoveries!"
 
+[node name="LeaveButton" type="Button" parent="InfoScreen"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -112.0
+margin_top = -186.0
+margin_right = 114.0
+margin_bottom = -100.0
+text = "Leave"
+
 [node name="Button_Diary" type="Button" parent="."]
 margin_left = -11.0
 margin_right = 144.0
@@ -203,5 +214,6 @@ text = "Close"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="gui_input" from="InfoScreen" to="." method="_on_InfoScreen_gui_input"]
+[connection signal="pressed" from="InfoScreen/LeaveButton" to="." method="_on_LeaveButton_pressed"]
 [connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
