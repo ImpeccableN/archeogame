@@ -37,4 +37,12 @@ theme = ExtResource( 2 )
 text = "Day 1"
 align = 1
 
-[connection signal="gui_input" from="." to="." method="_on_DiaryLvl1_gui_input"]
+[node name="CloseButton" type="Button" parent="."]
+margin_left = 1161.0
+margin_top = 825.0
+margin_right = 1358.0
+margin_bottom = 899.0
+theme = ExtResource( 2 )
+text = "Close"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
