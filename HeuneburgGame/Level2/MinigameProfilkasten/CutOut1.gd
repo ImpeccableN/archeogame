@@ -2,6 +2,7 @@ extends Sprite
 
 var shovel_entered : bool = false
 onready var shovel_node = get_node("../../../Schaufel")
+onready var audio = get_node("../../../ShovelAudio")
 
 signal deleted(node)
 
@@ -26,6 +27,8 @@ func area_exited(area):
 
 func _process(_delta):
 	if Input.is_mouse_button_pressed(1) and shovel_entered:
+		if not audio.is_playing():
+			audio.play()		
 		emit_signal("deleted", self)
 		get_parent().queue_free()
 		

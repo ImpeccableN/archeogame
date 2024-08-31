@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/Handschuh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg1_cutouts/bg1_cut7.png" type="Texture" id=25]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/bg1_cutouts/bg1_cut16.png" type="Texture" id=26]
 [ext_resource path="res://Level2/MinigameProfilkasten/CutOut1.gd" type="Script" id=27]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/Shovel.wav" type="AudioStream" id=28]
 
 [node name="MainMinigameProfilkasten" type="Node2D"]
 script = ExtResource( 6 )
@@ -330,6 +331,9 @@ script = ExtResource( 27 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cutouts/CutOutArea18"]
 position = Vector2( 960, 540 )
 polygon = PoolVector2Array( 256, 29.5, 256, 51, 257, 51, 257, 101, 259, 173, 257.6, 173, 256.6, 175, 190.6, 175, 187, 171.4, 187, 168.2, 182, 160.3, 182, 157.2, 167, 126.2, 167, 123.3, 164, 118.3, 164, 113, 162.6, 109, 164, 109, 164, 106, 165.5, 106, 193.5, 72, 198.5, 72, 205.6, 66, 207, 66, 210.6, 62, 212, 62, 251, 28.5, 251, 27.4, 252.1, 26.8 )
+
+[node name="ShovelAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 28 )
 
 [connection signal="button_down" from="Toolbox/ToolButton" to="Schaufel" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton3" to="Kelle" method="_on_ToolButton_button_down"]
