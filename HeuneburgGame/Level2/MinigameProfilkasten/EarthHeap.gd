@@ -9,6 +9,7 @@ signal show_earthheap
 
 func _ready():
 	hide()
+	parent_node.get_child(1).set_deferred("disabled", true)
 	
 #	mouse_filter = 2
 	
