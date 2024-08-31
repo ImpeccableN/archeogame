@@ -54,5 +54,8 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 text = "Start next day"
 
+[node name="CloseButton" parent="." index="3"]
+visible = false
+
 [connection signal="gui_input" from="." to="." method="_on_DiaryLvl1End_gui_input"]
 [connection signal="pressed" from="Button_nextDay" to="." method="_on_Button_nextDay_pressed"]
