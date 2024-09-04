@@ -9,6 +9,11 @@ export var strength: float
 export var speed: float
 export var region: Rect2
 onready var flash = get_node("CameraFlash")
+onready var camera = get_node("ViewportContainer/ViewportPhoto/Kamera")
+onready var flashaudio = get_node("ViewportContainer/ViewportPhoto/AudioCameraFlash")
+onready var tween = get_node("ViewportContainer/ViewportPhoto/Tween")
+onready var photo = get_node("ViewportContainer/ViewportPhoto/Photo")
+onready var viewport = get_node("ViewportContainer/ViewportPhoto")
 
 signal change_tool(node)
 
@@ -16,7 +21,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	var tools: Array = get_tree().get_nodes_in_group("tool")
-	var tool_pos: Array = $Toolbox.get_children()
+	var tool_pos: Array = $ViewportContainer/ViewportPhoto/Toolbox.get_children()
 	
 	
 	var i = 0
@@ -46,27 +51,27 @@ func tools_snapped():
 
 
 func camera_flash():
-	$Kamera.hide()
+	camera.hide()
 	yield(get_tree().create_timer(0.1), "timeout")
-	var image = get_viewport().get_texture().get_data().get_rect(region)
+	var image = viewport.get_texture().get_data().get_rect(region)
 	image.flip_y()
 	var imgtext = ImageTexture.new()
 	imgtext.create_from_image(image)
 	Global.photo = imgtext
 	
 	
-	$AudioCameraFlash.play()
-	$CameraFlash.raise()
-	$Tween.interpolate_property(flash, "self_modulate:a", 0, strength, speed, Tween.TRANS_SINE, Tween.EASE_OUT)
-	$Tween.start()
+	flashaudio.play()
+	flash.raise()
+	tween.interpolate_property(flash, "self_modulate:a", 0, strength, speed, Tween.TRANS_SINE, Tween.EASE_OUT)
+	tween.start()
 	
 	yield(get_tree().create_timer(0.05), "timeout")
-	$Tween.interpolate_property(flash, "self_modulate:a", strength, 0, 1, Tween.TRANS_SINE, Tween.EASE_OUT)
-	$Tween.start()
-	$Kamera.show()
-	$Photo.texture = imgtext
+	tween.interpolate_property(flash, "self_modulate:a", strength, 0, 1, Tween.TRANS_SINE, Tween.EASE_OUT)
+	tween.start()
+	camera.show()
+	photo.texture = imgtext
 	yield(get_tree().create_timer(1), "timeout")
-	$Photo.show()
+	photo.show()
 #	yield(get_tree().create_timer(3), "timeout")
 ##	$Photo.hide()
 	

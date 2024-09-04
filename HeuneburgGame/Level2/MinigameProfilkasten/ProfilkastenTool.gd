@@ -65,7 +65,7 @@ func _input(event):
 				if camera_flash_buffer:
 					camera_flash_buffer = not camera_flash_buffer
 				else:
-					get_parent().camera_flash()
+					get_tree().get_current_scene().camera_flash()
 				
 		
 #	if mouse_entered and grabbed == false:
