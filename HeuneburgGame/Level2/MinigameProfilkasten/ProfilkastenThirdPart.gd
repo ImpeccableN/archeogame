@@ -5,6 +5,11 @@ var grabbed_tool : Node = null
 #keeps track of snapped tools
 var snapped_tools: int = 0
 
+var tools: Array
+var tool_pos: Array
+
+var camera_flashed = false
+
 export var strength: float
 export var speed: float
 export var region: Rect2
@@ -14,14 +19,15 @@ onready var flashaudio = get_node("ViewportContainer/ViewportPhoto/AudioCameraFl
 onready var tween = get_node("ViewportContainer/ViewportPhoto/Tween")
 onready var photo = get_node("ViewportContainer/ViewportPhoto/Photo")
 onready var viewport = get_node("ViewportContainer/ViewportPhoto")
+var spitzhacke = preload("res://Level2/MinigameProfilkasten/Spitzhacke.tscn")
 
 signal change_tool(node)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	var tools: Array = get_tree().get_nodes_in_group("tool")
-	var tool_pos: Array = $ViewportContainer/ViewportPhoto/Toolbox.get_children()
+	tools = get_tree().get_nodes_in_group("tool")
+	tool_pos = $ViewportContainer/ViewportPhoto/Toolbox.get_children()
 	
 	
 	var i = 0
@@ -51,37 +57,54 @@ func tools_snapped():
 
 
 func camera_flash():
-	camera.hide()
-	yield(get_tree().create_timer(0.1), "timeout")
-	var image = viewport.get_texture().get_data().get_rect(region)
-	image.flip_y()
-	var imgtext = ImageTexture.new()
-	imgtext.create_from_image(image)
-	Global.photo = imgtext
-	
-	
-	flashaudio.play()
-	flash.raise()
-	tween.interpolate_property(flash, "self_modulate:a", 0, strength, speed, Tween.TRANS_SINE, Tween.EASE_OUT)
-	tween.start()
-	
-	yield(get_tree().create_timer(0.05), "timeout")
-	tween.interpolate_property(flash, "self_modulate:a", strength, 0, 1, Tween.TRANS_SINE, Tween.EASE_OUT)
-	tween.start()
-	camera.show()
-	photo.texture = imgtext
-	yield(get_tree().create_timer(1), "timeout")
-	photo.show()
-#	yield(get_tree().create_timer(3), "timeout")
-##	$Photo.hide()
-	
-	if snapped_tools == 3:
-		Global.profilkasten_done = true
-		$LeaveButton.show()
-		_on_grabbed_tool(null)
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$SuccessLabel.show()
+	if camera_flashed == false and snapped_tools == 3:
+		camera_flashed = true
+		camera.hide()
+		yield(get_tree().create_timer(0.1), "timeout")
+		var image = viewport.get_texture().get_data().get_rect(region)
+		image.flip_y()
+		var imgtext = ImageTexture.new()
+		imgtext.create_from_image(image)
+		Global.photo = imgtext
+		
+		
+		flashaudio.play()
+		flash.raise()
+		tween.interpolate_property(flash, "self_modulate:a", 0, strength, speed, Tween.TRANS_SINE, Tween.EASE_OUT)
+		tween.start()
+		
+		yield(get_tree().create_timer(0.05), "timeout")
+		tween.interpolate_property(flash, "self_modulate:a", strength, 0, 1, Tween.TRANS_SINE, Tween.EASE_OUT)
+		tween.start()
+		camera.show()
+		photo.texture = imgtext
+		yield(get_tree().create_timer(1), "timeout")
+		photo.show()
+		yield(get_tree().create_timer(2), "timeout")
+		photo.hide()
+		
+		transition_to_shovel()
+#		Global.profilkasten_done = true
+#		$LeaveButton.show()
+#		_on_grabbed_tool(null)
+#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#		$SuccessLabel.show()
+	else:
+		pass
 
+
+func transition_to_shovel():
+	for thing in tools:
+		thing.queue_free()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	var spitzhacken_node = spitzhacke.instance()
+	add_child(spitzhacken_node)
+	spitzhacken_node.position = tool_pos[0].global_position
+	spitzhacken_node.set_wait_pos(tool_pos[0].global_position)
+	spitzhacken_node.scale = Vector2(0.075, 0.075)
+	$ViewportContainer/ViewportPhoto/Toolbox/ToolButton.connect("pressed", spitzhacken_node, "_on_ToolButton_button_down")
+	spitzhacken_node.connect("grabbed_tool", self, "_on_grabbed_tool")
+	connect("change_tool", spitzhacken_node, "ungrab_tool")
 
 
 func _on_LeaveButton_pressed():
