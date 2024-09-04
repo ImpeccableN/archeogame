@@ -31,3 +31,5 @@ func _on_grabbed_tool(node):
 	if grabbed_tool != node:
 		grabbed_tool = node
 		emit_signal("change_tool", node)
+
+

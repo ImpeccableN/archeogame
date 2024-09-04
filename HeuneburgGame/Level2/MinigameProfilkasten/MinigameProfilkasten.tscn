@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/Handschuh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Toolbox.tscn" type="PackedScene" id=2]
@@ -29,6 +29,37 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/CutOut1.gd" type="Script" id=27]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/Shovel.wav" type="AudioStream" id=28]
 [ext_resource path="res://Themes/Infoblock.tres" type="Theme" id=29]
+[ext_resource path="res://Level2/MinigameProfilkasten/InfoBox.gd" type="Script" id=30]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=31]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+use_filter = true
+font_data = ExtResource( 31 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.054902, 0.0313726, 0.580392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.980392, 0.933333, 0.933333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.054902, 0.0313726, 0.580392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0.658824 )
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.678431, 0.666667, 0.92549, 1 )
 
 [node name="MainMinigameProfilkasten" type="Node2D"]
 script = ExtResource( 6 )
@@ -340,10 +371,33 @@ margin_right = 1842.0
 margin_bottom = 1022.0
 theme = ExtResource( 29 )
 text = "
-Hier muss du was cooles machen"
+Hier musst du was cooles machen"
+script = ExtResource( 30 )
+
+[node name="CloseButton" type="Button" parent="InfoBox"]
+margin_left = 689.0
+margin_top = 777.0
+margin_right = 1098.0
+margin_bottom = 904.0
+text = "Close"
+
+[node name="Button_Tip" type="Button" parent="."]
+margin_left = 1845.0
+margin_top = 5.0
+margin_right = 1915.0
+margin_bottom = 66.0
+custom_colors/font_color_hover = Color( 0.0980392, 0.494118, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0.0980392, 0.494118, 0.235294, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "?"
 
 [connection signal="button_down" from="Toolbox/ToolButton" to="Schaufel" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton3" to="Kelle" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="Toolbox/ToolButton4" to="Futterkelle" method="_on_ToolButton_button_down"]
+[connection signal="pressed" from="InfoBox/CloseButton" to="InfoBox" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Button_Tip" to="InfoBox" method="_on_Button_Tip_pressed"]
 
 [editable path="Toolbox"]

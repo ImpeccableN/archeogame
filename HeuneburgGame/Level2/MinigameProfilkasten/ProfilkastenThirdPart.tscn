@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/camera-flash.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Level2/MinigameProfilkasten/ColorRectSnapzone.gd" type="Script" id=13]
 [ext_resource path="res://Themes/just_font.tres" type="Theme" id=14]
+[ext_resource path="res://Themes/Infoblock.tres" type="Theme" id=15]
+[ext_resource path="res://Level2/MinigameProfilkasten/InfoBox.gd" type="Script" id=16]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 193 )
@@ -24,17 +27,40 @@ extents = Vector2( 444.5, 99.5 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 287, 87 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 35
+use_filter = true
+font_data = ExtResource( 17 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.054902, 0.0313726, 0.580392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.980392, 0.933333, 0.933333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.054902, 0.0313726, 0.580392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0.658824 )
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.678431, 0.666667, 0.92549, 1 )
+
 [node name="ProfilkastenThirdPart" type="Node2D"]
 script = ExtResource( 1 )
 strength = 20.0
 speed = 0.5
 region = Rect2( 390, 300, 960, 780 )
-
-[node name="ReferenceRect" type="ReferenceRect" parent="."]
-margin_left = 408.0
-margin_top = 788.0
-margin_right = 1368.0
-margin_bottom = 1548.0
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 40.0
@@ -205,6 +231,36 @@ position = Vector2( 959.5, 539 )
 scale = Vector2( 3.87, 2.184 )
 texture = ExtResource( 11 )
 
+[node name="InfoBox" type="RichTextLabel" parent="."]
+margin_left = 91.0
+margin_top = 26.0
+margin_right = 1842.0
+margin_bottom = 1022.0
+theme = ExtResource( 15 )
+text = "
+Hier musst du was cooles machen"
+script = ExtResource( 16 )
+
+[node name="CloseButton" type="Button" parent="InfoBox"]
+margin_left = 689.0
+margin_top = 777.0
+margin_right = 1098.0
+margin_bottom = 904.0
+text = "Close"
+
+[node name="Button_Tip" type="Button" parent="."]
+margin_left = 1845.0
+margin_top = 5.0
+margin_right = 1915.0
+margin_bottom = 66.0
+custom_colors/font_color_hover = Color( 0.0980392, 0.494118, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0.0980392, 0.494118, 0.235294, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "?"
+
 [connection signal="button_down" from="ViewportContainer/ViewportPhoto/Toolbox/ToolButton" to="ViewportContainer/ViewportPhoto/Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="ViewportContainer/ViewportPhoto/Toolbox/ToolButton2" to="ViewportContainer/ViewportPhoto/Massstab" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="ViewportContainer/ViewportPhoto/Toolbox/ToolButton3" to="ViewportContainer/ViewportPhoto/Nordpfeil" method="_on_ToolButton_button_down"]
@@ -229,6 +285,8 @@ texture = ExtResource( 11 )
 [connection signal="snapzone_entered" from="ViewportContainer/ViewportPhoto/SnappingZoneNordpfeil" to="ViewportContainer/ViewportPhoto/ColorRectNordpfeil" method="make_visible"]
 [connection signal="snapzone_exited" from="ViewportContainer/ViewportPhoto/SnappingZoneNordpfeil" to="ViewportContainer/ViewportPhoto/ColorRectNordpfeil" method="make_invisible"]
 [connection signal="pressed" from="ViewportContainer/ViewportPhoto/LeaveButton" to="." method="_on_LeaveButton_pressed"]
+[connection signal="pressed" from="InfoBox/CloseButton" to="InfoBox" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Button_Tip" to="InfoBox" method="_on_Button_Tip_pressed"]
 
 [editable path="ViewportContainer/ViewportPhoto/Toolbox"]
 [editable path="ViewportContainer/ViewportPhoto/SnappingZoneMassstab"]
