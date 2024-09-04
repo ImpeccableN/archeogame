@@ -5,6 +5,8 @@ var grabbed_tool : Node = null
 #keeps track of snapped tools
 var snapped_tools: int = 0
 
+var infotext_spitzi = "Jetzt mach was Verrücktes"
+
 var tools: Array
 var tool_pos: Array
 
@@ -19,6 +21,7 @@ onready var flashaudio = get_node("ViewportContainer/ViewportPhoto/AudioCameraFl
 onready var tween = get_node("ViewportContainer/ViewportPhoto/Tween")
 onready var photo = get_node("ViewportContainer/ViewportPhoto/Photo")
 onready var viewport = get_node("ViewportContainer/ViewportPhoto")
+onready var infobox = get_node("ViewportContainer/ViewportPhoto/InfoBox")
 var spitzhacke = preload("res://Level2/MinigameProfilkasten/Spitzhacke.tscn")
 
 signal change_tool(node)
@@ -97,6 +100,7 @@ func transition_to_shovel():
 	for thing in tools:
 		thing.queue_free()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	infobox.new_message()
 	var spitzhacken_node = spitzhacke.instance()
 	add_child(spitzhacken_node)
 	spitzhacken_node.position = tool_pos[0].global_position
