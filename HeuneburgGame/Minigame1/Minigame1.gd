@@ -111,6 +111,7 @@ func _on_Player_hit():
 
 
 func success():
+	$AudioSuccess.play()
 	$Truck/CollisionShape2D.set_deferred("disabled", true)
 	$Sun/CollisionShape2D.set_deferred("disabled", true)
 	$Player.hide()

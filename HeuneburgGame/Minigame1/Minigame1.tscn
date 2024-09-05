@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Minigame1/Assets/Sprites/ground_dry.jpeg" type="Texture" id=1]
 [ext_resource path="res://Minigame1/Assets/Sprites/ground_wet.jpeg" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Minigame1/Assets/SFX/truck-engine-idle-loops-33687.wav" type="AudioStream" id=15]
 [ext_resource path="res://Minigame1/Assets/SFX/Sunburn2.wav" type="AudioStream" id=16]
 [ext_resource path="res://Minigame1/Assets/SFX/pickupArtefact.wav" type="AudioStream" id=17]
+[ext_resource path="res://Minigame1/Assets/SFX/VictoryFanfare.wav" type="AudioStream" id=18]
 
 [sub_resource type="TileSet" id=5]
 2/name = "placeholder_artefact.png 2"
@@ -206,6 +207,9 @@ margin_top = 944.0
 margin_right = 1062.0
 margin_bottom = 1026.0
 text = "Leave"
+
+[node name="AudioSuccess" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
 
 [connection signal="score_up" from="." to="Minigame1_HUD" method="_on_Minigame1_score_up"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
