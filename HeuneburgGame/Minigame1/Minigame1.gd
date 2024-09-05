@@ -44,8 +44,6 @@ func _process(_delta):
 			tilemap_artefacts.set_cellv(sunny_tile, -1)
 		if sunny_art_tile in placed_artefacts:
 			placed_artefacts.erase(sunny_art_tile)
-			print("sun destroyed artefact")
-			print(placed_artefacts.size())
 			if placed_artefacts.empty() and truck_stopped:
 				success()
 #	if sun_direction == false:
@@ -61,7 +59,6 @@ func _on_ArtefactSpawnTimer_timeout():
 	var artefact_tile : Vector2 = tilemap_artefacts.world_to_map(truck_position)
 	tilemap_artefacts.set_cellv(artefact_tile, artefact_cell_randomizer())
 	placed_artefacts.append(artefact_tile)
-	print(placed_artefacts.size())
 
 
 func artefact_cell_randomizer():
@@ -86,8 +83,6 @@ func _on_Player_set_marker(player_position):
 		marker_array.append(marker_instance)
 		marker_instance.position = tilemap_artefacts.map_to_world(player_tile) + Vector2(32, 32)
 		placed_artefacts.erase(player_tile)
-		print("set marker")
-		print(placed_artefacts.size())
 		score += 1
 		emit_signal("score_up", score)
 		if placed_artefacts.empty() and truck_stopped:
@@ -101,6 +96,7 @@ func _on_Player_hit():
 	if score < score_goal:
 		$Truck/CollisionShape2D.set_deferred("disabled", true)
 		$Sun/CollisionShape2D.set_deferred("disabled", true)
+		$Truck/AudioTruck.stop()
 		$Truck.speed = 0
 		$Sun.speed = 0
 		$ArtefactSpawnTimer.stop()
@@ -111,7 +107,7 @@ func _on_Player_hit():
 
 
 func success():
-	$AudioSuccess.play()
+	$Truck/AudioTruck.stop()
 	$Truck/CollisionShape2D.set_deferred("disabled", true)
 	$Sun/CollisionShape2D.set_deferred("disabled", true)
 	$Player.hide()
@@ -121,6 +117,7 @@ func success():
 	$Minigame1_HUD.show()
 	$Minigame1_HUD/StartButton.hide()
 	$Minigame1_HUD.display_message(success_message)
+	$Truck/AudioTruck.stop()
 	Global.minigame_digger_done = true
 	$Minigame1_HUD/LeaveButton.show()
 
@@ -141,7 +138,6 @@ func _on_Minigame1_HUD_start_game():
 	$Truck/CollisionShape2D.disabled = false
 	$Sun/CollisionShape2D.disabled = false
 	$ArtefactSpawnTimer.start()
-	
 
 
 func _on_LeaveButton_pressed():
