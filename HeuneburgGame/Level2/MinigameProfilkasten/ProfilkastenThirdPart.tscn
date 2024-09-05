@@ -157,9 +157,6 @@ shape = SubResource( 3 )
 
 [node name="Tween" type="Tween" parent="ViewportContainer/ViewportPhoto"]
 
-[node name="AudioCameraFlash" type="AudioStreamPlayer2D" parent="ViewportContainer/ViewportPhoto"]
-stream = ExtResource( 12 )
-
 [node name="Photo" type="Sprite" parent="ViewportContainer/ViewportPhoto"]
 visible = false
 position = Vector2( 255, 162 )
@@ -279,6 +276,9 @@ self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 959.5, 539 )
 scale = Vector2( 3.87, 2.184 )
 texture = ExtResource( 11 )
+
+[node name="AudioCameraFlash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
 
 [connection signal="button_down" from="ViewportContainer/ViewportPhoto/Toolbox/ToolButton" to="ViewportContainer/ViewportPhoto/Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="ViewportContainer/ViewportPhoto/Toolbox/ToolButton2" to="ViewportContainer/ViewportPhoto/Massstab" method="_on_ToolButton_button_down"]

@@ -17,7 +17,7 @@ export var speed: float
 export var region: Rect2
 onready var flash = get_node("CameraFlash")
 onready var camera = get_node("ViewportContainer/ViewportPhoto/Kamera")
-onready var flashaudio = get_node("ViewportContainer/ViewportPhoto/AudioCameraFlash")
+onready var flashaudio = get_node("AudioCameraFlash")
 onready var tween = get_node("ViewportContainer/ViewportPhoto/Tween")
 onready var photo = get_node("ViewportContainer/ViewportPhoto/Photo")
 onready var viewport = get_node("ViewportContainer/ViewportPhoto")
