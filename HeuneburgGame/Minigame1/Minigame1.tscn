@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Minigame1/Assets/Sprites/ground_dry.jpeg" type="Texture" id=1]
 [ext_resource path="res://Minigame1/Assets/Sprites/ground_wet.jpeg" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Minigame1/Minigame1.gd" type="Script" id=4]
 [ext_resource path="res://Minigame1/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Minigame1/Truck.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Minigame1/Minigame1_HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Themes/Infoblock.tres" type="Theme" id=7]
 [ext_resource path="res://Minigame1/Assets/Sprites/placeholder_artefact.png" type="Texture" id=8]
 [ext_resource path="res://Minigame1/Assets/Sprites/Artefacts/Figure.png" type="Texture" id=9]
 [ext_resource path="res://Minigame1/Assets/Sprites/Artefacts/Horse.png" type="Texture" id=10]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Minigame1/Assets/SFX/Sunburn2.wav" type="AudioStream" id=16]
 [ext_resource path="res://Minigame1/Assets/SFX/pickupArtefact.wav" type="AudioStream" id=17]
 [ext_resource path="res://Minigame1/Assets/SFX/VictoryFanfare.wav" type="AudioStream" id=18]
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=19]
+[ext_resource path="res://Minigame1/Minigame1_HUD.gd" type="Script" id=20]
 
 [sub_resource type="TileSet" id=5]
 2/name = "placeholder_artefact.png 2"
@@ -192,24 +194,63 @@ stream = ExtResource( 15 )
 wait_time = 1.5
 autostart = true
 
-[node name="Minigame1_HUD" parent="." instance=ExtResource( 7 )]
+[node name="AudioSuccess" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
 
-[node name="MessageLabel" parent="Minigame1_HUD" index="2"]
-margin_left = -321.0
-margin_top = -343.0
-margin_right = 332.0
-margin_bottom = -272.0
+[node name="Minigame1_HUD" type="Node2D" parent="."]
+script = ExtResource( 20 )
+
+[node name="ScoreLabel" type="Label" parent="Minigame1_HUD"]
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+margin_left = 1064.0
+margin_top = 21.0
+margin_right = 1127.0
+margin_bottom = 98.0
+theme = ExtResource( 7 )
+text = " 0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StartButton" type="Button" parent="Minigame1_HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 417.0
+margin_top = 876.0
+margin_right = 607.0
+margin_bottom = 958.0
+theme = ExtResource( 19 )
+disabled = true
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MessageLabel" type="RichTextLabel" parent="Minigame1_HUD"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -251.0
+margin_top = 143.0
+margin_right = 1293.0
+margin_bottom = 839.0
+theme = ExtResource( 7 )
 
 [node name="LeaveButton" type="Button" parent="Minigame1_HUD"]
 visible = false
-margin_left = 872.0
-margin_top = 944.0
-margin_right = 1062.0
-margin_bottom = 1026.0
+margin_left = 417.0
+margin_top = 876.0
+margin_right = 607.0
+margin_bottom = 958.0
+theme = ExtResource( 19 )
 text = "Leave"
-
-[node name="AudioSuccess" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 18 )
 
 [connection signal="score_up" from="." to="Minigame1_HUD" method="_on_Minigame1_score_up"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
@@ -222,6 +263,5 @@ stream = ExtResource( 18 )
 [connection signal="start_game" from="Minigame1_HUD" to="Player" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Sun" method="start"]
 [connection signal="start_game" from="Minigame1_HUD" to="Truck" method="start"]
+[connection signal="button_up" from="Minigame1_HUD/StartButton" to="Minigame1_HUD" method="_on_StartButton_button_up"]
 [connection signal="pressed" from="Minigame1_HUD/LeaveButton" to="." method="_on_LeaveButton_pressed"]
-
-[editable path="Minigame1_HUD"]

@@ -20,8 +20,6 @@ func _on_StartButton_button_up():
 	$Minigame1_HUD/StartButton.disabled = true
 
 
-
-
 func _on_Button_Diary_pressed():
 	$Diary.show()
 	$Diary/Diary_texture.show()

@@ -118,6 +118,7 @@ func success():
 	$Minigame1_HUD/StartButton.hide()
 	$Minigame1_HUD.display_message(success_message)
 	$Truck/AudioTruck.stop()
+	$AudioSuccess.play()
 	Global.minigame_digger_done = true
 	$Minigame1_HUD/LeaveButton.show()
 

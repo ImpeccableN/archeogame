@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 onready var score_label = $ScoreLabel
 
