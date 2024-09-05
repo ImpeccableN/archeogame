@@ -142,7 +142,7 @@ func _on_Minigame1_HUD_start_game():
 
 
 func _on_LeaveButton_pressed():
-	get_tree().change_scene("res://Level1/FirstLevel_Map2.tscn")
+	get_tree().change_scene("res://Level1/FirstLevel_Map.tscn")
 
 
 func _on_Truck_truck_stopped():
