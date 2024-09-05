@@ -11,8 +11,7 @@ func _input(event):
 		$CollisionPolygon2D.set_deferred("disabled", true)
 		dust_video.show()
 		dust_video.play()
-		yield(get_tree().create_timer(2), "timeout")
-		main_node.end()
+		
 
 
 func _on_SpitzhackeHitPoint_area_entered(area):
@@ -21,3 +20,7 @@ func _on_SpitzhackeHitPoint_area_entered(area):
 
 func _on_SpitzhackeHitPoint_area_exited(area):
 	spitzi_entered = false
+
+
+func _on_DustVideoPlayer_finished():
+	main_node.end()

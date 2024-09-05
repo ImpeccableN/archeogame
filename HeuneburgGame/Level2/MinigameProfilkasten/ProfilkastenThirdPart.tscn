@@ -306,6 +306,7 @@ texture = ExtResource( 11 )
 [connection signal="pressed" from="ViewportContainer/ViewportPhoto/LeaveButton" to="." method="_on_LeaveButton_pressed"]
 [connection signal="pressed" from="ViewportContainer/ViewportPhoto/InfoBox/CloseButton" to="ViewportContainer/ViewportPhoto/InfoBox" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="ViewportContainer/ViewportPhoto/Button_Tip" to="ViewportContainer/ViewportPhoto/InfoBox" method="_on_Button_Tip_pressed"]
+[connection signal="finished" from="ViewportContainer/ViewportPhoto/DustVideoPlayer" to="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" method="_on_DustVideoPlayer_finished"]
 [connection signal="area_entered" from="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" to="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" method="_on_SpitzhackeHitPoint_area_entered"]
 [connection signal="area_exited" from="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" to="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" method="_on_SpitzhackeHitPoint_area_exited"]
 
