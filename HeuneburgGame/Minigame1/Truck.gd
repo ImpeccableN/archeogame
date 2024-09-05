@@ -9,6 +9,8 @@ var crash_sound = load("res://Minigame1/Assets/SFX/ExcavatorCrash.wav")
 var drive_sound = load("res://Minigame1/Assets/SFX/truck-engine-idle-loops-33687.wav")
 onready var sprite_node = get_node("Sprite")
 
+signal truck_stopped
+
 
 func _ready():
 	play_drive_sound()
@@ -21,6 +23,7 @@ func _process(delta):
 	if screen_lowerend:
 		speed = 0
 		stop_sound()
+		emit_signal("truck_stopped")
 #		rotation_degrees = -90
 #		direction = Vector2(0.0, -1.0)
 	else:

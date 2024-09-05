@@ -158,8 +158,8 @@ tile_data = PoolIntArray( 0, 10, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 5, 1
 
 [node name="TileMap_Artefacts" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
-collision_layer = 0
-collision_mask = 0
+collision_layer = 4
+collision_mask = 4
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
@@ -193,6 +193,12 @@ autostart = true
 
 [node name="Minigame1_HUD" parent="." instance=ExtResource( 7 )]
 
+[node name="MessageLabel" parent="Minigame1_HUD" index="2"]
+margin_left = -321.0
+margin_top = -343.0
+margin_right = 332.0
+margin_bottom = -272.0
+
 [node name="LeaveButton" type="Button" parent="Minigame1_HUD"]
 visible = false
 margin_left = 872.0
@@ -201,17 +207,12 @@ margin_right = 1062.0
 margin_bottom = 1026.0
 text = "Leave"
 
-[node name="MessageLabel" parent="Minigame1_HUD" index="3"]
-margin_left = -321.0
-margin_top = -343.0
-margin_right = 332.0
-margin_bottom = -272.0
-
 [connection signal="score_up" from="." to="Minigame1_HUD" method="_on_Minigame1_score_up"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="Minigame1_HUD" method="_on_Player_hit"]
 [connection signal="set_marker" from="Player" to="." method="_on_Player_set_marker"]
 [connection signal="direction_change" from="Sun" to="." method="_on_Sun_direction_change"]
+[connection signal="truck_stopped" from="Truck" to="." method="_on_Truck_truck_stopped"]
 [connection signal="timeout" from="ArtefactSpawnTimer" to="." method="_on_ArtefactSpawnTimer_timeout"]
 [connection signal="start_game" from="Minigame1_HUD" to="." method="_on_Minigame1_HUD_start_game"]
 [connection signal="start_game" from="Minigame1_HUD" to="Player" method="start"]

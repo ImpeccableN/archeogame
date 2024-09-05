@@ -5,11 +5,13 @@ var sun_position = Vector2.ZERO
 var sun_direction = false
 var marker_scene = preload("res://Minigame1/Marker.tscn")
 var score = 0
+var truck_stopped = false
 var score_goal = 10
 var cell_array_ground : Array
 var marker_array : Array
 var artefact_cell_array = [5, 6, 7, 8, 9]
 var artefact_cell_numb = 0
+var placed_artefacts : Array
 var tilemap_border := Vector2(16, 17)
 var game_over_message = "Game  Over.  Want  to  try  again?"
 var success_message = "You did it. Now get out of here"
@@ -35,10 +37,17 @@ func _process(_delta):
 	
 	sun_position = sun_node.position
 	var sunny_tile : Vector2 = tilemap_ground.world_to_map(sun_position)
+	var sunny_art_tile : Vector2 = tilemap_artefacts.world_to_map(sun_position)
 	if sunny_tile.x < tilemap_border.x && sunny_tile.x >= 0 && sunny_tile.y < tilemap_border.y && sunny_tile.y >= 0:
 		if tilemap_ground.get_cellv(sunny_tile) != 10:
 			tilemap_ground.set_cellv(sunny_tile, 3)
 			tilemap_artefacts.set_cellv(sunny_tile, -1)
+		if sunny_art_tile in placed_artefacts:
+			placed_artefacts.erase(sunny_art_tile)
+			print("sun destroyed artefact")
+			print(placed_artefacts.size())
+			if placed_artefacts.empty() and truck_stopped:
+				success()
 #	if sun_direction == false:
 #		tilemap.set_cellv((sunny_tile)+Vector2(1,1) , 0)
 #		tilemap.set_cellv((sunny_tile)-Vector2(1,1) , 0)
@@ -51,6 +60,8 @@ func _on_ArtefactSpawnTimer_timeout():
 	truck_position = truck_node.position
 	var artefact_tile : Vector2 = tilemap_artefacts.world_to_map(truck_position)
 	tilemap_artefacts.set_cellv(artefact_tile, artefact_cell_randomizer())
+	placed_artefacts.append(artefact_tile)
+	print(placed_artefacts.size())
 
 
 func artefact_cell_randomizer():
@@ -70,12 +81,17 @@ func _on_Player_set_marker(player_position):
 	var player_tile : Vector2 = tilemap_artefacts.world_to_map(player_position)
 	if tilemap_artefacts.get_cellv(player_tile) in artefact_cell_array:
 		$Player/AudioPlayer.play()
-		var marker_instace = marker_scene.instance()
-		add_child(marker_instace)
-		marker_array.append(marker_instace)
-		marker_instace.position = tilemap_artefacts.map_to_world(player_tile) + Vector2(32, 32)
+		var marker_instance = marker_scene.instance()
+		add_child(marker_instance)
+		marker_array.append(marker_instance)
+		marker_instance.position = tilemap_artefacts.map_to_world(player_tile) + Vector2(32, 32)
+		placed_artefacts.erase(player_tile)
+		print("set marker")
+		print(placed_artefacts.size())
 		score += 1
 		emit_signal("score_up", score)
+		if placed_artefacts.empty() and truck_stopped:
+			success()
 	
 #	if score == score_goal:
 #		success()
@@ -120,6 +136,7 @@ func _on_Minigame1_HUD_start_game():
 		marker.queue_free()
 	marker_array.clear()
 	score = 0
+	truck_stopped = false
 	$Truck/CollisionShape2D.disabled = false
 	$Sun/CollisionShape2D.disabled = false
 	$ArtefactSpawnTimer.start()
@@ -128,3 +145,8 @@ func _on_Minigame1_HUD_start_game():
 
 func _on_LeaveButton_pressed():
 	get_tree().change_scene("res://Level1/FirstLevel_Map2.tscn")
+
+
+func _on_Truck_truck_stopped():
+	truck_stopped = true
+	$ArtefactSpawnTimer.stop()
