@@ -102,10 +102,11 @@ func transition_to_shovel():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	infobox.new_message()
 	var spitzhacken_node = spitzhacke.instance()
-	add_child(spitzhacken_node)
+	viewport.add_child(spitzhacken_node)
 	spitzhacken_node.position = tool_pos[0].global_position
 	spitzhacken_node.set_wait_pos(tool_pos[0].global_position)
 	spitzhacken_node.scale = Vector2(0.075, 0.075)
+	infobox.raise()
 	$ViewportContainer/ViewportPhoto/Toolbox/ToolButton.connect("pressed", spitzhacken_node, "_on_ToolButton_button_down")
 	spitzhacken_node.connect("grabbed_tool", self, "_on_grabbed_tool")
 	connect("change_tool", spitzhacken_node, "ungrab_tool")
@@ -113,3 +114,13 @@ func transition_to_shovel():
 
 func _on_LeaveButton_pressed():
 	get_tree().change_scene("res://Level2/SecondDay_Map.tscn")
+
+
+func end():
+	Global.profilkasten_done = true
+	$ViewportContainer/ViewportPhoto/LeaveButton.show()
+	$ViewportContainer/ViewportPhoto/LeaveButton.raise()
+	grabbed_tool.queue_free()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$ViewportContainer/ViewportPhoto/SuccessLabel.show()
+	$ViewportContainer/ViewportPhoto/SuccessLabel.raise()

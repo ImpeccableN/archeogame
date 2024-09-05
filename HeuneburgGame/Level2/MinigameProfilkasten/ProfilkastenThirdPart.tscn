@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Themes/Infoblock.tres" type="Theme" id=15]
 [ext_resource path="res://Level2/MinigameProfilkasten/InfoBox.gd" type="Script" id=16]
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Animation/staubwolkeUebergangEnde.ogv" type="VideoStream" id=18]
+[ext_resource path="res://Level2/MinigameProfilkasten/SpitzhackeHitPoint.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 193 )
@@ -60,7 +62,7 @@ border_color = Color( 0.678431, 0.666667, 0.92549, 1 )
 script = ExtResource( 1 )
 strength = 20.0
 speed = 0.5
-region = Rect2( 390, 300, 960, 780 )
+region = Rect2( 390, 300, 1024, 720 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 40.0
@@ -227,6 +229,7 @@ theme = ExtResource( 14 )
 text = "You did it!"
 
 [node name="InfoBox" type="RichTextLabel" parent="ViewportContainer/ViewportPhoto"]
+visible = false
 margin_left = 91.0
 margin_top = 26.0
 margin_right = 1842.0
@@ -255,6 +258,21 @@ custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 text = "?"
+
+[node name="DustVideoPlayer" type="VideoPlayer" parent="ViewportContainer/ViewportPhoto"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+stream = ExtResource( 18 )
+
+[node name="SpitzhackeHitPoint" type="Area2D" parent="ViewportContainer/ViewportPhoto"]
+position = Vector2( 850, 400 )
+collision_layer = 128
+collision_mask = 128
+script = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint"]
+polygon = PoolVector2Array( -8, 132, -91, 119, -181, 32, -251, -75, -290, -167, -256, -196, -148, -226, -14, -242, 117, -241, 251, -212, 283, -174, 255, -109, 177, 56, 91, 107 )
 
 [node name="CameraFlash" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -288,6 +306,8 @@ texture = ExtResource( 11 )
 [connection signal="pressed" from="ViewportContainer/ViewportPhoto/LeaveButton" to="." method="_on_LeaveButton_pressed"]
 [connection signal="pressed" from="ViewportContainer/ViewportPhoto/InfoBox/CloseButton" to="ViewportContainer/ViewportPhoto/InfoBox" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="ViewportContainer/ViewportPhoto/Button_Tip" to="ViewportContainer/ViewportPhoto/InfoBox" method="_on_Button_Tip_pressed"]
+[connection signal="area_entered" from="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" to="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" method="_on_SpitzhackeHitPoint_area_entered"]
+[connection signal="area_exited" from="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" to="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint" method="_on_SpitzhackeHitPoint_area_exited"]
 
 [editable path="ViewportContainer/ViewportPhoto/Toolbox"]
 [editable path="ViewportContainer/ViewportPhoto/SnappingZoneMassstab"]
