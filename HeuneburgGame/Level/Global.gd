@@ -26,3 +26,7 @@ var puzzlePieces = 0
 
 #temp save of picture taken of profilkasten
 var photo : ImageTexture
+
+
+func calculate_disaster(score):
+	disasterScore += score
