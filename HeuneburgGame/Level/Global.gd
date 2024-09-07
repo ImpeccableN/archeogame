@@ -3,7 +3,7 @@ extends Node
 #data only for global variables. Saves player choices
 
 #keeps track of the amount of disaster points gathered
-var disasterScore = 0
+var disaster_score = 0
 
 #for application score
 var scoreApplication : int = 0 
@@ -29,4 +29,4 @@ var photo : ImageTexture
 
 
 func calculate_disaster(score):
-	disasterScore += score
+	disaster_score += score

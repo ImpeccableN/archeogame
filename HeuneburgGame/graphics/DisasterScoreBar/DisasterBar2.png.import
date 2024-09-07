@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DesasterBar7.png-1c7354491e5e4fa8f7c24ee2fa112919.stex"
+path="res://.import/DisasterBar2.png-6fac8200cc0fdc9b09bc20887b2c58a2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/DesasterScoreBar/DesasterBar7.png"
-dest_files=[ "res://.import/DesasterBar7.png-1c7354491e5e4fa8f7c24ee2fa112919.stex" ]
+source_file="res://graphics/DisasterScoreBar/DisasterBar2.png"
+dest_files=[ "res://.import/DisasterBar2.png-6fac8200cc0fdc9b09bc20887b2c58a2.stex" ]
 
 [params]
 

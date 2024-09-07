@@ -7,7 +7,7 @@ func _ready():
 #	var imgarr
 	
 	
-	var i = 1
+#	var i = 1
 	for child in children:
 		var sprite_node = child.get_child(0)
 		## set mouse filter to "ignore"
@@ -44,7 +44,7 @@ func _ready():
 		child.connect("area_entered", sprite_node, "area_entered")
 		child.connect("area_exited", sprite_node, "area_exited")
 		
-		i += 1
+#		i += 1
 
 func delete_cutout(_area):
 #	print("true")
