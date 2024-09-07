@@ -1,6 +1,5 @@
 extends Node2D
 
-onready var distasterScore = Global.disasterScore
 
 var team_names_array : Array
 var team_scenes_array : Array
@@ -126,15 +125,19 @@ func show_text(text):
 func get_score_message():
 	match score:
 		3, 4, 5:
-			Global.disasterScore += 30
+			Global.calculate_disaster(30)
 			return "Needs improvement. Pay more attention to your team's strengths and weaknesses."
 		6, 7, 8:
+			Global.calculate_disaster(20)
 			return "Not bad, but you can do better. Not during this excavation though."
 		9, 10, 11:
+			Global.calculate_disaster(10)
 			return "Good effort! You’re on the right track, but there's room for improvement."
 		12, 13, 14:
+			Global.calculate_disaster(0)
 			return "Great job! Your leadership skills are impressive."
 		15, 16, 17, 18:
+			Global.calculate_disaster(-5)
 			return "Perfect, you are a super supervisor!!!"
 
 

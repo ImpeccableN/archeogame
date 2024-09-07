@@ -1,4 +1,4 @@
-extends Sprite
+extends Area2D
 
 
 var disaster_score
@@ -36,4 +36,12 @@ func match_score():
 
 
 func load_texture():
-	texture = load("res://graphics/DisasterScoreBar/DisasterBar" +  load_num + ".png")
+	$Sprite.texture = load("res://graphics/DisasterScoreBar/DisasterBar" +  load_num + ".png")
+
+
+func _on_DisasterScore_mouse_entered():
+	$Label.show()
+
+
+func _on_DisasterScore_mouse_exited():
+	$Label.hide()
