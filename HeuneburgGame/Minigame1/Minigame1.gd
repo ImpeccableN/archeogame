@@ -134,6 +134,7 @@ func _on_Minigame1_HUD_start_game():
 	for marker in marker_array:
 		marker.queue_free()
 	marker_array.clear()
+	placed_artefacts.empty()
 	score = 0
 	truck_stopped = false
 	$Truck/CollisionShape2D.disabled = false
@@ -148,3 +149,16 @@ func _on_LeaveButton_pressed():
 func _on_Truck_truck_stopped():
 	truck_stopped = true
 	$ArtefactSpawnTimer.stop()
+
+
+func disaster_points():
+	var disaster_score
+	if score == 10:
+		disaster_score = 30
+	elif score >= 11 && score <= 13:
+		disaster_score = 20
+	elif score >= 14 && score <= 16:
+		disaster_score = 10
+	elif score >= 17:
+		disaster_score = 0
+	Global.calculate_disaster(disaster_score)
