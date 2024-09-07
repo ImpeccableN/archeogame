@@ -5,6 +5,10 @@ onready var keltenmuseum_image = get_node("Keltenmuseum_Overlay")
 onready var bauwagen_image = get_node("Bauwagen_Overlay")
 export var images_grow_scale := Vector2.ZERO
 
+func _ready():
+	MusicPlayer.play_mapmusic()
+
+
 func _on_Button_Bauwagen_mouse_entered():
 	bauwagen_image.rect_scale = images_grow_scale
 

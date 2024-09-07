@@ -11,6 +11,8 @@ var done_text = "You've already done this. Look for something else."
 
 
 func _ready():
+	MusicPlayer.play_mapmusic()
+	
 	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
 		yield(get_tree().create_timer(0.5), "timeout")
 		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")
