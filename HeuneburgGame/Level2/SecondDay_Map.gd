@@ -8,7 +8,8 @@ export var images_grow_scale := Vector2.ZERO
 
 
 func _ready():
-	MusicPlayer.play_mapmusic()
+	if not MusicPlayer.is_playing():
+		MusicPlayer.play_mapmusic()
 	
 	# on load up, check if minigame is absolved succesfully. Wait two seconds, then load diary entry from Day 1.
 	if Global.profilkasten_done:

@@ -6,7 +6,8 @@ onready var bauwagen_image = get_node("Bauwagen_Overlay")
 export var images_grow_scale := Vector2.ZERO
 
 func _ready():
-	MusicPlayer.play_mapmusic()
+	if not MusicPlayer.is_playing():
+		MusicPlayer.play_mapmusic()
 
 
 func _on_Button_Bauwagen_mouse_entered():
