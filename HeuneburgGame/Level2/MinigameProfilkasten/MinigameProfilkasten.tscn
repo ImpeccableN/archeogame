@@ -371,7 +371,11 @@ margin_right = 1842.0
 margin_bottom = 1022.0
 theme = ExtResource( 29 )
 text = "
-Hier musst du was cooles machen"
+Time to get your hands dirty!
+Use the tools in the correct order by simply clicking on them. Don’t worry, it’s all about
+finesse—click, hover, and let the magic happen.
+
+Let’s dig in and make some history!"
 script = ExtResource( 30 )
 
 [node name="CloseButton" type="Button" parent="InfoBox"]

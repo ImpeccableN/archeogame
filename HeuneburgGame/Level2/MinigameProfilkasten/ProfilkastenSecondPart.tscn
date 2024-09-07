@@ -193,7 +193,8 @@ margin_right = 1842.0
 margin_bottom = 1022.0
 theme = ExtResource( 23 )
 text = "
-Hier musst du was cooles machen"
+Once you've freed the pieces with the right tools, take them up and carefully remove them from the
+profile box. Make sure to store them properly—no tossing them around!"
 script = ExtResource( 24 )
 
 [node name="CloseButton" type="Button" parent="InfoBox"]

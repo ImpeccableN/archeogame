@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Niko.png-421006a5057d762e69c6dfa8c8fc997f.stex"
+path="res://.import/Niko.PNG-f01849ed5263115c2bdff6f912529259.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Headshots/Niko.png"
-dest_files=[ "res://.import/Niko.png-421006a5057d762e69c6dfa8c8fc997f.stex" ]
+source_file="res://graphics/Characters/Headshots/Niko.PNG"
+dest_files=[ "res://.import/Niko.PNG-f01849ed5263115c2bdff6f912529259.stex" ]
 
 [params]
 

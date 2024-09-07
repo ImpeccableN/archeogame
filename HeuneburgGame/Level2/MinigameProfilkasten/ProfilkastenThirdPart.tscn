@@ -226,14 +226,14 @@ theme = ExtResource( 14 )
 text = "You did it!"
 
 [node name="InfoBox" type="RichTextLabel" parent="ViewportContainer/ViewportPhoto"]
-visible = false
 margin_left = 91.0
 margin_top = 26.0
 margin_right = 1842.0
 margin_bottom = 1022.0
 theme = ExtResource( 15 )
 text = "
-Hier musst du was cooles machen"
+When you’ve successfully dug everything out, the final task is to document the profile box. Yes, you
+get to be the hero who captures all the details."
 script = ExtResource( 16 )
 
 [node name="CloseButton" type="Button" parent="ViewportContainer/ViewportPhoto/InfoBox"]
