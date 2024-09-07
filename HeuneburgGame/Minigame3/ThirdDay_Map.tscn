@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Minigame3/Button_Bauwagen3.gd" type="Script" id=1]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Level1/Assets/Images/lv3_map_symbol_minigame.png" type="Texture" id=11]
 [ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Minigame3/ThirdDay_Map.gd" type="Script" id=13]
+[ext_resource path="res://Music/map_final.wav" type="AudioStream" id=14]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -119,6 +120,10 @@ custom_styles/normal = SubResource( 3 )
 
 [node name="DisasterScore" parent="." instance=ExtResource( 12 )]
 position = Vector2( 984, 256 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+autoplay = true
 
 [connection signal="input_event" from="FirstLevel_Image/Button_Keltenmuseum" to="FirstLevel_Image/Button_Keltenmuseum" method="_on_Button_Keltenmuseum_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_entered"]

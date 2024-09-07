@@ -16,6 +16,7 @@ run/main_scene="res://Level1/FirstLevel_Map.tscn"
 [autoload]
 
 Global="*res://Level/Global.gd"
+MusicPlayer="*res://MusicPlayer.tscn"
 
 [display]
 

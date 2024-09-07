@@ -6,6 +6,8 @@ var grabbed_tool : Node = null
 signal change_tool(node)
 
 func _ready():
+	MusicPlayer.play_profilkasten()
+	
 	var tools: Array = get_tree().get_nodes_in_group("tool")
 	var tool_pos: Array = $Toolbox.get_children()
 	

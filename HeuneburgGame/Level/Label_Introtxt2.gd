@@ -5,7 +5,7 @@ var typingText : float
 func _ready():
 	percent_visible = 0.0
 	typingText = 12.0 / text.length()
-	yield(get_tree().create_timer(20.0), "timeout")
+#	yield(get_tree().create_timer(20.0), "timeout")
 	$Timer.start()
 
 

@@ -113,6 +113,7 @@ func transition_to_shovel():
 
 
 func _on_LeaveButton_pressed():
+	MusicPlayer.stop()
 	get_tree().change_scene("res://Level2/SecondDay_Map.tscn")
 
 

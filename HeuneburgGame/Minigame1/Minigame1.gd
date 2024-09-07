@@ -111,6 +111,7 @@ func success():
 	$Truck/CollisionShape2D.set_deferred("disabled", true)
 	$Sun/CollisionShape2D.set_deferred("disabled", true)
 	$Player.hide()
+	disaster_points()
 	$Truck.speed = 0
 	$Sun.speed = 0
 	$ArtefactSpawnTimer.stop()
@@ -134,7 +135,7 @@ func _on_Minigame1_HUD_start_game():
 	for marker in marker_array:
 		marker.queue_free()
 	marker_array.clear()
-	placed_artefacts.empty()
+	placed_artefacts.clear()
 	score = 0
 	truck_stopped = false
 	$Truck/CollisionShape2D.disabled = false
@@ -155,10 +156,10 @@ func disaster_points():
 	var disaster_score
 	if score == 10:
 		disaster_score = 30
-	elif score >= 11 && score <= 13:
+	elif score >= 11 && score <= 15:
 		disaster_score = 20
-	elif score >= 14 && score <= 16:
+	elif score >= 16 && score <= 19:
 		disaster_score = 10
-	elif score >= 17:
+	elif score >= 20:
 		disaster_score = 0
 	Global.calculate_disaster(disaster_score)

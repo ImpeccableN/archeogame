@@ -3,7 +3,7 @@ extends Node2D
 
 var team_names_array : Array
 var team_scenes_array : Array
-var which_team : int
+var which_team : int = 0
 var team_members_path = ""
 var werkzeug_preload = preload("res://Minigame_WerkzeugZuordnen/Werkzeug.tscn")
 var werkzeug_person_scene = preload("res://Minigame_WerkzeugZuordnen/WerkzeugPerson.tscn")
@@ -134,10 +134,10 @@ func get_score_message():
 			Global.calculate_disaster(10)
 			return "Good effort! You’re on the right track, but there's room for improvement."
 		12, 13, 14:
-			Global.calculate_disaster(0)
+			Global.calculate_disaster(5)
 			return "Great job! Your leadership skills are impressive."
 		15, 16, 17, 18:
-			Global.calculate_disaster(-5)
+			Global.calculate_disaster(0)
 			return "Perfect, you are a super supervisor!!!"
 
 

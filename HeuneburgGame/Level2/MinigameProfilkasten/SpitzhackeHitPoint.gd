@@ -2,7 +2,7 @@ extends Area2D
 
 var spitzi_entered = false
 onready var dust_video = get_node("../DustVideoPlayer")
-onready var main_node = get_tree().get_root().get_child(1)
+onready var main_node = get_tree().get_root().get_child(2)
 
 
 

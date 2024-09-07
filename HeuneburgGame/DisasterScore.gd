@@ -15,7 +15,7 @@ func _ready():
 	print(load_num)
 
 func match_score():
-	if disaster_score == 0:
+	if disaster_score <= 0:
 		load_num = "0"
 	if disaster_score > 0 && disaster_score <= 14:
 		load_num = "1"
