@@ -119,9 +119,11 @@ func _on_LeaveButton_pressed():
 
 func end():
 	Global.profilkasten_done = true
+	infobox.text = "You did it!"
 	$ViewportContainer/ViewportPhoto/LeaveButton.show()
 	$ViewportContainer/ViewportPhoto/LeaveButton.raise()
 	grabbed_tool.queue_free()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$ViewportContainer/ViewportPhoto/SuccessLabel.show()
-	$ViewportContainer/ViewportPhoto/SuccessLabel.raise()
+	infobox.show()
+#	$ViewportContainer/ViewportPhoto/SuccessLabel.show()
+#	$ViewportContainer/ViewportPhoto/SuccessLabel.raise()

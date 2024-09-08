@@ -8,8 +8,6 @@ export var images_grow_scale := Vector2.ZERO
 
 
 func _ready():
-	print("is musicplayer playing?")
-	print(MusicPlayer.is_playing())
 	if not MusicPlayer.is_playing():
 		MusicPlayer.play_mapmusic()
 	
