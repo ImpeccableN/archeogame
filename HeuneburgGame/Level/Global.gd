@@ -36,7 +36,7 @@ func calculate_disaster(score):
 	disaster_score += score
 
 #saves start time of certain games
-func take_start_time():
+func start_timer():
 	start_time = OS.get_unix_time()
 
 

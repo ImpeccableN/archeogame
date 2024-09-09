@@ -118,7 +118,9 @@ func _on_LeaveButton_pressed():
 
 
 func end():
+	
 	Global.profilkasten_done = true
+	Global.calculate_disaster(distribute_disaster_points())
 	infobox.text = "You did it!"
 	$ViewportContainer/ViewportPhoto/LeaveButton.show()
 	$ViewportContainer/ViewportPhoto/LeaveButton.raise()
@@ -127,3 +129,15 @@ func end():
 	infobox.show()
 #	$ViewportContainer/ViewportPhoto/SuccessLabel.show()
 #	$ViewportContainer/ViewportPhoto/SuccessLabel.raise()
+
+
+func distribute_disaster_points() -> int:
+	var elapsed_time = Global.calculate_time()
+	if elapsed_time >= 300:
+		return 30
+	elif elapsed_time < 300 && elapsed_time >= 240:
+		return 20
+	elif elapsed_time < 240 && elapsed_time >= 180:
+		return 10
+	else:
+		return 0
