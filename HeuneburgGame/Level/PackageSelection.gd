@@ -8,6 +8,7 @@ func _ready():
 
 func _on_confirm_pressed():
 	Global.packageSelect = packageNum
+	Global.calculate_disaster(disaster_score_calculation())
 	popupPackage.show()
 	$PackageConfirmation/Label.text = "You chose package " + str(Global.packageSelect) + ". " + "Have a good trip!"
 	yield(get_tree().create_timer(4.0), "timeout")
@@ -57,3 +58,12 @@ func _on_Button_Close_pressed():
 	$Button_Serious.show()
 	$confirm.hide()
 	$decline.hide()
+
+
+func disaster_score_calculation() -> int:
+	if packageNum == 1:
+		return 30
+	elif packageNum == 2:
+		return 15
+	else:
+		return 0
