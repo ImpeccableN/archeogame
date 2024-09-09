@@ -7,9 +7,11 @@ func _ready():
 	$TextureRect2_puzzleFinished.hide()
 	$Label.hide()
 	$Button_ctn.hide()
+	Global.start_timer()
 
 func _process(_delta):
 	if Global.puzzlePieces == 11:
+		Global.calculate_disaster(distribute_disaster_points())
 		$TextureRect2_puzzleFinished.show()
 		$Label.show()
 		$CanvasLayer/Control/piece2_target.hide()
@@ -65,3 +67,15 @@ func _on_Button_Close_pressed():
 
 func _on_Button_ctn_pressed():
 	get_tree().change_scene("res://Minigame3/DiaryLvl3.tscn")
+
+
+func distribute_disaster_points() -> int:
+	var elapsed_time = Global.calculate_time()
+	if elapsed_time >= 300:
+		return 30
+	elif elapsed_time < 300 && elapsed_time >= 240:
+		return 20
+	elif elapsed_time < 240 && elapsed_time >= 180:
+		return 10
+	else:
+		return 0
