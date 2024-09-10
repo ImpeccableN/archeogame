@@ -3,11 +3,19 @@ extends Node2D
 
 onready var keltenmuseum_image = get_node("Keltenmuseum_Overlay")
 onready var bauwagen_image = get_node("Bauwagen_Overlay")
+onready var video_player = get_node("OutroVideoPlayer")
 export var images_grow_scale := Vector2.ZERO
 
 func _ready():
 	if not MusicPlayer.is_playing():
 		MusicPlayer.play_mapmusic()
+	
+	if Global.puzzle_done:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		yield(get_tree().create_timer(2),"timeout")
+		MusicPlayer.stop()
+		video_player.show()
+		video_player.play()
 
 
 func _on_Button_Bauwagen_mouse_entered():
@@ -25,3 +33,7 @@ func _on_Button_Keltenmuseum_mouse_entered():
 func _on_Button_Keltenmuseum_mouse_exited():
 	keltenmuseum_image.rect_scale = Vector2.ONE
 
+
+
+func _on_OutroVideoPlayer_finished():
+	get_tree().change_scene("res://Minigame3/DiaryLvl3.tscn")
