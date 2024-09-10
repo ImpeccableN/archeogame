@@ -8,6 +8,7 @@ onready var main_node = get_tree().get_root().get_child(2)
 
 func _input(event):
 	if spitzi_entered and Input.is_mouse_button_pressed(1):
+		$AudioPickaxe.play()
 		$CollisionPolygon2D.set_deferred("disabled", true)
 		dust_video.show()
 		dust_video.play()
