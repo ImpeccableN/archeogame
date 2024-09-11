@@ -29,6 +29,9 @@ var profilkasten_done: bool = false
 #keeps track of puzzle completion in lvl3
 var puzzle_done : bool = false
 
+#keeps track if game was finished, so outro doesn't get played again
+var game_finished : bool = false
+
 #keeps track of placed pieces in vase puzzle
 var puzzlePieces = 0
 
