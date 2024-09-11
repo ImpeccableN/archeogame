@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=1]
 [ext_resource path="res://Themes/just_font.tres" type="Theme" id=2]
 [ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Minigame3/DiaryLvl3.gd" type="Script" id=4]
+[ext_resource path="res://video/tb_blaettern_spedUp.ogv" type="VideoStream" id=5]
+[ext_resource path="res://Level/TgAnimation.gd" type="Script" id=6]
+[ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
@@ -24,21 +27,51 @@ border_width_right = 2
 border_width_bottom = 1
 border_color = Color( 0.0823529, 0.509804, 0.0941176, 1 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 25
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
 [node name="DiaryLvl3" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
-[node name="DiaryEntry" type="RichTextLabel" parent="."]
-margin_left = 998.0
-margin_top = 180.0
-margin_right = 1467.0
-margin_bottom = 679.0
+[node name="DiaryEntry1" type="RichTextLabel" parent="."]
+margin_left = 986.0
+margin_top = 209.0
+margin_right = 1535.0
+margin_bottom = 680.0
 theme = ExtResource( 2 )
-text = "Good job on finishing the last minigame. This is the end of our demo.  If you want, you can close the diary now and look at a few exhibits in the museum if you didn't already.
+text = "We fossil digging made it! What an adventure this excavation has been, from start to finish. 
 
-Thank you for playing!"
+It all began with filling out the paperwork (because what’s archaeology without a bit of bureaucracy?), then assembling our trusty team and assigning tasks like seasoned pros. We dug into creating the planum and somehow managed it not to get flattened by the excavator in the process, quite the achievement!
+
+
+Next, we moved on to the profile box, carefully diving through layers of history. Each step revealed something new, leading us to our final triumph: piecing together those dug-up pottery shards into a proper historic vessel.
+It was like a giant puzzle, but with pieces which do not fit together! It was way more satisfying when it all finally came one whole."
+
+[node name="DiaryEntry2" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 986.0
+margin_top = 209.0
+margin_right = 1535.0
+margin_bottom = 680.0
+theme = ExtResource( 2 )
+text = "Looking back, I think Sir Mortimer Wheeler would be proud of our precise work and the bond in our team. We didn’t just dig holes, we unearthed stories, layer by layer. Of course, we also avoided an Indiana Jones like excavation, like snakes, rolling boulders or complete demolition, which is always a win. 
+ 
+So here’s to a successful excavation, a job well done, and the incredible history we’ve uncovered. Now we can call ourselves archeologic excavation Professionals!!
+Until the next dig!"
 
 [node name="TitelLabel" type="Label" parent="."]
 margin_left = 417.0
@@ -50,10 +83,11 @@ text = "Day 3"
 align = 1
 
 [node name="Button_toMap3" type="Button" parent="."]
-margin_left = 1108.0
-margin_top = 702.0
-margin_right = 1320.0
-margin_bottom = 789.0
+visible = false
+margin_left = 1115.0
+margin_top = 798.0
+margin_right = 1327.0
+margin_bottom = 885.0
 custom_colors/font_color = Color( 0.0235294, 0.321569, 0.160784, 1 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/hover = SubResource( 1 )
@@ -61,4 +95,31 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 text = "Close diary"
 
+[node name="TgFlip" type="VideoPlayer" parent="."]
+visible = false
+margin_right = 1917.0
+margin_bottom = 1079.0
+stream = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="SoundFlip" type="AudioStreamPlayer2D" parent="TgFlip"]
+visible = false
+stream = ExtResource( 7 )
+volume_db = 10.124
+
+[node name="nextPage_Button" type="Button" parent="."]
+margin_left = 1375.0
+margin_top = 829.0
+margin_right = 1485.0
+margin_bottom = 872.0
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0.0313726, 0.478431, 0.00392157, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Turn page"
+
 [connection signal="pressed" from="Button_toMap3" to="." method="_on_Button_toMap3_pressed"]
+[connection signal="finished" from="TgFlip" to="." method="_on_TgFlip_finished"]
+[connection signal="pressed" from="nextPage_Button" to="." method="_on_nextPage_Button_pressed"]
