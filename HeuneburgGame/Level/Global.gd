@@ -8,6 +8,7 @@ var end_time
 
 #keeps track of the amount of disaster points gathered
 var disaster_score = 0
+var old_score: int
 
 #for application score
 var scoreApplication : int = 0 
@@ -36,6 +37,7 @@ var photo : ImageTexture
 
 #adds disaster points from games to global score
 func calculate_disaster(score):
+	old_score = disaster_score
 	disaster_score += score
 
 #saves start time of certain games

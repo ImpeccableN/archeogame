@@ -1,20 +1,21 @@
 extends Area2D
 
 
-var disaster_score
+var current_score
+var old_score
 var load_num : String
 
 
 
 func _ready():
-	disaster_score = Global.disaster_score
-	
-	match_score()
+	current_score = Global.disaster_score
+	old_score = Global.old_score
+	match_score(old_score)
 	load_texture()
-	print(disaster_score)
-	print(load_num)
+	if old_score != current_score:
+		animate()
 
-func match_score():
+func match_score(disaster_score):
 	if disaster_score <= 0:
 		load_num = "0"
 	if disaster_score > 0 && disaster_score <= 14:
@@ -33,6 +34,18 @@ func match_score():
 		load_num = "7"
 	elif disaster_score >= 100:
 		load_num = "8"
+
+
+func animate():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	yield(get_tree().create_timer(1), "timeout")
+	scale *= 1.2
+	match_score(current_score)
+	yield(get_tree().create_timer(1), "timeout")
+	load_texture()
+	yield(get_tree().create_timer(1), "timeout")
+	scale = Vector2.ONE
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func load_texture():

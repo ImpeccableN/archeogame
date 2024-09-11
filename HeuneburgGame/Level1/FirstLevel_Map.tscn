@@ -373,7 +373,7 @@ custom_styles/normal = SubResource( 25 )
 text = "Close diary"
 
 [node name="DisasterScore" parent="." instance=ExtResource( 26 )]
-position = Vector2( 984, 256 )
+position = Vector2( 974, 85 )
 
 [connection signal="input_event" from="FirstLevel_Image/Button_Grabungsstaette" to="FirstLevel_Image/Button_Grabungsstaette" method="_on_Button_Grabungsstaette_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Grabungsstaette" to="." method="_on_Button_Grabungsstaette_mouse_entered"]
