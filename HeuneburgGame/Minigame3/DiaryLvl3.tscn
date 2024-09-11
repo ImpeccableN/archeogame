@@ -71,6 +71,7 @@ theme = ExtResource( 2 )
 text = "Looking back, I think Sir Mortimer Wheeler would be proud of our precise work and the bond in our team. We didn’t just dig holes, we unearthed stories, layer by layer. Of course, we also avoided an Indiana Jones like excavation, like snakes, rolling boulders or complete demolition, which is always a win. 
  
 So here’s to a successful excavation, a job well done, and the incredible history we’ve uncovered. Now we can call ourselves archeologic excavation Professionals!!
+You may now return and take a look through the museum's exhibit if you like.
 Until the next dig!"
 
 [node name="TitelLabel" type="Label" parent="."]
