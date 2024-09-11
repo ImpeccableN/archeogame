@@ -5,7 +5,9 @@ var current_score
 var old_score
 var load_num : String
 
+onready var news_video = get_node("../NewspaperPlayer")
 
+signal disaster_score_finished()
 
 func _ready():
 	current_score = Global.disaster_score
@@ -44,8 +46,14 @@ func animate():
 	yield(get_tree().create_timer(1), "timeout")
 	load_texture()
 	yield(get_tree().create_timer(1), "timeout")
-	scale = Vector2.ONE
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if current_score >= 100:
+		news_video.show()
+		news_video.play()
+	else:
+		scale = Vector2.ONE
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		yield(get_tree().create_timer(1), "timeout")
+		emit_signal("disaster_score_finished")
 
 
 func load_texture():

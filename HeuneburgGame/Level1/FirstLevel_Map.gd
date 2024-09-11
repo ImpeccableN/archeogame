@@ -11,8 +11,8 @@ var done_text = "You've already done this. Look for something else."
 
 
 func _ready():
-	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
-		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")
+#	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
+#		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")
 	
 	if not MusicPlayer.is_playing():
 		MusicPlayer.play_mapmusic()
@@ -80,3 +80,8 @@ func _on_Button_Close_pressed():
 	$Keltenmuseum_Overlay.show()
 
 
+
+
+func _on_DisasterScore_disaster_score_finished():
+	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
+		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")

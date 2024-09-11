@@ -101,6 +101,7 @@ func _on_Button_pressed():
 			return
 	show_text(get_score_message())
 	$InfoScreen/LeaveButton.show()
+	$InfoScreen.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	Global.minigame_werkzeuge_done = true
 
 
