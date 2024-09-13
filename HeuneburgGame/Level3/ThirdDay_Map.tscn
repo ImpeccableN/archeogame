@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Minigame3/Button_Bauwagen3.gd" type="Script" id=1]
+[ext_resource path="res://Level3/ThirdDay_Map.gd" type="Script" id=1]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=2]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=3]
 [ext_resource path="res://Level1/Button_Freilichtmuseum.gd" type="Script" id=4]
@@ -12,8 +12,6 @@
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_bauwagen.png" type="Texture" id=10]
 [ext_resource path="res://Level1/Assets/Images/lv3_map_symbol_minigame.png" type="Texture" id=11]
 [ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Minigame3/ThirdDay_Map.gd" type="Script" id=13]
-[ext_resource path="res://Minigame3/OutroVideoPlayer.gd" type="Script" id=14]
 [ext_resource path="res://video/heueneburgDaily_withBG.ogv" type="VideoStream" id=15]
 
 [sub_resource type="StyleBoxTexture" id=1]
@@ -29,8 +27,7 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
 
 [node name="ThirdDay_Map" type="Node2D"]
-script = ExtResource( 13 )
-images_grow_scale = Vector2( 1.2, 1.2 )
+script = ExtResource( 1 )
 
 [node name="FirstLevel_Image" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -57,7 +54,6 @@ script = ExtResource( 5 )
 polygon = PoolVector2Array( 120, 199, 241, 129, 276, 131, 337, 170, 341, 227, 219, 320, 129, 274 )
 
 [node name="Button_Bauwagen3" type="Area2D" parent="FirstLevel_Image"]
-script = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Bauwagen3"]
 polygon = PoolVector2Array( 1066, 418, 1066, 329, 1137, 302, 1199, 295, 1226, 320, 1224, 377, 1224, 398, 1112, 425 )
@@ -127,7 +123,6 @@ visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 expand = false
-script = ExtResource( 14 )
 
 [node name="NewspaperPlayer" type="VideoPlayer" parent="."]
 visible = false
