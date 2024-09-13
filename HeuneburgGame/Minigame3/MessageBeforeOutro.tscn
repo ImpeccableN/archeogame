@@ -9,7 +9,7 @@
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 
-[node name="MessageLabel" type="RichTextLabel" parent="."]
+[node name="MessageLabel1" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -31,13 +31,37 @@ Looking back, I think Sir Mortimer Wheeler would be proud of our precise work an
 So here’s to a successful excavation, a job well done, and the incredible history we’ve uncovered. Now we can call ourselves archaeological excavation professionals!!
 Until the next dig!"
 
-[node name="LeaveButton" type="Button" parent="."]
+[node name="MessageLabel2" type="RichTextLabel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -760.0
+margin_top = -412.0
+margin_right = 784.0
+margin_bottom = 284.0
+theme = ExtResource( 1 )
+text = "After surviving this excavation, you maybe want to relax and reflect on your hard work!
+Why not take a trip to the museum? Here, you can admire the very artifacts you brought back to light and carefully pieced together to display them for all to see.
+It’s your chance to see how your discoveries fit into the bigger picture of history. So, take a break from digging and enjoy the fruits of your labor! "
+
+[node name="LeaveButton1" type="Button" parent="."]
 margin_left = 872.0
 margin_top = 944.0
 margin_right = 1062.0
 margin_bottom = 1026.0
 theme = ExtResource( 1 )
-text = "Leave"
+text = "Done"
+
+[node name="LeaveButton2" type="Button" parent="."]
+visible = false
+margin_left = 872.0
+margin_top = 944.0
+margin_right = 1062.0
+margin_bottom = 1026.0
+theme = ExtResource( 1 )
+text = "Go for it!"
 
 [node name="OutroPlayer" type="VideoPlayer" parent="."]
 visible = false
@@ -46,4 +70,6 @@ margin_bottom = 40.0
 expand = false
 script = ExtResource( 4 )
 
-[connection signal="pressed" from="LeaveButton" to="." method="_on_LeaveButton_pressed"]
+[connection signal="pressed" from="LeaveButton1" to="." method="_on_LeaveButton1_pressed"]
+[connection signal="pressed" from="LeaveButton2" to="." method="_on_LeaveButton2_pressed"]
+[connection signal="finished" from="OutroPlayer" to="." method="_on_OutroPlayer_finished"]
