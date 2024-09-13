@@ -5,7 +5,7 @@ var grabbed_tool : Node = null
 #keeps track of snapped tools
 var snapped_tools: int = 0
 
-var infotext_spitzi = "Jetzt mach was Verrücktes"
+var infotext_spitzi = "Now for the Grand Finale!"
 
 var tools: Array
 var tool_pos: Array

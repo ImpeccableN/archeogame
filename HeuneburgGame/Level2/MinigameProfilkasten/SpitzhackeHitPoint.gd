@@ -12,6 +12,7 @@ func _input(event):
 		$CollisionPolygon2D.set_deferred("disabled", true)
 		dust_video.show()
 		dust_video.play()
+		$AudioDust.play()
 		yield(get_tree().create_timer(5), "timeout")
 		main_node.end()
 
