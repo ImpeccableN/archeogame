@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Themes/Infoblock.tres" type="Theme" id=1]
+[ext_resource path="res://Minigame1/Assets/Images/miniGameBackground.png" type="Texture" id=2]
+[ext_resource path="res://Minigame3/MessageBeforeOutro.gd" type="Script" id=3]
+[ext_resource path="res://Minigame3/OutroPlayer.gd" type="Script" id=4]
+
+[node name="MessageBeforeOutro" type="TextureRect"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="MessageLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -760.0
+margin_top = -412.0
+margin_right = 784.0
+margin_bottom = 284.0
+theme = ExtResource( 1 )
+text = "We fossil digging made it! What an adventure this excavation has been, from start to finish. 
+
+It all began with filling out the paperwork (because what’s archaeology without a bit of bureaucracy?), then assembling our trusty team and assigning tasks like seasoned pros. We dug into creating the planum and somehow managed it not to get flattened by the excavator in the process, quite the achievement!
+
+Next, we moved on to the profile box, carefully diving through layers of history. Each step revealed something new, leading us to our final triumph: piecing together those dug-up pottery shards into a proper historic vessel.
+It was like a giant puzzle, but with pieces which do not fit together! It was way more satisfying when it all finally came one whole.
+
+Looking back, I think Sir Mortimer Wheeler would be proud of our precise work and the bond in our team. We didn’t just dig holes, we unearthed stories, layer by layer. Of course, we also avoided an Indiana Jones like excavation, like snakes, rolling boulders or complete demolition, which is always a win. 
+ 
+So here’s to a successful excavation, a job well done, and the incredible history we’ve uncovered. Now we can call ourselves archaeological excavation professionals!!
+Until the next dig!"
+
+[node name="LeaveButton" type="Button" parent="."]
+margin_left = 872.0
+margin_top = 944.0
+margin_right = 1062.0
+margin_bottom = 1026.0
+theme = ExtResource( 1 )
+text = "Leave"
+
+[node name="OutroPlayer" type="VideoPlayer" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+expand = false
+script = ExtResource( 4 )
+
+[connection signal="pressed" from="LeaveButton" to="." method="_on_LeaveButton_pressed"]
