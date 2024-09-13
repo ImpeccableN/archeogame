@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/StartingToWorkOnIt_Female.wav-bceccdf54fd11920f03157b2b1a01c38.sample"
+
+[deps]
+
+source_file="res://Minigame_WerkzeugZuordnen/Assets/Sounds/TeamSounds/StartingToWorkOnIt_Female.wav"
+dest_files=[ "res://.import/StartingToWorkOnIt_Female.wav-bceccdf54fd11920f03157b2b1a01c38.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

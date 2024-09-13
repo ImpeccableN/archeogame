@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/OKBoss_Male.wav-9bb845e072fe6eec53ddfe2c99d0baa6.sample"
+
+[deps]
+
+source_file="res://Minigame_WerkzeugZuordnen/Assets/Sounds/TeamSounds/OKBoss_Male.wav"
+dest_files=[ "res://.import/OKBoss_Male.wav-9bb845e072fe6eec53ddfe2c99d0baa6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
