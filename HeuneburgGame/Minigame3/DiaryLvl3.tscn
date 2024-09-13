@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=1]
+[ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=2]
+[ext_resource path="res://Level2/DiaryLvl2.gd" type="Script" id=3]
+
+[node name="DiaryLvl3" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="DiaryEntry" type="RichTextLabel" parent="."]
+margin_left = 994.0
+margin_top = 177.0
+margin_right = 1531.0
+margin_bottom = 891.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+text = "We’ve made it to the final day of our excavation adventure! After carefully digging out all those pottery shards, today’s challenge is to glue them back together. It’s like working on the most difficult Ravensburger Puzzle you could find, just that it’s a few thousand years older and with a few more missing pieces.
+
+Before we get started, let’s take a moment to reflect on what we’ve learned so far. We’ve become experts at creating profile boxes, revealing layers of history hidden under our feet’s. I think even the great Flinders Petrie, known for his meticulous methods, would appreciate our attention to detail!
+
+Now, it’s time to take those pottery shards and carefully match the edges, piece by piece, to rebuild the original vessel. Of course, the edges might not always fit perfectly, time and nature have taken their toll, but with patience, glue, sweat and a steady hand, we’ll restore it as best we can.
+So, let’s roll up our sleeves and bring history back together today, one shard at a time. 
+And who knows, maybe by the end of it, we’ll have something for which we make it into the history books! 
+"
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_left = 458.0
+margin_top = 287.0
+margin_right = 827.0
+margin_bottom = 391.0
+theme = ExtResource( 1 )
+text = "Day 3"
+align = 1
+
+[node name="CloseButton" type="Button" parent="."]
+margin_left = 1161.0
+margin_top = 825.0
+margin_right = 1358.0
+margin_bottom = 899.0
+theme = ExtResource( 1 )
+text = "Close"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
