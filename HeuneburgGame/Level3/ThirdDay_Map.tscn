@@ -1,0 +1,131 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level1/Button_Freilichtmuseum.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Button_Keltenmuseum.gd" type="Script" id=3]
+[ext_resource path="res://Level1/Assets/Images/lv3_map_symbol_minigame.png" type="Texture" id=4]
+[ext_resource path="res://Level1/Assets/Images/karteGelaende_keltenmuseum.png" type="Texture" id=5]
+[ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=6]
+[ext_resource path="res://Level1/Assets/Images/karteGelaende_bauwagen.png" type="Texture" id=7]
+[ext_resource path="res://Level1/Assets/Images/karteGelaende_hintergrund.png" type="Texture" id=8]
+[ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=9]
+[ext_resource path="res://Level1/Assets/Images/karteGelaende_freilichtmuseum.png" type="Texture" id=10]
+[ext_resource path="res://Minigame_WerkzeugZuordnen/Assets/possible_theme.tres" type="Theme" id=11]
+[ext_resource path="res://Level3/ThirdDay_Map.gd" type="Script" id=12]
+[ext_resource path="res://Level3/Button_Bauwagen3.gd" type="Script" id=13]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[node name="ThirdDay_Map" type="Node2D"]
+script = ExtResource( 12 )
+images_grow_scale = Vector2( 1.2, 1.2 )
+
+[node name="FirstLevel_Image" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource( 8 )
+
+[node name="Button_Grabungsstaette" type="Area2D" parent="FirstLevel_Image"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Grabungsstaette"]
+position = Vector2( 1221, 554 )
+polygon = PoolVector2Array( 54, -140, 94, -99, 56, -47, 159, 62, -16, 96, -191, -94, -19, -121 )
+
+[node name="Button_Freilichtmuseum" type="Area2D" parent="FirstLevel_Image"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Freilichtmuseum"]
+polygon = PoolVector2Array( 1324, 692, 1550, 685, 1634, 760, 1707, 749, 1844, 840, 1836, 869, 1470, 901, 1313, 742 )
+
+[node name="Button_Keltenmuseum" type="Area2D" parent="FirstLevel_Image"]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Keltenmuseum"]
+polygon = PoolVector2Array( 120, 199, 241, 129, 276, 131, 337, 170, 341, 227, 219, 320, 129, 274 )
+
+[node name="Button_Bauwagen3" type="Area2D" parent="FirstLevel_Image"]
+script = ExtResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Bauwagen3"]
+polygon = PoolVector2Array( 1066, 418, 1066, 329, 1137, 302, 1199, 295, 1226, 320, 1224, 377, 1224, 398, 1112, 425 )
+
+[node name="Bauwagen_Overlay" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 1157, 366 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+
+[node name="Freilichtmuseum_Overlay" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 1550, 805 )
+mouse_filter = 2
+texture = ExtResource( 10 )
+
+[node name="FreilichtLabel" type="Label" parent="Freilichtmuseum_Overlay"]
+visible = false
+margin_left = 1358.0
+margin_top = 745.0
+margin_right = 1758.0
+margin_bottom = 818.0
+theme = ExtResource( 11 )
+text = "The museum's not open yet. 
+You must first find some artefacts."
+
+[node name="Grabungsstaette_Overlay" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 1250, 550 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+
+[node name="Keltenmuseum_Overlay" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 237, 211 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+
+[node name="KeltenLabel" type="Label" parent="Keltenmuseum_Overlay"]
+visible = false
+margin_left = 81.0
+margin_top = 134.0
+margin_right = 497.0
+margin_bottom = 223.0
+theme = ExtResource( 11 )
+text = "The museum's not open yet. 
+You must first find some artefacts."
+
+[node name="Button_Diary" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 156.0
+margin_bottom = 145.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="DisasterScore" parent="." instance=ExtResource( 1 )]
+position = Vector2( 984, 256 )
+
+[connection signal="input_event" from="FirstLevel_Image/Button_Freilichtmuseum" to="FirstLevel_Image/Button_Freilichtmuseum" method="_on_Button_Freilichtmuseum_input_event"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_exited"]
+[connection signal="input_event" from="FirstLevel_Image/Button_Keltenmuseum" to="FirstLevel_Image/Button_Keltenmuseum" method="_on_Button_Keltenmuseum_input_event"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_exited"]
+[connection signal="input_event" from="FirstLevel_Image/Button_Bauwagen3" to="FirstLevel_Image/Button_Bauwagen3" method="_on_Button_Bauwagen3_input_event"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_exited"]

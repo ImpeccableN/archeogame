@@ -26,3 +26,7 @@ func _on_Button_Close_pressed():
 	$Diary/Diary_texture.hide()
 	$PCMonitor.show()
 	$CanvasLayer.show()
+
+
+func _on_Button_Glossar_pressed():
+	get_tree().change_scene("")

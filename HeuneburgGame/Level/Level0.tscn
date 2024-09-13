@@ -1,20 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Level/PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=3]
-[ext_resource path="res://Level/Button_StartNewGame.gd" type="Script" id=8]
-[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Level/TgStatic.gd" type="Script" id=4]
 [ext_resource path="res://video/tb_zoomIn.ogv" type="VideoStream" id=13]
-[ext_resource path="res://Level/Tb_zoomIn.gd" type="Script" id=14]
-
-[sub_resource type="DynamicFont" id=12]
-size = 30
-use_filter = true
-font_data = ExtResource( 9 )
-
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -59,23 +49,13 @@ bg_color = Color( 0.439216, 0.270588, 0.168627, 1 )
 margin_right = 1920.0
 margin_bottom = 1080.0
 texture = ExtResource( 3 )
-
-[node name="Button_Start" type="Button" parent="TgStatic"]
-margin_left = 1108.0
-margin_top = 343.0
-margin_right = 1331.0
-margin_bottom = 429.0
-custom_fonts/font = SubResource( 12 )
-custom_styles/normal = SubResource( 13 )
-text = "New game"
-script = ExtResource( 8 )
+script = ExtResource( 4 )
 
 [node name="Tb_zoomIn" type="VideoPlayer" parent="."]
-visible = false
 margin_right = 1920.0
 margin_bottom = 1082.0
 stream = ExtResource( 13 )
-script = ExtResource( 14 )
+autoplay = true
 
 [node name="PauseMenu" type="Control" parent="."]
 pause_mode = 2
@@ -129,8 +109,7 @@ custom_styles/hover = SubResource( 11 )
 custom_styles/normal = SubResource( 9 )
 text = "Quit"
 
-[connection signal="pressed" from="TgStatic/Button_Start" to="TgStatic/Button_Start" method="_on_Button_Start_pressed"]
-[connection signal="finished" from="Tb_zoomIn" to="TgStatic/Button_Start" method="_on_Tb_zoomIn_finished"]
+[connection signal="finished" from="Tb_zoomIn" to="TgStatic" method="_on_Tb_zoomIn_finished"]
 [connection signal="pressed" from="PauseMenu/Resume" to="PauseMenu" method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Main Menu" to="PauseMenu" method="_on_Main_Menu_pressed"]
 [connection signal="pressed" from="PauseMenu/Quit" to="PauseMenu" method="_on_Quit_pressed"]

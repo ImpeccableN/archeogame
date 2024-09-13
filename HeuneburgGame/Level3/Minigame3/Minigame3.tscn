@@ -1,0 +1,551 @@
+[gd_scene load_steps=69 format=2]
+
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 2.png" type="Texture" id=1]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 4.png" type="Texture" id=2]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 3.png" type="Texture" id=3]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 5.png" type="Texture" id=4]
+[ext_resource path="res://Level3/Minigame3/piece2_target.gd" type="Script" id=5]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 7.png" type="Texture" id=6]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 8.png" type="Texture" id=7]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 9.png" type="Texture" id=8]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 10.png" type="Texture" id=9]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 11.png" type="Texture" id=10]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 12.png" type="Texture" id=11]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 13.png" type="Texture" id=12]
+[ext_resource path="res://Level3/Minigame3/Piece2.gd" type="Script" id=13]
+[ext_resource path="res://Level3/Minigame3/piece3.gd" type="Script" id=14]
+[ext_resource path="res://Level3/Minigame3/piece4.gd" type="Script" id=15]
+[ext_resource path="res://Level3/Minigame3/piece5.gd" type="Script" id=16]
+[ext_resource path="res://Level3/Minigame3/piece10.gd" type="Script" id=17]
+[ext_resource path="res://Level3/Minigame3/piece7.gd" type="Script" id=18]
+[ext_resource path="res://Level3/Minigame3/piece8.gd" type="Script" id=19]
+[ext_resource path="res://Level3/Minigame3/piece9.gd" type="Script" id=20]
+[ext_resource path="res://Level3/Minigame3/piece12.gd" type="Script" id=21]
+[ext_resource path="res://Level3/Minigame3/piece13.gd" type="Script" id=22]
+[ext_resource path="res://Level3/Minigame3/piece11.gd" type="Script" id=23]
+[ext_resource path="res://Level3/Minigame3/piece3_target.gd" type="Script" id=24]
+[ext_resource path="res://Level3/Minigame3/piece4_target.gd" type="Script" id=25]
+[ext_resource path="res://Level3/Minigame3/piece12_target.gd" type="Script" id=26]
+[ext_resource path="res://Level3/Minigame3/piece8_target.gd" type="Script" id=27]
+[ext_resource path="res://Level3/Minigame3/piece13_target.gd" type="Script" id=28]
+[ext_resource path="res://Level3/Minigame3/piece7_target.gd" type="Script" id=29]
+[ext_resource path="res://Level3/Minigame3/piece5_target.gd" type="Script" id=30]
+[ext_resource path="res://Level3/Minigame3/piece9_target.gd" type="Script" id=31]
+[ext_resource path="res://Level3/Minigame3/piece10_target.gd" type="Script" id=32]
+[ext_resource path="res://Level3/Minigame3/piece11_target.gd" type="Script" id=33]
+[ext_resource path="res://sound effects/click.mp3" type="AudioStream" id=34]
+[ext_resource path="res://Level3/Minigame3/Minigame3.gd" type="Script" id=35]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Topf_ohneBG.png" type="Texture" id=36]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=37]
+[ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=38]
+[ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=39]
+[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=40]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=41]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/VaseUmriss.PNG" type="Texture" id=42]
+[ext_resource path="res://Level3/Minigame3/Assets/Images/Schreibtisch_Bauwagen.png" type="Texture" id=43]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+use_filter = true
+font_data = ExtResource( 37 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 37 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+use_filter = true
+font_data = ExtResource( 37 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.862745, 0.541176, 0.0823529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.862745, 0.541176, 0.0823529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.862745, 0.541176, 0.0823529, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+use_filter = true
+font_data = ExtResource( 37 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.933333, 0.227451, 0.227451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.827451, 0.121569, 0.121569, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.827451, 0.121569, 0.121569, 1 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 38 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 38 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 39 )
+region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+use_filter = true
+font_data = ExtResource( 41 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 32
+use_filter = true
+font_data = ExtResource( 41 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 30
+font_data = ExtResource( 41 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.105882, 0.494118, 0.247059, 1 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.105882, 0.494118, 0.247059, 1 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.105882, 0.494118, 0.247059, 1 )
+
+[node name="Vase_Puzzle" type="Node2D"]
+script = ExtResource( 35 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 43 )
+expand = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 2
+
+[node name="piece10_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 1070.0
+margin_top = 460.0
+margin_right = 1398.0
+margin_bottom = 721.0
+script = ExtResource( 32 )
+
+[node name="piece10_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece10_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece10_target/piece10_targetArea2D"]
+position = Vector2( 174, 123 )
+scale = Vector2( 12.04, 12.32 )
+polygon = PoolVector2Array( -3.65449, 9.74026, -2.90697, 9.49675, -1.99335, 9.33442, 0, 8.52273, 4.98339, 6.16883, 8.2226, 4.05844, 8.38871, 3.57143, 8.72094, 3.49026, 9.05316, 2.84091, 9.13622, 1.21753, 9.46844, 0.405846, 9.30233, -0.162338, 8.80399, -0.974026, 8.38871, -1.86688, 8.13954, -2.35389, 7.72426, -2.84091, 7.05981, -3.73376, 6.39536, -4.78896, 5.48174, -5.35714, 3.40532, -6.65584, 0.664452, -8.11688, -2.65781, -9.41558, -3.07309, -9.49675, -3.2392, -9.33442, -3.40532, -9.82143, -3.65449, -9.74026, -3.73754, -9.57792, -4.31894, -9.57792, -4.40199, -9.82143, -5.14951, -9.9026, -5.7309, -9.74026, -6.39535, -9.25325, -6.39535, -8.8474, -6.81063, -8.76623, -7.22591, -8.19805, -7.05981, -7.95454, -7.30898, -7.06169, -7.39203, -6.81818, -7.72426, -6.73701, -7.72426, -6.41234, -7.89037, -6.33117, -8.80399, -5.84415, -9.5515, -5.51948, -9.80067, -5.11364, -9.5515, -4.9513, -9.38538, -4.54545, -8.80399, -4.30195, -9.05316, -3.97727, -8.63788, -3.57143, -9.13622, -2.84091, -9.05316, -2.51623, -9.21928, -1.2987, -9.21928, -0.974026, -8.72093, -0.56818, -8.13954, 0.162338, -7.72426, 1.05519, -7.39203, 2.02922, -7.22591, 2.27273, -7.05981, 2.27273, -6.97675, 2.51624, -6.97675, 2.75974, -6.64452, 3.16558, -6.22924, 3.49026, -6.06313, 4.05844, -5.98006, 4.78896, -5.7309, 5.19481, -5.06644, 5.92533, -4.56811, 6.65585, -4.56811, 6.89935, -4.23588, 7.06169, -4.31894, 7.38636, -4.48505, 7.46753, -4.48505, 7.71104, -4.31894, 7.71104, -4.23588, 7.87338, -4.06977, 8.19806, -4.40199, 8.27922, -4.15282, 8.6039, -3.90366, 8.6039 )
+
+[node name="piece9_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 973.0
+margin_top = 542.0
+margin_right = 1198.0
+margin_bottom = 781.0
+script = ExtResource( 31 )
+
+[node name="piece9_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece9_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece9_target/piece9_targetArea2D"]
+position = Vector2( 119, 119 )
+scale = Vector2( 9.83999, -11.8376 )
+polygon = PoolVector2Array( -3.55692, -10.0527, -2.13415, -9.46136, 1.9309, -7.85631, 7.0122, -6.42021, 9.24798, -5.49097, 9.3496, -5.23754, 8.63822, -4.3083, 8.13009, -3.80145, 7.82522, -3.29459, 7.52033, -3.12563, 7.52033, -2.78773, 7.92684, -2.36534, 7.52033, -1.77401, 6.80895, -1.18267, 6.1992, -0.253433, 5.79269, 0.844765, 5.28456, 1.52058, 4.47155, 1.85848, 4.06505, 1.94296, 3.96342, 2.78772, 3.45529, 4.05486, 2.3374, 5.23753, 1.82927, 5.82887, 1.72765, 6.16678, 2.3374, 7.94078, 2.54066, 8.53212, 2.03252, 8.9545, 1.62601, 9.12345, 1.11789, 9.96822, 0.203255, 9.96822, -0.508133, 9.63031, -1.21951, 9.37688, -1.72765, 9.2924, -1.52439, 9.03898, -1.21951, 8.78555, -1.11789, 8.19421, -1.42277, 8.19421, -1.62602, 8.10973, -2.13415, 7.94078, -2.84554, 7.1805, -3.86179, 6.25125, -5.48782, 5.74439, -6.6057, 5.32201, -7.52034, 5.23753, -8.5366, 4.3083, -9.45123, 3.46353, -8.84148, 2.28086, -8.02847, 0.253426, -8.84148, -0.506859, -8.9431, -0.929245, -8.43497, -1.60506, -8.02847, -2.02744, -7.82522, -1.77401, -6.1992, -4.81516, -6.1992, -5.40649, -6.09757, -6.16678, -5.38618, -6.42021, -5.18294, -6.67364, -5.28456, -7.09602, -4.97968, -7.1805, -4.77643, -7.68736, -4.77643, -8.36317, -4.47155, -8.95451, -4.16667, -9.54584, -3.96342, -9.96822 )
+
+[node name="piece5_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 777.0
+margin_top = 817.0
+margin_right = 1006.0
+margin_bottom = 924.0
+script = ExtResource( 30 )
+
+[node name="piece5_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece5_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece5_target/piece5_targetArea2D"]
+position = Vector2( 114, 52 )
+scale = Vector2( 11.6444, 5.63358 )
+polygon = PoolVector2Array( -9.53246, 6.92278, -6.01147, 9.94038, 3.17748, 9.76288, 3.69275, 9.05286, 4.98092, 7.6328, 5.32443, 5.68022, 6.95612, 1.42006, 9.70422, -3.37263, 9.79009, -4.08266, 9.44658, -5.32521, 8.84544, -7.8103, 8.84544, -8.87534, 8.5878, -9.05284, 8.15841, -8.69783, 7.72902, -7.98781, 6.78436, -7.6328, 5.32443, -7.27779, 4.46565, -7.8103, 3.43512, -8.52032, 2.83397, -8.16531, 2.23283, -7.8103, 1.37405, -7.8103, 0.257629, -7.98781, -0.257637, -7.8103, -0.772903, -7.45529, -1.45993, -6.56775, -2.23283, -5.85773, -3.26337, -6.03523, -4.46566, -7.10027, -5.49619, -7.6328, -6.78437, -7.45529, -8.24429, -7.27779, -9.0172, -7.27779, -9.53246, -6.74525, -9.53246, -5.50272, -9.44659, -3.37263, -9.44659, -1.06503, -9.70422, 1.42006, -9.7901, 3.01762, -9.61834, 5.50272 )
+
+[node name="piece11_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 657.0
+margin_top = 443.0
+margin_right = 812.0
+margin_bottom = 623.0
+script = ExtResource( 33 )
+
+[node name="piece11_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece11_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece11_target/piece11_targetArea2D"]
+position = Vector2( 71, 79 )
+rotation = 3.14159
+scale = Vector2( 7.6435, -8.6873 )
+polygon = PoolVector2Array( 2.6166, 9.43907, 1.96245, 9.32396, 0.392487, 7.36708, -2.22411, 5.17998, -5.36404, 3.2231, -8.11147, 1.61155, -8.24229, 1.38133, -9.28894, 1.036, -9.02728, 0, -9.02728, -0.230217, -8.63479, -1.1511, -7.98064, -1.72665, -6.80317, -3.22309, -5.62569, -4.02887, -5.10238, -4.71953, -4.05574, -5.87064, -2.6166, -7.02174, -2.6166, -8.05774, -2.48577, -8.63329, -2.09328, -8.97862, -1.17747, -8.86351, -1.04664, -8.40307, -0.654152, -7.5973, -0.654152, -7.5973, -0.261665, -7.25196, 1.04664, -6.79152, 1.96245, -6.21597, 3.13992, -5.41019, 3.53241, -4.3742, 4.57905, -2.07199, 5.2332, -1.61154, 5.88735, -1.26621, 7.8498, -1.26621, 8.37312, -0.920883, 8.76561, -0.575554, 8.50395, -0.345329, 8.11146, 0.230225, 7.32648, 2.07199, 6.93399, 2.30222, 7.32648, 2.64754, 6.93399, 2.99287, 6.93399, 3.45332, 7.19565, 3.45332, 7.19565, 3.91376, 6.93399, 4.83465, 6.5415, 5.52531, 6.27984, 5.87064, 5.10237, 6.90664, 4.44822, 8.05774, 3.79407, 8.86352, 3.00909, 9.32396 )
+
+[node name="piece13_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 447.0
+margin_top = 662.0
+margin_right = 510.0
+margin_bottom = 749.0
+script = ExtResource( 28 )
+
+[node name="piece13_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece13_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece13_target/piece13_targetArea2D"]
+position = Vector2( 33, 44 )
+scale = Vector2( 3.55587, 4.49081 )
+polygon = PoolVector2Array( 0.281219, 9.12976, -0.281235, 9.35243, -2.24982, 8.6844, -7.87431, 5.7896, -9.28044, 4.8989, -8.71799, 3.56284, -7.87431, 3.34015, -6.74941, 2.67212, -3.93716, 1.11339, -2.53104, 0, -0.281235, -2.89481, 1.96857, -5.12158, 5.34328, -7.34836, 5.6245, -7.34836, 7.31186, -9.57512, 7.8743, -9.57512, 8.15553, -9.35245, 7.8743, -8.68442, 7.31186, -7.7937, 5.90573, -6.23497, 5.90573, -5.56694, 5.6245, -4.67622, 4.78082, -4.00819, 3.65593, -3.11749, 3.09348, -2.67213, 2.81224, -1.78142, 2.53102, -0.222687, 1.96857, 3.78551, 2.2498, 4.67621, 1.96857, 6.23495, 2.2498, 6.45763, 2.2498, 6.90298, 1.68735, 6.90298, 1.12489, 6.90298, 0.843674, 7.34834, 0.562439, 7.7937, 0.281219, 8.01637, 1.12489, 8.46173, 1.12489, 8.90709 )
+
+[node name="piece7_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 499.0
+margin_top = 581.0
+margin_right = 827.0
+margin_bottom = 921.0
+script = ExtResource( 29 )
+
+[node name="piece7_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece7_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece7_target/piece7_targetArea2D"]
+position = Vector2( 145, 164 )
+scale = Vector2( 16.72, 16.6 )
+polygon = PoolVector2Array( 7.11723, 9.57832, 7.23684, 9.09639, 7.05742, 8.55422, 7.17703, 7.77108, 7.29665, 6.74699, 7.17703, 6.0241, 7.29665, 4.33735, 7.17703, 4.09639, 6.10048, 4.09639, 5.5622, 3.91566, 3.88756, 3.6747, 4.06699, 3.55422, 3.40909, 3.31326, 3.22966, 3.37349, 2.811, 3.37349, 2.57177, 2.16867, 2.33253, 0.361446, 2.33253, -0.722889, 2.45215, -2.04819, 3.05024, -3.6747, 3.64832, -4.81927, 3.22966, -5, 3.05024, -5.06024, 2.99043, -5.36144, 2.811, -5.36144, 2.33253, -6.08434, 1.79426, -6.20482, 1.61483, -6.56626, 1.31579, -6.86747, 1.25598, -7.22891, 1.07655, -7.77108, 1.13636, -8.73494, 0.299042, -9.87952, 0.119617, -9.81927, -0.239235, -8.85542, -0.538277, -9.09638, -0.538277, -8.91566, -0.897129, -8.85542, -1.79426, -9.15662, -2.93062, -9.09638, -3.52871, -8.43373, -4.36603, -8.19277, -4.72488, -7.40964, -4.78469, -6.3253, -5.32297, -5.90361, -6.99761, -4.45783, -7.29665, -4.09638, -7.05742, -3.49397, -7.23684, -3.31325, -7.77512, -2.71084, -8.01436, -2.16867, -7.95455, -0.903614, -8.25359, -0.662651, -8.25359, 0.0602417, -8.37321, 0.361446, -8.55263, 0.602409, -8.61244, 0.903614, -8.43302, 1.14458, -7.83493, 1.50602, -6.10048, 2.16867, -1.97369, 3.6747, 0.598083, 4.75904, 2.69139, 5.66265, 3.70813, 6.44579, 4.60526, 7.46988, 4.9043, 7.83133, 5.50239, 8.6747, 5.98086, 9.15663, 6.51914, 9.51807, 6.75837, 9.6988 )
+
+[node name="piece8_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 713.0
+margin_top = 521.0
+margin_right = 1010.0
+margin_bottom = 813.0
+script = ExtResource( 27 )
+
+[node name="piece8_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece8_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece8_target/piece8_targetArea2D"]
+position = Vector2( 147, 146 )
+scale = Vector2( 15.36, 15.0715 )
+polygon = PoolVector2Array( -3.97136, 9.15638, -2.79948, 9.15638, -1.75781, 9.02368, -0.976563, 9.09002, -0.0651093, 9.48813, 0.911453, 9.62083, 2.14844, 9.22273, 2.73438, 8.82463, 3.32031, 8.75827, 3.51563, 9.15638, 4.8177, 8.95732, 5.66406, 8.69192, 6.05469, 9.02368, 6.57552, 9.15638, 8.72395, 8.89097, 9.63541, 8.29382, 9.63541, 7.76301, 9.11458, 7.49762, 8.59375, 6.36966, 7.55208, 3.64928, 7.29166, 3.58293, 7.35677, 3.38388, 7.03125, 3.18483, 7.09635, 2.78672, 7.48698, 2.32227, 7.74739, 2.05687, 7.29166, 0.331753, 6.96614, -0.2654, 6.90104, -0.663506, 6.05469, -1.59241, 6.11979, -2.98577, 5.66406, -3.18483, 5.40364, -3.38388, 5.27344, -3.64928, 4.7526, -3.58293, 4.23177, -5.30804, 4.16666, -5.97155, 4.36198, -6.10425, 4.29688, -6.36965, 3.90625, -6.36965, 3.90625, -6.7014, 3.32031, -7.03316, 3.58073, -7.23221, 3.1901, -7.36491, 2.40885, -8.62557, 2.27864, -9.35543, 1.82291, -9.62083, 1.43229, -9.35543, 0.846352, -9.35543, 0, -9.28907, -0.325523, -9.02367, -0.651047, -8.62557, -0.976563, -8.36017, -1.30209, -8.09476, -1.82292, -7.96206, -2.21355, -7.82936, -2.79948, -7.89571, -2.86459, -7.76301, -2.73438, -7.69666, -2.79948, -7.36491, -3.0599, -7.29856, -3.32031, -7.09951, -2.79948, -7.09951, -2.86459, -6.63505, -3.0599, -6.3033, -3.32031, -6.10425, -4.23177, -5.63979, -4.6875, -5.24169, -5.07813, -5.17534, -5.46875, -4.90994, -7.09636, -3.38388, -8.26823, -1.85781, -9.17969, 0.663506, -9.57031, 3.25118, -9.2448, 6.3033, -9.04948, 7.23221, -8.65886, 7.29856, -8.33334, 7.09951, -8.07292, 7.29856, -7.48698, 7.36491, -6.57552, 7.49762, -5.98959, 7.29856, -5.72917, 7.49762, -5.40365, 7.56396, -5.14323, 7.56396, -4.16667, 7.56396, -4.03646, 7.76301, -4.16667, 8.02842, -4.36198, 8.09477, -4.23177, 8.22747, -3.97136, 8.22747, -3.77605, 8.36017, -3.90625, 8.89097 )
+
+[node name="piece4_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 816.0
+margin_top = 304.0
+margin_right = 1256.0
+margin_bottom = 595.0
+script = ExtResource( 25 )
+
+[node name="piece4_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece4_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece4_target/piece4_targetArea2D"]
+position = Vector2( 242, 145 )
+scale = Vector2( 11.8618, 14.5132 )
+polygon = PoolVector2Array( 1.34886, -7.09698, 1.93899, -7.5793, 3.54076, -8.40613, 4.04659, -8.95735, 4.46811, -9.78418, 4.13089, -9.92199, 3.70937, -9.57747, 2.02329, -9.30186, 0.758736, -9.02625, -1.51747, -8.75064, -3.11925, -8.68174, -3.62507, -8.33722, -4.63672, -7.44149, -5.14254, -6.27015, -5.47976, -3.37623, -5.90128, -3.51404, -6.15419, -3.10062, -7.41875, -2.6872, -8.26179, -1.92928, -8.599, -1.17135, -8.76761, -0.482319, -9.86356, 0.137806, -9.77926, 0.964638, -9.52634, 1.58476, -8.76761, 2.20489, -8.6833, 2.6872, -8.09318, 3.30733, -7.41875, 3.44513, -6.99722, 4.13416, -6.99722, 4.75429, -7.33444, 5.0299, -7.08153, 5.58112, -6.74432, 5.85673, -6.57571, 5.92563, -6.4914, 6.13234, -6.4071, 6.61466, -6.4071, 6.61466, -6.4914, 6.95917, -5.64836, 7.44149, -5.14254, 7.786, -5.05824, 8.40613, -4.88963, 8.88845, -3.87798, 9.85308, -3.54076, 9.92199, -3.11925, 9.78418, -2.95064, 9.57747, -3.03494, 9.37077, -2.44482, 8.95735, -1.01165, 8.47503, 0.252914, 8.19942, 1.09595, 7.5793, 1.43317, 7.09698, 2.36051, 6.40795, 2.78203, 6.27014, 2.95064, 5.30551, 4.72102, 4.89209, 4.55241, 4.34087, 6.15419, 3.72075, 6.57571, 3.44513, 6.4914, 2.82501, 6.82862, 3.23843, 7.08153, 3.16952, 7.08153, 2.6872, 7.25014, 2.75611, 7.41875, 2.75611, 7.33444, 2.5494, 7.08153, 2.34269, 7.25014, 2.13598, 7.16583, 1.99818, 8.09318, 1.58476, 8.34609, 1.24025, 9.02052, 0.757929, 9.35773, 0.620125, 9.27343, 0.482319, 8.76761, 0.344513, 8.51469, 0.344513, 8.00887, 0.137806, 7.33444, -0.413416, 5.05824, -2.13598, 2.52912, -4.40977, 1.26456, -5.85673, 1.18025, -6.47685 )
+
+[node name="piece3_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 752.0
+margin_top = 320.0
+margin_right = 986.0
+margin_bottom = 495.0
+script = ExtResource( 24 )
+
+[node name="piece3_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece3_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece3_target/piece3_targetArea2D"]
+position = Vector2( 126, 82 )
+rotation = 3.14159
+scale = Vector2( 11.23, -10.1772 )
+polygon = PoolVector2Array( 4.54143, 8.94156, 3.5619, 8.54852, 3.20572, 7.95897, 1.15762, 6.09205, 0.267143, 5.60075, -0.267143, 5.60075, -0.890472, 5.79727, -2.31523, 4.81468, -3.29476, 4.02861, -3.47285, 2.35821, -3.91809, 1.96518, -4.63047, 0.884331, -5.87714, 0.491295, -6.58952, 0, -7.1238, -1.17911, -7.3019, -2.55473, -7.3019, -4.02861, -7.65809, -5.60075, -8.37047, -6.6816, -8.90475, -7.27115, -9.52809, -7.36941, -9.34999, -7.86071, -8.90475, -7.95897, -8.37047, -7.76245, -7.1238, -7.66419, -2.0481, -7.46767, 5.34286, -7.56593, 7.6581, -7.66419, 7.83619, -7.46767, 7.83619, -6.87812, 7.3019, -6.38682, 7.03476, -5.50249, 7.21286, -4.22513, 7.6581, -3.53732, 8.10333, -2.84951, 8.10333, -2.16169, 7.92524, -1.17911, 8.28143, -0.393034, 8.9938, 0.196518, 9.79523, 0.589554, 9.43905, 1.17911, 9.26095, 1.76866, 9.17191, 2.35821, 8.37048, 3.3408, 7.12381, 5.10946, 6.05524, 6.19031, 5.43191, 7.1729, 4.98666, 8.05723 )
+
+[node name="piece12_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 369.0
+margin_top = 508.0
+margin_right = 536.0
+margin_bottom = 684.0
+script = ExtResource( 26 )
+
+[node name="piece12_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece12_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece12_target/piece12_targetArea2D"]
+position = Vector2( 74, 91 )
+scale = Vector2( 9.2095, 7.57485 )
+polygon = PoolVector2Array( -3.36609, 9.90119, -3.90901, 9.50514, -5.32059, 7.92095, -7.49226, 5.28063, -7.81802, 3.96047, -7.81802, 2.5083, -7.16651, -0.26403, -5.10342, -4.35653, -1.84592, -7.78894, -0.542915, -6.86483, 0, -7.26088, 0.651501, -6.86483, 5.21201, -9.50515, 8.36094, -6.99684, 7.9266, -4.88459, 7.60085, -3.96048, 7.05793, -2.90435, 6.08068, -2.11226, 4.88626, -1.45218, 4.12617, -0.66008, 3.90901, -0.132019, 3.69184, 1.05612, 3.36609, 2.11225, 2.71459, 2.77233, 1.84592, 3.43241, 1.08584, 4.62055, 0.651501, 5.0166, -0.217167, 6.99684, -0.542915, 7.39289, -1.52017, 7.92095, -2.06309, 8.18498, -2.71459, 9.10909, -3.25751, 9.10909 )
+
+[node name="piece2_target" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 422.0
+margin_top = 307.0
+margin_right = 737.0
+margin_bottom = 535.0
+script = ExtResource( 5 )
+
+[node name="piece2_targetArea2D" type="Area2D" parent="CanvasLayer/Control/piece2_target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Control/piece2_target/piece2_targetArea2D"]
+position = Vector2( 168, 101 )
+scale = Vector2( 14.7877, 11.2183 )
+polygon = PoolVector2Array( 4.73365, -3.65476, 4.66603, -4.6353, 3.92217, -5.52671, 2.63732, -6.86382, 1.96109, -7.9335, 2.02871, -8.91405, 2.2992, -8.91405, 3.85455, -8.29006, 7.23573, -7.66608, 9.33205, -7.4878, 9.53493, -7.4878, 9.4673, -7.22038, 9.39968, -7.0421, 9.60255, -6.77467, 9.7378, -5.79413, 9.7378, -4.81359, 9.67017, -3.92218, 9.39968, -3.56562, 9.06156, -3.11992, 9.06156, -2.58507, 9.12918, -1.69367, 8.99394, -1.24797, 8.79107, -0.534843, 8.25008, -0.0891399, 8.11483, 0.445702, 7.64146, 0.802265, 7.37097, 1.78281, 6.35662, 2.31765, 5.748, 2.76336, 5.27464, 3.56562, 5.20702, 4.72444, 4.80127, 5.79413, 4.46316, 6.50725, 4.05742, 6.59639, 3.11069, 6.41811, 3.31356, 6.68553, 3.24593, 6.77467, 3.38118, 7.0421, 3.24593, 7.22038, 2.36683, 6.86382, 2.09633, 8.29006, 1.69059, 8.73576, 0.879108, 8.64662, 0.473366, 8.55748, -0.270493, 8.02264, -0.946728, 8.20092, -1.48772, 8.82491, -2.2992, 9.62717, -2.84019, 9.71631, -2.97544, 9.44889, -3.17831, 9.62717, -3.92216, 9.27061, -5.13939, 7.9335, -5.81563, 8.3792, -6.15374, 8.73576, -7.30334, 9.44889, -8.65582, 9.71631, -8.92631, 9.09232, -8.92631, 8.82491, -8.11483, 8.11178, -6.62711, 7.0421, -3.31355, 5.08101, -2.56969, 4.6353, -0.540989, 3.47648, -0.135246, 3.03077, 4.19266, -2.40679, 4.66603, -3.2982 )
+
+[node name="VBoxContainer_pieces1" type="VBoxContainer" parent="CanvasLayer/Control"]
+margin_right = 382.0
+margin_bottom = 1245.0
+rect_min_size = Vector2( 382, 1080 )
+
+[node name="piece2" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces1"]
+margin_right = 382.0
+margin_bottom = 228.0
+rect_min_size = Vector2( 382, 200 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+script = ExtResource( 13 )
+
+[node name="piece3" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces1"]
+margin_top = 232.0
+margin_right = 382.0
+margin_bottom = 432.0
+rect_min_size = Vector2( 382, 200 )
+texture = ExtResource( 3 )
+script = ExtResource( 14 )
+
+[node name="piece4" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces1"]
+margin_top = 436.0
+margin_right = 382.0
+margin_bottom = 636.0
+rect_min_size = Vector2( 382, 200 )
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 15 )
+
+[node name="piece5" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces1"]
+margin_top = 640.0
+margin_right = 382.0
+margin_bottom = 820.0
+rect_min_size = Vector2( 382, 180 )
+texture = ExtResource( 4 )
+script = ExtResource( 16 )
+
+[node name="piece10" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces1"]
+margin_top = 824.0
+margin_right = 382.0
+margin_bottom = 1085.0
+rect_min_size = Vector2( 382, 230 )
+texture = ExtResource( 9 )
+script = ExtResource( 17 )
+
+[node name="VBoxContainer_pieces2" type="VBoxContainer" parent="CanvasLayer/Control"]
+margin_left = 1539.0
+margin_top = 45.0
+margin_right = 1921.0
+margin_bottom = 1081.0
+rect_min_size = Vector2( 382, 1080 )
+
+[node name="piece7" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces2"]
+margin_right = 382.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 382, 200 )
+texture = ExtResource( 6 )
+script = ExtResource( 18 )
+
+[node name="piece8" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces2"]
+margin_top = 344.0
+margin_right = 382.0
+margin_bottom = 636.0
+rect_min_size = Vector2( 382, 200 )
+texture = ExtResource( 7 )
+script = ExtResource( 19 )
+
+[node name="piece9" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer_pieces2"]
+margin_top = 640.0
+margin_right = 382.0
+margin_bottom = 879.0
+rect_min_size = Vector2( 382, 200 )
+texture = ExtResource( 8 )
+script = ExtResource( 20 )
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="CanvasLayer/Control"]
+margin_left = 538.0
+margin_right = 1368.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 830, 176 )
+
+[node name="piece12" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer1"]
+margin_right = 200.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 200, 109 )
+texture = ExtResource( 11 )
+script = ExtResource( 21 )
+
+[node name="piece13" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer1"]
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 200, 109 )
+texture = ExtResource( 12 )
+script = ExtResource( 22 )
+
+[node name="piece11" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer1"]
+margin_left = 408.0
+margin_right = 608.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 200, 0 )
+texture = ExtResource( 10 )
+script = ExtResource( 23 )
+
+[node name="Click_correct" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 34 )
+
+[node name="TextureRect2_puzzleFinished" type="TextureRect" parent="."]
+visible = false
+margin_left = 410.0
+margin_top = 303.0
+margin_right = 1398.0
+margin_bottom = 924.0
+texture = ExtResource( 36 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 665.0
+margin_top = 63.0
+margin_right = 1063.0
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 1 )
+text = "Congrats! You have put it back together!"
+
+[node name="Tip3" type="Popup" parent="."]
+margin_left = 1385.0
+margin_top = 4.0
+margin_right = 1836.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 451, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Tip3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Tip3" type="Label" parent="Tip3/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1105.0
+margin_top = 1024.0
+margin_right = -333.0
+margin_bottom = 1020.0
+custom_colors/font_color = Color( 0.2, 0.835294, 0.537255, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Click and drag the pieces to the middle. When a piece is correct it disappears from the stack. You can start anew by clicking on Reset."
+valign = 1
+
+[node name="Button_Tip3" type="Button" parent="."]
+margin_left = 1432.0
+margin_top = 951.0
+margin_right = 1502.0
+margin_bottom = 1012.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
+text = "tip"
+
+[node name="Button_reset" type="Button" parent="."]
+margin_left = 414.0
+margin_top = 972.0
+margin_right = 524.0
+margin_bottom = 1013.0
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 8 )
+text = "Reset"
+
+[node name="Button_Diary" type="Button" parent="."]
+margin_left = 1389.0
+margin_top = 801.0
+margin_right = 1544.0
+margin_bottom = 944.0
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+
+[node name="Diary" type="Popup" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Diary_texture" type="TextureRect" parent="Diary"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 40 )
+
+[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 384.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Glossar"
+
+[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+text = "Close"
+
+[node name="Button_ctn" type="Button" parent="."]
+margin_left = 827.0
+margin_top = 169.0
+margin_right = 950.0
+margin_bottom = 227.0
+custom_fonts/font = SubResource( 22 )
+custom_styles/hover = SubResource( 23 )
+custom_styles/pressed = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
+text = "Continue"
+
+[node name="VaseUmriss" type="Sprite" parent="."]
+position = Vector2( 873, 597 )
+texture = ExtResource( 42 )
+
+[connection signal="pressed" from="Button_Tip3" to="." method="_on_Button_Tip3_pressed"]
+[connection signal="pressed" from="Button_reset" to="." method="_on_Button_reset_pressed"]
+[connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
+[connection signal="pressed" from="Button_ctn" to="." method="_on_Button_ctn_pressed"]

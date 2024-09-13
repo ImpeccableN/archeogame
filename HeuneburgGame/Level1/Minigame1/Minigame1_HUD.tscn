@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=1]
+[ext_resource path="res://Level1/Minigame1/Minigame1_HUD.gd" type="Script" id=2]
+[ext_resource path="res://Themes/Infoblock.tres" type="Theme" id=3]
+
+
+[node name="Minigame1_HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+margin_left = -15.0
+margin_top = 6.0
+margin_right = 48.0
+margin_bottom = 83.0
+theme = ExtResource( 3 )
+text = " 0"
+
+[node name="StartButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.0
+margin_top = 404.0
+margin_right = 102.0
+margin_bottom = 486.0
+theme = ExtResource( 1 )
+disabled = true
+text = "START"
+
+[node name="MessageLabel" type="RichTextLabel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -768.0
+margin_top = -316.0
+margin_right = 776.0
+margin_bottom = 380.0
+theme = ExtResource( 3 )
+
+[connection signal="button_up" from="StartButton" to="." method="_on_StartButton_button_up"]

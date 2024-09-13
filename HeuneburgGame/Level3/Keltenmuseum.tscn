@@ -1,0 +1,300 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Level3/Keltenmuseum.gd" type="Script" id=2]
+[ext_resource path="res://Level3/Museum/museum_background.png" type="Texture" id=3]
+[ext_resource path="res://Level3/Museum/IMG_2694.png" type="Texture" id=4]
+[ext_resource path="res://Level3/Museum_inside.gd" type="Script" id=6]
+[ext_resource path="res://Level3/Museum/Museum-Vase.png" type="Texture" id=7]
+[ext_resource path="res://Level3/Button_Reiter.gd" type="Script" id=8]
+[ext_resource path="res://Level3/Button_Vase.gd" type="Script" id=9]
+[ext_resource path="res://Level3/Museum/IMG_2721.png" type="Texture" id=10]
+[ext_resource path="res://Level3/Museum/Museum-sofa1.png" type="Texture" id=11]
+[ext_resource path="res://Level3/Museum/Museum-B18.png" type="Texture" id=12]
+[ext_resource path="res://Level3/Museum/Museum-Nadel .png" type="Texture" id=13]
+[ext_resource path="res://Level3/Museum/Museum-sofa2.png" type="Texture" id=14]
+[ext_resource path="res://Level3/Museum/IMG_2724.png" type="Texture" id=15]
+[ext_resource path="res://Level3/Museum/sockel.PNG" type="Texture" id=16]
+[ext_resource path="res://Level3/Museum/sockel2.PNG" type="Texture" id=17]
+[ext_resource path="res://Level3/Museum/Perle.PNG" type="Texture" id=18]
+[ext_resource path="res://Level3/Museum/sockel3.PNG" type="Texture" id=19]
+[ext_resource path="res://Level3/Museum/pferdemaske.PNG" type="Texture" id=20]
+[ext_resource path="res://Level3/Museum/sockel4.PNG" type="Texture" id=21]
+[ext_resource path="res://Level3/Museum/Museum-Gemälde .png" type="Texture" id=22]
+[ext_resource path="res://Level3/Button_Geländemodell.gd" type="Script" id=23]
+[ext_resource path="res://Level3/Button_Skulptur.gd" type="Script" id=24]
+[ext_resource path="res://Level3/Button_Gewandnadel.gd" type="Script" id=25]
+[ext_resource path="res://Level3/Button_Perle.gd" type="Script" id=26]
+[ext_resource path="res://Level3/Button_Pferdemaske.gd" type="Script" id=27]
+[ext_resource path="res://Level3/Button_Spinnwirtel.gd" type="Script" id=28]
+[ext_resource path="res://Level3/Button_Gemälde.gd" type="Script" id=29]
+[ext_resource path="res://fonts/ArialTh.ttf" type="DynamicFontData" id=30]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+use_filter = true
+font_data = ExtResource( 30 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.737255, 0.34902, 0.34902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.737255, 0.34902, 0.34902, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.501961, 0.0705882, 0.0705882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0.501961, 0.0705882, 0.0705882, 1 )
+
+[node name="Keltenmuseum" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Museum_inside" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 1.0
+margin_right = 1919.0
+margin_bottom = 1081.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Button_Reiter" type="Area2D" parent="Museum_inside"]
+position = Vector2( 187, 10 )
+script = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Reiter"]
+position = Vector2( 165, 164 )
+scale = Vector2( 19.904, -19.5722 )
+polygon = PoolVector2Array( 3.6676, -8.43032, 4.01929, -6.89753, 4.22025, -6.13114, 4.42122, -6.18223, 4.87339, -6.84644, 5.97869, -6.89753, 6.02893, -6.3866, 5.57676, -4.85382, 5.12459, -3.42322, 5.72749, -1.32841, 5.77773, -2.55464, 5.72749, -3.47431, 6.43086, -3.83196, 6.88303, -3.67868, 7.43568, -0.255465, 7.63665, 0.459835, 7.93809, 0.817485, 7.93809, 1.53278, 7.73713, 2.1459, 7.3352, 2.04371, 6.68207, 1.12404, 6.12941, 1.48169, 5.97869, 2.04371, 5.67724, 2.1459, 5.22507, 1.63497, 4.82314, 0.766392, 4.27049, 0.35765, 3.16519, -1.89044, 3.31591, -2.55464, 3.51688, -3.11666, 3.16519, -3.88306, 2.11013, -4.03633, 1.80868, -3.11666, 1.45699, -1.83934, 1.45699, -1.27732, 1.60771, 0.0510921, 2.41157, 0.306557, 2.96422, 1.12404, 2.96422, 2.50355, 2.61254, 3.11666, 1.60771, 3.98524, 1.40675, 4.59835, 1.45699, 5.0071, 1.9594, 5.87568, 2.00964, 7.20409, 1.55747, 7.8172, 0.653133, 8.27704, -0.100483, 8.27704, -0.40193, 7.8683, -0.954582, 7.61283, -1.45699, 7.153, -1.00482, 6.74425, -1.30627, 6.33551, -1.30627, 5.31365, -1.00482, 4.54726, -0.351688, 4.39398, -0.452171, 3.93415, -0.753618, 3.62759, -1.25603, 3.06557, -1.60772, 2.65683, -3.31591, 3.37213, -4.01929, 5.62021, -4.27049, 6.13114, -4.92363, 6.18223, -5.02411, 5.41584, -5.17483, 5.0071, -5.77773, 5.21147, -6.02893, 5.41584, -6.2299, 6.02895, -6.4811, 6.23333, -6.98351, 5.87568, -6.83279, 4.54726, -7.28496, 3.93415, -7.53617, 3.32103, -7.38544, 2.65683, -7.78737, 1.27732, -7.98834, 0.408742, -7.88785, -0.153279, -6.4811, -0.102186, -6.33038, 0.817485, -5.92845, 1.73716, -5.52652, 1.12404, -5.47628, 0.0510921, -5.47628, -2.75901, -6.07917, -3.5765, -6.78255, -4.59836, -6.88303, -5.05819, -6.88303, -5.51803, -6.78255, -6.48879, -6.68207, -7.8683, -6.63183, -8.32813, -5.52652, -8.22595, -5.17483, -6.08005, -5.17483, -5.82458, -4.72266, -5.62021, -4.87339, -6.69316, -4.67242, -7.71502, -4.72266, -8.48141, -4.01929, -8.73687, -3.51688, -8.73687, -2.96423, -7.35737, -2.86374, -5.77349, -1.05506, -5.97786, -0.753618, -7.1019, -0.904341, -7.71502, 0.301445, -7.71502, 0.552652, -7.25518, 0.301445, -6.48879, 0.0502396, -6.08005, 1.00482, -6.13114, 1.00482, -6.69316, 0.552652, -7.40846, 1.40675, -7.40846, 2.05989, -7.25518, 2.26085, -6.84644, 2.41157, -7.40846, 2.16037, -8.27704, 2.41157, -8.43032 )
+
+[node name="Button_Vase" type="Area2D" parent="Museum_inside"]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Vase"]
+position = Vector2( 982, 184 )
+scale = Vector2( -24.6749, -14.3398 )
+polygon = PoolVector2Array( -6.40327, -8.85646, -6.64644, -8.1591, -6.64644, -4.53283, -6.84908, 7.60121, -6.32222, 8.71698, 7.09222, 8.50778, 7.21381, 7.60121, 7.25433, -8.50778, 6.93012, -8.78672 )
+
+[node name="Button_Skulptur" type="Area2D" parent="Museum_inside"]
+script = ExtResource( 24 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Skulptur"]
+position = Vector2( 1528, 168 )
+scale = Vector2( 6.36, 18.16 )
+polygon = PoolVector2Array( -5.34592, 8.25991, -6.91824, 6.44273, -6.13208, 5.12114, -6.91824, 2.86343, -6.91824, 0.440528, -4.55975, -0.825992, -4.71698, -3.02864, -6.60378, -5.78194, -6.28931, -6.3326, -3.14465, -6.3326, -2.67296, -7.59912, -2.51573, -8.37004, 0.157227, -8.97577, 2.83018, -7.92952, 2.67296, -7.54405, 2.04402, -6.99339, 2.83018, -6.60793, 4.55974, -6.4978, 6.28931, -6.22247, 6.60378, -5.61674, 4.87421, -4.01982, 3.93082, -2.47797, 3.30188, -1.65198, 6.13206, 0.825991, 6.28931, 4.07489, 5.50314, 5.12114, 6.60378, 6.22247, 4.87421, 8.25991, 5.03145, 8.97577, -5.81761, 9.14097 )
+
+[node name="Button_Geländemodell" type="Area2D" parent="Museum_inside"]
+script = ExtResource( 23 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Geländemodell"]
+position = Vector2( 350, 597 )
+scale = Vector2( 16.5646, -11.9463 )
+polygon = PoolVector2Array( 8.2103, 9.3753, -8.814, 9.20789, -8.93474, 8.78935, -8.814, -9.71012, -7.18402, -9.71012, -7.24439, -7.61742, 7.30476, -7.70113, 7.36513, -9.29158, 7.60661, -9.37529, 8.75363, -9.37529, 8.87437, -7.03147, 8.814, 7.2826, 8.87437, 8.95676 )
+
+[node name="Button_Gewandnadel" type="Area2D" parent="Museum_inside"]
+script = ExtResource( 25 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Gewandnadel"]
+position = Vector2( 804, 536 )
+scale = Vector2( -13.8637, 14.6594 )
+polygon = PoolVector2Array( 6.9967, 8.18585, -5.33768, 8.04942, -5.8426, 7.64013, -5.91473, -7.36726, -4.97702, -7.50369, 6.56392, -7.43547, 6.85244, -7.23083, 6.9967, 2.79684 )
+
+[node name="Button_Spinnwirtel" type="Area2D" parent="Museum_inside"]
+position = Vector2( 1, -1 )
+script = ExtResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Spinnwirtel"]
+position = Vector2( 1613, 565 )
+scale = Vector2( 9.87246, 6.24931 )
+polygon = PoolVector2Array( -1.62068, 9.12101, -6.28011, 7.52083, -9.31886, 4.96055, -9.72403, 3.6804, -9.31886, -0.800095, -7.39432, -5.12057, -3.7478, -9.44105, -1.72197, -9.12101, 0.202576, -9.12101, 2.83617, -9.28103, 3.24133, -9.44105, 4.25426, -8.80098, 6.1788, -6.08067, 8.20464, -2.56029, 8.91368, 0.32003, 8.91368, 4.64051, 8.40723, 5.4406, 3.34262, 8.32092, 0.607742, 9.44104 )
+
+[node name="Button_Perle" type="Area2D" parent="Museum_inside"]
+script = ExtResource( 26 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Perle"]
+position = Vector2( 330, 915 )
+scale = Vector2( 7.51553, -7.01957 )
+polygon = PoolVector2Array( 4.79008, -8.54753, 7.58429, -5.55591, 8.91487, -1.42459, 8.51569, 1.99442, 6.919, 4.70113, 3.99173, 7.83523, 0.798344, 9.11736, -2.39504, 9.25982, -5.0562, 8.12015, -7.58429, 5.55589, -9.18099, 1.85196, -9.18099, -0.284927, -8.78181, -1.85197, -8.24958, -4.13132, -6.51983, -6.83803, -4.92314, -8.40508, -1.72975, -9.68721, 0.665287, -9.97212, 2.5281, -9.68721 )
+
+[node name="Button_Pferdemaske" type="Area2D" parent="Museum_inside"]
+script = ExtResource( 27 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Pferdemaske"]
+position = Vector2( 955, 896 )
+scale = Vector2( 6.72751, -9.37797 )
+polygon = PoolVector2Array( -9.51318, 8.42401, 9.06725, 8.42401, 9.06725, -9.38369, -9.66183, -9.49033 )
+
+[node name="Button_Gemälde" type="Area2D" parent="Museum_inside"]
+script = ExtResource( 29 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Museum_inside/Button_Gemälde"]
+position = Vector2( 1622, 882 )
+scale = Vector2( 13.6428, 13.3392 )
+polygon = PoolVector2Array( -9.52882, -8.92108, -8.57594, -9.22095, 9.08901, -8.99605, 9.16231, -7.72161, 9.23561, 8.84612, 7.98953, 9.07101, -9.01572, 9.37089, -9.23562, 9.14598, -9.45551, -3.74835 )
+
+[node name="Button_Leave" type="Button" parent="Museum_inside"]
+margin_left = 1716.0
+margin_top = 99.0
+margin_right = 1917.0
+margin_bottom = 162.0
+custom_colors/font_color = Color( 0.101961, 0.0901961, 0.0901961, 1 )
+custom_colors/font_color_hover = Color( 0.101961, 0.0901961, 0.0901961, 1 )
+custom_colors/font_color_pressed = Color( 0.101961, 0.0901961, 0.0901961, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
+text = "Leave museum"
+
+[node name="Reiter_texture" type="TextureRect" parent="."]
+margin_left = 187.0
+margin_top = 10.0
+margin_right = 586.0
+margin_bottom = 410.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+
+[node name="Kegelhalsgefäß_texture" type="TextureRect" parent="."]
+margin_left = 800.0
+margin_top = 58.0
+margin_right = 1275.0
+margin_bottom = 340.0
+mouse_filter = 2
+texture = ExtResource( 7 )
+
+[node name="Krieger_texture" type="TextureRect" parent="."]
+margin_left = 1482.0
+margin_top = 5.0
+margin_right = 1573.0
+margin_bottom = 328.0
+mouse_filter = 2
+texture = ExtResource( 10 )
+
+[node name="Sofa1_texture" type="TextureRect" parent="."]
+margin_left = 1655.0
+margin_top = 260.0
+margin_right = 1854.0
+margin_bottom = 312.0
+texture = ExtResource( 11 )
+
+[node name="Geländemodell_texture" type="TextureRect" parent="."]
+margin_left = 199.0
+margin_top = 482.0
+margin_right = 500.0
+margin_bottom = 714.0
+mouse_filter = 2
+texture = ExtResource( 12 )
+
+[node name="Gewandnadel_texture" type="TextureRect" parent="."]
+margin_left = 704.0
+margin_top = 427.0
+margin_right = 890.0
+margin_bottom = 663.0
+mouse_filter = 2
+texture = ExtResource( 13 )
+
+[node name="Sofa2_texture" type="TextureRect" parent="."]
+margin_left = 900.0
+margin_top = 581.0
+margin_right = 1215.0
+margin_bottom = 701.0
+texture = ExtResource( 14 )
+
+[node name="Spinnwirtel_texture" type="TextureRect" parent="."]
+margin_left = 1514.0
+margin_top = 505.0
+margin_right = 1709.0
+margin_bottom = 629.0
+mouse_filter = 2
+texture = ExtResource( 15 )
+
+[node name="sockel1_texture" type="TextureRect" parent="."]
+margin_left = 1536.0
+margin_top = 631.0
+margin_right = 1690.0
+margin_bottom = 671.0
+texture = ExtResource( 16 )
+
+[node name="sockel2_texture" type="TextureRect" parent="."]
+margin_left = 1491.0
+margin_top = 320.0
+margin_right = 1561.0
+margin_bottom = 333.0
+texture = ExtResource( 17 )
+
+[node name="Schmuckperle_texture" type="TextureRect" parent="."]
+margin_left = 260.0
+margin_top = 851.0
+margin_right = 394.0
+margin_bottom = 986.0
+mouse_filter = 2
+texture = ExtResource( 18 )
+
+[node name="sockel3_texture" type="TextureRect" parent="."]
+margin_left = 285.0
+margin_top = 988.0
+margin_right = 372.0
+margin_bottom = 1021.0
+texture = ExtResource( 19 )
+
+[node name="Pferdemaske_texture" type="TextureRect" parent="."]
+margin_left = 890.0
+margin_top = 817.0
+margin_right = 1016.0
+margin_bottom = 986.0
+mouse_filter = 2
+texture = ExtResource( 20 )
+
+[node name="sockel4_texture" type="TextureRect" parent="."]
+margin_left = 866.0
+margin_top = 989.0
+margin_right = 1046.0
+margin_bottom = 1044.0
+mouse_filter = 2
+texture = ExtResource( 21 )
+
+[node name="HerrderTiere_texture" type="TextureRect" parent="."]
+margin_left = 1491.0
+margin_top = 758.0
+margin_right = 1754.0
+margin_bottom = 1013.0
+mouse_filter = 2
+texture = ExtResource( 22 )
+
+[connection signal="input_event" from="Museum_inside/Button_Reiter" to="Museum_inside/Button_Reiter" method="_on_Button_Reiter_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Reiter" to="." method="_on_Button_Reiter_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Reiter" to="." method="_on_Button_Reiter_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Vase" to="Museum_inside/Button_Vase" method="_on_Button_Vase_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Vase" to="." method="_on_Button_Vase_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Vase" to="." method="_on_Button_Vase_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Skulptur" to="Museum_inside/Button_Skulptur" method="_on_Button_Skulptur_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Skulptur" to="." method="_on_Button_Skulptur_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Skulptur" to="." method="_on_Button_Skulptur_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Geländemodell" to="Museum_inside/Button_Geländemodell" method="_on_Button_Gelndemodell_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Geländemodell" to="." method="_on_Button_Gelndemodell_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Geländemodell" to="." method="_on_Button_Gelndemodell_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Gewandnadel" to="Museum_inside/Button_Gewandnadel" method="_on_Button_Gewandnadel_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Gewandnadel" to="." method="_on_Button_Gewandnadel_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Gewandnadel" to="." method="_on_Button_Gewandnadel_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Spinnwirtel" to="Museum_inside/Button_Spinnwirtel" method="_on_Button_Spinnwirtel_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Spinnwirtel" to="." method="_on_Button_Spinnwirtel_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Spinnwirtel" to="." method="_on_Button_Spinnwirtel_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Perle" to="Museum_inside/Button_Perle" method="_on_Button_Perle_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Perle" to="." method="_on_Button_Perle_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Perle" to="." method="_on_Button_Perle_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Pferdemaske" to="Museum_inside/Button_Pferdemaske" method="_on_Button_Pferdemaske_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Pferdemaske" to="." method="_on_Button_Pferdemaske_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Pferdemaske" to="." method="_on_Button_Pferdemaske_mouse_exited"]
+[connection signal="input_event" from="Museum_inside/Button_Gemälde" to="Museum_inside/Button_Gemälde" method="_on_Button_Gemlde_input_event"]
+[connection signal="mouse_entered" from="Museum_inside/Button_Gemälde" to="." method="_on_Button_Gemlde_mouse_entered"]
+[connection signal="mouse_exited" from="Museum_inside/Button_Gemälde" to="." method="_on_Button_Gemlde_mouse_exited"]
+[connection signal="pressed" from="Museum_inside/Button_Leave" to="." method="_on_Button_Leave_pressed"]

@@ -48,7 +48,7 @@
 [ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=47]
 
 [sub_resource type="DynamicFont" id=30]
-size = 45
+size = 39
 use_filter = true
 font_data = ExtResource( 1 )
 
@@ -59,7 +59,7 @@ bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
 bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
 
 [sub_resource type="DynamicFont" id=29]
-size = 45
+size = 39
 use_filter = true
 font_data = ExtResource( 1 )
 
@@ -73,7 +73,7 @@ bg_color = Color( 0.878431, 0.898039, 0.784314, 1 )
 bg_color = Color( 0.792157, 0.823529, 0.662745, 1 )
 
 [sub_resource type="DynamicFont" id=31]
-size = 45
+size = 39
 use_filter = true
 font_data = ExtResource( 1 )
 
@@ -166,7 +166,7 @@ script = ExtResource( 21 )
 margin_left = 30.0
 margin_top = 145.0
 margin_right = 583.0
-margin_bottom = 800.0
+margin_bottom = 960.0
 rect_min_size = Vector2( 540, 700 )
 scroll_horizontal_enabled = false
 
@@ -274,7 +274,7 @@ texture = ExtResource( 30 )
 margin_left = 712.0
 margin_top = 145.0
 margin_right = 1265.0
-margin_bottom = 845.0
+margin_bottom = 960.0
 rect_min_size = Vector2( 540, 700 )
 scroll_horizontal_enabled = false
 
@@ -382,7 +382,7 @@ texture = ExtResource( 33 )
 margin_left = 1340.0
 margin_top = 145.0
 margin_right = 1893.0
-margin_bottom = 845.0
+margin_bottom = 960.0
 rect_min_size = Vector2( 540, 700 )
 scroll_horizontal_enabled = false
 
@@ -487,10 +487,10 @@ scale = Vector2( 0.352, 0.357 )
 texture = ExtResource( 41 )
 
 [node name="Button_Team1" type="Button" parent="."]
-margin_left = 104.0
-margin_top = 887.0
-margin_right = 487.0
-margin_bottom = 1016.0
+margin_left = 108.0
+margin_top = 981.0
+margin_right = 491.0
+margin_bottom = 1051.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 30 )
 custom_styles/hover = SubResource( 23 )
@@ -500,9 +500,9 @@ script = ExtResource( 25 )
 
 [node name="Button_Team2" type="Button" parent="."]
 margin_left = 788.0
-margin_top = 887.0
+margin_top = 981.0
 margin_right = 1171.0
-margin_bottom = 1016.0
+margin_bottom = 1051.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 29 )
 custom_styles/hover = SubResource( 20 )
@@ -512,10 +512,10 @@ text = "Select Team 2"
 script = ExtResource( 26 )
 
 [node name="Button_Team3" type="Button" parent="."]
-margin_left = 1428.0
-margin_top = 887.0
-margin_right = 1811.0
-margin_bottom = 1016.0
+margin_left = 1432.0
+margin_top = 981.0
+margin_right = 1815.0
+margin_bottom = 1051.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 31 )
 custom_styles/hover = SubResource( 26 )
@@ -527,11 +527,11 @@ script = ExtResource( 27 )
 [node name="Label" type="Label" parent="."]
 margin_left = 589.0
 margin_top = 5.0
-margin_right = 1319.0
+margin_right = 1466.0
 margin_bottom = 118.0
 custom_fonts/font = SubResource( 1 )
 text = "Pick your team!
-Who is going to accompany your project?"
+Who is going to accompany your project? (you can scroll to view everyone)"
 align = 1
 
 [node name="UserTeamConfirmation" type="PanelContainer" parent="."]

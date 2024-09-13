@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Minigame1/Assets/Images/miniGameBackground.png" type="Texture" id=1]
-[ext_resource path="res://Minigame1/Main_Minigame1.gd" type="Script" id=2]
-[ext_resource path="res://Minigame1/Minigame1_HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Minigame1/Assets/Images/miniGameBackground.png" type="Texture" id=1]
+[ext_resource path="res://Level1/Minigame1/Main_Minigame1.gd" type="Script" id=2]
+[ext_resource path="res://Level1/Minigame1/Minigame1_HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=4]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=5]
 
