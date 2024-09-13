@@ -60,19 +60,6 @@ I laid out all the shards, hoping they’d magically fit together. Of course, th
 
 By the end of the day, I had successfully reassembled a vessel that had been buried for centuries. It’s a little rough around the edges, but after all that time underground, I’m calling it a big win. The satisfaction of seeing those fragments come together was well worth the effort."
 
-[node name="DiaryEntry2" type="RichTextLabel" parent="."]
-visible = false
-margin_left = 986.0
-margin_top = 209.0
-margin_right = 1535.0
-margin_bottom = 680.0
-theme = ExtResource( 1 )
-text = "Looking back, I think Sir Mortimer Wheeler would be proud of our precise work and the bond in our team. We didn’t just dig holes, we unearthed stories, layer by layer. Of course, we also avoided an Indiana Jones like excavation, like snakes, rolling boulders or complete demolition, which is always a win. 
- 
-So here’s to a successful excavation, a job well done, and the incredible history we’ve uncovered. Now we can call ourselves archeologic excavation Professionals!!
-You may now return and take a look through the museum's exhibit if you like.
-Until the next dig!"
-
 [node name="TitelLabel" type="Label" parent="."]
 margin_left = 417.0
 margin_top = 274.0

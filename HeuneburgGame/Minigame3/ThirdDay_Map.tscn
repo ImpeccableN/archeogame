@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Minigame3/Button_Bauwagen3.gd" type="Script" id=1]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Level1/Assets/Images/lv3_map_symbol_minigame.png" type="Texture" id=11]
 [ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Minigame3/ThirdDay_Map.gd" type="Script" id=13]
-[ext_resource path="res://Minigame3/OutroVideoPlayer.gd" type="Script" id=14]
 [ext_resource path="res://video/heueneburgDaily_withBG.ogv" type="VideoStream" id=15]
 
 [sub_resource type="StyleBoxTexture" id=1]
@@ -122,13 +121,6 @@ custom_styles/normal = SubResource( 3 )
 [node name="DisasterScore" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1007, 94 )
 
-[node name="OutroVideoPlayer" type="VideoPlayer" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-expand = false
-script = ExtResource( 14 )
-
 [node name="NewspaperPlayer" type="VideoPlayer" parent="."]
 visible = false
 margin_right = 40.0
@@ -143,4 +135,3 @@ expand = false
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_exited"]
 [connection signal="disaster_score_finished" from="DisasterScore" to="." method="_on_DisasterScore_disaster_score_finished"]
-[connection signal="finished" from="OutroVideoPlayer" to="." method="_on_OutroVideoPlayer_finished"]
