@@ -244,7 +244,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Answer1" type="TextureRect" parent="CanvasLayer/Control_Application/VBoxContainer_answerfield"]
-visible = false
 margin_left = 270.0
 margin_right = 683.0
 margin_bottom = 69.0
@@ -254,7 +253,6 @@ texture = ExtResource( 5 )
 script = ExtResource( 8 )
 
 [node name="Answer2" type="TextureRect" parent="CanvasLayer/Control_Application/VBoxContainer_answerfield"]
-visible = false
 margin_left = 214.0
 margin_top = 73.0
 margin_right = 738.0
@@ -265,7 +263,6 @@ texture = ExtResource( 16 )
 script = ExtResource( 6 )
 
 [node name="Answer3" type="TextureRect" parent="CanvasLayer/Control_Application/VBoxContainer_answerfield"]
-visible = false
 margin_left = 204.0
 margin_top = 138.0
 margin_right = 749.0
@@ -276,7 +273,6 @@ texture = ExtResource( 15 )
 script = ExtResource( 14 )
 
 [node name="ContinueButton" type="Button" parent="CanvasLayer/Control_Application/VBoxContainer_answerfield"]
-visible = false
 margin_left = 823.0
 margin_top = 240.0
 margin_right = 953.0
@@ -295,7 +291,6 @@ align = 2
 script = ExtResource( 9 )
 
 [node name="HBoxContainer_questionfield" type="HBoxContainer" parent="CanvasLayer/Control_Application"]
-visible = false
 margin_left = 120.0
 margin_top = -10.0
 margin_right = 926.0
@@ -303,7 +298,6 @@ margin_bottom = 238.0
 script = ExtResource( 11 )
 
 [node name="Label1" type="Label" parent="CanvasLayer/Control_Application/HBoxContainer_questionfield"]
-visible = false
 margin_top = 24.0
 margin_right = 412.0
 margin_bottom = 224.0
