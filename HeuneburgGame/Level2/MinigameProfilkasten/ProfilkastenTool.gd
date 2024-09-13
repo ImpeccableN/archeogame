@@ -111,6 +111,7 @@ func _on_ProfilkastenTool_area_entered(area):
 	else:
 		entered_areas.append(area)
 		if $Timer.get_time_left() == 0:
+			$Sprite.rotation_degrees = 10
 			$Timer.start()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_hintergrund.png" type="Texture" id=1]
 [ext_resource path="res://Level1/Button_Grabungsstaette.gd" type="Script" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=24]
 [ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=25]
 [ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=26]
+[ext_resource path="res://video/heueneburgDaily_withBG.ogv" type="VideoStream" id=27]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 12 )
@@ -373,7 +374,14 @@ custom_styles/normal = SubResource( 25 )
 text = "Close diary"
 
 [node name="DisasterScore" parent="." instance=ExtResource( 26 )]
-position = Vector2( 984, 256 )
+position = Vector2( 974, 85 )
+
+[node name="NewspaperPlayer" type="VideoPlayer" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+stream = ExtResource( 27 )
+expand = false
 
 [connection signal="input_event" from="FirstLevel_Image/Button_Grabungsstaette" to="FirstLevel_Image/Button_Grabungsstaette" method="_on_Button_Grabungsstaette_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Grabungsstaette" to="." method="_on_Button_Grabungsstaette_mouse_entered"]
@@ -392,3 +400,4 @@ position = Vector2( 984, 256 )
 [connection signal="timeout" from="TgFlip/TgStatic/Label_Introtxt2/Timer" to="TgFlip/TgStatic/Label_Introtxt2" method="_on_Timer_timeout"]
 [connection signal="pressed" from="TgFlip/TgStatic/Button_nextPage" to="TgFlip" method="_on_Button_nextPage_pressed"]
 [connection signal="pressed" from="TgFlip/Close_introTxt" to="TgFlip" method="_on_Close_introTxt_pressed"]
+[connection signal="disaster_score_finished" from="DisasterScore" to="." method="_on_DisasterScore_disaster_score_finished"]

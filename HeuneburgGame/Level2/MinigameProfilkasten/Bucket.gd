@@ -6,8 +6,11 @@ var img2 = load("res://Level2/MinigameProfilkasten/Assets/Images/EimerKrankVoll.
 var img3 = load("res://Level2/MinigameProfilkasten/Assets/Images/EimerMidiVoll.png")
 var img4 = load("res://Level2/MinigameProfilkasten/Assets/Images/EimerMiniVoll.png")
 
+onready var audio = get_node("../AudioBucket")
+
 func change_img():
 	dirt_collected += 1
+	audio.play()
 	match dirt_collected:
 		1:
 			set_texture(img2)

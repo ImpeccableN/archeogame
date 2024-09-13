@@ -13,7 +13,6 @@ func _ready():
 	
 	# on load up, check if minigame is absolved succesfully. Wait two seconds, then load diary entry from Day 1.
 	if Global.profilkasten_done:
-		yield(get_tree().create_timer(0.5), "timeout")
 		get_tree().change_scene("res://Level2/DiaryLvl2End.tscn")
 
 
@@ -47,3 +46,9 @@ func _on_Button_Keltenmuseum_mouse_exited():
 
 func _on_Freilichtmuseum_Overlay_mouse_entered():
 	pass # Replace with function body.
+
+
+# check if minigame is absolved succesfully, then load diary entry from Day 2.
+func _on_DisasterScore_disaster_score_finished():
+	if Global.profilkasten_done:
+		get_tree().change_scene("res://Level2/DiaryLvl2End.tscn")

@@ -6,8 +6,11 @@ var img2 = load("res://Level2/MinigameProfilkasten/Assets/Images/fundtueteMit1Sc
 var img3 = load("res://Level2/MinigameProfilkasten/Assets/Images/fundtueteMit2Scherben.png")
 var img4 = load("res://Level2/MinigameProfilkasten/Assets/Images/fundtueteMit3Scherben.png")
 
+onready var audio = get_node("../AudioBag")
+
 func change_img():
 	shards_found += 1
+	audio.play()
 	match shards_found:
 		1:
 			set_texture(img2)

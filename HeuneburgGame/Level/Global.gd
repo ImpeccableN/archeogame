@@ -8,6 +8,7 @@ var end_time
 
 #keeps track of the amount of disaster points gathered
 var disaster_score = 0
+var old_score: int
 
 #for application score
 var scoreApplication : int = 0 
@@ -25,6 +26,9 @@ var minigame_werkzeuge_done = false
 #keeps track of minigame completion in lvl2
 var profilkasten_done: bool = false
 
+#keeps track of puzzle completion in lvl3
+var puzzle_done : bool = false
+
 #keeps track of placed pieces in vase puzzle
 var puzzlePieces = 0
 
@@ -33,6 +37,7 @@ var photo : ImageTexture
 
 #adds disaster points from games to global score
 func calculate_disaster(score):
+	old_score = disaster_score
 	disaster_score += score
 
 #saves start time of certain games

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Stecktafel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Level2/MinigameProfilkasten/SnappingZone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/flash.png" type="Texture" id=11]
-[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/camera-flash.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/Camera_Shutter.wav" type="AudioStream" id=12]
 [ext_resource path="res://Level2/MinigameProfilkasten/ColorRectSnapzone.gd" type="Script" id=13]
 [ext_resource path="res://Themes/just_font.tres" type="Theme" id=14]
 [ext_resource path="res://Themes/Infoblock.tres" type="Theme" id=15]
@@ -19,6 +19,7 @@
 [ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Animation/staubwolkeUebergangEnde.ogv" type="VideoStream" id=18]
 [ext_resource path="res://Level2/MinigameProfilkasten/SpitzhackeHitPoint.gd" type="Script" id=19]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/Pickaxe.wav" type="AudioStream" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 193 )
@@ -268,6 +269,10 @@ collision_layer = 128
 collision_mask = 128
 script = ExtResource( 19 )
 
+[node name="AudioPickaxe" type="AudioStreamPlayer" parent="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint"]
+stream = ExtResource( 20 )
+volume_db = 3.5
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint"]
 polygon = PoolVector2Array( -8, 132, -91, 119, -181, 32, -251, -75, -290, -167, -256, -196, -148, -226, -14, -242, 117, -241, 251, -212, 283, -174, 255, -109, 177, 56, 91, 107 )
 
@@ -279,7 +284,6 @@ texture = ExtResource( 11 )
 
 [node name="AudioCameraFlash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = -6.545
 
 [connection signal="button_down" from="ViewportContainer/ViewportPhoto/Toolbox/ToolButton" to="ViewportContainer/ViewportPhoto/Kamera" method="_on_ToolButton_button_down"]
 [connection signal="button_down" from="ViewportContainer/ViewportPhoto/Toolbox/ToolButton2" to="ViewportContainer/ViewportPhoto/Massstab" method="_on_ToolButton_button_down"]
