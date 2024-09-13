@@ -12,7 +12,8 @@
     "Drawing": 3,
     "Organisation": 3,
     "Photography": 2,
-    "Documentation": 3
+    "Documentation": 3,
+    "Gender": "Female"
   },
   {
     "Name": "Isaac",
@@ -27,7 +28,8 @@
     "Drawing": 3,
     "Organisation": 2,
     "Photography": 3,
-    "Documentation": 3
+    "Documentation": 3,
+    "Gender": "Male"
   },
   {
     "Name": "Kilian",
@@ -42,7 +44,8 @@
     "Drawing": 2,
     "Organisation": 1,
     "Photography": 1,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Male"
   },
   {
     "Name": "Luc",
@@ -57,7 +60,8 @@
     "Drawing": 1,
     "Organisation": 1,
     "Photography": 1,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Male"
   },
   {
     "Name": "Marie",
@@ -72,7 +76,8 @@
     "Drawing": 3,
     "Organisation": 1,
     "Photography": 3,
-    "Documentation": 2
+    "Documentation": 2,
+    "Gender": "Female"
   },
   {
     "Name": "Thea",
@@ -87,7 +92,8 @@
     "Drawing": 3,
     "Organisation": 1,
     "Photography": 2,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Female"
   },
   {
     "Name": "Emilia",
@@ -102,7 +108,8 @@
     "Drawing": 3,
     "Organisation": 3,
     "Photography": 3,
-    "Documentation": 3
+    "Documentation": 3,
+    "Gender": "Female"
   },
   {
     "Name": "Francesco",
@@ -117,7 +124,8 @@
     "Drawing": 2,
     "Organisation": 1,
     "Photography": 1,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Male"
   },
   {
     "Name": "Lina",
@@ -132,7 +140,8 @@
     "Drawing": 2,
     "Organisation": 1,
     "Photography": 1,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Female"
   },
   {
     "Name": "Niko",
@@ -147,7 +156,8 @@
     "Drawing": 3,
     "Organisation": 1,
     "Photography": 3,
-    "Documentation": 2
+    "Documentation": 2,
+    "Gender": "Male"
   },
   {
     "Name": "Sinisa",
@@ -162,7 +172,8 @@
     "Drawing": 3,
     "Organisation": 1,
     "Photography": 3,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Male"
   },
   {
     "Name": "Sofia",
@@ -177,7 +188,8 @@
     "Drawing": 3,
     "Organisation": 2,
     "Photography": 2,
-    "Documentation": 3
+    "Documentation": 3,
+    "Gender": "Female"
   },
   {
     "Name": "Diego",
@@ -192,7 +204,8 @@
     "Drawing": 3,
     "Organisation": 1,
     "Photography": 2,
-    "Documentation": 2
+    "Documentation": 2,
+    "Gender": "Male"
   },
   {
     "Name": "Jupp",
@@ -207,7 +220,8 @@
     "Drawing": 1,
     "Organisation": 1,
     "Photography": 2,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Male"
   },
   {
     "Name": "Lydia",
@@ -222,7 +236,8 @@
     "Drawing": 2,
     "Organisation": 1,
     "Photography": 2,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Female"
   },
   {
     "Name": "Thilo",
@@ -237,7 +252,8 @@
     "Drawing": 3,
     "Organisation": 1,
     "Photography": 2,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Male"
   },
   {
     "Name": "Tommy",
@@ -252,7 +268,8 @@
     "Drawing": 1,
     "Organisation": 1,
     "Photography": 1,
-    "Documentation": 1
+    "Documentation": 1,
+    "Gender": "Male"
   },
   {
     "Name": "Tilda",
@@ -267,6 +284,7 @@
     "Drawing": 3,
     "Organisation": 2,
     "Photography": 1,
-    "Documentation": 2
+    "Documentation": 2,
+    "Gender": "Female"
   }
 ]
