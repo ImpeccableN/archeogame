@@ -5,6 +5,7 @@ onready var keltenmuseum_image = get_node("Keltenmuseum_Overlay")
 onready var bauwagen_image = get_node("Bauwagen_Overlay")
 export var images_grow_scale := Vector2.ZERO
 
+
 func _ready():
 	if not MusicPlayer.is_playing():
 		MusicPlayer.play_mapmusic()
@@ -31,7 +32,7 @@ func _on_DisasterScore_disaster_score_finished():
 	if Global.puzzle_done:
 		MusicPlayer.stop()
 		Global.game_finished = true
-		get_tree().change_scene("res://Minigame3/DiaryLvl3End.tscn")
+		get_tree().change_scene("res://Level3/DiaryLvl3End.tscn")
 
 
 func _on_Button_Diary_pressed():
@@ -42,7 +43,6 @@ func _on_Button_Diary_pressed():
 	$Freilichtmuseum_Overlay.hide()
 	$Grabungsstaette_Overlay.hide()
 	$Keltenmuseum_Overlay.hide()
-
 
 
 func _on_Button_Close_pressed():
