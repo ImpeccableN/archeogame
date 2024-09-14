@@ -5,8 +5,8 @@ export var starting_position = Vector2.ZERO
 var straight = true
 var screen_size = Vector2(1024, 1088)
 var screen_lowerend = false
-var crash_sound = load("res://Minigame1/Assets/SFX/ExcavatorCrash.wav")
-var drive_sound = load("res://Minigame1/Assets/SFX/truck-engine-idle-loops-33687.wav")
+var crash_sound = load("res://Level1/Minigame1/Assets/SFX/ExcavatorCrash.wav")
+var drive_sound = load("res://Level1/Minigame1/Assets/SFX/truck-engine-idle-loops-33687.wav")
 onready var sprite_node = get_node("Sprite")
 
 signal truck_stopped

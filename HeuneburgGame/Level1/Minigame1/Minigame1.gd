@@ -3,7 +3,7 @@ extends Node2D
 var truck_position = Vector2.ZERO
 var sun_position = Vector2.ZERO
 var sun_direction = false
-var marker_scene = preload("res://Minigame1/Marker.tscn")
+var marker_scene = preload("res://Level1/Minigame1/Marker.tscn")
 var score = 0
 var truck_stopped = false
 var score_goal = 10

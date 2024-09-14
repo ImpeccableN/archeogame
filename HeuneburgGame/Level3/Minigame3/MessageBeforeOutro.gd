@@ -16,4 +16,4 @@ func _on_OutroPlayer_finished():
 
 
 func _on_LeaveButton2_pressed():
-	get_tree().change_scene("res://Minigame3/ThirdDay_Map.tscn")
+	get_tree().change_scene("res://Level3/Minigame3/ThirdDay_Map.tscn")

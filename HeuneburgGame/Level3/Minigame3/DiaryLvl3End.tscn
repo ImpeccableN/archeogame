@@ -4,7 +4,7 @@
 [ext_resource path="res://Level/TgAnimation.gd" type="Script" id=2]
 [ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=3]
 [ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=4]
-[ext_resource path="res://Minigame3/DiaryLvl3End.gd" type="Script" id=5]
+[ext_resource path="res://Level3/DiaryLvl3End.gd" type="Script" id=5]
 [ext_resource path="res://video/tb_zoomIn.ogv" type="VideoStream" id=6]
 [ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=7]
 

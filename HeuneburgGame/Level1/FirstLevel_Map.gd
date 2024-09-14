@@ -19,7 +19,6 @@ func _ready():
 
 
 
-
 func _on_Button_Grabungsstaette_mouse_entered():
 	grabungsstaette_image.rect_scale = images_grow_scale
 	$Grabungsstaette_Overlay/GrabungsstaettenLabel.show()

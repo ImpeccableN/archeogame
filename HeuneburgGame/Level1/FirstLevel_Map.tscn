@@ -136,6 +136,7 @@ mouse_filter = 2
 texture = ExtResource( 5 )
 
 [node name="FreilichtLabel" type="Label" parent="Freilichtmuseum_Overlay"]
+visible = false
 margin_left = 1358.0
 margin_top = 745.0
 margin_right = 1758.0
@@ -248,7 +249,6 @@ autowrap = true
 stream = ExtResource( 16 )
 
 [node name="DisasterScore" parent="." instance=ExtResource( 26 )]
-visible = false
 position = Vector2( 974, 85 )
 
 [node name="NewspaperPlayer" type="VideoPlayer" parent="."]

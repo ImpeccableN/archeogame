@@ -45,6 +45,7 @@ func get_team_members(path):
 	else:
 		print("An error occurred when trying to access the path.")
 	dir.list_dir_end()
+	print(team_names_array)
 
 
 func load_in_team_members():
