@@ -21,5 +21,14 @@ func play_museummusic():
 
 
 func play_titletheme():
+	if is_playing():
+		stop()
 	stream = load("res://Music/title.wav")
+	play()
+
+
+func play_applicationmusic():
+	if is_playing():
+		stop()
+	stream = load("res://Music/application_nope.wav")
 	play()
