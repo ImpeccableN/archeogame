@@ -12,10 +12,13 @@ onready var gemaelde_img = $HerrderTiere_texture
 export var images_grow_scale := Vector2.ZERO
 
 
+func _ready():
+	MusicPlayer.play_museummusic()
 
 
 func _on_Button_Reiter_mouse_entered():
 	reiter_img.rect_scale = images_grow_scale
+
 
 func _on_Button_Reiter_mouse_exited():
 	reiter_img.rect_scale = Vector2.ONE
@@ -87,6 +90,7 @@ func _on_Button_Gemlde_mouse_exited():
 
 
 func _on_Button_Leave_pressed():
+	MusicPlayer.stop()
 	get_tree().change_scene("res://Level3/ThirdDay_Map.tscn")
 
 

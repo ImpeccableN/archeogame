@@ -11,3 +11,10 @@ func play_mapmusic():
 		stop()
 	stream = load("res://Music/map_final.wav")
 	play()
+
+
+func play_museummusic():
+	if is_playing():
+		stop()
+	stream = load("res://Music/museum_final.wav")
+	play()

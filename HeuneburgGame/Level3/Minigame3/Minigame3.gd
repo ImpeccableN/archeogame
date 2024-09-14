@@ -4,6 +4,7 @@ extends Node2D
 onready var puzzleScore = Global.puzzlePieces
 
 func _ready():
+	MusicPlayer.play_profilkasten()
 	$TextureRect2_puzzleFinished.hide()
 	$Label.hide()
 	$Button_ctn.hide()
@@ -13,6 +14,7 @@ func _process(_delta):
 	if Global.puzzlePieces == 11:
 		Global.calculate_disaster(distribute_disaster_points())
 		Global.puzzle_done = true
+		MusicPlayer.stop()
 		$TextureRect2_puzzleFinished.show()
 		$Label.show()
 		$CanvasLayer/Control/piece2_target.hide()
