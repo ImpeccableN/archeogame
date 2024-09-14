@@ -18,3 +18,8 @@ func play_museummusic():
 		stop()
 	stream = load("res://Music/museum_final.wav")
 	play()
+
+
+func play_titletheme():
+	stream = load("res://Music/title.wav")
+	play()
