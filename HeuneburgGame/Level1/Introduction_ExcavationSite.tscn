@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Level/Label_Introtxt2.gd" type="Script" id=3]
+[ext_resource path="res://Level/Label_Introtxt.gd" type="Script" id=4]
+[ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=5]
+[ext_resource path="res://Level1/Introduction_ExcavationSite.gd" type="Script" id=6]
+[ext_resource path="res://sound effects/book-closing.mp3" type="AudioStream" id=7]
+[ext_resource path="res://sound effects/scribble_long.wav" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_color = Color( 1, 1, 1, 1 )
+
+[node name="TgStatic" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="Label_Introtxt1" type="Label" parent="."]
+margin_left = 335.0
+margin_top = 128.0
+margin_right = 723.0
+margin_bottom = 581.0
+rect_min_size = Vector2( 388, 252 )
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Hello fellow Archeologist! Welcome to the Heuneburg excavation site. Our mission? To uncover the secrets of one of Germany’s most fascinating archaeological sites, the Heuneburg. This Iron Age settlement offers glimpses into the lives of our ancient ancestors. Your role? Help us to make the right decisions and prevent turning history into dirt.  
+Here on this scenery hill we are going to start our excavation. Imagine bustling streets and early trade."
+autowrap = true
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="Label_Introtxt1"]
+wait_time = 0.5
+
+[node name="Label_Introtxt2" type="Label" parent="."]
+margin_left = 945.0
+margin_top = 128.0
+margin_right = 1345.0
+margin_bottom = 581.0
+rect_min_size = Vector2( 388, 453 )
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Your task is crucial: every choice impacts our excavation. Choose wisely, and we’ll unearth valuable insights. Missteps?
+They lead to missed opportunities and maybe a few laughs. Join our team of passionate scientists. Let’s tackle this excavation with curiosity and humor. Together, we’ll uncover Heuneburg’s secrets and perhaps make groundbreaking discoveries. 
+Grab your shovel, put on your explorer hat, and let’s make history – one layer at a time!"
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="Label_Introtxt2"]
+wait_time = 0.5
+
+[node name="Button_CloseIntroTxt" type="Button" parent="."]
+margin_left = 1104.0
+margin_top = 877.0
+margin_right = 1303.0
+margin_bottom = 933.0
+custom_colors/font_color = Color( 0.054902, 0.443137, 0.196078, 1 )
+custom_colors/font_color_hover = Color( 0.117647, 0.843137, 0.537255, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Close diary"
+
+[node name="CloseDiary" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Scribble" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[connection signal="timeout" from="Label_Introtxt1/Timer" to="Label_Introtxt1" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Label_Introtxt2/Timer" to="Label_Introtxt2" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button_CloseIntroTxt" to="." method="_on_Button_CloseIntroTxt_pressed"]

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/pageturn.mp3-e5988ef2b722e38478fcf74fee127ed3.mp3str
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

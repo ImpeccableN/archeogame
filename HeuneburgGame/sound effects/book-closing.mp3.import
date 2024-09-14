@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/book-closing.mp3-e03ea0ff3a1d528d049d97d2cf52d115.mp3str"
+
+[deps]
+
+source_file="res://sound effects/book-closing.mp3"
+dest_files=[ "res://.import/book-closing.mp3-e03ea0ff3a1d528d049d97d2cf52d115.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

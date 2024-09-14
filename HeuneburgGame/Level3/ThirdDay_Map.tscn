@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Level3/ThirdDay_Map.gd" type="Script" id=1]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=2]
@@ -12,7 +12,10 @@
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_bauwagen.png" type="Texture" id=10]
 [ext_resource path="res://Level1/Assets/Images/lv3_map_symbol_minigame.png" type="Texture" id=11]
 [ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=12]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://sound effects/book-closing.mp3" type="AudioStream" id=14]
 [ext_resource path="res://video/heueneburgDaily_withBG.ogv" type="VideoStream" id=15]
+[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=16]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -25,6 +28,62 @@ region_rect = Rect2( 0, 0, 2048, 2048 )
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.886275, 0.737255, 0.313726, 0.729412 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.886275, 0.737255, 0.313726, 0.729412 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.792157, 0.619608, 0.12549, 0.729412 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 20
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.878431, 0.580392, 0.239216, 0.760784 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.878431, 0.580392, 0.239216, 0.760784 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.792157, 0.482353, 0.12549, 0.760784 )
 
 [node name="ThirdDay_Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -106,7 +165,7 @@ theme = ExtResource( 6 )
 text = "The museum's not open yet. 
 You must first find some artefacts."
 
-[node name="Button_Diary" type="Button" parent="."]
+[node name="Button_Diary" type="Button" parent="Keltenmuseum_Overlay"]
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 156.0
@@ -114,6 +173,65 @@ margin_bottom = 145.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
+
+[node name="Diary" type="Popup" parent="."]
+margin_left = 2.0
+margin_top = 4.0
+margin_right = 42.0
+margin_bottom = 44.0
+
+[node name="Diary_texture" type="TextureRect" parent="Diary"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 16 )
+
+[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 384.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Glossary"
+
+[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Close"
+
+[node name="Button_BacktoMain" type="Button" parent="Diary/Diary_texture"]
+margin_left = 515.0
+margin_top = 697.0
+margin_right = 725.0
+margin_bottom = 773.0
+custom_fonts/font = SubResource( 12 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 14 )
+text = "Back to main menu"
+
+[node name="Button_Quit" type="Button" parent="Diary/Diary_texture"]
+margin_left = 514.0
+margin_top = 790.0
+margin_right = 724.0
+margin_bottom = 866.0
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 15 )
+text = "Quit game"
+
+[node name="BookClose" type="AudioStreamPlayer2D" parent="Diary"]
+stream = ExtResource( 14 )
 
 [node name="DisasterScore" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1007, 94 )
@@ -137,5 +255,9 @@ expand = false
 [connection signal="input_event" from="FirstLevel_Image/Button_Bauwagen3" to="FirstLevel_Image/Button_Bauwagen3" method="_on_Button_Bauwagen3_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_exited"]
+[connection signal="pressed" from="Keltenmuseum_Overlay/Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_BacktoMain" to="." method="_on_Button_BacktoMain_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Quit" to="." method="_on_Button_Quit_pressed"]
 [connection signal="disaster_score_finished" from="DisasterScore" to="." method="_on_DisasterScore_disaster_score_finished"]
 [connection signal="finished" from="OutroVideoPlayer" to="." method="_on_OutroVideoPlayer_finished"]

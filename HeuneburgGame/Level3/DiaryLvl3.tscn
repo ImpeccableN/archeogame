@@ -2,63 +2,69 @@
 
 [ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=1]
 [ext_resource path="res://Themes/just_font.tres" type="Theme" id=2]
-[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Level3/DiaryLvl3.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 1
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 1
-border_color = Color( 0.0823529, 0.509804, 0.0941176, 1 )
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
 
 [node name="DiaryLvl3" type="TextureRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1919.0
+margin_bottom = 1077.0
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
 [node name="DiaryEntry" type="RichTextLabel" parent="."]
-margin_left = 998.0
-margin_top = 180.0
-margin_right = 1467.0
-margin_bottom = 679.0
+margin_left = 994.0
+margin_top = 177.0
+margin_right = 1531.0
+margin_bottom = 882.0
+mouse_filter = 2
 theme = ExtResource( 2 )
-text = "Good job on finishing the last minigame. This is the end of our demo.  If you want, you can close the diary now and look at a few exhibits in the museum if you didn't already.
+text = "Good day, fellow archaeologist!
 
-Thank you for playing!"
+We’ve made it to the final day of our excavation adventure!
+After carefully digging out all those pottery shards, today’s challenge is to glue them back together. It’s like working on the most difficult Ravensburger puzzle you could find, just that it’s a few thousand years older and with a few more missing pieces.
 
-[node name="TitelLabel" type="Label" parent="."]
-margin_left = 417.0
-margin_top = 274.0
-margin_right = 798.0
-margin_bottom = 351.0
+Before we get started, let’s take a moment to reflect on what we’ve learned so far. We’ve become experts at creating profile boxes, revealing layers of history hidden under our feet. I think even the great Flinders Petrie, known for his meticulous methods, would appreciate our attention to detail!
+
+Now, it’s time to take those pottery shards and carefully match the edges, piece by piece, to rebuild the original vessel. Of course, the edges might not always fit perfectly, time and nature have taken their toll, but with patience, glue, sweat and a steady hand, we’ll restore it as best we can.
+
+Let’s roll up our sleeves and bring history back together today, one shard at a time. And who knows, maybe by the end of it, we’ll have something for which we make it into the history books! 
+"
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_left = 458.0
+margin_top = 287.0
+margin_right = 827.0
+margin_bottom = 391.0
 theme = ExtResource( 2 )
 text = "Day 3"
 align = 1
 
-[node name="Button_toMap3" type="Button" parent="."]
-margin_left = 1108.0
-margin_top = 702.0
-margin_right = 1320.0
-margin_bottom = 789.0
+[node name="CloseButton" type="Button" parent="."]
+margin_left = 1160.0
+margin_top = 863.0
+margin_right = 1357.0
+margin_bottom = 937.0
+theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.0235294, 0.321569, 0.160784, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
-text = "Close diary"
+custom_colors/font_color_hover = Color( 0.117647, 0.843137, 0.537255, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Close"
 
-[connection signal="pressed" from="Button_toMap3" to="." method="_on_Button_toMap3_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]

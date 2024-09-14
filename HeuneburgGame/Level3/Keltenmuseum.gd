@@ -88,3 +88,53 @@ func _on_Button_Gemlde_mouse_exited():
 
 func _on_Button_Leave_pressed():
 	get_tree().change_scene("res://Level3/ThirdDay_Map.tscn")
+
+
+func _on_Button_Diary_pressed():
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$Museum_inside.hide()
+	$Reiter_texture.hide()
+	$"Kegelhalsgefäß_texture".hide()
+	$Krieger_texture.hide()
+	$Sofa1_texture.hide()
+	$"Geländemodell_texture".hide()
+	$Gewandnadel_texture.hide()
+	$Sofa2_texture.hide()
+	$Spinnwirtel_texture.hide()
+	$sockel1_texture.hide()
+	$sockel2_texture.hide()
+	$Schmuckperle_texture.hide()
+	$sockel3_texture.hide()
+	$Pferdemaske_texture.hide()
+	$sockel4_texture.hide()
+	$HerrderTiere_texture.hide()
+
+func _on_Button_Close_pressed():
+	$Diary/BookClose.play()
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$Museum_inside.show()
+	$Reiter_texture.show()
+	$"Kegelhalsgefäß_texture".show()
+	$Krieger_texture.show()
+	$Sofa1_texture.show()
+	$"Geländemodell_texture".show()
+	$Gewandnadel_texture.show()
+	$Sofa2_texture.show()
+	$Spinnwirtel_texture.show()
+	$sockel1_texture.show()
+	$sockel2_texture.show()
+	$Schmuckperle_texture.show()
+	$sockel3_texture.show()
+	$Pferdemaske_texture.show()
+	$sockel4_texture.show()
+	$HerrderTiere_texture.show()
+
+
+func _on_Button_BacktoMain_pressed():
+	get_tree().change_scene("res://MainMenu.tscn")
+
+
+func _on_Button_Quit_pressed():
+	get_tree().quit()

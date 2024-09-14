@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 2.png" type="Texture" id=1]
 [ext_resource path="res://Level3/Minigame3/Assets/Images/Topf 4.png" type="Texture" id=2]
@@ -43,6 +43,7 @@
 [ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=41]
 [ext_resource path="res://Level3/Minigame3/Assets/Images/VaseUmriss.PNG" type="Texture" id=42]
 [ext_resource path="res://Level3/Minigame3/Assets/Images/Schreibtisch_Bauwagen.png" type="Texture" id=43]
+[ext_resource path="res://sound effects/book-closing.mp3" type="AudioStream" id=44]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
@@ -443,6 +444,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Congrats! You have put it back together!"
 
 [node name="Tip3" type="Popup" parent="."]
+visible = true
 margin_left = 1385.0
 margin_top = 4.0
 margin_right = 1836.0
@@ -456,20 +458,20 @@ anchor_bottom = 1.0
 [node name="Tip3" type="Label" parent="Tip3/NinePatchRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1105.0
-margin_top = 1024.0
-margin_right = -333.0
-margin_bottom = 1020.0
-custom_colors/font_color = Color( 0.2, 0.835294, 0.537255, 1 )
+margin_left = -1096.0
+margin_top = 1037.0
+margin_right = -324.0
+margin_bottom = 1033.0
+custom_colors/font_color = Color( 0.0901961, 0.509804, 0.196078, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Click and drag the pieces to the middle. When a piece is correct it disappears from the stack. You can start anew by clicking on Reset."
 valign = 1
 
 [node name="Button_Tip3" type="Button" parent="."]
-margin_left = 1432.0
-margin_top = 951.0
-margin_right = 1502.0
-margin_bottom = 1012.0
+margin_left = 1426.0
+margin_top = 958.0
+margin_right = 1496.0
+margin_bottom = 1019.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 6 )
@@ -528,6 +530,9 @@ custom_styles/hover = SubResource( 19 )
 custom_styles/pressed = SubResource( 20 )
 custom_styles/normal = SubResource( 21 )
 text = "Close"
+
+[node name="BookClose" type="AudioStreamPlayer2D" parent="Diary"]
+stream = ExtResource( 44 )
 
 [node name="Button_ctn" type="Button" parent="."]
 margin_left = 827.0

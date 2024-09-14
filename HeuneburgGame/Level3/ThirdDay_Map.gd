@@ -39,3 +39,33 @@ func _on_DisasterScore_disaster_score_finished():
 		MusicPlayer.stop()
 		video_player.show()
 		video_player.play()
+
+
+func _on_Button_Diary_pressed():
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$FirstLevel_Image.hide()
+	$Bauwagen_Overlay.hide()
+	$Freilichtmuseum_Overlay.hide()
+	$Grabungsstaette_Overlay.hide()
+	$Keltenmuseum_Overlay.hide()
+
+
+
+func _on_Button_Close_pressed():
+	$Diary/BookClose.play()
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$FirstLevel_Image.show()
+	$Bauwagen_Overlay.show()
+	$Freilichtmuseum_Overlay.show()
+	$Grabungsstaette_Overlay.show()
+	$Keltenmuseum_Overlay.show()
+
+
+func _on_Button_BacktoMain_pressed():
+	get_tree().change_scene("res://MainMenu.tscn")
+
+
+func _on_Button_Quit_pressed():
+	get_tree().quit()

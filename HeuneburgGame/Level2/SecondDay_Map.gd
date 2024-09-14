@@ -52,3 +52,28 @@ func _on_Freilichtmuseum_Overlay_mouse_entered():
 func _on_DisasterScore_disaster_score_finished():
 	if Global.profilkasten_done:
 		get_tree().change_scene("res://Level2/DiaryLvl2End.tscn")
+
+
+func _on_Button_Diary_pressed():
+	$Diary.show()
+	$Diary/Diary_texture.show()
+	$FirstLevel_Image.hide()
+	$Bauwagen_Overlay.hide()
+	$Freilichtmuseum_Overlay.hide()
+	$Grabungsstaette_Overlay.hide()
+	$Keltenmuseum_Overlay.hide()
+	
+	
+func _on_Button_Close_pressed():
+	$Diary/BookClose.play()
+	$Diary.hide()
+	$Diary/Diary_texture.hide()
+	$FirstLevel_Image.show()
+	$Bauwagen_Overlay.show()
+	$Freilichtmuseum_Overlay.show()
+	$Grabungsstaette_Overlay.show()
+	$Keltenmuseum_Overlay.show()
+
+
+func _on_Button_Glossar_pressed():
+	pass # Replace with function body.

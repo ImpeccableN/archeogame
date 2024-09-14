@@ -5,4 +5,4 @@ func _ready():
 
 
 func _on_Button_nextDay_pressed():
-	get_tree().change_scene("res://Minigame3/ThirdDay_Map.tscn")
+	get_tree().change_scene("res://Level3/DiaryLvl3.tscn")

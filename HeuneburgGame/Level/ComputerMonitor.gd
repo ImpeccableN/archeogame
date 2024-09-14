@@ -1,9 +1,9 @@
 extends Node2D
 
 
-
 #plays computer booting sound when scene is entered
 func _ready():
+	$CanvasLayer/Control_Application.hide()
 	$PCBoot.play()
 
 
@@ -22,6 +22,7 @@ func _on_Button_Diary_pressed():
 	
 
 func _on_Button_Close_pressed():
+	$Diary/BookClose.play()
 	$Diary.hide()
 	$Diary/Diary_texture.hide()
 	$PCMonitor.show()
@@ -29,4 +30,13 @@ func _on_Button_Close_pressed():
 
 
 func _on_Button_Glossar_pressed():
-	get_tree().change_scene("")
+	$Diary/Diary_texture/Button_Glossar/Label_titel1.show()
+	$Diary/Diary_texture/Button_Glossar/term1.show()
+	$Diary/Diary_texture/Button_Glossar/explanation1.show()
+	$Diary/Diary_texture/Button_Glossar/Button_nextPage1.show()
+
+
+func _on_Close_explanation_pressed():
+	$CanvasLayer/Control_Application.show()
+	$Application_intro.hide()
+	$Application_intro/Close_explanation.hide()

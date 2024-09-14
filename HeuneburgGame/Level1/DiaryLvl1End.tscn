@@ -42,10 +42,10 @@ Concluded
 "
 
 [node name="Button_nextDay" type="Button" parent="." index="2"]
-margin_left = 1283.0
-margin_top = 848.0
-margin_right = 1461.0
-margin_bottom = 891.0
+margin_left = 1238.0
+margin_top = 837.0
+margin_right = 1457.0
+margin_bottom = 889.0
 rect_scale = Vector2( 1.483, 1.8 )
 custom_colors/font_color = Color( 0.0313726, 0.478431, 0.00392157, 1 )
 custom_fonts/font = SubResource( 1 )

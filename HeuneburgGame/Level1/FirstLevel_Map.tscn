@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Level1/Assets/Images/karteGelaende_hintergrund.png" type="Texture" id=1]
 [ext_resource path="res://Level1/Button_Grabungsstaette.gd" type="Script" id=2]
@@ -15,16 +15,9 @@
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=13]
 [ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=14]
 [ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://Level/Label_Introtxt.gd" type="Script" id=16]
-[ext_resource path="res://Level/Label_Introtxt2.gd" type="Script" id=17]
+[ext_resource path="res://sound effects/book-closing.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Level1/BauwagenLabel.gd" type="Script" id=18]
-[ext_resource path="res://Level/Button_nextPage.gd" type="Script" id=19]
-[ext_resource path="res://video/tb_blaettern_spedUp.ogv" type="VideoStream" id=20]
-[ext_resource path="res://Level/TgAnimation.gd" type="Script" id=21]
-[ext_resource path="res://Level/TgStatic.gd" type="Script" id=22]
 [ext_resource path="res://Level1/GrabungsstaettenLabel.gd" type="Script" id=23]
-[ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=24]
-[ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=25]
 [ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=26]
 [ext_resource path="res://video/heueneburgDaily_withBG.ogv" type="VideoStream" id=27]
 
@@ -72,43 +65,15 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[sub_resource type="DynamicFont" id=16]
-size = 20
+[sub_resource type="DynamicFont" id=12]
+size = 30
 use_filter = true
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=17]
-size = 20
-use_filter = true
-font_data = ExtResource( 15 )
-
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=13]
 size = 25
 use_filter = true
 font_data = ExtResource( 15 )
-
-[sub_resource type="StyleBoxFlat" id=19]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=21]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="DynamicFont" id=22]
-size = 34
-use_filter = true
-font_data = ExtResource( 15 )
-
-[sub_resource type="StyleBoxFlat" id=23]
-bg_color = Color( 0.462745, 0.239216, 0.121569, 1 )
-
-[sub_resource type="StyleBoxFlat" id=24]
-bg_color = Color( 0.462745, 0.239216, 0.121569, 1 )
-
-[sub_resource type="StyleBoxFlat" id=25]
-bg_color = Color( 0.462745, 0.239216, 0.121569, 1 )
 
 [node name="FirstLevel_Map" type="Node2D"]
 script = ExtResource( 3 )
@@ -171,7 +136,6 @@ mouse_filter = 2
 texture = ExtResource( 5 )
 
 [node name="FreilichtLabel" type="Label" parent="Freilichtmuseum_Overlay"]
-visible = false
 margin_left = 1358.0
 margin_top = 745.0
 margin_right = 1758.0
@@ -229,7 +193,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Diary_texture" type="TextureRect" parent="Diary"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 14 )
@@ -244,7 +207,7 @@ custom_fonts/font = SubResource( 4 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "Glossar"
+text = "Glossary"
 
 [node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
 margin_left = 216.0
@@ -257,123 +220,35 @@ custom_styles/pressed = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Close"
 
-[node name="TgFlip" type="VideoPlayer" parent="."]
-visible = false
-margin_right = 1917.0
-margin_bottom = 1079.0
-stream = ExtResource( 20 )
-script = ExtResource( 21 )
-
-[node name="SoundFlip" type="AudioStreamPlayer2D" parent="TgFlip"]
-visible = false
-stream = ExtResource( 25 )
-volume_db = 10.124
-
-[node name="TgStatic" type="TextureRect" parent="TgFlip"]
-visible = false
-margin_right = 1912.0
-margin_bottom = 1075.0
-texture = ExtResource( 24 )
-script = ExtResource( 22 )
-
-[node name="Label_Introtxt1" type="Label" parent="TgFlip/TgStatic"]
-margin_left = 335.0
-margin_top = 128.0
-margin_right = 723.0
-margin_bottom = 581.0
-rect_min_size = Vector2( 388, 252 )
-rect_scale = Vector2( 1.483, 1.8 )
+[node name="Diary_Intro_Title" type="Label" parent="Diary/Diary_texture"]
+margin_left = 395.0
+margin_top = 144.0
+margin_right = 825.0
+margin_bottom = 198.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 16 )
-text = "Welcome to the Heuneburg Excavation Site!
-I’m the lead archaeologist and my Name is Professor Dustina Sands. Our mission?
-To uncover the secrets of one of Germany’s most fascinating archaeological sites, the Heuneburg. This Iron Age settlement offers glimpses into the lives of our ancient ancestors. Your role?
-Help us to make the right decisions and prevent turning history into dirt. Here on this scenery hill we are going to start our excavation. Imagine bustling streets and"
-autowrap = true
-script = ExtResource( 16 )
+custom_fonts/font = SubResource( 12 )
+text = "The Heuneburg Excavation Diary"
 
-[node name="Timer" type="Timer" parent="TgFlip/TgStatic/Label_Introtxt1"]
-wait_time = 0.5
-
-[node name="Label_Introtxt2" type="Label" parent="TgFlip/TgStatic"]
-margin_left = 945.0
-margin_top = 128.0
-margin_right = 1345.0
-margin_bottom = 581.0
-rect_min_size = Vector2( 388, 453 )
-rect_scale = Vector2( 1.483, 1.8 )
+[node name="Diary_Intro_Txt" type="Label" parent="Diary/Diary_texture"]
+margin_left = 344.0
+margin_top = 214.0
+margin_right = 888.0
+margin_bottom = 947.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 17 )
-text = "early trade. Your task is crucial: every choice impacts our excavation. Choose wisely, and we’ll unearth valuable insights. Missteps?
-They lead to missed opportunities and maybe a few laughs. Join our team of passionate scientists. Let’s tackle this excavation with curiosity and humor. Together, we’ll uncover Heuneburg’s secrets and perhaps make groundbreaking discoveries. 
-Grab your shovel, put on your explorer hat, and let’s make history – one layer at a time!"
-autowrap = true
-script = ExtResource( 17 )
+custom_fonts/font = SubResource( 13 )
+text = "Welcome to the Heuneburg Excavation Diary, your trusty chronicle of progress and discovery!
+As you complete mini missions and unearth ancient secrets, this diary will fill itself with the tales of your archaeological adventures.
+Every puzzle solved, every artifact found, and every decision made will be recorded here - make sure to check it out regularly. Think of it as your personal time capsule, capturing the highlights of your journey through history. 
+So dive in, get your hands dirty, and watch as your achievements turn into entries in this ever-growing log.
 
-[node name="Timer" type="Timer" parent="TgFlip/TgStatic/Label_Introtxt2"]
-wait_time = 0.5
-
-[node name="Button_nextPage" type="Button" parent="TgFlip/TgStatic"]
-margin_left = 1395.0
-margin_top = 859.0
-margin_right = 1505.0
-margin_bottom = 902.0
-rect_scale = Vector2( 1.483, 1.8 )
-custom_colors/font_color = Color( 0.0313726, 0.478431, 0.00392157, 1 )
-custom_fonts/font = SubResource( 18 )
-custom_styles/hover = SubResource( 19 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 21 )
-text = "Turn page"
-script = ExtResource( 19 )
-
-[node name="Label_Introtxt3" type="Label" parent="TgFlip/TgStatic"]
-margin_left = 328.0
-margin_top = 124.0
-margin_right = 721.0
-margin_bottom = 615.0
-rect_min_size = Vector2( 388, 480 )
-rect_scale = Vector2( 1.483, 1.8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 16 )
-text = "The Heuneburg Excavation Diary
-
-Welcome to the Heuneburg Excavation Diary, your trusty chronicle of progress and
-discovery! As you complete mini missions and unearth ancient secrets, this diary will fill
-itself with the tales of your archaeological adventures.
-
-Every puzzle solved, every artifact found, and every decision made will be recorded here.
-"
+Ready to make your mark on history? Let’s see what fascinating stories you’ll uncover next!"
 autowrap = true
 
-[node name="Label_Introtxt4" type="Label" parent="TgFlip/TgStatic"]
-margin_left = 940.0
-margin_top = 137.0
-margin_right = 1354.0
-margin_bottom = 477.0
-rect_min_size = Vector2( 388, 252 )
-rect_scale = Vector2( 1.483, 1.8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 16 )
-text = "Think of it as your personal time capsule, capturing the highlights of your journey through history. So, dive in, get your hands dirty, and watch as your achievements turn into entries in this ever-growing log.
-
-Ready to make your mark on history?
-Let’s see what fascinating stories you’ll uncover next!"
-autowrap = true
-
-[node name="Close_introTxt" type="Button" parent="TgFlip"]
-visible = false
-margin_left = 1116.0
-margin_top = 776.0
-margin_right = 1321.0
-margin_bottom = 870.0
-custom_fonts/font = SubResource( 22 )
-custom_styles/hover = SubResource( 23 )
-custom_styles/pressed = SubResource( 24 )
-custom_styles/normal = SubResource( 25 )
-text = "Close diary"
+[node name="BookClose" type="AudioStreamPlayer2D" parent="Diary"]
+stream = ExtResource( 16 )
 
 [node name="DisasterScore" parent="." instance=ExtResource( 26 )]
+visible = false
 position = Vector2( 974, 85 )
 
 [node name="NewspaperPlayer" type="VideoPlayer" parent="."]
@@ -394,10 +269,6 @@ expand = false
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen" to="." method="_on_Button_Bauwagen_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen" to="." method="_on_Button_Bauwagen_mouse_exited"]
 [connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Glossar" to="." method="_on_Button_Glossar_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
-[connection signal="finished" from="TgFlip" to="TgFlip/TgStatic" method="_on_TgFlip_finished"]
-[connection signal="timeout" from="TgFlip/TgStatic/Label_Introtxt1/Timer" to="TgFlip/TgStatic/Label_Introtxt1" method="_on_Timer_timeout"]
-[connection signal="timeout" from="TgFlip/TgStatic/Label_Introtxt2/Timer" to="TgFlip/TgStatic/Label_Introtxt2" method="_on_Timer_timeout"]
-[connection signal="pressed" from="TgFlip/TgStatic/Button_nextPage" to="TgFlip" method="_on_Button_nextPage_pressed"]
-[connection signal="pressed" from="TgFlip/Close_introTxt" to="TgFlip" method="_on_Close_introTxt_pressed"]
 [connection signal="disaster_score_finished" from="DisasterScore" to="." method="_on_DisasterScore_disaster_score_finished"]
