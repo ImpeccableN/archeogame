@@ -10,12 +10,15 @@ onready var news_video = get_node("../NewspaperPlayer")
 signal disaster_score_finished()
 
 func _ready():
-	current_score = Global.disaster_score
-	old_score = Global.old_score
-	match_score(old_score)
-	load_texture()
-	if old_score != current_score:
-		animate()
+	if not Global.game_finished:
+		current_score = Global.disaster_score
+		old_score = Global.old_score
+		match_score(old_score)
+		load_texture()
+		if old_score != current_score:
+			animate()
+		else:
+			emit_signal("disaster_score_finished")
 
 func match_score(disaster_score):
 	if disaster_score <= 0:

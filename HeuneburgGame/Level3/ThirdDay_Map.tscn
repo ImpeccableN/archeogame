@@ -14,8 +14,9 @@
 [ext_resource path="res://DisasterScore.tscn" type="PackedScene" id=12]
 [ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://sound effects/book-closing.mp3" type="AudioStream" id=14]
-[ext_resource path="res://video/heueneburgDaily_withBG.ogv" type="VideoStream" id=15]
-[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=16]
+[ext_resource path="res://Minigame3/ThirdDay_Map.gd" type="Script" id=15]
+[ext_resource path="res://video/heueneburgDaily_withBG.ogv" type="VideoStream" id=16]
+[ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=17]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -236,12 +237,6 @@ stream = ExtResource( 14 )
 [node name="DisasterScore" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1007, 94 )
 
-[node name="OutroVideoPlayer" type="VideoPlayer" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-expand = false
-
 [node name="NewspaperPlayer" type="VideoPlayer" parent="."]
 visible = false
 margin_right = 40.0
@@ -260,4 +255,3 @@ expand = false
 [connection signal="pressed" from="Diary/Diary_texture/Button_BacktoMain" to="." method="_on_Button_BacktoMain_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Quit" to="." method="_on_Button_Quit_pressed"]
 [connection signal="disaster_score_finished" from="DisasterScore" to="." method="_on_DisasterScore_disaster_score_finished"]
-[connection signal="finished" from="OutroVideoPlayer" to="." method="_on_OutroVideoPlayer_finished"]

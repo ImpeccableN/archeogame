@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/IfYouWantIllDoIt_Male.wav-dd5210a76243018635dce16a986911f2.sample"
+
+[deps]
+
+source_file="res://Minigame_WerkzeugZuordnen/Assets/Sounds/TeamSounds/IfYouWantIllDoIt_Male.wav"
+dest_files=[ "res://.import/IfYouWantIllDoIt_Male.wav-dd5210a76243018635dce16a986911f2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

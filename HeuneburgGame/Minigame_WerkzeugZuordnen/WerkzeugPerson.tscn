@@ -30,6 +30,8 @@ custom_fonts/font = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="AudioConfirm" type="AudioStreamPlayer" parent="."]
+
 [connection signal="area_entered" from="." to="." method="on_Area_entered"]
 [connection signal="area_exited" from="." to="." method="on_Area_exited"]
 [connection signal="mouse_entered" from="." to="." method="_on_WerkzeugPerson_mouse_entered"]

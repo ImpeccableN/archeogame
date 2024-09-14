@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Level2/MinigameProfilkasten/ProfilkastenThirdPart.gd" type="Script" id=1]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Images/hintergrund2_bis5_clean.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Animation/staubwolkeUebergangEnde.ogv" type="VideoStream" id=18]
 [ext_resource path="res://Level2/MinigameProfilkasten/SpitzhackeHitPoint.gd" type="Script" id=19]
 [ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/Pickaxe.wav" type="AudioStream" id=20]
+[ext_resource path="res://Level2/MinigameProfilkasten/Assets/Sounds/DustCloud.wav" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 87.5, 193 )
@@ -275,6 +276,9 @@ volume_db = 3.5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint"]
 polygon = PoolVector2Array( -8, 132, -91, 119, -181, 32, -251, -75, -290, -167, -256, -196, -148, -226, -14, -242, 117, -241, 251, -212, 283, -174, 255, -109, 177, 56, 91, 107 )
+
+[node name="AudioDust" type="AudioStreamPlayer" parent="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint"]
+stream = ExtResource( 21 )
 
 [node name="CameraFlash" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )

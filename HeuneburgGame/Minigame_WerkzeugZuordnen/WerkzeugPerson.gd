@@ -8,6 +8,9 @@ var initiated_member_scene : Node
 var area_entered = false
 var mouse_entered = false
 var infotext : String
+var audio_array : Array
+
+onready var audio = get_node("AudioConfirm")
 
 signal show_memberinfo(text)
 
@@ -35,11 +38,15 @@ func initiate_scene(name):
 	$Sprite.texture = load(initiated_member_scene.member_headshot_path)
 	infotext = "Name: " + initiated_member_scene.dictionary.Name + "\nPro: " + initiated_member_scene.dictionary.Pro + "\nCon: " + initiated_member_scene.dictionary.Con
 	$InfoBox.raise()
+	load_audio_array()
 
 
 func on_Area_entered(area):
 	var task_name = area.task_name
 	task_score += initiated_member_scene.dictionary[task_name]
+	audio_array.shuffle()
+	audio.stream = load("res://Minigame_WerkzeugZuordnen/Assets/Sounds/TeamSounds/" + audio_array[0])
+	audio.play()
 	print(member_name + "'s score:")
 	print(task_score)
 
@@ -49,3 +56,22 @@ func on_Area_exited(area):
 	task_score -= initiated_member_scene.dictionary[task_name]
 	print(member_name + "'s score:")
 	print(task_score)
+
+
+func load_audio_array():
+	var gender = initiated_member_scene.dictionary.Gender
+	var dir = Directory.new()
+	if dir.open("res://Minigame_WerkzeugZuordnen/Assets/Sounds/TeamSounds/") == OK:
+		dir.list_dir_begin(true)
+		var file_name = dir.get_next()
+		
+		while file_name != "":
+			if "import" in file_name:
+				pass
+			elif gender in file_name:
+				var file = file_name.replace(".import", "")
+				audio_array.append(file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+	dir.list_dir_end()

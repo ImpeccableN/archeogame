@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Themes/just_font.tres" type="Theme" id=1]
+[ext_resource path="res://Level/TgAnimation.gd" type="Script" id=2]
+[ext_resource path="res://graphics/Tagebuch_mit_bg.png" type="Texture" id=3]
+[ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Minigame3/DiaryLvl3End.gd" type="Script" id=5]
+[ext_resource path="res://video/tb_zoomIn.ogv" type="VideoStream" id=6]
+[ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color( 0.0823529, 0.509804, 0.0941176, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="DiaryEntry3" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+script = ExtResource( 5 )
+
+[node name="DiaryEntry1" type="RichTextLabel" parent="."]
+margin_left = 986.0
+margin_top = 209.0
+margin_right = 1535.0
+margin_bottom = 680.0
+theme = ExtResource( 1 )
+text = "Today was a real challenge, but one that ended in success! After days of carefully digging up pottery shards, I finally got to piece them back together. It felt a bit like when I was young, fixing a broken cup and hoping mum would not notice. except this time, she wouldn’t because of my tremendous work!
+
+I laid out all the shards, hoping they’d magically fit together. Of course, they didn’t, so I got to work. Carefully matching each edge, piece by piece, it was slow at first, but with a bit of glue patience and sweat, everything started to come together.  
+
+
+By the end of the day, I had successfully reassembled a vessel that had been buried for centuries. It’s a little rough around the edges, but after all that time underground, I’m calling it a big win. The satisfaction of seeing those fragments come together was well worth the effort."
+
+[node name="TitelLabel" type="Label" parent="."]
+margin_left = 417.0
+margin_top = 274.0
+margin_right = 798.0
+margin_bottom = 351.0
+theme = ExtResource( 1 )
+text = "Day 3"
+align = 1
+
+[node name="Button_toMap3" type="Button" parent="."]
+margin_left = 1115.0
+margin_top = 798.0
+margin_right = 1327.0
+margin_bottom = 885.0
+custom_colors/font_color = Color( 0.0235294, 0.321569, 0.160784, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Close diary"
+
+[node name="TgFlip" type="VideoPlayer" parent="."]
+visible = false
+margin_right = 1917.0
+margin_bottom = 1079.0
+stream = ExtResource( 6 )
+script = ExtResource( 2 )
+
+[node name="SoundFlip" type="AudioStreamPlayer2D" parent="TgFlip"]
+visible = false
+stream = ExtResource( 4 )
+volume_db = 10.124
+
+[node name="nextPage_Button" type="Button" parent="."]
+visible = false
+margin_left = 1375.0
+margin_top = 829.0
+margin_right = 1485.0
+margin_bottom = 872.0
+rect_scale = Vector2( 1.483, 1.8 )
+custom_colors/font_color = Color( 0.0313726, 0.478431, 0.00392157, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Turn page"
+
+[connection signal="pressed" from="Button_toMap3" to="." method="_on_Button_toMap3_pressed"]
+[connection signal="finished" from="TgFlip" to="." method="_on_TgFlip_finished"]
+[connection signal="pressed" from="nextPage_Button" to="." method="_on_nextPage_Button_pressed"]
