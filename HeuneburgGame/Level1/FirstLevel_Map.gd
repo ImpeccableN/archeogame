@@ -20,6 +20,7 @@ func _ready():
 
 
 
+
 func _on_Button_Grabungsstaette_mouse_entered():
 	grabungsstaette_image.rect_scale = images_grow_scale
 	$Grabungsstaette_Overlay/GrabungsstaettenLabel.show()
@@ -68,10 +69,13 @@ func _on_Button_Diary_pressed():
 	$Freilichtmuseum_Overlay.hide()
 	$Grabungsstaette_Overlay.hide()
 	$Keltenmuseum_Overlay.hide()
-
+	$Diary/Diary_texture/Button_Glossar/Label_titel1.hide()
+	$Diary/Diary_texture/Button_Glossar/term1.hide()
+	$Diary/Diary_texture/Button_Glossar/explanation1.hide()
+	$Diary/Diary_texture/Button_Glossar/Button_nextPage1.hide()
 
 func _on_Button_Close_pressed():
-	$Diary/BookClose.play()
+	$Diary/Diary_texture/BookClose.play()
 	$Diary.hide()
 	$Diary/Diary_texture.hide()
 	$FirstLevel_Image.show()
@@ -87,6 +91,3 @@ func _on_DisasterScore_disaster_score_finished():
 	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
 		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")
 
-
-func _on_Button_Glossar_pressed():
-	get_tree().change_scene("res://Glossar.tscn")

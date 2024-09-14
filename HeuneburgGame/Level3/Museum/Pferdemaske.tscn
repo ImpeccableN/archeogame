@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://fonts/ArialTh.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Level3/Museum/Baumstamm_.png" type="Texture" id=2]
@@ -46,6 +46,26 @@ size = 35
 use_filter = true
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=10]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.235294, 0.376471, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.0627451, 0.227451, 0.780392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.0627451, 0.227451, 0.780392, 1 )
+
 [node name="Museum_Pferdemaske" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -63,10 +83,10 @@ margin_bottom = 882.0
 texture = ExtResource( 2 )
 
 [node name="Button_moreInfo" type="Button" parent="."]
-margin_left = 1605.0
-margin_top = 29.0
-margin_right = 1837.0
-margin_bottom = 102.0
+margin_left = 1529.0
+margin_top = 15.0
+margin_right = 1761.0
+margin_bottom = 58.0
 custom_colors/font_color_focus = Color( 0.0627451, 0.227451, 0.780392, 1 )
 custom_colors/font_color = Color( 0.0627451, 0.227451, 0.780392, 1 )
 custom_colors/font_color_hover = Color( 0.235294, 0.376471, 0.854902, 1 )
@@ -108,10 +128,10 @@ Origin: \"Princess\" grave of Bettelbühl
 Topic: Burial"
 
 [node name="info_text" type="Label" parent="."]
-margin_left = 1518.0
-margin_top = 128.0
-margin_right = 1916.0
-margin_bottom = 939.0
+margin_left = 1511.0
+margin_top = 64.0
+margin_right = 1911.0
+margin_bottom = 875.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "In 2010, archaeologists recovered a burial chamber from a burial mound near Herbertingen (Kreis Sigmaringen), 3 km from the Heuneburg settlement, and took the 80-tonne so-called block to a specialist laboratory for further investigation.
@@ -122,5 +142,21 @@ A chariot grave with rich grave goods came to light, which contained jewellery m
 The burial could be dated to the winter of 583/82 BC based on the good preservation of the wood."
 autowrap = true
 
+[node name="Button_burialsInfo" type="Button" parent="."]
+margin_left = 1418.0
+margin_top = 896.0
+margin_right = 1909.0
+margin_bottom = 948.0
+custom_colors/font_color_focus = Color( 0.0627451, 0.227451, 0.780392, 1 )
+custom_colors/font_color = Color( 0.0627451, 0.227451, 0.780392, 1 )
+custom_colors/font_color_hover = Color( 0.235294, 0.376471, 0.854902, 1 )
+custom_colors/font_color_pressed = Color( 0.0627451, 0.227451, 0.780392, 1 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "More information about burials at the Heuneburg"
+
 [connection signal="pressed" from="Button_moreInfo" to="." method="_on_Button_moreInfo_pressed"]
 [connection signal="pressed" from="Button_back" to="." method="_on_Button_back_pressed"]
+[connection signal="pressed" from="Button_burialsInfo" to="." method="_on_Button_burialsInfo_pressed"]

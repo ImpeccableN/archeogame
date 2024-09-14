@@ -1,0 +1,214 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Credits.gd" type="Script" id=1]
+[ext_resource path="res://fonts/ArialTh.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://graphics/Credits_BG.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 23
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.388235, 0.309804, 0.309804, 0.321569 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.247059, 0.890196, 0.235294, 0.682353 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.247059, 0.890196, 0.235294, 0.682353 )
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1918.0
+margin_bottom = 1076.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1916.0
+margin_bottom = 207.0
+custom_colors/font_color = Color( 1, 0.992157, 0.992157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "
+Credits
+
+This game was developed as part of the Seminar “That belongs in a museum! - Creating Archaeogames from idea to release” at University of Cologne.
+"
+align = 1
+autowrap = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 0.247
+margin_left = 2.0
+margin_top = 231.0
+margin_right = 1916.0
+margin_bottom = 1075.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Team
+
+Berivan Altunsaray: Design, Illustrations
+David Golomb: Storytelling, Texts, Sound
+Corinna Hennicke: Coding
+Helena Köster: Design, Illustrations, Animations
+Niels Schreiner: Coding, Music
+Charlotte Tornes: Research
+
+Reference Images & Research
+
+Vessel based on reconstruction drawing in “Technological dynamics of Early Iron Age ceramics from the Heuneburg (SW Germany): A synthesis of 50 years of research” by Beatrijs G. de Groot, Dennis Braekmans, Manuel Fernández‐Götz, Leif Hansen, Gerd Stegmaier, Dirk Krausse; https://doi.org/10.1007/s12520-023-01832-2
+
+Object drawings in the museum based on reference pictures from the Landesamt für Denkmalpflege Baden-Württemberg.
+
+Sounds
+
+Voicebook - AI Voices (Mission 1):
+- https://www.voicebooking.com/en/free-voice-over-generator
+Freesound:
+- Plastic Bag
+o https://freesound.org/people/Joedozer/sounds/396426/
+- DirtInBucket
+o https://freesound.org/people/Henrythetrain/sounds/174508/
+- Camera_Shutter
+o https://www.voicebooking.com/en/free-voice-over-generator
+- Shovel
+o https://freesound.org/people/CGEffex/sounds/96212/
+- Scribble
+o https://freesound.org/people/KerryPeter/sounds/626738/
+- VictoryFanfare
+o https://freesound.org/people/joepayne/sounds/413203/
+- Pickaxe
+o https://freesound.org/people/bigal13/sounds/654499/
+- Pageturn
+o https://freesound.org/people/kzarkses/sounds/746920/
+- Trainride
+o https://freesound.org/people/kangaroovindaloo/sounds/442209/
+- Printing
+o https://freesound.org/people/Kleber_KGF/sounds/529987/
+ZapSplat:
+- ExcavatoCrash:
+o https://www.zapsplat.com/?s=excavator&post_type=music&sound-
+effect-category-id=
+- Sunburn:
+o https://www.zapsplat.com/page/2/?s=burn&post_type=music&sound-
+effect-category-id
+JSFXR:
+- pickupArtefact
+o https://sfxr.me/
+- Close Book
+o https://pixabay.com/sound-effects/book-closing-48311/
+(and various others from pixabay.com)
+
+
+Fonts
+
+“AYearWithoutRain” by Kimberly Geswein
+“Arial” font family by Patricia Saunders https://font.download/font/arial
+“OpenSans” font family by Steve Matteson https://github.com/googlefonts/opensans
+pixabay
+
+Programs used
+
+Procreate
+GIMP 2.10.38
+Audacity
+Developed with Godot Engine 3.5
+https://godotengine.org/license/
+
+"
+text = "Team
+
+Berivan Altunsaray: Design, Illustrations
+David Golomb: Storytelling, Texts, Sound
+Corinna Hennicke: Coding
+Helena Köster: Design, Illustrations, Animations
+Niels Schreiner: Coding, Music
+Charlotte Tornes: Research
+
+Reference Images & Research
+
+Vessel based on reconstruction drawing in “Technological dynamics of Early Iron Age ceramics from the Heuneburg (SW Germany): A synthesis of 50 years of research” by Beatrijs G. de Groot, Dennis Braekmans, Manuel Fernández‐Götz, Leif Hansen, Gerd Stegmaier, Dirk Krausse; https://doi.org/10.1007/s12520-023-01832-2
+
+Object drawings in the museum based on reference pictures from the Landesamt für Denkmalpflege Baden-Württemberg.
+
+Sounds
+
+Voicebook - AI Voices (Mission 1):
+- https://www.voicebooking.com/en/free-voice-over-generator
+Freesound:
+- Plastic Bag
+o https://freesound.org/people/Joedozer/sounds/396426/
+- DirtInBucket
+o https://freesound.org/people/Henrythetrain/sounds/174508/
+- Camera_Shutter
+o https://www.voicebooking.com/en/free-voice-over-generator
+- Shovel
+o https://freesound.org/people/CGEffex/sounds/96212/
+- Scribble
+o https://freesound.org/people/KerryPeter/sounds/626738/
+- VictoryFanfare
+o https://freesound.org/people/joepayne/sounds/413203/
+- Pickaxe
+o https://freesound.org/people/bigal13/sounds/654499/
+- Pageturn
+o https://freesound.org/people/kzarkses/sounds/746920/
+- Trainride
+o https://freesound.org/people/kangaroovindaloo/sounds/442209/
+- Printing
+o https://freesound.org/people/Kleber_KGF/sounds/529987/
+ZapSplat:
+- ExcavatoCrash:
+o https://www.zapsplat.com/?s=excavator&post_type=music&sound-
+effect-category-id=
+- Sunburn:
+o https://www.zapsplat.com/page/2/?s=burn&post_type=music&sound-
+effect-category-id
+JSFXR:
+- pickupArtefact
+o https://sfxr.me/
+- Close Book
+o https://pixabay.com/sound-effects/book-closing-48311/
+(and various others from pixabay.com)
+
+
+Fonts
+
+“AYearWithoutRain” by Kimberly Geswein
+“Arial” font family by Patricia Saunders https://font.download/font/arial
+“OpenSans” font family by Steve Matteson https://github.com/googlefonts/opensans
+pixabay
+
+Programs used
+
+Procreate
+GIMP 2.10.38
+Audacity
+Developed with Godot Engine 3.5
+https://godotengine.org/license/
+
+"
+
+[node name="Back_Button" type="Button" parent="."]
+margin_right = 196.0
+margin_bottom = 83.0
+custom_colors/font_color_hover = Color( 0.74902, 0.768627, 0.117647, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Back to main menu"
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_Back_Button_pressed"]

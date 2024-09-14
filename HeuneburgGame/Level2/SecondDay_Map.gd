@@ -62,6 +62,10 @@ func _on_Button_Diary_pressed():
 	$Freilichtmuseum_Overlay.hide()
 	$Grabungsstaette_Overlay.hide()
 	$Keltenmuseum_Overlay.hide()
+	$Diary/Diary_texture/Button_Glossar/Label_titel1.hide()
+	$Diary/Diary_texture/Button_Glossar/term1.hide()
+	$Diary/Diary_texture/Button_Glossar/explanation1.hide()
+	$Diary/Diary_texture/Button_Glossar/Button_nextPage1.hide()
 	
 	
 func _on_Button_Close_pressed():
@@ -75,5 +79,3 @@ func _on_Button_Close_pressed():
 	$Keltenmuseum_Overlay.show()
 
 
-func _on_Button_Glossar_pressed():
-	pass # Replace with function body.

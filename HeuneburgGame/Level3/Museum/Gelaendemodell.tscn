@@ -63,10 +63,10 @@ margin_bottom = 470.0
 texture = ExtResource( 2 )
 
 [node name="Button_moreInfo" type="Button" parent="."]
-margin_left = 1605.0
-margin_top = 29.0
-margin_right = 1837.0
-margin_bottom = 102.0
+margin_left = 1482.0
+margin_top = 23.0
+margin_right = 1714.0
+margin_bottom = 96.0
 custom_colors/font_color_focus = Color( 0.0627451, 0.227451, 0.780392, 1 )
 custom_colors/font_color = Color( 0.0627451, 0.227451, 0.780392, 1 )
 custom_colors/font_color_hover = Color( 0.235294, 0.376471, 0.854902, 1 )
@@ -77,10 +77,25 @@ custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
 text = "More info"
 
+[node name="Button_moreInfo2" type="Button" parent="."]
+margin_left = 1438.0
+margin_top = 819.0
+margin_right = 1891.0
+margin_bottom = 892.0
+custom_colors/font_color_focus = Color( 0.0627451, 0.227451, 0.780392, 1 )
+custom_colors/font_color = Color( 0.0627451, 0.227451, 0.780392, 1 )
+custom_colors/font_color_hover = Color( 0.235294, 0.376471, 0.854902, 1 )
+custom_colors/font_color_pressed = Color( 0.0627451, 0.227451, 0.780392, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "More information about the settlements' town"
+
 [node name="Button_back" type="Button" parent="."]
-margin_left = 1598.0
+margin_left = 1629.0
 margin_top = 970.0
-margin_right = 1830.0
+margin_right = 1861.0
 margin_bottom = 1043.0
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 5 )
@@ -106,10 +121,10 @@ custom_fonts/font = SubResource( 3 )
 text = "Topic: The city"
 
 [node name="info_text" type="Label" parent="."]
-margin_left = 1517.0
-margin_top = 112.0
-margin_right = 1915.0
-margin_bottom = 960.0
+margin_left = 1369.0
+margin_top = 117.0
+margin_right = 1905.0
+margin_bottom = 780.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "The Heuneburg is an Iron Age hilltop settlement in Herbertingen-Hundersingen (Sigmaringen, Baden-Württemberg), which developed into an important centre in the 6th century BC. 
@@ -121,4 +136,5 @@ The influence of the town probably also extended to the wider surroundings of th
 autowrap = true
 
 [connection signal="pressed" from="Button_moreInfo" to="." method="_on_Button_moreInfo_pressed"]
+[connection signal="pressed" from="Button_moreInfo2" to="." method="_on_Button_moreInfo2_pressed"]
 [connection signal="pressed" from="Button_back" to="." method="_on_Button_back_pressed"]

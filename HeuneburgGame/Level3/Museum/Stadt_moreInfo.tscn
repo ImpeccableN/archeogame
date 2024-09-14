@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://fonts/ArialTh.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Level3/Museum/museum_bg.PNG" type="Texture" id=2]
+[ext_resource path="res://Level3/Museum/Stadt_moreInfo.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 55
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 38
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.866667, 0.835294, 0.835294, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.486275 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0196078, 0.0156863, 0.0156863, 0.34902 )
+
+[node name="Heuneburg_Information" type="TextureRect"]
+margin_right = 1917.0
+margin_bottom = 1075.0
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 3 )
+
+[node name="Label_Titel" type="Label" parent="."]
+margin_left = 725.0
+margin_top = 18.0
+margin_right = 1045.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "The Heuneburg"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 43.0
+margin_top = 82.0
+margin_right = 1895.0
+margin_bottom = 976.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Between the end of the 7th and the first half of the 5th century BCE, one of the most important settlement, economic and power centres of the European Iron Age was built in the Danube valley on a hill near Herbertingen-Hundersingen (Sigmaringen, Baden-Württemberg). After an initial settlement phase in the Bronze Age, the Burgberg was fortified and repopulated at the beginning of the Late Hallstatt period (approx. 620 - 450 BCE). Initially, a wooden wall was erected. Inside the complex were farmsteads separated by palisades with associated outbuildings. Similar settlement structures can also be found in rural areas, whereby traits of a well thought-out building plan for adaptation in a confined space can be recognised here.
+
+Around 600 BCE, the settlement area was completely restructured, presumably as part of a planned political decision. A new stone plinth wall was erected with a superstructure of air-dried mud bricks, which were plastered with clay and whitewashed. The wall, which is around 5 metres high and 3 metres wide, was built using a construction method that is unique north of the Alps and requires craftsmanship from the Mediterranean region. It can be seen as a status symbol and a demonstration of power.
+
+Extensive remodelling also took place inside the wall. Although there is no evidence of a fire, all the courtyards were demolished at around the same time as the wall was built and rows of houses were built along a network of paths that intersected at an angle. There is evidence of specialised craftsmanship on the upper plateau of the castle hill. Although the high-quality furnishings of some of the houses suggest that they may have served as residences for the upper classes, there are no outstanding ‘palace buildings’ on the plateau.
+In addition to the upper plateau, the settlement consisted of an outer bailey on a lower plateau and the outlying settlements. The archaeologists were also able to prove a dense settlement in the fortified outer bailey and also found a large gate building, which had been built in the same style as the enclosing walls of the Burgberg. The outlying settlement to the west, north and south-west of the Heuneburg covered an area of around 100 hectares, on which there were farmsteads demarcated by palisades. Ramparts and ditches divided the area into smaller settlement neighbourhoods, which in turn comprised individual estates of 1 to 1.5 ha in size. It is assumed that there were around 5,000 inhabitants in the entire settlement area during its heyday.
+"
+autowrap = true
+
+[node name="Button_back" type="Button" parent="."]
+margin_left = 776.0
+margin_top = 970.0
+margin_right = 1008.0
+margin_bottom = 1043.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Back"
+
+[connection signal="pressed" from="Button_back" to="." method="_on_Button_back_pressed"]
