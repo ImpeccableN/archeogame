@@ -14,7 +14,6 @@ func _process(_delta):
 	if Global.puzzlePieces == 11:
 		Global.calculate_disaster(distribute_disaster_points())
 		Global.puzzle_done = true
-		MusicPlayer.stop()
 		$TextureRect2_puzzleFinished.show()
 		$Label.show()
 		$CanvasLayer/Control/piece2_target.hide()
@@ -70,7 +69,8 @@ func _on_Button_Close_pressed():
 
 
 func _on_Button_ctn_pressed():
-	get_tree().change_scene("res://Level3/DiaryLvl3End.tscn")
+	MusicPlayer.stop()
+	get_tree().change_scene("res://Level3/ThirdDay_Map.tscn")
 
 
 func distribute_disaster_points() -> int:

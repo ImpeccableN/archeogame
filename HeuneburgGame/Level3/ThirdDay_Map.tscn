@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Level3/ThirdDay_Map.gd" type="Script" id=1]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://graphics/Accepted.PNG" type="Texture" id=24]
 [ext_resource path="res://graphics/Bagger.PNG" type="Texture" id=25]
 [ext_resource path="res://graphics/profilkasten.PNG" type="Texture" id=26]
+[ext_resource path="res://Level3/Button_Bauwagen3.gd" type="Script" id=27]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -454,6 +455,7 @@ border_color = Color( 0.6, 0.427451, 0.164706, 1 )
 
 [node name="ThirdDay_Map" type="Node2D"]
 script = ExtResource( 1 )
+images_grow_scale = Vector2( 1.2, 1.2 )
 
 [node name="FirstLevel_Image" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -480,6 +482,7 @@ script = ExtResource( 5 )
 polygon = PoolVector2Array( 120, 199, 241, 129, 276, 131, 337, 170, 341, 227, 219, 320, 129, 274 )
 
 [node name="Button_Bauwagen3" type="Area2D" parent="FirstLevel_Image"]
+script = ExtResource( 27 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Bauwagen3"]
 polygon = PoolVector2Array( 1066, 418, 1066, 329, 1137, 302, 1199, 295, 1226, 320, 1224, 377, 1224, 398, 1112, 425 )
@@ -532,7 +535,7 @@ theme = ExtResource( 6 )
 text = "The museum's not open yet. 
 You must first find some artefacts."
 
-[node name="Button_Diary" type="Button" parent="Keltenmuseum_Overlay"]
+[node name="Button_Diary" type="Button" parent="."]
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 156.0
@@ -1205,7 +1208,7 @@ expand = false
 [connection signal="input_event" from="FirstLevel_Image/Button_Bauwagen3" to="FirstLevel_Image/Button_Bauwagen3" method="_on_Button_Bauwagen3_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_exited"]
-[connection signal="pressed" from="Keltenmuseum_Overlay/Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_BacktoMain" to="." method="_on_Button_BacktoMain_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Quit" to="." method="_on_Button_Quit_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Glossar" to="Diary/Diary_texture" method="_on_Button_Glossar_pressed"]

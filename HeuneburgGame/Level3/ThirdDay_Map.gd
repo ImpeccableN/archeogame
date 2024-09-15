@@ -37,8 +37,6 @@ func _on_DisasterScore_disaster_score_finished():
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		yield(get_tree().create_timer(2),"timeout")
 		MusicPlayer.stop()
-		video_player.show()
-		video_player.play()
 
 
 func _on_Button_Diary_pressed():
