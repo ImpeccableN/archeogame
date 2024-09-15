@@ -516,7 +516,6 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 
 [node name="Diary" type="Popup" parent="."]
-visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 

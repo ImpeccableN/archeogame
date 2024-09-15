@@ -469,12 +469,6 @@ texture = ExtResource( 8 )
 position = Vector2( 1221, 554 )
 polygon = PoolVector2Array( 54, -140, 94, -99, 56, -47, 159, 62, -16, 96, -191, -94, -19, -121 )
 
-[node name="Button_Freilichtmuseum" type="Area2D" parent="FirstLevel_Image"]
-script = ExtResource( 4 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Freilichtmuseum"]
-polygon = PoolVector2Array( 1324, 692, 1550, 685, 1634, 760, 1707, 749, 1844, 840, 1836, 869, 1470, 901, 1313, 742 )
-
 [node name="Button_Keltenmuseum" type="Area2D" parent="FirstLevel_Image"]
 script = ExtResource( 5 )
 
@@ -486,6 +480,12 @@ script = ExtResource( 27 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Bauwagen3"]
 polygon = PoolVector2Array( 1066, 418, 1066, 329, 1137, 302, 1199, 295, 1226, 320, 1224, 377, 1224, 398, 1112, 425 )
+
+[node name="Button_Freilichtmuseum" type="Area2D" parent="FirstLevel_Image"]
+script = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Freilichtmuseum"]
+polygon = PoolVector2Array( 1324, 692, 1550, 685, 1634, 760, 1707, 749, 1844, 840, 1836, 869, 1470, 901, 1313, 742 )
 
 [node name="Bauwagen_Overlay" type="TextureRect" parent="."]
 margin_right = 1920.0
@@ -545,7 +545,6 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 
 [node name="Diary" type="Popup" parent="."]
-visible = true
 margin_left = 2.0
 margin_top = 4.0
 margin_right = 42.0
@@ -1202,6 +1201,9 @@ expand = false
 [connection signal="input_event" from="FirstLevel_Image/Button_Bauwagen3" to="FirstLevel_Image/Button_Bauwagen3" method="_on_Button_Bauwagen3_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_exited"]
+[connection signal="input_event" from="FirstLevel_Image/Button_Freilichtmuseum" to="FirstLevel_Image/Button_Freilichtmuseum" method="_on_Button_Freilichtmuseum_input_event"]
+[connection signal="mouse_entered" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_entered"]
+[connection signal="mouse_exited" from="FirstLevel_Image/Button_Freilichtmuseum" to="." method="_on_Button_Freilichtmuseum_mouse_exited"]
 [connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_BacktoMain" to="." method="_on_Button_BacktoMain_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Quit" to="." method="_on_Button_Quit_pressed"]

@@ -1,9 +1,8 @@
 extends Node2D
 
-
+onready var freilichtmuseum_image = get_node("Freilichtmuseum_Overlay")
 onready var keltenmuseum_image = get_node("Keltenmuseum_Overlay")
 onready var bauwagen_image = get_node("Bauwagen_Overlay")
-onready var video_player = get_node("OutroVideoPlayer")
 export var images_grow_scale := Vector2.ZERO
 
 func _ready():
@@ -31,10 +30,8 @@ func _on_Button_Keltenmuseum_mouse_exited():
 func _on_DisasterScore_disaster_score_finished():
 	if not Global.game_finished:
 		if Global.puzzle_done:
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-			yield(get_tree().create_timer(2),"timeout")
 			MusicPlayer.stop()
-			get_tree().change_scene("res://Minigame3/DiaryLvl3.tscn")
+			get_tree().change_scene("res://Level3/DiaryLvl3End.tscn")
 
 
 func _on_Button_Diary_pressed():
@@ -69,3 +66,12 @@ func _on_Button_BacktoMain_pressed():
 
 func _on_Button_Quit_pressed():
 	get_tree().quit()
+
+
+func _on_Button_Freilichtmuseum_mouse_entered():
+	print("entered")
+	freilichtmuseum_image.rect_scale = images_grow_scale
+
+
+func _on_Button_Freilichtmuseum_mouse_exited():
+	freilichtmuseum_image.rect_scale = Vector2.ONE

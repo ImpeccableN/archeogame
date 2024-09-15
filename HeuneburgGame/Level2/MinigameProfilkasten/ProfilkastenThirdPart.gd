@@ -5,8 +5,6 @@ var grabbed_tool : Node = null
 #keeps track of snapped tools
 var snapped_tools: int = 0
 
-var infotext_spitzi = "Now for the Grand Finale!"
-
 var tools: Array
 var tool_pos: Array
 
@@ -121,7 +119,7 @@ func end():
 	
 	Global.profilkasten_done = true
 	Global.calculate_disaster(distribute_disaster_points())
-	infobox.text = "You did it!"
+	infobox.text = "\nYou did it!"
 	$ViewportContainer/ViewportPhoto/LeaveButton.show()
 	$ViewportContainer/ViewportPhoto/LeaveButton.raise()
 	grabbed_tool.queue_free()

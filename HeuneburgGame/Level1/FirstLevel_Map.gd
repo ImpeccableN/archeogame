@@ -4,7 +4,7 @@ onready var grabungsstaette_image = get_node("Grabungsstaette_Overlay")
 onready var freilichtmuseum_image = get_node("Freilichtmuseum_Overlay")
 onready var keltenmuseum_image = get_node("Keltenmuseum_Overlay")
 onready var bauwagen_image = get_node("Bauwagen_Overlay")
-onready var grabungs_label = get_node("Grabungsstaette_Overlay/GrabungsstaettenLabel")
+
 export var images_grow_scale := Vector2.ZERO
 
 var done_text = "You've already done this. Look for something else."

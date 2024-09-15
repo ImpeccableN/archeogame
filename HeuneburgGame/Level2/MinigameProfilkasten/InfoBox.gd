@@ -11,5 +11,5 @@ func _on_Button_Tip_pressed():
 
 
 func new_message():
-	text = "Jetzt mach was Verrücktes"
+	text = "\nNow for the Grand Finale!"
 	show()
