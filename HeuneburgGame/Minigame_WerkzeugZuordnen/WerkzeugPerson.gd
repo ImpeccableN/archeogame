@@ -66,10 +66,12 @@ func load_audio_array():
 		var file_name = dir.get_next()
 		
 		while file_name != "":
-			if "import" in file_name:
-				pass
-			elif gender in file_name:
-				var file = file_name.replace(".import", "")
+#			if "import" in file_name:
+#				pass
+			if gender in file_name and "import" in file_name:
+				print(file_name)
+				file_name = file_name.replace(".import", "")
+				print(file_name)
 				audio_array.append(file_name)
 			file_name = dir.get_next()
 	else:

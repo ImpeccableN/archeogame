@@ -15,6 +15,7 @@ func _ready():
 		old_score = Global.old_score
 		match_score(old_score)
 		load_texture()
+		Global.old_score = Global.disaster_score
 		if old_score != current_score:
 			animate()
 		else:

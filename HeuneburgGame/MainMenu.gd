@@ -6,7 +6,7 @@ func _ready():
 
 func _on_Start_pressed():
 	MusicPlayer.stop()
-	get_tree().change_scene("res://Level/Level0.tscn")
+	get_tree().change_scene("res://Level/Desk.tscn")
 
 
 func _on_Quit_pressed():
