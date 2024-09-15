@@ -1189,12 +1189,6 @@ stream = ExtResource( 19 )
 [node name="DisasterScore" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1007, 94 )
 
-[node name="OutroVideoPlayer" type="VideoPlayer" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-expand = false
-
 [node name="NewspaperPlayer" type="VideoPlayer" parent="."]
 visible = false
 margin_right = 40.0
@@ -1229,4 +1223,3 @@ expand = false
 [connection signal="finished" from="Diary/PageFlipAnim" to="Diary/Diary_texture" method="_on_PageFlipAnim_finished"]
 [connection signal="finished" from="Diary/PageFBackAnim" to="Diary/Diary_texture" method="_on_PageFBackAnim_finished"]
 [connection signal="disaster_score_finished" from="DisasterScore" to="." method="_on_DisasterScore_disaster_score_finished"]
-[connection signal="finished" from="OutroVideoPlayer" to="." method="_on_OutroVideoPlayer_finished"]

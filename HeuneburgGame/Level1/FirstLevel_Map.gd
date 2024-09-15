@@ -11,24 +11,16 @@ var done_text = "You've already done this. Look for something else."
 
 
 func _ready():
-#	if Global.minigame_digger_done and Global.minigame_werkzeuge_done:
-#		get_tree().change_scene("res://Level1/DiaryLvl1End.tscn")
-
 	if not MusicPlayer.is_playing():
 		MusicPlayer.play_mapmusic()
 
 
-
-
-
 func _on_Button_Grabungsstaette_mouse_entered():
 	grabungsstaette_image.rect_scale = images_grow_scale
-	$Grabungsstaette_Overlay/GrabungsstaettenLabel.show()
 
 
 func _on_Button_Grabungsstaette_mouse_exited():
 	grabungsstaette_image.rect_scale = Vector2.ONE
-	$Grabungsstaette_Overlay/GrabungsstaettenLabel.hide()
 
 
 func _on_Button_Freilichtmuseum_mouse_entered():
@@ -53,12 +45,10 @@ func _on_Button_Keltenmuseum_mouse_exited():
 
 func _on_Button_Bauwagen_mouse_entered():
 	bauwagen_image.rect_scale = images_grow_scale
-	$Bauwagen_Overlay/BauwagenLabel.show()
 
 
 func _on_Button_Bauwagen_mouse_exited():
 	bauwagen_image.rect_scale = Vector2.ONE
-	$Bauwagen_Overlay/BauwagenLabel.hide()
 
 
 func _on_Button_Diary_pressed():
@@ -83,8 +73,6 @@ func _on_Button_Close_pressed():
 	$Freilichtmuseum_Overlay.show()
 	$Grabungsstaette_Overlay.show()
 	$Keltenmuseum_Overlay.show()
-
-
 
 
 func _on_DisasterScore_disaster_score_finished():

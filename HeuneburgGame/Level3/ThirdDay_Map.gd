@@ -12,7 +12,8 @@ func _ready():
 
 
 func _on_Button_Bauwagen_mouse_entered():
-	bauwagen_image.rect_scale = images_grow_scale
+	if not Global.game_finished:
+		bauwagen_image.rect_scale = images_grow_scale
 
 
 func _on_Button_Bauwagen_mouse_exited():
@@ -27,16 +28,13 @@ func _on_Button_Keltenmuseum_mouse_exited():
 	keltenmuseum_image.rect_scale = Vector2.ONE
 
 
-
-func _on_OutroVideoPlayer_finished():
-	get_tree().change_scene("res://Minigame3/DiaryLvl3.tscn")
-
-
 func _on_DisasterScore_disaster_score_finished():
-	if Global.puzzle_done:
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-		yield(get_tree().create_timer(2),"timeout")
-		MusicPlayer.stop()
+	if not Global.game_finished:
+		if Global.puzzle_done:
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			yield(get_tree().create_timer(2),"timeout")
+			MusicPlayer.stop()
+			get_tree().change_scene("res://Minigame3/DiaryLvl3.tscn")
 
 
 func _on_Button_Diary_pressed():
