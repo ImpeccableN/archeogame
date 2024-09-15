@@ -1,7 +1,10 @@
 extends Control
 
 func _ready():
+	var screen_pos = OS.get_window_position()
+	OS.set_window_position(screen_pos + Vector2(200, 200))
 	MusicPlayer.play_titletheme()
+	
 
 
 func _on_Start_pressed():
