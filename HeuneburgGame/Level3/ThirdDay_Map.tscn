@@ -26,7 +26,6 @@
 [ext_resource path="res://graphics/Accepted.PNG" type="Texture" id=24]
 [ext_resource path="res://graphics/Bagger.PNG" type="Texture" id=25]
 [ext_resource path="res://graphics/profilkasten.PNG" type="Texture" id=26]
-[ext_resource path="res://Level3/Button_Bauwagen3.gd" type="Script" id=27]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
@@ -455,7 +454,6 @@ border_color = Color( 0.6, 0.427451, 0.164706, 1 )
 
 [node name="ThirdDay_Map" type="Node2D"]
 script = ExtResource( 1 )
-images_grow_scale = Vector2( 1.2, 1.2 )
 
 [node name="FirstLevel_Image" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -482,7 +480,6 @@ script = ExtResource( 5 )
 polygon = PoolVector2Array( 120, 199, 241, 129, 276, 131, 337, 170, 341, 227, 219, 320, 129, 274 )
 
 [node name="Button_Bauwagen3" type="Area2D" parent="FirstLevel_Image"]
-script = ExtResource( 15 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FirstLevel_Image/Button_Bauwagen3"]
 polygon = PoolVector2Array( 1066, 418, 1066, 329, 1137, 302, 1199, 295, 1226, 320, 1224, 377, 1224, 398, 1112, 425 )
@@ -535,6 +532,15 @@ theme = ExtResource( 6 )
 text = "The museum's not open yet. 
 You must first find some artefacts."
 
+[node name="Button_Diary" type="Button" parent="Keltenmuseum_Overlay"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 156.0
+margin_bottom = 145.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
 [node name="Diary" type="Popup" parent="."]
 visible = true
 margin_left = 2.0
@@ -545,29 +551,8 @@ margin_bottom = 44.0
 [node name="Diary_texture" type="TextureRect" parent="Diary"]
 margin_right = 40.0
 margin_bottom = 40.0
-
-[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
-margin_left = 152.0
-margin_top = 329.0
-margin_right = 295.0
-margin_bottom = 384.0
-custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-text = "Glossary"
-
-[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
-margin_left = 216.0
-margin_top = 444.0
-margin_right = 298.0
-margin_bottom = 500.0
-custom_fonts/font = SubResource( 8 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-text = "Close"
+texture = ExtResource( 16 )
+script = ExtResource( 18 )
 
 [node name="Button_BacktoMain" type="Button" parent="Diary/Diary_texture"]
 margin_left = 515.0
@@ -1201,20 +1186,18 @@ stream = ExtResource( 19 )
 [node name="DisasterScore" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1007, 94 )
 
-[node name="NewspaperPlayer" type="VideoPlayer" parent="."]
+[node name="OutroVideoPlayer" type="VideoPlayer" parent="."]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 expand = false
 
-[node name="Button_Diary" type="Button" parent="."]
-margin_left = 1.0
-margin_top = 2.0
-margin_right = 156.0
-margin_bottom = 145.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+[node name="NewspaperPlayer" type="VideoPlayer" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+stream = ExtResource( 15 )
+expand = false
 
 [connection signal="input_event" from="FirstLevel_Image/Button_Keltenmuseum" to="FirstLevel_Image/Button_Keltenmuseum" method="_on_Button_Keltenmuseum_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Keltenmuseum" to="." method="_on_Button_Keltenmuseum_mouse_entered"]
@@ -1222,7 +1205,6 @@ custom_styles/normal = SubResource( 3 )
 [connection signal="input_event" from="FirstLevel_Image/Button_Bauwagen3" to="FirstLevel_Image/Button_Bauwagen3" method="_on_Button_Bauwagen3_input_event"]
 [connection signal="mouse_entered" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_entered"]
 [connection signal="mouse_exited" from="FirstLevel_Image/Button_Bauwagen3" to="." method="_on_Button_Bauwagen_mouse_exited"]
-[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
 [connection signal="pressed" from="Keltenmuseum_Overlay/Button_Diary" to="." method="_on_Button_Diary_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_BacktoMain" to="." method="_on_Button_BacktoMain_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Quit" to="." method="_on_Button_Quit_pressed"]
@@ -1244,4 +1226,4 @@ custom_styles/normal = SubResource( 3 )
 [connection signal="finished" from="Diary/PageFlipAnim" to="Diary/Diary_texture" method="_on_PageFlipAnim_finished"]
 [connection signal="finished" from="Diary/PageFBackAnim" to="Diary/Diary_texture" method="_on_PageFBackAnim_finished"]
 [connection signal="disaster_score_finished" from="DisasterScore" to="." method="_on_DisasterScore_disaster_score_finished"]
-[connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
+[connection signal="finished" from="OutroVideoPlayer" to="." method="_on_OutroVideoPlayer_finished"]

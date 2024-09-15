@@ -3,8 +3,8 @@ extends Node2D
 
 onready var keltenmuseum_image = get_node("Keltenmuseum_Overlay")
 onready var bauwagen_image = get_node("Bauwagen_Overlay")
+onready var video_player = get_node("OutroVideoPlayer")
 export var images_grow_scale := Vector2.ZERO
-
 
 func _ready():
 	if not MusicPlayer.is_playing():
@@ -12,8 +12,7 @@ func _ready():
 
 
 func _on_Button_Bauwagen_mouse_entered():
-	if not Global.game_finished:
-		bauwagen_image.rect_scale = images_grow_scale
+	bauwagen_image.rect_scale = images_grow_scale
 
 
 func _on_Button_Bauwagen_mouse_exited():
@@ -28,11 +27,18 @@ func _on_Button_Keltenmuseum_mouse_exited():
 	keltenmuseum_image.rect_scale = Vector2.ONE
 
 
+
+func _on_OutroVideoPlayer_finished():
+	get_tree().change_scene("res://Minigame3/DiaryLvl3.tscn")
+
+
 func _on_DisasterScore_disaster_score_finished():
 	if Global.puzzle_done:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		yield(get_tree().create_timer(2),"timeout")
 		MusicPlayer.stop()
-		Global.game_finished = true
-		get_tree().change_scene("res://Level3/DiaryLvl3End.tscn")
+		video_player.show()
+		video_player.play()
 
 
 func _on_Button_Diary_pressed():
@@ -47,6 +53,7 @@ func _on_Button_Diary_pressed():
 	$Diary/Diary_texture/Button_Glossar/term1.hide()
 	$Diary/Diary_texture/Button_Glossar/explanation1.hide()
 	$Diary/Diary_texture/Button_Glossar/Button_nextPage1.hide()
+
 
 
 func _on_Button_Close_pressed():
