@@ -465,6 +465,15 @@ rect_pivot_offset = Vector2( 1157, 366 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 
+[node name="Label" type="Label" parent="Bauwagen_Overlay"]
+visible = false
+margin_left = 761.0
+margin_top = 320.0
+margin_right = 1465.0
+margin_bottom = 397.0
+theme = ExtResource( 8 )
+text = "You've already done this. Look for something else."
+
 [node name="Freilichtmuseum_Overlay" type="TextureRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -488,6 +497,15 @@ margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 1250, 550 )
 mouse_filter = 2
 texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Grabungsstaette_Overlay"]
+visible = false
+margin_left = 890.0
+margin_top = 488.0
+margin_right = 1594.0
+margin_bottom = 565.0
+theme = ExtResource( 8 )
+text = "You've already done this. Look for something else."
 
 [node name="Keltenmuseum_Overlay" type="TextureRect" parent="."]
 margin_right = 1920.0

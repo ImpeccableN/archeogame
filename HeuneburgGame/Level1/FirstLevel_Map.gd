@@ -16,10 +16,14 @@ func _ready():
 
 
 func _on_Button_Grabungsstaette_mouse_entered():
+	if Global.minigame_digger_done:
+		$Grabungsstaette_Overlay/Label.show()
 	grabungsstaette_image.rect_scale = images_grow_scale
 
 
 func _on_Button_Grabungsstaette_mouse_exited():
+	if Global.minigame_digger_done:
+		$Grabungsstaette_Overlay/Label.hide()
 	grabungsstaette_image.rect_scale = Vector2.ONE
 
 
@@ -44,10 +48,14 @@ func _on_Button_Keltenmuseum_mouse_exited():
 
 
 func _on_Button_Bauwagen_mouse_entered():
+	if Global.minigame_werkzeuge_done:
+		$Bauwagen_Overlay/Label.show()
 	bauwagen_image.rect_scale = images_grow_scale
 
 
 func _on_Button_Bauwagen_mouse_exited():
+	if Global.minigame_werkzeuge_done:
+		$Bauwagen_Overlay/Label.hide()
 	bauwagen_image.rect_scale = Vector2.ONE
 
 

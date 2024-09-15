@@ -61,6 +61,7 @@ func _on_Button_Close_pressed():
 
 
 func _on_Button_BacktoMain_pressed():
+	
 	get_tree().change_scene("res://MainMenu.tscn")
 
 
@@ -69,7 +70,6 @@ func _on_Button_Quit_pressed():
 
 
 func _on_Button_Freilichtmuseum_mouse_entered():
-	print("entered")
 	freilichtmuseum_image.rect_scale = images_grow_scale
 
 
