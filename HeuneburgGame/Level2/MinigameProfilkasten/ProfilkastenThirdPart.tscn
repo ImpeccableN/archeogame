@@ -279,6 +279,7 @@ polygon = PoolVector2Array( -8, 132, -91, 119, -181, 32, -251, -75, -290, -167, 
 
 [node name="AudioDust" type="AudioStreamPlayer" parent="ViewportContainer/ViewportPhoto/SpitzhackeHitPoint"]
 stream = ExtResource( 21 )
+volume_db = 2.909
 
 [node name="CameraFlash" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
