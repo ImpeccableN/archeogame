@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Level3/Museum/museum_bg.PNG" type="Texture" id=1]
+[ext_resource path="res://fonts/ArialTh.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Level3/Museum/Pferdemaske_moreInfo.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 55
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 38
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.866667, 0.835294, 0.835294, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.486275 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0196078, 0.0156863, 0.0156863, 0.34902 )
+
+[node name="Burials_Information" type="TextureRect"]
+margin_right = 1918.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 3 )
+
+[node name="Label_Titel" type="Label" parent="."]
+margin_left = 592.0
+margin_top = 18.0
+margin_right = 1169.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Grand burials of the Heuneburg"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 107.0
+margin_right = 1884.0
+margin_bottom = 767.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "
+The Bettelbühl cemetery, from which the horse mask originates, is just one of numerous groups of burial mounds surrounding the Heuneburg. They mainly served as final resting places for members of the upper social classes. The larger of these burial mounds, which are often also referred to as ‘’royal tombs‘’, are usually found in larger necropolises, which contain both rich and simple burials.
+
+The Bettelbühl cemetery is of great archaeological interest for several reasons. In many burial mound groups, the central burials were already robbed in antiquity, so that it is often not possible to record the richest graves in their entirety. In Bettelbühl, however, there are two outstanding rich burials that have at least remained largely intact. One is the particularly richly decorated grave of a four-year-old girl. The reason why ornate children's graves are of interest to archaeologists is that they show that a high social status could be inherited.
+
+The second particularly interesting grave is the ornate tomb of a middle-aged woman, which was recovered in one piece in 2010 as the so-called Keltenblock. On the one hand, the wood of the inner burial chamber had been preserved here, so that the year of death could be dated to the winter of 583/82 BC. Secondly, the woman's gold jewellery and fibulae are very similar to those of the girl, so that a social relationship between the two individuals can be assumed.
+"
+autowrap = true
+
+[node name="Button_back" type="Button" parent="."]
+margin_left = 776.0
+margin_top = 970.0
+margin_right = 1008.0
+margin_bottom = 1043.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Back"
+
+[connection signal="pressed" from="Button_back" to="." method="_on_Button_back_pressed"]

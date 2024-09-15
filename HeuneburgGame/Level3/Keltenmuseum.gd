@@ -113,6 +113,10 @@ func _on_Button_Diary_pressed():
 	$Pferdemaske_texture.hide()
 	$sockel4_texture.hide()
 	$HerrderTiere_texture.hide()
+	$Diary/Diary_texture/Button_Glossar/Label_titel1.hide()
+	$Diary/Diary_texture/Button_Glossar/term1.hide()
+	$Diary/Diary_texture/Button_Glossar/explanation1.hide()
+	$Diary/Diary_texture/Button_Glossar/Button_nextPage1.hide()
 
 func _on_Button_Close_pressed():
 	$Diary/BookClose.play()

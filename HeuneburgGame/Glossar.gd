@@ -3,8 +3,8 @@ extends TextureRect
 
 
 func _on_Button_nextPage1_pressed():
+	
 	$Glossar_p2.show()
-	$PageFlip.play()
 
 
 func _on_Button_nextPage2_pressed():

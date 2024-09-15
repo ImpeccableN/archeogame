@@ -14,6 +14,4 @@ func _on_Quit_pressed():
 
 
 func _on_Credits_pressed():
-	pass # Replace with function body.
-
-
+	get_tree().change_scene("res://Credits.tscn")

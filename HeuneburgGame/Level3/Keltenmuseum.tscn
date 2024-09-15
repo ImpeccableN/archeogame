@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=150 format=2]
 
 [ext_resource path="res://fonts/AYearWithoutRain.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Level3/Keltenmuseum.gd" type="Script" id=2]
@@ -33,6 +33,16 @@
 [ext_resource path="res://graphics/Tagebuch_bg_Lesezeichen.png" type="Texture" id=31]
 [ext_resource path="res://graphics/Tagebuch_Icon.png" type="Texture" id=32]
 [ext_resource path="res://graphics/Tagebuch_Icon_Kontur.png" type="Texture" id=33]
+[ext_resource path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=34]
+[ext_resource path="res://Level3/Diary_texture.gd" type="Script" id=35]
+[ext_resource path="res://video/tb_blaettern_rueckwaerts_spedUp.ogv" type="VideoStream" id=36]
+[ext_resource path="res://video/tb_blaettern_spedUp.ogv" type="VideoStream" id=37]
+[ext_resource path="res://sound effects/pageturn.mp3" type="AudioStream" id=38]
+[ext_resource path="res://sound effects/PageTurn.wav" type="AudioStream" id=39]
+[ext_resource path="res://graphics/trainRide.PNG" type="Texture" id=40]
+[ext_resource path="res://graphics/Accepted.PNG" type="Texture" id=41]
+[ext_resource path="res://graphics/Bagger.PNG" type="Texture" id=42]
+[ext_resource path="res://graphics/profilkasten.PNG" type="Texture" id=43]
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
@@ -70,34 +80,6 @@ region_rect = Rect2( 0, 0, 2048, 2048 )
 texture = ExtResource( 32 )
 region_rect = Rect2( 0, 0, 2048, 2048 )
 
-[sub_resource type="DynamicFont" id=13]
-size = 32
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=16]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="DynamicFont" id=17]
-size = 32
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=18]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=19]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
 [sub_resource type="DynamicFont" id=21]
 size = 20
 use_filter = true
@@ -125,6 +107,391 @@ bg_color = Color( 0.878431, 0.580392, 0.239216, 0.760784 )
 
 [sub_resource type="StyleBoxFlat" id=28]
 bg_color = Color( 0.792157, 0.482353, 0.12549, 0.760784 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 35
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 17
+use_filter = true
+font_data = ExtResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=39]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=43]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=44]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=45]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=46]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=47]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=48]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=49]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=119]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=51]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=52]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=53]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=54]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=55]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=56]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=57]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=58]
+size = 35
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=59]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=60]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=61]
+size = 17
+use_filter = true
+font_data = ExtResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=62]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=63]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=64]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
+
+[sub_resource type="StyleBoxFlat" id=65]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=66]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=67]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="DynamicFont" id=68]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=69]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=70]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=71]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=72]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=73]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=74]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=75]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=76]
+size = 35
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=77]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=78]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=79]
+size = 17
+use_filter = true
+font_data = ExtResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=80]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=81]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=82]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
+
+[sub_resource type="StyleBoxFlat" id=83]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=84]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=85]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
+
+[sub_resource type="DynamicFont" id=86]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=87]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=88]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=89]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=90]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=91]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=92]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=93]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=94]
+size = 35
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=95]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=96]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=97]
+size = 17
+use_filter = true
+font_data = ExtResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=98]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=99]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=100]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
+
+[sub_resource type="StyleBoxFlat" id=101]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=102]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=103]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
+
+[sub_resource type="DynamicFont" id=104]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=105]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=106]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=107]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=108]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=109]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=110]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=111]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=112]
+size = 35
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=113]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=114]
+size = 30
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=115]
+size = 17
+use_filter = true
+font_data = ExtResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=116]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=117]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+
+[sub_resource type="StyleBoxFlat" id=118]
+bg_color = Color( 0.403922, 0.321569, 0.321569, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color( 0.6, 0.427451, 0.164706, 1 )
 
 [node name="Keltenmuseum" type="Node2D"]
 script = ExtResource( 2 )
@@ -354,7 +721,6 @@ custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )
 
 [node name="Diary" type="Popup" parent="."]
-visible = true
 margin_left = 2.0
 margin_top = 4.0
 margin_right = 42.0
@@ -364,29 +730,7 @@ margin_bottom = 44.0
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 31 )
-
-[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
-margin_left = 152.0
-margin_top = 329.0
-margin_right = 295.0
-margin_bottom = 384.0
-custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
-custom_fonts/font = SubResource( 13 )
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/normal = SubResource( 16 )
-text = "Glossary"
-
-[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
-margin_left = 216.0
-margin_top = 444.0
-margin_right = 298.0
-margin_bottom = 500.0
-custom_fonts/font = SubResource( 17 )
-custom_styles/hover = SubResource( 18 )
-custom_styles/pressed = SubResource( 19 )
-custom_styles/normal = SubResource( 20 )
-text = "Close"
+script = ExtResource( 35 )
 
 [node name="Button_BacktoMain" type="Button" parent="Diary/Diary_texture"]
 margin_left = 515.0
@@ -410,8 +754,615 @@ custom_styles/pressed = SubResource( 27 )
 custom_styles/normal = SubResource( 28 )
 text = "Quit game"
 
+[node name="Button_Glossar" type="Button" parent="Diary/Diary_texture"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 384.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 29 )
+custom_styles/hover = SubResource( 30 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/normal = SubResource( 32 )
+text = "Glossary"
+
+[node name="Label_titel1" type="Label" parent="Diary/Diary_texture/Button_Glossar"]
+visible = false
+margin_left = 271.0
+margin_top = -194.0
+margin_right = 650.0
+margin_bottom = -129.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 33 )
+text = "Glossary"
+align = 1
+
+[node name="term1" type="Label" parent="Diary/Diary_texture/Button_Glossar"]
+visible = false
+margin_left = 208.0
+margin_top = -151.0
+margin_right = 715.0
+margin_bottom = 582.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 34 )
+text = "Term
+artefact
+burial mound
+celts
+
+
+context
+excavation journal
+
+
+field plan"
+align = 1
+
+[node name="explanation1" type="Label" parent="Diary/Diary_texture/Button_Glossar"]
+visible = false
+margin_left = 801.0
+margin_top = -160.0
+margin_right = 1433.0
+margin_bottom = 607.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Explanation
+An object made by humans
+Burial with overlying earth mound
+Also known as Gauls or Gallates, a collection of
+groups in Iron Age Europe that shared cultural
+ similarities
+Relationship of all aspects of a feature
+A journal in which the head of the excavation
+notes down all events relating to the
+excavation 
+Plan of the excavation site showing the it's
+borders and all the fund structures (numbered).
+Serves as overview, documentation and helps 
+to recognize bigger patterns."
+
+[node name="Button_nextPage1" type="Button" parent="Diary/Diary_texture/Button_Glossar"]
+margin_left = 1240.0
+margin_top = 565.0
+margin_right = 1388.0
+margin_bottom = 605.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/normal = SubResource( 39 )
+text = "to page down"
+
+[node name="Button_Close" type="Button" parent="Diary/Diary_texture"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 40 )
+custom_styles/hover = SubResource( 41 )
+custom_styles/pressed = SubResource( 42 )
+custom_styles/normal = SubResource( 43 )
+text = "Close"
+
+[node name="Button_Journal" type="Button" parent="Diary/Diary_texture"]
+margin_left = 164.0
+margin_top = 213.0
+margin_right = 298.0
+margin_bottom = 275.0
+custom_fonts/font = SubResource( 44 )
+custom_styles/hover = SubResource( 45 )
+custom_styles/pressed = SubResource( 46 )
+custom_styles/normal = SubResource( 47 )
+text = "Journal"
+
+[node name="Diary_Intro_Title" type="Label" parent="Diary/Diary_texture"]
+margin_left = 346.0
+margin_top = 174.0
+margin_right = 890.0
+margin_bottom = 312.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 48 )
+text = "Day 3: We needed to work careful today as we unearthed our finds from the profile box. Seem to be parts of ceramic vessels... ."
+autowrap = true
+
+[node name="Diary_Intro_Txt" type="Label" parent="Diary/Diary_texture"]
+margin_left = 346.0
+margin_top = 283.0
+margin_right = 890.0
+margin_bottom = 947.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 49 )
+autowrap = true
+
+[node name="Diary_Intro_Txt2" type="Label" parent="Diary/Diary_texture"]
+margin_left = 965.0
+margin_top = 171.0
+margin_right = 1509.0
+margin_bottom = 269.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 119 )
+text = "Day 1: My application got accepted! 
+The train ride with the team went well."
+autowrap = true
+
+[node name="Diary_Intro_Txt3" type="Label" parent="Diary/Diary_texture"]
+margin_left = 949.0
+margin_top = 583.0
+margin_right = 1493.0
+margin_bottom = 718.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 119 )
+text = "Day 2: Organizing a team ain't easy but I managed. Working with the excavator was exciting! We made some promising discoveries."
+autowrap = true
+
+[node name="achievement1" type="TextureRect" parent="Diary/Diary_texture"]
+margin_left = 1323.0
+margin_top = 306.0
+margin_right = 1353.0
+margin_bottom = 335.0
+rect_rotation = 19.8
+rect_scale = Vector2( 7.10214, 5.56209 )
+texture = ExtResource( 41 )
+expand = true
+
+[node name="achievement2" type="TextureRect" parent="Diary/Diary_texture"]
+margin_left = 956.0
+margin_top = 320.0
+margin_right = 1269.0
+margin_bottom = 483.0
+texture = ExtResource( 40 )
+expand = true
+
+[node name="achievement3" type="TextureRect" parent="Diary/Diary_texture"]
+margin_left = 1107.0
+margin_top = 734.0
+margin_right = 1260.0
+margin_bottom = 901.0
+texture = ExtResource( 42 )
+expand = true
+
+[node name="achievement4" type="TextureRect" parent="Diary/Diary_texture"]
+margin_left = 350.0
+margin_top = 314.0
+margin_right = 883.0
+margin_bottom = 660.0
+texture = ExtResource( 43 )
+expand = true
+
+[node name="Glossar_p2" type="TextureRect" parent="Diary/Diary_texture"]
+visible = false
+margin_right = 1917.0
+margin_bottom = 1076.0
+texture = ExtResource( 31 )
+
+[node name="Button_Glossar2" type="Button" parent="Diary/Diary_texture/Glossar_p2"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 385.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 50 )
+custom_styles/hover = SubResource( 51 )
+custom_styles/pressed = SubResource( 52 )
+custom_styles/normal = SubResource( 53 )
+text = "Glossary"
+
+[node name="Button_Close2" type="Button" parent="Diary/Diary_texture/Glossar_p2"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 54 )
+custom_styles/hover = SubResource( 55 )
+custom_styles/pressed = SubResource( 56 )
+custom_styles/normal = SubResource( 57 )
+text = "Close"
+
+[node name="Label_titel2" type="Label" parent="Diary/Diary_texture/Glossar_p2"]
+margin_left = 444.0
+margin_top = 120.0
+margin_right = 823.0
+margin_bottom = 185.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 58 )
+text = "Glossary"
+align = 1
+
+[node name="term2" type="Label" parent="Diary/Diary_texture/Glossar_p2"]
+margin_left = 367.0
+margin_top = 180.0
+margin_right = 880.0
+margin_bottom = 913.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 59 )
+text = "Term
+filling
+
+find
+
+
+
+find bag
+
+finding"
+align = 1
+
+[node name="explanation2" type="Label" parent="Diary/Diary_texture/Glossar_p2"]
+margin_left = 935.0
+margin_top = 169.0
+margin_right = 1603.0
+margin_bottom = 936.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 60 )
+text = "Explanation
+The material used to fill a previously excavated
+area (i.e. in a waste pit)
+Specific object that can provide information on
+the environment or people of past times
+(i.e. aretfacts, animal or human remains,
+traces of plants)
+Plastic bag in which finds are collected and
+stored
+The totality of historically significant observations
+in archaeological find situations (position of finds
+in relation to each other in a find context,
+traces of past organic elements)"
+
+[node name="Button_nextPage2" type="Button" parent="Diary/Diary_texture/Glossar_p2"]
+margin_left = 1406.0
+margin_top = 892.0
+margin_right = 1554.0
+margin_bottom = 932.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 61 )
+custom_styles/hover = SubResource( 62 )
+custom_styles/pressed = SubResource( 63 )
+custom_styles/normal = SubResource( 64 )
+text = "to page down"
+
+[node name="Button_prevPage2" type="Button" parent="Diary/Diary_texture/Glossar_p2"]
+margin_left = 352.0
+margin_top = 895.0
+margin_right = 500.0
+margin_bottom = 935.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 61 )
+custom_styles/hover = SubResource( 65 )
+custom_styles/pressed = SubResource( 66 )
+custom_styles/normal = SubResource( 67 )
+text = "to page up"
+
+[node name="Glossar_p3" type="TextureRect" parent="Diary/Diary_texture"]
+visible = false
+margin_right = 1917.0
+margin_bottom = 1083.0
+texture = ExtResource( 31 )
+
+[node name="Button_Glossar3" type="Button" parent="Diary/Diary_texture/Glossar_p3"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 385.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 68 )
+custom_styles/hover = SubResource( 69 )
+custom_styles/pressed = SubResource( 70 )
+custom_styles/normal = SubResource( 71 )
+text = "Glossary"
+
+[node name="Button_Close3" type="Button" parent="Diary/Diary_texture/Glossar_p3"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 72 )
+custom_styles/hover = SubResource( 73 )
+custom_styles/pressed = SubResource( 74 )
+custom_styles/normal = SubResource( 75 )
+text = "Close"
+
+[node name="Label_titel3" type="Label" parent="Diary/Diary_texture/Glossar_p3"]
+margin_left = 444.0
+margin_top = 120.0
+margin_right = 823.0
+margin_bottom = 185.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 76 )
+text = "Glossary"
+align = 1
+
+[node name="term3" type="Label" parent="Diary/Diary_texture/Glossar_p3"]
+margin_left = 367.0
+margin_top = 180.0
+margin_right = 880.0
+margin_bottom = 883.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 77 )
+text = "Term
+Hallstatt period
+
+
+hill-top settlement
+
+
+Iron Age
+
+
+level plane"
+align = 1
+
+[node name="explanation3" type="Label" parent="Diary/Diary_texture/Glossar_p3"]
+margin_left = 935.0
+margin_top = 169.0
+margin_right = 1603.0
+margin_bottom = 936.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 78 )
+text = "Explanation
+The Hallstatt period (approx. 800 - 450 BCE) 
+refers to an epoch of the older Pre-Roman
+Iron Age in large parts of Europe
+Historical type of settlement built on
+elevated sites without the assumption
+of fortification 
+Period named after the material used for the
+ production of weapons and tools
+(Central Germany ca. 900 BCE - 0)
+Artificially created flat surface during
+an excavation for the purpose of recognising
+and documenting soil discoloration"
+
+[node name="Button_nextPage3" type="Button" parent="Diary/Diary_texture/Glossar_p3"]
+margin_left = 1406.0
+margin_top = 892.0
+margin_right = 1554.0
+margin_bottom = 932.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 79 )
+custom_styles/hover = SubResource( 80 )
+custom_styles/pressed = SubResource( 81 )
+custom_styles/normal = SubResource( 82 )
+text = "to page down"
+
+[node name="Button_prevPage3" type="Button" parent="Diary/Diary_texture/Glossar_p3"]
+margin_left = 352.0
+margin_top = 895.0
+margin_right = 500.0
+margin_bottom = 935.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 79 )
+custom_styles/hover = SubResource( 83 )
+custom_styles/pressed = SubResource( 84 )
+custom_styles/normal = SubResource( 85 )
+text = "to page up"
+
+[node name="Glossar_p4" type="TextureRect" parent="Diary/Diary_texture"]
+visible = false
+margin_right = 1921.0
+margin_bottom = 1080.0
+texture = ExtResource( 31 )
+
+[node name="Button_Glossar4" type="Button" parent="Diary/Diary_texture/Glossar_p4"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 385.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 86 )
+custom_styles/hover = SubResource( 87 )
+custom_styles/pressed = SubResource( 88 )
+custom_styles/normal = SubResource( 89 )
+text = "Glossary"
+
+[node name="Button_Close4" type="Button" parent="Diary/Diary_texture/Glossar_p4"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 90 )
+custom_styles/hover = SubResource( 91 )
+custom_styles/pressed = SubResource( 92 )
+custom_styles/normal = SubResource( 93 )
+text = "Close"
+
+[node name="Label_titel4" type="Label" parent="Diary/Diary_texture/Glossar_p4"]
+margin_left = 444.0
+margin_top = 120.0
+margin_right = 823.0
+margin_bottom = 185.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 94 )
+text = "Glossary"
+align = 1
+
+[node name="term4" type="Label" parent="Diary/Diary_texture/Glossar_p4"]
+margin_left = 367.0
+margin_top = 180.0
+margin_right = 880.0
+margin_bottom = 883.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 95 )
+text = "Term
+overburden
+
+posthole
+
+
+profile
+
+
+profile box
+
+situation of discovery"
+align = 1
+
+[node name="explanation4" type="Label" parent="Diary/Diary_texture/Glossar_p4"]
+margin_left = 935.0
+margin_top = 169.0
+margin_right = 1575.0
+margin_bottom = 936.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 96 )
+text = "Explanation
+Removed soil, usually deposited in large piles
+next to the excavation area
+Remains of the ditch for setting up a
+wooden post, today mainly recognisable as
+discoloration in the ground
+Corresponds to the vertical documentation
+surface of an excavation, which can be used to
+easily read stratigraphic sequences in particular
+Quadratic trench created to document
+the profile of a feature
+Environment and conditions under which
+archaeological finds are discovered"
+
+[node name="Button_nextPage4" type="Button" parent="Diary/Diary_texture/Glossar_p4"]
+margin_left = 1406.0
+margin_top = 892.0
+margin_right = 1554.0
+margin_bottom = 932.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 97 )
+custom_styles/hover = SubResource( 98 )
+custom_styles/pressed = SubResource( 99 )
+custom_styles/normal = SubResource( 100 )
+text = "to page down"
+
+[node name="Button_prevPage4" type="Button" parent="Diary/Diary_texture/Glossar_p4"]
+margin_left = 352.0
+margin_top = 895.0
+margin_right = 500.0
+margin_bottom = 935.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 97 )
+custom_styles/hover = SubResource( 101 )
+custom_styles/pressed = SubResource( 102 )
+custom_styles/normal = SubResource( 103 )
+text = "to page up"
+
+[node name="Glossar_p5" type="TextureRect" parent="Diary/Diary_texture"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 31 )
+
+[node name="Button_Glossar5" type="Button" parent="Diary/Diary_texture/Glossar_p5"]
+margin_left = 152.0
+margin_top = 329.0
+margin_right = 295.0
+margin_bottom = 385.0
+custom_colors/font_color_hover = Color( 0.992157, 0.988235, 0.988235, 1 )
+custom_fonts/font = SubResource( 104 )
+custom_styles/hover = SubResource( 105 )
+custom_styles/pressed = SubResource( 106 )
+custom_styles/normal = SubResource( 107 )
+text = "Glossary"
+
+[node name="Button_Close5" type="Button" parent="Diary/Diary_texture/Glossar_p5"]
+margin_left = 216.0
+margin_top = 444.0
+margin_right = 298.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 108 )
+custom_styles/hover = SubResource( 109 )
+custom_styles/pressed = SubResource( 110 )
+custom_styles/normal = SubResource( 111 )
+text = "Close"
+
+[node name="Label_titel5" type="Label" parent="Diary/Diary_texture/Glossar_p5"]
+margin_left = 444.0
+margin_top = 120.0
+margin_right = 823.0
+margin_bottom = 185.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 112 )
+text = "Glossary"
+align = 1
+
+[node name="term5" type="Label" parent="Diary/Diary_texture/Glossar_p5"]
+margin_left = 367.0
+margin_top = 180.0
+margin_right = 880.0
+margin_bottom = 883.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 113 )
+text = "Term
+stratigraphy
+
+to clean
+
+
+
+trench"
+align = 1
+
+[node name="explanation5" type="Label" parent="Diary/Diary_texture/Glossar_p5"]
+margin_left = 935.0
+margin_top = 169.0
+margin_right = 1575.0
+margin_bottom = 887.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 114 )
+text = "Explanation
+Sequence of different layers that stand out
+from each other in terms of color and texture
+Careful removal of the uppermost layer exposed
+to the weather (dried out, washed out, etc.)
+in order to be able to clearly trace the
+boundaries of the findings
+An excavation area can consist of several
+trench cuts. A trench is a contiguous uncovered
+area. Sometimes it is wiser not to expose
+the entire area at the same time and
+so areas are opened up one section at a time
+(sometimes over several years). "
+
+[node name="Button_prevPage5" type="Button" parent="Diary/Diary_texture/Glossar_p5"]
+margin_left = 352.0
+margin_top = 895.0
+margin_right = 500.0
+margin_bottom = 935.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.533333, 0.254902, 1 )
+custom_fonts/font = SubResource( 115 )
+custom_styles/hover = SubResource( 116 )
+custom_styles/pressed = SubResource( 117 )
+custom_styles/normal = SubResource( 118 )
+text = "to page up"
+
 [node name="BookClose" type="AudioStreamPlayer2D" parent="Diary"]
+position = Vector2( 2, 4 )
 stream = ExtResource( 5 )
+
+[node name="PageFlip" type="AudioStreamPlayer2D" parent="Diary"]
+stream = ExtResource( 39 )
+
+[node name="PageFlip_short" type="AudioStreamPlayer2D" parent="Diary"]
+stream = ExtResource( 38 )
+
+[node name="PageFlipAnim" type="VideoPlayer" parent="Diary"]
+visible = false
+margin_left = -2.0
+margin_top = -4.0
+margin_right = 1916.0
+margin_bottom = 1074.0
+stream = ExtResource( 37 )
+
+[node name="PageFBackAnim" type="VideoPlayer" parent="Diary"]
+visible = false
+margin_left = -2.0
+margin_top = -4.0
+margin_right = 1916.0
+margin_bottom = 1074.0
+stream = ExtResource( 36 )
 
 [connection signal="input_event" from="Museum_inside/Button_Reiter" to="Museum_inside/Button_Reiter" method="_on_Button_Reiter_input_event"]
 [connection signal="mouse_entered" from="Museum_inside/Button_Reiter" to="." method="_on_Button_Reiter_mouse_entered"]
@@ -442,6 +1393,22 @@ stream = ExtResource( 5 )
 [connection signal="mouse_exited" from="Museum_inside/Button_Gemälde" to="." method="_on_Button_Gemlde_mouse_exited"]
 [connection signal="pressed" from="Museum_inside/Button_Leave" to="." method="_on_Button_Leave_pressed"]
 [connection signal="pressed" from="Button_Diary" to="." method="_on_Button_Diary_pressed"]
-[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_BacktoMain" to="." method="_on_Button_BacktoMain_pressed"]
 [connection signal="pressed" from="Diary/Diary_texture/Button_Quit" to="." method="_on_Button_Quit_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Glossar" to="Diary/Diary_texture" method="_on_Button_Glossar_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Glossar/Button_nextPage1" to="Diary/Diary_texture" method="_on_Button_nextPage1_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Close" to="." method="_on_Button_Close_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Button_Journal" to="Diary/Diary_texture" method="_on_Button_Journal_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p2/Button_Close2" to="Diary/Diary_texture" method="_on_Button_Close2_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p2/Button_nextPage2" to="Diary/Diary_texture" method="_on_Button_nextPage2_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p2/Button_prevPage2" to="Diary/Diary_texture" method="_on_Button_prevPage2_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p3/Button_Close3" to="Diary/Diary_texture" method="_on_Button_Close3_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p3/Button_nextPage3" to="Diary/Diary_texture" method="_on_Button_nextPage3_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p3/Button_prevPage3" to="Diary/Diary_texture" method="_on_Button_prevPage3_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p4/Button_Close4" to="Diary/Diary_texture" method="_on_Button_Close4_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p4/Button_nextPage4" to="Diary/Diary_texture" method="_on_Button_nextPage4_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p4/Button_prevPage4" to="Diary/Diary_texture" method="_on_Button_prevPage4_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p5/Button_Close5" to="Diary/Diary_texture" method="_on_Button_Close5_pressed"]
+[connection signal="pressed" from="Diary/Diary_texture/Glossar_p5/Button_prevPage5" to="Diary/Diary_texture" method="_on_Button_prevPage5_pressed"]
+[connection signal="finished" from="Diary/PageFlipAnim" to="Diary/Diary_texture" method="_on_PageFlipAnim_finished"]
+[connection signal="finished" from="Diary/PageFBackAnim" to="Diary/Diary_texture" method="_on_PageFBackAnim_finished"]
