@@ -120,6 +120,7 @@ Fonts
 “OpenSans” font family by Steve Matteson https://github.com/googlefonts/opensans
 pixabay
 
+
 Programs used
 
 Procreate
@@ -127,7 +128,13 @@ GIMP 2.10.38
 Audacity
 Developed with Godot Engine 3.5
 https://godotengine.org/license/
+REAPER
 
+
+Music/Sound Plugins
+
+BBC Symphony Orchestra Discover
+Iota Mini
 "
 text = "Team
 
@@ -191,6 +198,7 @@ Fonts
 “OpenSans” font family by Steve Matteson https://github.com/googlefonts/opensans
 pixabay
 
+
 Programs used
 
 Procreate
@@ -198,7 +206,13 @@ GIMP 2.10.38
 Audacity
 Developed with Godot Engine 3.5
 https://godotengine.org/license/
+REAPER
 
+
+Music/Sound Plugins
+
+BBC Symphony Orchestra Discover
+Iota Mini
 "
 
 [node name="Back_Button" type="Button" parent="."]

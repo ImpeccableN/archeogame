@@ -52,6 +52,7 @@ texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="Tb_zoomIn" type="VideoPlayer" parent="."]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1082.0
 stream = ExtResource( 13 )
