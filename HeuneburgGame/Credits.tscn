@@ -135,7 +135,9 @@ Music/Sound Plugins
 
 BBC Symphony Orchestra Discover
 Iota Mini
-"
+
+
+Special thanks to John Williams"
 text = "Team
 
 Berivan Altunsaray: Design, Illustrations
@@ -213,7 +215,9 @@ Music/Sound Plugins
 
 BBC Symphony Orchestra Discover
 Iota Mini
-"
+
+
+Special thanks to John Williams"
 
 [node name="Back_Button" type="Button" parent="."]
 margin_right = 196.0

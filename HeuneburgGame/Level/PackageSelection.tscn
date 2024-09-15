@@ -186,18 +186,21 @@ text = "Select no. 3: Serious Business"
 script = ExtResource( 11 )
 
 [node name="PNG_DIY" type="TextureRect" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 8 )
 script = ExtResource( 3 )
 
 [node name="PNG_GLAM" type="TextureRect" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 13 )
 script = ExtResource( 5 )
 
 [node name="PNG_Serious" type="TextureRect" parent="."]
+visible = false
 margin_left = 4.0
 margin_top = -1.0
 margin_right = 1924.0
@@ -284,7 +287,6 @@ custom_styles/pressed = SubResource( 26 )
 custom_styles/normal = SubResource( 27 )
 text = "Close"
 
-[connection signal="pressed" from="Button_DIY" to="." method="_on_Button_DIY_pressed"]
 [connection signal="pressed" from="Button_DIY" to="Button_DIY" method="_on_Button_DIY_pressed"]
 [connection signal="sendPackageNum" from="Button_DIY" to="." method="_on_Button_DIY_sendPackageNum"]
 [connection signal="pressed" from="Button_GLAM" to="Button_GLAM" method="_on_Button_GLAM_pressed"]
